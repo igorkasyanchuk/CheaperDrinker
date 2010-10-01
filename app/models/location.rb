@@ -15,6 +15,7 @@ class Location < ActiveRecord::Base
     bounds_sql = "lat>#{sw.lat} AND lat<#{ne.lat} AND #{lng_sql}"
     where(bounds_sql)
   }
+  scope :by_name, order('name')
 
   before_save :geocode_it!
   

@@ -29,19 +29,23 @@ var CENTER_OF_THE_WORLD_LAT = 44.96;
 var CENTER_OF_THE_WORLD_LNG = -93.3;
 var HEADER_HEIGHT = 130;
 var FOOTER_HEIGHT = 50;
-var DEFAULT_ZOOM = 12;
+//var DEFAULT_ZOOM = 12;
+var DEFAULT_ZOOM = 5;
 
 var info_window;
 var bar_icon;
 var map;
 var markers = new Array();
+var infos = new Array();
 
 function init_resize_map() {
   document_height = $(window).height();
   $('#global_map').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT)+'px'});
+  $('#sidebar').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT - 120)+'px'});
   $(window).resize(function(){
     document_height = $(window).height();
     $('#global_map').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT)+'px'});
+    $('#sidebar').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT - 120)+'px'});
   });
 };
 
@@ -52,7 +56,6 @@ function show_bars_on_map(bars) {
   map.enableScrollWheelZoom();
   map.setCenter(new GLatLng(CENTER_OF_THE_WORLD_LAT, CENTER_OF_THE_WORLD_LNG), DEFAULT_ZOOM, G_NORMAL_MAP);
   init_resize_map();
-  
   GEvent.addListener(map, "moveend", function() { updateMap(); });
 };
 
@@ -75,7 +78,12 @@ function add_bar_icon(info) {
   map.addOverlay(tooltip);   
   GEvent.addListener(bar_marker, 'mouseover', function() { this.tooltip.show(); } ); 
   GEvent.addListener(bar_marker, 'mouseout', function() { this.tooltip.hide(); } );
-  markers[info.id] = bar_marker;
+  markers[info.id] = {'marker': bar_marker, 'info': info};
+}
+
+function add_location_info(info, where) {
+  var _html = "<li><strong>" + info.name +  "</strong><div class='description'>" + info.description + "</div></li>";
+  where.append(_html);
 }
 
 function init_map_base() {
@@ -86,6 +94,7 @@ function init_map_base() {
 };
 
 function updateMap() {
+  $('#sidebar').show();
   var bounds = map.getBounds();
   var southWest = bounds.getSouthWest();
   var northEast = bounds.getNorthEast();
@@ -99,9 +108,18 @@ function updateMap() {
 
 function remove_markers_outside_of_map_bounds() {
   for(i in markers) {
-    if(i > 0 && markers[i] && !map.getBounds().containsLatLng(markers[i].getLatLng())) {
-      map.removeOverlay(markers[i]);
+    if(i > 0 && markers[i] && !map.getBounds().containsLatLng(markers[i]['marker'].getLatLng())) {
+      map.removeOverlay(markers[i]['marker']);
       markers[i] = null;
     }
   }
 };
+
+function add_markers_outside_to_sidebar(where) {
+  for(i in markers) {
+    if(i > 0 && markers[i] && map.getBounds().containsLatLng(markers[i]['marker'].getLatLng())) {
+      add_location_info(markers[i]['info'], where);
+    }
+  }
+};
+

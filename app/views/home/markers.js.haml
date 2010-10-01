@@ -1,6 +1,15 @@
+var $where = $('#sidebar ul');
+
+$where.find('li').slideUp().remove();
+
 if(markers.length > 0) { remove_markers_outside_of_map_bounds(); }
 
 !== var bars = #{@locations.collect{|l| l.location_info}.to_json};
+
+if (!bars || bars.length == 0) 
+{ $('#sidebar p').show(); }
+else
+{ $('#sidebar p').hide(); }
 
 $.each(bars, function() { 
 
@@ -9,3 +18,5 @@ var _id = this['id'];
 if(!markers[_id] || markers[_id] == null) { add_bar_icon(this); }
 
 });
+
+if(markers.length > 0) { add_markers_outside_to_sidebar($where); }

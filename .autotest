@@ -1,0 +1,10 @@
+Autotest.add_hook :initialize do |at|
+  unless ARGV.empty?
+    if ARGV[0] == '-d'
+      at.find_directories = ARGV[1..-1].dup
+    else
+      at.find_directories = []
+      at.extra_files = ARGV.dup
+    end
+  end
+end

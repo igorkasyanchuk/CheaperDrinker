@@ -1,0 +1,11 @@
+%h1.left #{@user.name}
+
+- if logged_in? && current_user == @user
+  .subnav.right= link_to 'Edit', edit_dashboard_user_path(@user), :class => 'edit_button'
+
+.clear
+
+- if @user.locations.count > 0
+  %ul
+    - @user.locations.each do |p|
+      %li= link_to p.title, [@user, p]

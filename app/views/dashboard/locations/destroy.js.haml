@@ -1,0 +1,7 @@
+== $('#location-#{@location.id}').slideUp('slow').remove();
+$e = '#{ escape_javascript(render :partial => '/dashboard/locations/locations', :locals => { :user => @user }) }';
+== $('.locations').html($e);
+- if @user.locations.count > 0
+  $('.locations_list_is_empty').hide();
+- else
+  $('.locations_list_is_empty').show();

@@ -1,0 +1,216 @@
+@import "base"
+@import "colors"
+@import "header"
+
+$border_for_notice: unquote("1px solid #ccc")
+
+$width = 98%
+$margin = 1%
+$max_width: 1600px
+
+$border_for_notice: unquote("1px solid #ccc")
+
+=bordered($color: red)
+  border: unquote("1px solid #{$color}")
+
+=alpha-omega
+  +alpha
+  +omega
+
+#root
+  margin-left: auto
+  margin-right: auto
+  width: $width
+  max-width: $max_width
+  #header
+    +grid-container
+    height: 80px
+    #logo
+      +grid(6)
+      +alpha
+      h1
+        font-size: 2.3em
+    #nav_container
+      +grid(16)
+      +alpha
+      +omega
+      ul#nav
+        +float-right
+        +horizontal-list
+        height: 2em
+        padding-top: 1em
+        li
+          +text-right
+          a
+            font-size: 0.9em
+            padding: 2px 2px
+  #content
+    .container
+      display: inline
+      float: left
+      margin-left: $margin
+      margin-right: $margin
+      width: $width - $margin
+      max-width: $max_width
+    div.flash
+      margin-top: 0.6em
+      margin-bottom: 0.6em
+      +alpha
+      +omega
+      padding: 4px 6px
+      border: $border_for_notice
+      +rounded_corners
+    div.flash.error
+      color: #8a1f11
+      background: #fff6bf
+      border-color: #ffd324
+    div.flash.notice
+      color: #514721
+      background: #fff6bf
+      border-color: #ffd324
+    #admin_menu
+      +grid(16)
+      +alpha
+      +omega
+      padding-top: 0.3em
+      padding-bottom: 0.3em
+      position: relative
+      z-index: 11
+    #admin_section
+      +grid(16)
+      +alpha
+      +omega
+      padding-bottom: 1em
+      h1, h2, h3
+        margin: 0.5em 0
+
+#footer
+  hr
+    margin: 0
+  a
+    font-size: 0.9em
+    padding-top: 4px
+    float: right
+
+html body
+  font-size: 14px
+  line-height: 1.5em
+
+.clear
+  clear: both  
+
+.left
+  float: left
+  
+.right
+  float: right
+  
+.block
+  display: block
+  
+th
+  .current
+    padding-right: 20px
+    background-repeat: no-repeat
+    background-position: right center
+  .asc
+    background-image: url(/images/sort-asc1.png)
+  .desc
+    background-image: url(/images/sort-desc1.png)
+    
+.subnav
+  font-size: 14px
+  font-weight: bold
+  margin-top: 16px
+  margin-right: 36px
+  padding: 3px 4px
+  background: $subnav_bg_color
+  -moz-border-radius: 12px
+  -webkit-border-radius: 12px
+  
+.locations
+  padding-bottom: 16px
+  .location
+    font-size: 12px
+    margin-bottom: 6px
+    border-bottom: 1px solid #ececec
+    border-top: 1px solid #ececec
+    .full_address
+      float: left
+      width: 24%
+      padding-right: 1%
+    .message
+      float: left
+      width: 50%
+    .controls
+      float: left
+      width: 10%
+    .name
+      float: left
+      width: 14%
+    .amount_total
+      margin-left: 90%
+      
+#map
+  margin-top: 0px
+  margin-bottom: 20px
+  width: 100%
+  height: 470px
+  -moz-box-shadow: 0px 0px 5px #333
+  -webkit-box-shadow: 0px 0px 5px #333
+  box-shadow: 0px 0px 5px #333  
+  
+#global_map  
+  margin-top: 20px
+  margin-bottom: 20px
+  width: 100%
+  height: 670px
+  -moz-box-shadow: 0px 0px 5px #333
+  -webkit-box-shadow: 0px 0px 5px #333
+  box-shadow: 0px 0px 5px #333  
+  
+form.formtastic ol li.text .textile
+  float: left
+  width: 75%
+  .markItUpEditor
+    background: none
+    font-size: 14px
+  textarea
+    width: 100%
+  .markItUp
+    margin: 0
+    width: 75%
+    padding: 0
+    border: 0  
+  .markItUpContainer
+    border: 1px solid #ddd
+    
+.public_post
+  padding-top: 16px
+
+.tooltip
+  background-color: #FFFFFF
+  border: 2px solid #CCCCCC
+  padding: 2px
+  white-space: nowrap
+
+.googleMarkerTab .address
+  margin-bottom: 0.6em
+
+.tooltip dl, .tooltip dd, .tooltip dt
+  margin: 0px
+  padding: 0px
+
+.tooltip dt 
+  font-weight: bold
+
+.tooltip dd
+  margin-left: 1em
+
+.tooltip img
+  border: 1px solid #AAAAAA
+  display: block
+  
+.tooltip span
+  font-size: 12px
+  color: #999 

@@ -1,0 +1,22 @@
+- content_for :on_ready do
+  init_add_form(); 
+  init_location_form();
+  
+%h1 General Dashboard
+
+%h2.left Locations
+.right.subnav= link_to 'Add Location', '#', :class => 'add_button', :to => '.location_form'
+.clear
+= render :partial => '/dashboard/locations/locations', :locals => { :user => @user }
+.add_more_block
+  = semantic_form_for [:dashboard, current_user, @user.locations.build], :remote => true, :html => { :class => 'none location_form' } do |f|
+    = f.inputs do
+      = f.input :name, :label => 'Name'
+      = f.input :city
+      = f.input :state, :collection => STATES, :include_blank => false
+      = f.input :zip
+      = f.input :address
+      = f.input :description, :input_html => { :rows => '3', :cols => '40' }, :label => 'Location Description'
+    = f.buttons do
+      = f.submit 'Add new Location'
+      = link_to 'Hide', '#', :class => 'hide cancel_button'

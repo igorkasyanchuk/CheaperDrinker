@@ -1,0 +1,27 @@
+%html
+  %head
+    %title= yield :title
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    = stylesheet_link_tag 'uniform.default', 'application', 'formtastic', 'formtastic_changes' 
+    = yield :css
+    = yield :js
+    = javascript_include_tag 'jquery-1.4.2.min', 'jquery-ui-1.8.4.custom.min', 'rails.jquery', 'jquery.uniform.min', 'application'
+    = csrf_meta_tag
+    = yield :map
+    = yield :markitup
+    %script{:type => 'text/javascript', :charset => 'utf-8'}
+      $(document).ready(function() {
+      = yield :on_ready
+      });
+      = yield :inline_js
+  %body
+    #root
+      #content
+        .container= raw(flash_messages)
+        .container= render '/shared/header'
+        .container= yield
+      #root_footer
+    #footer
+      = render :partial => '/shared/footer'
+    - if Rails.env == 'production'
+      = render :partial => '/shared/ga'

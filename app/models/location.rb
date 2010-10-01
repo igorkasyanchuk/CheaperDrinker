@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
+  
   validates_presence_of :name
   validates_presence_of :description
   validates_presence_of :state
@@ -7,6 +8,13 @@ class Location < ActiveRecord::Base
   
   scope :forward,  order('created_at ASC')
   scope :backward, order('created_at DESC')  
+  scope :in_bounds, lambda { |p|
+    bounds = Geokit::Bounds.normalize(p)
+    sw,ne = bounds.sw, bounds.ne
+    lng_sql = bounds.crosses_meridian? ? "(lng<#{ne.lng} OR lng>#{sw.lng})" : "lng>#{sw.lng} AND lng<#{ne.lng}"
+    bounds_sql = "lat>#{sw.lat} AND lat<#{ne.lat} AND #{lng_sql}"
+    where(bounds_sql)
+  }
 
   before_save :geocode_it!
   
@@ -36,6 +44,6 @@ class Location < ActiveRecord::Base
   
   def location_info
     { "lat" => self.lat, "lng" => self.lng, "id" => self.id, "name" => self.name, "description" => RedCloth.new(self.description).to_html }
-  end  
+  end
   
 end

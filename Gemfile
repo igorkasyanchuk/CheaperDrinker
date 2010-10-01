@@ -2,11 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
-group :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
-
-
 gem 'haml', '3.0.18'
 gem 'compass', '0.10.5'
 gem "will_paginate", "~> 3.0.pre2"
@@ -22,8 +17,15 @@ gem 'formtastic', '1.1.0.beta'
 gem 'hassle', :path => File.join(File.dirname(__FILE__), '/vendor/gems/hassle'), :group => :production 
 gem 'RedCloth'
 gem 'geokit'
+#gem 'geokit-rails', :git => 'git://github.com/jlecour/geokit-rails.git', :branch => 'gem'
 gem 'acts-as-taggable-on'
 gem "auto_html"
+
+group :development do
+  gem 'awesome_print', :require => 'ap'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'mysql'
+end
 
 group :test do
   gem "shoulda"

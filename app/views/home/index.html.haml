@@ -3,6 +3,7 @@
   = javascript_include_tag 'Tooltip.v2'  
   
 - content_for :on_ready do
-  !== show_bars_on_map(#{Location.all.collect{|l| l.location_info}.to_json});
+  !== show_bars_on_map();
+  updateMap();
 
 #global_map.none

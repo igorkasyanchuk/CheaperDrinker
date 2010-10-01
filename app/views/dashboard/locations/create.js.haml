@@ -1,9 +1,8 @@
-$e = '#{ escape_javascript(render :partial => '/dashboard/locations/locations', :locals => { :user => @user }) }';
-== $('.locations').html($e).find('.location:first').next().effect('highlight', {}, 2000);
-$('.location_form a.hide').trigger('click');
+!==var $e = "#{ escape_javascript(render :partial => '/dashboard/locations/locations', :locals => { :user => @user }) }";
+!==$('.locations').html($e).find('.location:first').next().effect('highlight', {}, 2000);
+!==$('.location_form a.hide').trigger('click');
 - if @user.locations.count > 0
-  $('.locations_list_is_empty').hide();
+  !==$('.locations_list_is_empty').hide();
 - else
-  $('.locations_list_is_empty').show();
-  
-$('.location_form input, textarea, select').val('');
+  !==$('.locations_list_is_empty').show();
+!==$('.location_form input, textarea, select').val('');

@@ -49,11 +49,11 @@ function init_location_form() {
   $('#location_country').trigger('change');
 };
 
-var CENTER_OF_THE_WORLD_LAT = 38;
-var CENTER_OF_THE_WORLD_LNG = -95;
+var CENTER_OF_THE_WORLD_LAT = 44.94;
+var CENTER_OF_THE_WORLD_LNG = -93.3;
 var HEADER_HEIGHT = 130;
 var FOOTER_HEIGHT = 50;
-var DEFAULT_ZOOM = 5;
+var DEFAULT_ZOOM = 12;
 
 var info_window;
 var bar_icon;

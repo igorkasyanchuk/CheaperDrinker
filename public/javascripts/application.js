@@ -90,7 +90,8 @@ function add_bar_icon(info) {
   var _html = "<div class='info_window'><h1>" + info.name + "</h1>" + 
       "<strong>" + info.description + "</strong>" + 
       "</div>";
-  marker_options = { icon: bar_icon};
+  marker_options = {};
+  //marker_options = { icon: bar_icon};
   var position = new GLatLng( info.lat, info.lng );
   var bar_marker = new GMarker( position, marker_options );
   map.addOverlay(bar_marker);

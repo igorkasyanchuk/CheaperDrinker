@@ -25,31 +25,7 @@ function init_add_form() {
   });
 };
 
-function init_company_form() {
-  $('#company_country').change(function() {
-    val = $(this).val();
-    if (val == 'United States') {
-      $('#company_state').parents('li').slideDown();
-    } else {
-      $('#company_state').parents('li').slideUp();
-    }
-  });
-  $('#company_country').trigger('change');
-};
-
-function init_location_form() {
-  $('#location_country').change(function() {
-    val = $(this).val();
-    if (val == 'United States') {
-      $('#location_state').parents('li').slideDown();
-    } else {
-      $('#location_state').parents('li').slideUp();
-    }
-  });
-  $('#location_country').trigger('change');
-};
-
-var CENTER_OF_THE_WORLD_LAT = 44.94;
+var CENTER_OF_THE_WORLD_LAT = 44.96;
 var CENTER_OF_THE_WORLD_LNG = -93.3;
 var HEADER_HEIGHT = 130;
 var FOOTER_HEIGHT = 50;

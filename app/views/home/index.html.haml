@@ -5,9 +5,14 @@
 - content_for :on_ready do
   !== show_bars_on_map();
   updateMap();
+  init_day_filter();
 
 #global_map.none
 #sidebar.none
-  %h1 Locations
+  %h1 Your happy hour finder
+  .select_date
+    = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date'
+  .title.text_center
+    %strong Bars Currently Displayed
   %p None
   %ul

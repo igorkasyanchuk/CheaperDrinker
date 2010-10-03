@@ -1,0 +1,15 @@
+= f.input :name, :label => 'Name'
+= f.input :city
+= f.input :state, :collection => STATES, :include_blank => false
+= f.input :zip
+= f.input :address
+= f.input :description, :input_html => { :rows => '4', :cols => '40' }, :label => 'Tell something about Bar'
+= f.input :specials_monday, :label => 'Monday Specials', :input_html => { :rows => '4', :cols => '40' }
+= f.input :specials_tuesday, :label => 'Tuesday Specials', :input_html => { :rows => '4', :cols => '40' }
+= f.input :specials_wednesday, :label => 'Wednesday Specials', :input_html => { :rows => '4', :cols => '40' }
+= f.input :specials_thursday, :label => 'Thursday Specials', :input_html => { :rows => '4', :cols => '40' }
+= f.input :specials_friday, :label => 'Friday Specials', :input_html => { :rows => '4', :cols => '40' }
+= f.input :specials_saturday, :label => 'Saturday Specials', :input_html => { :rows => '4', :cols => '40' }
+= f.input :specials_sunday, :label => 'Sunday Specials', :input_html => { :rows => '4', :cols => '40' }
+
+

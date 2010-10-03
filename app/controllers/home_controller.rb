@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   layout 'public'
   
   def index
+    @current_date = DAYS_FOR_SPECIALS.keys[Time.zone.now.to_date.wday]
   end
 
   def markers
@@ -9,7 +10,7 @@ class HomeController < ApplicationController
       format.js do
         ne = params['ne'].split(',').collect{|e|e.to_f}
         sw = params['sw'].split(',').collect{|e|e.to_f}
-        @locations = Location.in_bounds([sw, ne]).by_name.limit(100)
+        @locations = Location.in_bounds([sw, ne]).by_name.by_day(params['day']).limit(100)
       end
     end
   end

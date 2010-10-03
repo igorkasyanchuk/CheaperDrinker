@@ -1,6 +1,10 @@
 .location{ :class => cycle(:odd, :even), :id => "location-#{location.id}" }
   .name= location.name
   .full_address= location.full_address
+  .specials
+    - location.special_days.each do |day|
+      %span= day
+    &nbsp;
   .message!= RedCloth.new(location.description).to_html
   .controls
     = link_to 'edit', [:edit, :dashboard, current_user, location], :class => 'edit_button'

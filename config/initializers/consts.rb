@@ -22,4 +22,14 @@ STATES = [:alabama, :alaska, :arizona, :arkansas,
 AutoHtml.add_filter(:red_cloth) do |text|
   RedCloth.new(text).to_html
 end
-          
+
+days_for_specials = ActiveSupport::OrderedHash.new
+days_for_specials[:monday] = 'MON'
+days_for_specials[:tuesday] = 'TUE'
+days_for_specials[:wednesday] = 'WED'
+days_for_specials[:thursday] = 'THU'
+days_for_specials[:friday] = 'FRI'
+days_for_specials[:saturday] = 'SAT'
+days_for_specials[:sunday] = 'SUN'
+
+DAYS_FOR_SPECIALS = days_for_specials

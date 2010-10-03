@@ -16,8 +16,20 @@ class Location < ActiveRecord::Base
     where(bounds_sql)
   }
   scope :by_name, order('name')
+  
+  scope :by_day, lambda { |day|
+    where("specials_#{day.downcase} IS NOT NULL AND specials_#{day.downcase} <> ''")
+  }
 
   before_save :geocode_it!
+  
+  after_initialize :set_state
+  
+  def set_state
+    if new_record?
+      self.state = 'Minnesota'
+    end
+  end
   
   def full_address
     _address = ''
@@ -45,6 +57,23 @@ class Location < ActiveRecord::Base
   
   def location_info
     { "lat" => self.lat, "lng" => self.lng, "id" => self.id, "name" => self.name, "description" => RedCloth.new(self.description).to_html }
+  end
+  
+  def special?(day)
+    return case day
+      when :monday then self.specials_monday.present?
+      when :tuesday then self.specials_tuesday.present?
+      when :wednesday then self.specials_wednesday.present?
+      when :thursday then self.specials_thursday.present?
+      when :friday then self.specials_friday.present?
+      when :saturday then self.specials_saturday.present?
+      when :sunday then self.specials_sunday.present?
+      else false;
+    end
+  end
+  
+  def special_days
+    DAYS_FOR_SPECIALS.keys.collect{|e| DAYS_FOR_SPECIALS[e] if self.special?(e) }.compact
   end
   
 end

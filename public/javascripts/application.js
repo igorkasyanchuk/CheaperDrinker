@@ -100,7 +100,11 @@ function updateMap() {
   var northEast = bounds.getNorthEast();
   $.get(
     '/markers.js', 
-    {sw: southWest.toUrlValue(), ne: northEast.toUrlValue()},
+    {  
+      sw: southWest.toUrlValue(), 
+      ne: northEast.toUrlValue(),
+      day: get_selected_day()
+    },
     function(data) {
     }
   );
@@ -123,3 +127,22 @@ function add_markers_outside_to_sidebar(where) {
   }
 };
 
+function get_selected_day() {
+  return $('#select_date').val();
+};
+
+function init_day_filter() {
+  $('#select_date').live('change', function() {
+    total_map_clean();
+    updateMap();
+  });
+};
+
+function total_map_clean() {
+  // TODO make me better
+  for(i in markers) {
+    map.removeOverlay(markers[i]['marker']);
+    markers[i] = null;
+  }
+  markers = new Array();
+};

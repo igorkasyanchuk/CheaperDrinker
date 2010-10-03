@@ -2471,9 +2471,9 @@ th .desc {
 #sidebar {
   position: absolute;
   min-width: 180px;
-  width: 20%;
-  top: 110px;
-  right: 5.5%;
+  width: 21%;
+  top: 95px;
+  right: 5%;
   height: 400px;
   z-index: 9999;
   background: white;
@@ -2576,26 +2576,29 @@ form.formtastic ol li.text .textile .markItUpContainer {
   color: #999999;
 }
 
-/* line 252, ../../app/stylesheets/application.sass */
+/* line 254, ../../app/stylesheets/application.sass */
 #sidebar h1 {
   text-align: center;
+  padding-left: 3%;
+  padding-right: 3%;
   margin-bottom: 12px;
 }
-/* line 255, ../../app/stylesheets/application.sass */
+/* line 259, ../../app/stylesheets/application.sass */
 #sidebar .select_date {
   padding-left: 12px;
+  text-align: center;
 }
-/* line 257, ../../app/stylesheets/application.sass */
-#sidebar .select_date .selector {
-  margin: 0 auto;
-  display: block;
+/* line 262, ../../app/stylesheets/application.sass */
+#sidebar .select_date select {
+  font-size: 18px;
 }
-/* line 260, ../../app/stylesheets/application.sass */
+/* line 264, ../../app/stylesheets/application.sass */
 #sidebar .title {
   padding-top: 6px;
-  padding-left: 12px;
+  padding-left: 3%;
+  padding-right: 3%;
 }
-/* line 263, ../../app/stylesheets/application.sass */
+/* line 268, ../../app/stylesheets/application.sass */
 #sidebar .title strong {
   font-size: 16px;
 }

@@ -177,9 +177,9 @@ th
 #sidebar
   position: absolute
   min-width: 180px
-  width: 20%
-  top: 110px
-  right: 5.5%
+  width: 21%
+  top: 95px
+  right: 5%
   height: 400px
   z-index: 9999
   background: white
@@ -247,18 +247,23 @@ form.formtastic ol li.text .textile
 .tooltip span
   font-size: 12px
   color: #999 
-  
+
+$sidebar_padding = 3%
+
 #sidebar
   h1
     text-align: center
+    padding-left: $sidebar_padding
+    padding-right: $sidebar_padding
     margin-bottom: 12px
   .select_date
     padding-left: 12px
-    .selector
-      margin: 0 auto
-      display: block
+    text-align: center
+    select
+      font-size: 18px
   .title
     padding-top: 6px
-    padding-left: 12px
+    padding-left: $sidebar_padding
+    padding-right: $sidebar_padding
     strong
       font-size: 16px

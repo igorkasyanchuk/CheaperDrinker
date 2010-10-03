@@ -11,7 +11,7 @@
 #sidebar.none
   %h1 Your happy hour finder
   .select_date
-    = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date'
+    = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
   .title.text_center
     %strong Bars Currently Displayed
   %p None

@@ -1,5 +1,5 @@
 $(function() {
-  $("select, input, textarea, input:checkbox, input:radio, input:file").uniform(); 
+  $("select[class!=simple], input, textarea, input:checkbox, input:radio, input:file").uniform(); 
   $('.date_picker').datepicker({
     showOn: 'both',
     buttonImage: '/images/calendar_3.png',

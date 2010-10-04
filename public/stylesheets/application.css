@@ -2602,47 +2602,52 @@ form.formtastic ol li.text .textile .markItUpContainer {
 #sidebar .title strong {
   font-size: 16px;
 }
+/* line 270, ../../app/stylesheets/application.sass */
+#sidebar a {
+  font-weight: 600;
+  font-size: 14px;
+}
 
-/* line 272, ../../app/stylesheets/application.sass */
+/* line 275, ../../app/stylesheets/application.sass */
 .info_window h1 {
   margin: 0;
   padding: 6px 0;
   font-size: 16px;
 }
-/* line 276, ../../app/stylesheets/application.sass */
+/* line 279, ../../app/stylesheets/application.sass */
 .info_window strong {
   font-weight: normal;
 }
-/* line 278, ../../app/stylesheets/application.sass */
+/* line 281, ../../app/stylesheets/application.sass */
 .info_window p {
   font-size: 12px;
   padding-bottom: 0;
   margin-bottom: 6px;
 }
-/* line 282, ../../app/stylesheets/application.sass */
+/* line 285, ../../app/stylesheets/application.sass */
 .info_window a {
   font-size: 12px;
 }
 
-/* line 285, ../../app/stylesheets/application.sass */
+/* line 288, ../../app/stylesheets/application.sass */
 .bar {
   margin-top: 2em;
 }
-/* line 287, ../../app/stylesheets/application.sass */
+/* line 290, ../../app/stylesheets/application.sass */
 .bar #map {
   margin-top: 22px;
   height: 380px;
 }
-/* line 290, ../../app/stylesheets/application.sass */
+/* line 293, ../../app/stylesheets/application.sass */
 .bar .day {
   font-size: 24px;
   font-weight: bold;
 }
-/* line 293, ../../app/stylesheets/application.sass */
+/* line 296, ../../app/stylesheets/application.sass */
 .bar .description {
   font-size: 14px;
 }
-/* line 295, ../../app/stylesheets/application.sass */
+/* line 298, ../../app/stylesheets/application.sass */
 .bar ul li {
   padding-bottom: 2em;
 }

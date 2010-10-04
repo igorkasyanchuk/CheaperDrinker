@@ -83,7 +83,7 @@ function add_bar_icon(info) {
 }
 
 function add_location_info(info, where) {
-  var _html = "<li><strong>" + info.name +  "</strong><div class='description'>" + info.description + "</div></li>";
+  var _html = "<li><strong><a href='/places/" + info.id + "'>" + info.name +  "</a></strong><div class='description'>" + info.description + "</div></li>";
   where.append(_html);
 }
 

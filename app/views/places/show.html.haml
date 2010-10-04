@@ -1,0 +1,27 @@
+= title @location.name
+
+= content_for :map do
+  == <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{GOOGLE_KEYS[Rails.env.to_s]}" type="text/javascript"></script>
+  = javascript_include_tag 'Tooltip.v2'  
+
+= content_for :on_ready do
+  !== show_place_map(#{@location.map_info.to_json});
+
+%h1= @location.name
+%address= @location.full_address
+
+.bar
+
+  .w49.left
+    %strong Find your special in #{@location.name}
+    %ul
+      - DAYS_FOR_SPECIALS.keys.each do |day|
+        - next unless @location.special?(day)
+        %li
+          .day= day.to_s.titleize
+          .description= simple_format(@location.formatted_special_for_day(day))
+  
+  .w49.left
+    #map
+  
+.clear

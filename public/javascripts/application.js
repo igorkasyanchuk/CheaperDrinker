@@ -61,7 +61,8 @@ function show_bars_on_map(bars) {
 
 function add_bar_icon(info) {
   var _html = "<div class='info_window'><h1>" + info.name + "</h1>" + 
-      "<strong>" + info.description + "</strong>" + 
+      info.description + 
+      "<a href='/places/" + info.id + "'>more details &rarr;</a>"
       "</div>";
   marker_options = {};
   //marker_options = { icon: bar_icon};
@@ -145,4 +146,18 @@ function total_map_clean() {
     markers[i] = null;
   }
   markers = new Array();
+};
+
+function show_place_map(location) {
+  map = new GMap2(document.getElementById('map'));
+  map.setMapType(G_SATELLITE_MAP);
+  map.setCenter(new GLatLng(location.lat, location.lng), 15, G_NORMAL_MAP);
+  marker_options = {};
+  //marker_options = { icon: bar_icon};
+  var position = new GLatLng( location.lat, location.lng );
+  var bar_marker = new GMarker( position, marker_options );
+  map.addOverlay(bar_marker);
+  $(window).scroll(function() {
+    $('#map').css('top', $(window).scrollTop() + 'px');
+  });
 };

@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
+  include ActionView::Helpers::JavaScriptHelper
   
   validates_presence_of :name
   validates_presence_of :description
@@ -55,8 +56,12 @@ class Location < ActiveRecord::Base
     true
   end
   
-  def location_info
-    { "lat" => self.lat, "lng" => self.lng, "id" => self.id, "name" => self.name, "description" => RedCloth.new(self.description).to_html }
+  def location_info(day)
+    map_info.merge({ "id" => self.id, "name" => self.name, "description" => formatted_special_for_day(day) })
+  end
+  
+  def map_info
+    { "lat" => self.lat, "lng" => self.lng }
   end
   
   def special?(day)
@@ -76,4 +81,12 @@ class Location < ActiveRecord::Base
     DAYS_FOR_SPECIALS.keys.collect{|e| DAYS_FOR_SPECIALS[e] if self.special?(e) }.compact
   end
   
+  def special_for_day(day)
+    self.send("specials_#{day}")
+  end
+  
+  def formatted_special_for_day(day)
+    (self.special_for_day(day))
+  end
+
 end

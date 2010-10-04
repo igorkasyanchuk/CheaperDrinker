@@ -4,7 +4,9 @@ RailsjazzCom::Application.routes.draw do
   end
   resources :password_resets
   resources :users
-  
+
+  resources :places, :only => [:index, :show]
+
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
     resources :users do

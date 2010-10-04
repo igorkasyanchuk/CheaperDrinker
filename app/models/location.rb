@@ -1,5 +1,8 @@
 class Location < ActiveRecord::Base
   include ActionView::Helpers::JavaScriptHelper
+  include ActionView::Helpers::TextHelper
+  include ActionView::Helpers::SanitizeHelper
+  include ActionView::Helpers::TagHelper
   
   validates_presence_of :name
   validates_presence_of :description
@@ -57,7 +60,7 @@ class Location < ActiveRecord::Base
   end
   
   def location_info(day)
-    map_info.merge({ "id" => self.id, "name" => self.name, "description" => formatted_special_for_day(day) })
+    map_info.merge({ "id" => self.id, "name" => self.name, "description" => simple_format(formatted_special_for_day(day)) })
   end
   
   def map_info

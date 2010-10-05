@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout 'public'
   
   def index
-    @current_date = DAYS_FOR_SPECIALS.keys[Time.zone.now.to_date.wday]
+    @current_date = DAYS_FOR_SPECIALS.keys[Time.zone.now.to_date.wday-1]
   end
 
   def markers

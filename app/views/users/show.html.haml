@@ -8,4 +8,4 @@
 - if @user.locations.count > 0
   %ul
     - @user.locations.each do |p|
-      %li= link_to p.title, [@user, p]
+      %li= link_to p.name, place_path(p)

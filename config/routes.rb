@@ -18,8 +18,14 @@ RailsjazzCom::Application.routes.draw do
   namespace :dashboard do
     match '/', :to => 'dashboard#welcome'
     resources :users, :only => [:edit, :update, :show] do
-      resources :locations
+      resources :locations do
+        resources :comments, :only => [:show, :index, :destroy]
+      end
     end
+  end
+  
+  resources :locations, :only => [] do
+    resources :comments, :only => [:create]
   end
   
   root :controller => 'home', :action => 'index'

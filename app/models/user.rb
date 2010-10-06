@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password_confirmation, :if => :require_password?
   
   has_many :locations, :dependent => :destroy
+  has_many :comments, :dependent => :destroy, :as => :commentable
   
   scope :admins, where(:admin => true)
   scope :forward,  order('created_at ASC')

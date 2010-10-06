@@ -6,6 +6,7 @@
 
 = content_for :on_ready do
   !== show_place_map(#{@location.map_info.to_json});
+  $("#post_comment").colorbox({width:"50%", inline:true, href:"#comments" });
 
 %h1= @location.name
 %address= @location.full_address
@@ -25,3 +26,18 @@
     #map
   
 .clear
+
+%a{:href => '#comments', :id => 'post_comment'} Add Comment
+
+%ul#all_comments
+  - @location.comments.recent.all.each do |comment|
+    %li= comment.comment
+
+.none
+  #comments
+    = semantic_form_for [@location, @comment], :html => { :id => 'post_comment_form' }, :remote => true do |f|
+      %h3 Post Your Comment
+      = f.inputs do
+        = f.input :comment, :input_html => { :rows => '5', :cols => '40' }
+      = f.buttons do
+        = f.submit "Post", :id => 'post_comment_button'        

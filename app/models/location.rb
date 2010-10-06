@@ -24,6 +24,8 @@ class Location < ActiveRecord::Base
   scope :by_day, lambda { |day|
     where("specials_#{day.downcase} IS NOT NULL AND specials_#{day.downcase} <> ''")
   }
+  
+  has_many :comments, :dependent => :destroy, :as => :commentable
 
   before_save :geocode_it!
   

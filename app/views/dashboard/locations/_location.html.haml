@@ -9,4 +9,5 @@
   .controls
     = link_to 'edit', [:edit, :dashboard, current_user, location], :class => 'edit_button'
     = link_to 'remove', [:dashboard, current_user, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+    = link_to "comments(#{location.comments_count})", [:dashboard, current_user, location, :comments], :class => 'index_button'
   .clear

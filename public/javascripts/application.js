@@ -1,3 +1,11 @@
+$(document).ajaxSend(function(event, request, settings) {
+    if ( settings.type == 'post' ) {
+        settings.data = (settings.data ? settings.data + "&" : "")
+                + "authenticity_token=" + encodeURIComponent( AUTH_TOKEN );
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    }
+});
+
 $(function() {
   $("select[class!=simple], input, textarea, input:checkbox, input:radio, input:file").uniform(); 
   $('.date_picker').datepicker({
@@ -161,3 +169,14 @@ function show_place_map(location) {
     $('#map').css('top', $(window).scrollTop() + 'px');
   });
 };
+
+function re_init_comments() {
+  $.colorbox.close(); 
+  $('#comments form').show(); 
+  $('#comments h3.thanks').remove();
+  $('#comment_comment').val('');
+};
+
+function init_location_form() {
+  
+}

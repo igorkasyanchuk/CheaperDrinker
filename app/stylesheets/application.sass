@@ -118,6 +118,12 @@ th
   .desc
     background-image: url(/images/sort-desc1.png)
     
+    
+=round_me($r)
+  -moz-border-radius: $r
+  -webkit-border-radius: $r
+  border-radius: $r
+      
 .subnav
   font-size: 14px
   font-weight: bold
@@ -146,7 +152,14 @@ th
       float: left
       width: 10%
       span
-        padding-right: 2px
+        display: inline-block
+        padding: 1px 2px
+        background: #4778b2
+        color: white
+        font-size: 10px
+        height: 12px
+        line-height: 12px
+        +round_me(4px)
     .controls
       float: left
       width: 10%
@@ -297,3 +310,11 @@ $sidebar_padding = 3%
     font-size: 14px
   ul li
     padding-bottom: 2em
+    
+#comments
+  text-align: left
+  padding-bottom: 20px
+  h3.thanks
+    color: green
+    font-weight: bold
+    text-align: center

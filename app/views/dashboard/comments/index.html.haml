@@ -1,0 +1,11 @@
+= title "Manage #{@location.name} Comments"
+
+%h1 Manage #{@location.name} Comments
+
+%ul#all_comments
+  - @location.comments.recent.all.each do |comment|
+    %li
+      = comment.comment
+      = comment.status
+      = link_to 'approve', [:dashboard, current_user, @location, comment]
+      = link_to 'delete', [:dashboard, current_user, @location, comment], :method => :delete

@@ -20,7 +20,7 @@
         - next unless @location.special?(day)
         %li
           .day= day.to_s.titleize
-          .description= simple_format(@location.formatted_special_for_day(day))
+          .description= simple_format(@location.special_for_day(day))
   
   .w49.left
     #map

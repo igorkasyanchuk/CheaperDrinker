@@ -62,7 +62,7 @@ class Location < ActiveRecord::Base
   end
   
   def location_info(day)
-    map_info.merge({ "id" => self.id, "name" => self.name, "description" => simple_format(formatted_special_for_day(day)) })
+    map_info.merge({ "id" => self.id, "name" => self.name, "description" => simple_format(special_for_day(day)) })
   end
   
   def map_info
@@ -90,8 +90,4 @@ class Location < ActiveRecord::Base
     self.send("specials_#{day}")
   end
   
-  def formatted_special_for_day(day)
-    (self.special_for_day(day))
-  end
-
 end

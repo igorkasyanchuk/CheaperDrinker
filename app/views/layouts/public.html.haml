@@ -1,4 +1,25 @@
-= title "CheaperDrinker - Your Happy Hour and Bar Specials Finder!"
-
-= inside_layout 'application' do
-  #public= yield
+%html
+  %head
+    %title= yield :title
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    = stylesheet_link_tag 'uniform.default', 'application', 'formtastic', 'formtastic_changes' , 'colorbox'
+    = yield :css
+    = yield :js
+    = javascript_include_tag 'jquery-1.4.2.min', 'jquery-ui-1.8.4.custom.min', 'rails.jquery', 'jquery.uniform.min', 'jquery.colorbox-min', 'application'
+    = csrf_meta_tag
+    = yield :map
+    = yield :markitup
+    %script{:type => 'text/javascript', :charset => 'utf-8'}
+      $(document).ready(function() {
+      = yield :on_ready
+      });
+      = yield :inline_js
+  %body
+    #root.full_screen
+      #content
+        .container= raw(flash_messages)
+        .container= render '/shared/header'
+        .container= yield
+        .clear
+    - if Rails.env == 'production'
+      = render :partial => '/shared/ga'

@@ -1,0 +1,3 @@
+.date= comment.created_at.to_s(:short)
+.user= comment.try(:user).try(:name)
+.comment= comment.comment

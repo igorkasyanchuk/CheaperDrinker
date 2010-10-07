@@ -35,7 +35,7 @@ function init_add_form() {
 
 var CENTER_OF_THE_WORLD_LAT = 44.96;
 var CENTER_OF_THE_WORLD_LNG = -93.3;
-var HEADER_HEIGHT = 130;
+var HEADER_HEIGHT = 99;
 var FOOTER_HEIGHT = 50;
 var DEFAULT_ZOOM = 12;
 //var DEFAULT_ZOOM = 5;
@@ -48,12 +48,12 @@ var infos = new Array();
 
 function init_resize_map() {
   document_height = $(window).height();
-  $('#global_map').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT)+'px'});
-  $('#sidebar').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT - 120)+'px'});
+  $('#global_map').css({'height':(document_height-HEADER_HEIGHT)+'px'});
+  $('#sidebar').css({'height':(document_height-HEADER_HEIGHT - 15)+'px'});
   $(window).resize(function(){
     document_height = $(window).height();
-    $('#global_map').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT)+'px'});
-    $('#sidebar').css({'height':(document_height-HEADER_HEIGHT-FOOTER_HEIGHT - 120)+'px'});
+    $('#global_map').css({'height':(document_height-HEADER_HEIGHT)+'px'});
+    $('#sidebar').css({'height':(document_height-HEADER_HEIGHT - 15)+'px'});
   });
 };
 

@@ -1729,7 +1729,7 @@ html {
   height: 100%;
   font-size: 1em;
   line-height: 1.2em;
-  font-size: 14px;
+  font-size: 12px;
 }
 /* line 14, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html html, html body, html div, html span, html applet, html object, html iframe,
@@ -2215,7 +2215,7 @@ ul#general_nav li:hover, ul#general_nav li.selected, ul#admin_nav li:hover, ul#a
 #root {
   margin-left: auto;
   margin-right: auto;
-  width: 98%;
+  width: 1000px;
   max-width: 1600px;
 }
 /* line 25, ../../app/stylesheets/application.sass */
@@ -2293,9 +2293,9 @@ ul#general_nav li:hover, ul#general_nav li.selected, ul#admin_nav li:hover, ul#a
 #root #content .container {
   display: inline;
   float: left;
-  margin-left: 1%;
-  margin-right: 1%;
-  width: 97%;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 990px;
   max-width: 1600px;
 }
 /* line 55, ../../app/stylesheets/application.sass */
@@ -2351,59 +2351,74 @@ ul#general_nav li:hover, ul#general_nav li.selected, ul#admin_nav li:hover, ul#a
   margin: 0.5em 0;
 }
 
-/* line 88, ../../app/stylesheets/application.sass */
+/* line 87, ../../app/stylesheets/application.sass */
+#root.full_screen {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 100%;
+}
+/* line 93, ../../app/stylesheets/application.sass */
+#root.full_screen #content .container {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+/* line 100, ../../app/stylesheets/application.sass */
 #footer hr {
   margin: 0;
 }
-/* line 90, ../../app/stylesheets/application.sass */
+/* line 102, ../../app/stylesheets/application.sass */
 #footer a {
   font-size: 0.9em;
   padding-top: 4px;
   float: right;
 }
 
-/* line 95, ../../app/stylesheets/application.sass */
+/* line 107, ../../app/stylesheets/application.sass */
 html body {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5em;
 }
 
-/* line 99, ../../app/stylesheets/application.sass */
+/* line 111, ../../app/stylesheets/application.sass */
 .clear {
   clear: both;
 }
 
-/* line 102, ../../app/stylesheets/application.sass */
+/* line 114, ../../app/stylesheets/application.sass */
 .left {
   float: left;
 }
 
-/* line 105, ../../app/stylesheets/application.sass */
+/* line 117, ../../app/stylesheets/application.sass */
 .right {
   float: right;
 }
 
-/* line 108, ../../app/stylesheets/application.sass */
+/* line 120, ../../app/stylesheets/application.sass */
 .block {
   display: block;
 }
 
-/* line 112, ../../app/stylesheets/application.sass */
+/* line 124, ../../app/stylesheets/application.sass */
 th .current {
   padding-right: 20px;
   background-repeat: no-repeat;
   background-position: right center;
 }
-/* line 116, ../../app/stylesheets/application.sass */
+/* line 128, ../../app/stylesheets/application.sass */
 th .asc {
   background-image: url(/images/sort-asc1.png);
 }
-/* line 118, ../../app/stylesheets/application.sass */
+/* line 130, ../../app/stylesheets/application.sass */
 th .desc {
   background-image: url(/images/sort-desc1.png);
 }
 
-/* line 127, ../../app/stylesheets/application.sass */
+/* line 139, ../../app/stylesheets/application.sass */
 .subnav {
   font-size: 14px;
   font-weight: bold;
@@ -2415,34 +2430,34 @@ th .desc {
   -webkit-border-radius: 12px;
 }
 
-/* line 137, ../../app/stylesheets/application.sass */
+/* line 149, ../../app/stylesheets/application.sass */
 .locations {
   padding-bottom: 16px;
 }
-/* line 139, ../../app/stylesheets/application.sass */
+/* line 151, ../../app/stylesheets/application.sass */
 .locations .location {
   font-size: 12px;
   margin-bottom: 6px;
   border-bottom: 1px solid #ececec;
   border-top: 1px solid #ececec;
 }
-/* line 144, ../../app/stylesheets/application.sass */
+/* line 156, ../../app/stylesheets/application.sass */
 .locations .location .full_address {
   float: left;
   width: 24%;
   padding-right: 1%;
 }
-/* line 148, ../../app/stylesheets/application.sass */
+/* line 160, ../../app/stylesheets/application.sass */
 .locations .location .message {
   float: left;
   width: 40%;
 }
-/* line 151, ../../app/stylesheets/application.sass */
+/* line 163, ../../app/stylesheets/application.sass */
 .locations .location .specials {
   float: left;
   width: 10%;
 }
-/* line 154, ../../app/stylesheets/application.sass */
+/* line 166, ../../app/stylesheets/application.sass */
 .locations .location .specials span {
   display: inline-block;
   padding: 1px 2px;
@@ -2455,22 +2470,22 @@ th .desc {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 163, ../../app/stylesheets/application.sass */
+/* line 175, ../../app/stylesheets/application.sass */
 .locations .location .controls {
   float: left;
   width: 10%;
 }
-/* line 166, ../../app/stylesheets/application.sass */
+/* line 178, ../../app/stylesheets/application.sass */
 .locations .location .name {
   float: left;
   width: 14%;
 }
-/* line 169, ../../app/stylesheets/application.sass */
+/* line 181, ../../app/stylesheets/application.sass */
 .locations .location .amount_total {
   margin-left: 90%;
 }
 
-/* line 172, ../../app/stylesheets/application.sass */
+/* line 184, ../../app/stylesheets/application.sass */
 #map {
   margin-top: 0px;
   margin-bottom: 20px;
@@ -2481,32 +2496,20 @@ th .desc {
   box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 181, ../../app/stylesheets/application.sass */
+/* line 193, ../../app/stylesheets/application.sass */
 #global_map {
+  float: right;
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 100%;
+  width: 79%;
   height: 400px;
-  -moz-box-shadow: 0px 0px 5px #333333;
-  -webkit-box-shadow: 0px 0px 5px #333333;
-  box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 190, ../../app/stylesheets/application.sass */
+/* line 200, ../../app/stylesheets/application.sass */
 #sidebar {
-  position: absolute;
-  min-width: 180px;
+  float: left;
   width: 21%;
-  top: 95px;
-  right: 5%;
-  height: 400px;
-  z-index: 9999;
   background: white;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-box-shadow: 0px 0px 5px #333333;
-  -webkit-box-shadow: 0px 0px 5px #333333;
-  box-shadow: 0px 0px 5px #333333;
   overflow-x: hidden;
   overflow-y: auto;
   font-size: 12px;

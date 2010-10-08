@@ -35,7 +35,7 @@ function init_add_form() {
 
 var CENTER_OF_THE_WORLD_LAT = 44.96;
 var CENTER_OF_THE_WORLD_LNG = -93.3;
-var HEADER_HEIGHT = 99;
+var HEADER_HEIGHT = 65;
 var FOOTER_HEIGHT = 50;
 var DEFAULT_ZOOM = 12;
 //var DEFAULT_ZOOM = 5;

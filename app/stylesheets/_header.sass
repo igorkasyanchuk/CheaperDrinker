@@ -1,24 +1,27 @@
 #logo
   float: left
   h1
+    margin-left: 16px
     margin-top: 16px
     margin-bottom: 16px
-    font-size: 48px
+    font-size: 36px
     font-weight: normal
-    font-family: 'Lobster', Helvetica, Arial, sans-serif
-    color: $blue
-    text-shadow: 2px 2px 2px #000
+    color: $cheaperdrinker_header_text_color
+    text-shadow: 1px 1px 1px white
     font-weight: normal
     a
-      color: $blue
+      color: $cheaperdrinker_header_text_color
       text-decoration: none
 
 ul#nav
+  color: $cheaperdrinker_header_text_color
   float: right
   li
     float: left
     list-style-type: none
     padding-left: 6px
+    a
+      color: $cheaperdrinker_header_text_color
     
 ul#general_nav
   margin: 6px 0 6px 0
@@ -48,3 +51,7 @@ ul#general_nav, ul#admin_nav
     background: $menu_background_color_not_selected
     &:hover, &.selected
       background: $menu_background_color
+      
+.header_container
+  background: $cheaperdrinker_header_bg_color
+  border-bottom: 2px solid $cheaperdrinker_header_text_color

@@ -7,12 +7,17 @@
   updateMap();
   init_day_filter();
 
-#global_map.none
-#sidebar.none
-  %h1 Your happy hour finder
-  .select_date
-    = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
-  .title.text_center
-    %strong Bars Currently Displayed
-  %p None
-  %ul
+.contentwrapper
+  .right_content
+    #global_map.none
+%div.left_content
+  #sidebar.none
+    %h1 Your happy hour finder
+    .select_date
+      = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
+    .title.text_center
+      %strong Bars Currently Displayed
+    %p None
+    %ul  
+%div.clear
+

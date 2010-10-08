@@ -10,6 +10,8 @@ $max_width: 1600px
 
 $border_for_notice: unquote("1px solid #ccc")
 
+$left_column: 350px
+
 =bordered($color: red)
   border: unquote("1px solid #{$color}")
 
@@ -181,6 +183,26 @@ th
     .amount_total
       margin-left: 90%
       
+.comments
+  padding-bottom: 16px
+  .comment
+    font-size: 12px
+    margin-bottom: 6px
+    border-bottom: 1px solid #ececec
+    border-top: 1px solid #ececec
+    .when
+      float: left
+      width: 14%
+      padding-right: 1%
+      .user
+        color: $cheaperdrinker_button_color
+        font-weight: bold
+      .date
+        font-size: 10px
+    .message
+      float: left
+      width: 85%
+
 #map
   margin-top: 0px
   margin-bottom: 20px
@@ -188,18 +210,37 @@ th
   height: 470px
   -moz-box-shadow: 0px 0px 5px #333
   -webkit-box-shadow: 0px 0px 5px #333
-  box-shadow: 0px 0px 5px #333  
+  box-shadow: 0px 0px 5px #333 
+  
+div.content
+  :display block
+  
+div.left_content
+  :float left
+  :margin-left -100%
+  :width= !left_column
+  :padding-left 10px
+
+div.right_content
+  :margin-left= !left_column + 20px + 10px
+
+.clear
+  :clear both
+  
+.contentwrapper
+  :float left
+  :width 100%
   
 #global_map  
   float: right
-  margin-top: 20px
-  margin-bottom: 20px
-  width: 79%
+  width: 100%
   height: 400px
+  border-left: 2px solid $cheaperdrinker_header_text_color
+  border-bottom: 2px solid $cheaperdrinker_header_text_color
   
 #sidebar
+  width: 100%
   float: left
-  width: 21%
   background: white
   overflow-x: hidden
   overflow-y: auto 
@@ -308,6 +349,7 @@ $sidebar_padding = 3%
     font-weight: bold
   .description
     font-size: 14px
+    color: $cheaperdrinker_dark_bg_color
   ul li
     padding-bottom: 2em
     
@@ -318,3 +360,10 @@ $sidebar_padding = 3%
     color: green
     font-weight: bold
     text-align: center
+    
+h1, h2, h3, h4
+  color: $cheaperdrinker_dark_bg_color    
+  font-weight: bold
+  
+strong
+  color: $cheaperdrinker_button_color

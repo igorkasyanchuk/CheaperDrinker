@@ -30,9 +30,11 @@
 - if logged_in?
   %a{:href => '#comments', :id => 'post_comment'} Add Comment
 
-%ul#all_comments
-  - @location.comments.recent.all.each do |comment|
-    %li= render :partial => '/places/comment', :locals => { :comment => comment }
+- if @location.comments.count > 0
+  %h3 Comments
+  #all_comments.comments
+    - @location.comments.recent.all.each do |comment|
+      .comment= render :partial => '/places/comment', :locals => { :comment => comment }
 
 - if logged_in?
   .none

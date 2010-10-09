@@ -1,7 +1,7 @@
 - if @comment.valid?
   $('#comments form').hide();
   $('#comments').append("<h3 class='thanks'>Thanks for your comment. Soon comment will be published.</h3>");
-  == $('#all_comments').prepend('<li>#{escape_javascript(@comment.comment)}</li>');
+  == $('.comments_container').html('#{escape_javascript(render :partial => '/places/comments', :locals => { :location => @location})}');
   $.colorbox.resize();
   setTimeout ( "re_init_comments();", 1500 );
 - else

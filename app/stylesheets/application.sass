@@ -14,6 +14,10 @@ $left_column: 350px
 
 =bordered($color: red)
   border: unquote("1px solid #{$color}")
+  
+=description_configuration
+  font-size: 11px
+  line-height: 13px
 
 =alpha-omega
   +alpha
@@ -255,6 +259,7 @@ div.right_content
     p
       padding: 0
       margin: 0
+      +description_configuration
   
 form.formtastic ol li.text .textile
   float: left
@@ -328,16 +333,16 @@ $sidebar_padding = 3%
 .info_window
   h1
     margin: 0
-    padding: 6px 0
-    font-size: 16px
+    padding: 2px 0
+    font-size: 14px
   strong
     font-weight: normal
   p
-    font-size: 12px
     padding-bottom: 0
-    margin-bottom: 6px
+    margin-bottom: 2px
+    +description_configuration
   a
-    font-size: 12px  
+    font-size: 11px
     
 .bar
   margin-top: 2em
@@ -348,8 +353,8 @@ $sidebar_padding = 3%
     font-size: 24px
     font-weight: bold
   .description
-    font-size: 14px
     color: $cheaperdrinker_dark_bg_color
+    +description_configuration
   ul li
     padding-bottom: 2em
     
@@ -357,7 +362,7 @@ $sidebar_padding = 3%
   text-align: left
   padding-bottom: 20px
   h3.thanks
-    color: green
+    color: $cheaperdrinker_button_color
     font-weight: bold
     text-align: center
     
@@ -367,3 +372,8 @@ h1, h2, h3, h4
   
 strong
   color: $cheaperdrinker_button_color
+  
+a
+  color: $cheaperdrinker_dark_bg_color
+  &:visited, &:hover
+    color: $cheaperdrinker_dark_bg_color

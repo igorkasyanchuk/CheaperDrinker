@@ -70,7 +70,7 @@ function show_bars_on_map(bars) {
 function add_bar_icon(info) {
   var _html = "<div class='info_window'><h1>" + info.name + "</h1>" + 
       info.description + 
-      "<br /><a href='/places/" + info.id + "'>more details &rarr;</a>"
+      "<div class='link_to_place'><a href='/places/" + info.id + "'>more details &rarr;</a></div>"
       "</div>";
   marker_options = {};
   //marker_options = { icon: bar_icon};

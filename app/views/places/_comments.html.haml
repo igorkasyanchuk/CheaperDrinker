@@ -1,0 +1,5 @@
+- if location.comments.count > 0
+  %h3 Comments
+  #all_comments.comments
+    - location.comments.recent.all.each do |comment|
+      .comment= render :partial => '/places/comment', :locals => { :comment => comment }

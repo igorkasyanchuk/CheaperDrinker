@@ -6,12 +6,13 @@ class HomeController < ApplicationController
   end
 
   def markers
+    logger.info(params["from"].green) if params["from"].green
     respond_to do |format|
       format.js do
         @current_day = params['day']
         ne = params['ne'].split(',').collect{|e|e.to_f}
         sw = params['sw'].split(',').collect{|e|e.to_f}
-        @locations = Location.in_bounds([sw, ne]).by_name.by_day(@current_day).limit(100)
+        @locations = Location.in_bounds([sw, ne]).by_name.by_day(@current_day).limit(200)
       end
     end
   end

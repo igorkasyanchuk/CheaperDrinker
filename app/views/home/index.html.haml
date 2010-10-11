@@ -1,10 +1,11 @@
 = content_for :map do
   == <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{GOOGLE_KEYS[Rails.env.to_s]}" type="text/javascript"></script>
-  = javascript_include_tag 'Tooltip.v2'  
+  = javascript_include_tag 'Tooltip.v2'
+  = javascript_include_tag 'markerclusterer_packed'
   
 - content_for :on_ready do
   !== show_bars_on_map();
-  updateMap();
+  updateMap('home');
   init_day_filter();
 
 .contentwrapper

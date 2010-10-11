@@ -1,0 +1,4 @@
+- places.each do |info|
+  %li
+    %strong= link_to info.name, place_path(info)
+    .description= simple_format info.special_for_day(current_day)

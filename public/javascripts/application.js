@@ -45,15 +45,16 @@ var bar_icon;
 var map;
 var markers = new Array();
 var infos = new Array();
+var markerClusterer = null;
 
 function init_resize_map() {
   document_height = $(window).height();
   $('#global_map').css({'height':(document_height-HEADER_HEIGHT)+'px'});
-  $('#sidebar').css({'height':(document_height-HEADER_HEIGHT - 15)+'px'});
+  $('#sidebar').css({'height':(document_height-HEADER_HEIGHT)+'px'});
   $(window).resize(function(){
     document_height = $(window).height();
     $('#global_map').css({'height':(document_height-HEADER_HEIGHT)+'px'});
-    $('#sidebar').css({'height':(document_height-HEADER_HEIGHT - 15)+'px'});
+    $('#sidebar').css({'height':(document_height-HEADER_HEIGHT)+'px'});
   });
 };
 
@@ -62,12 +63,14 @@ function show_bars_on_map(bars) {
   map = new GMap2(document.getElementById('global_map'));
   map.setMapType(G_SATELLITE_MAP);
   map.enableScrollWheelZoom();
+  map.addControl(new GLargeMapControl());
   map.setCenter(new GLatLng(CENTER_OF_THE_WORLD_LAT, CENTER_OF_THE_WORLD_LNG), DEFAULT_ZOOM, G_NORMAL_MAP);
   init_resize_map();
-  GEvent.addListener(map, "moveend", function() { updateMap(); });
+  markerClusterer = new MarkerClusterer(map, markers, {width: $('#global_map').width(), height: $('#global_map').height()});
+  GEvent.addListener(map, "moveend", function() { updateMap('moveend'); });
 };
 
-function add_bar_icon(info) {
+function get_bar_marker(info) {
   var _html = "<div class='info_window'><h1>" + info.name + "</h1>" + 
       info.description + 
       "<div class='link_to_place'><a href='/places/" + info.id + "'>more details &rarr;</a></div>"
@@ -88,6 +91,7 @@ function add_bar_icon(info) {
   GEvent.addListener(bar_marker, 'mouseover', function() { this.tooltip.show(); } ); 
   GEvent.addListener(bar_marker, 'mouseout', function() { this.tooltip.hide(); } );
   markers[info.id] = {'marker': bar_marker, 'info': info};
+  return bar_marker;
 }
 
 function add_location_info(info, where) {
@@ -102,7 +106,7 @@ function init_map_base() {
   bar_icon.shadowSize = new GSize(32, 32);
 };
 
-function updateMap() {
+function updateMap(from) {
   $('#sidebar').show();
   var bounds = map.getBounds();
   var southWest = bounds.getSouthWest();
@@ -112,29 +116,13 @@ function updateMap() {
     {  
       sw: southWest.toUrlValue(), 
       ne: northEast.toUrlValue(),
-      day: get_selected_day()
+      day: get_selected_day(),
+      from: from
     },
     function(data) {
     }
   );
 }
-
-function remove_markers_outside_of_map_bounds() {
-  for(i in markers) {
-    if(i > 0 && markers[i] && !map.getBounds().containsLatLng(markers[i]['marker'].getLatLng())) {
-      map.removeOverlay(markers[i]['marker']);
-      markers[i] = null;
-    }
-  }
-};
-
-function add_markers_outside_to_sidebar(where) {
-  for(i in markers) {
-    if(i > 0 && markers[i] && map.getBounds().containsLatLng(markers[i]['marker'].getLatLng())) {
-      add_location_info(markers[i]['info'], where);
-    }
-  }
-};
 
 function get_selected_day() {
   return $('#select_date').val();
@@ -143,16 +131,13 @@ function get_selected_day() {
 function init_day_filter() {
   $('#select_date').live('change', function() {
     total_map_clean();
-    updateMap();
+    updateMap('filter');
   });
 };
 
 function total_map_clean() {
-  // TODO make me better
-  for(i in markers) {
-    map.removeOverlay(markers[i]['marker']);
-    markers[i] = null;
-  }
+  map.clearOverlays();
+  markerClusterer.clearMarkers();
   markers = new Array();
 };
 

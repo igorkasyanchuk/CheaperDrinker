@@ -1,3 +1,5 @@
+//console.log("Start:");
+var start = new Date();
 var $where = $('#sidebar ul');
 total_map_clean();
 var map_markers = new Array();
@@ -6,15 +8,27 @@ var map_markers = new Array();
   $('#sidebar p').hide();
 - else
   $('#sidebar p').show();
+  
+- data = @locations.collect{|l| l.location_info(@current_day)}.to_json
 
-!==$.each(#{@locations.collect{|l| l.location_info(@current_day)}.to_json}, function(e, index) { 
-var _id = this['id'];
-_marker = get_bar_marker(this);
-map_markers[index] = _marker['marker'];
+//console.log((new Date()) - start);
+//console.log("Generate:");
+
+!==$.each(#{data}, function(e, index) { 
+map_markers[index] = get_bar_marker(this);
+map.addOverlay(map_markers[index]);
 });
 
+//console.log((new Date()) - start);
+//console.log("Sidebar:");
+
+var start = new Date();
 $where.find('li').remove();
 !== $str = '#{escape_javascript(render :partial => '/home/places', :locals => {:places => @locations, :current_day => @current_day})}';
 == $where.append($str);
+//console.log((new Date()) - start);
 
-setTimeout("markerClusterer.addMarkers(map_markers)", 30);
+//console.log("Draw:");
+var start = new Date();
+markerClusterer.addMarkers(map_markers);
+//console.log((new Date()) - start);

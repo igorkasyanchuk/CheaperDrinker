@@ -70,9 +70,7 @@ function show_bars_on_map(bars) {
 };
 
 function get_bar_marker(info) {
-  position = new GLatLng( info.lat, info.lng );
-  bar_marker = new GMarker( position );
-  map.addOverlay(bar_marker);
+  bar_marker = new GMarker(new GLatLng(info.lat, info.lng));
   GEvent.addListener(bar_marker, "click", function() {
     var _marker = this;
     var _info = "<div class='info_window'><h1>" + info.name + "</h1>" + 

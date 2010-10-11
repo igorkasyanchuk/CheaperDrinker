@@ -4,7 +4,7 @@ var $where = $('#sidebar ul');
 total_map_clean();
 var map_markers = new Array();
 
-- unless @locations.length > 0
+- if @locations.length > 0
   $('#sidebar p').hide();
 - else
   $('#sidebar p').show();

@@ -1,24 +1,20 @@
 var $where = $('#sidebar ul');
-$where.find('li').slideUp().remove();
-
-!== var bars = #{@locations.collect{|l| l.location_info(@current_day)}.to_json};
-
 total_map_clean();
-
-if (!bars || bars.length == 0) 
-{ $('#sidebar p').show(); }
-else
-{ $('#sidebar p').hide(); }
-
 var map_markers = new Array();
 
-$.each(bars, function(e, index) { 
+- unless @locations.empty?
+  $('#sidebar p').hide();
+- else
+  $('#sidebar p').show();
+
+!==$.each(#{@locations.collect{|l| l.location_info(@current_day)}.to_json}, function(e, index) { 
 var _id = this['id'];
 _marker = get_bar_marker(this);
 map_markers[index] = _marker['marker'];
 });
 
+$where.find('li').remove();
 !== $str = '#{escape_javascript(render :partial => '/home/places', :locals => {:places => @locations, :current_day => @current_day})}';
 == $where.append($str);
 
-markerClusterer.addMarkers(map_markers);
+setTimeout("markerClusterer.addMarkers(map_markers)", 30);

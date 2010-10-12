@@ -1,5 +1,8 @@
-class Dashboard::CommentsController < Dashboard::DashboardController
-  belongs_to :location
+class Admin::CommentsController < Admin::DashboardController
+  
+  def index
+    @comments = Comment.from_pending_to_approved.all
+  end
   
   def destroy
     destroy! do |format|

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_presence_of :first_name
   validates_presence_of :last_name
+  validates_presence_of :location
   
   validates_presence_of :password, :if => :require_password?
   validates_presence_of :password_confirmation, :if => :require_password?
@@ -21,6 +22,8 @@ class User < ActiveRecord::Base
   scope :admins, where(:admin => true)
   scope :forward,  order('created_at ASC')
   scope :backward, order('created_at DESC')  
+  
+  before_save :geocode_it!
   
   def name
     "#{first_name} #{last_name}"
@@ -37,6 +40,25 @@ class User < ActiveRecord::Base
   def toggle_admin!
     self.admin = !is_admin?
     self.save
+  end
+  
+  def geocode_it!
+    if self.location_changed? || self.new_record?
+      logger.info "Geocoding: #{self.location}"
+      _location = Geokit::Geocoders::MultiGeocoder.geocode(self.location)
+      if _location.lat && _location.lng && _location.accuracy
+        self.lat = _location.lat
+        self.lng = _location.lng
+        self.accuracy = _location.accuracy
+      else
+        self.accuracy = -1
+      end
+    end
+    true
+  end
+
+  def map_info
+    { "lat" => self.lat, "lng" => self.lng }
   end
 
 end

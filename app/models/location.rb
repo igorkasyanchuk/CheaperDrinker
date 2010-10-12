@@ -9,9 +9,16 @@ class Location < ActiveRecord::Base
   validates_presence_of :state
   validates_presence_of :city
   validates_presence_of :address
+  validates_presence_of :zip
   
   scope :forward,  order('created_at ASC')
-  scope :backward, order('created_at DESC')  
+  scope :backward, order('created_at DESC')
+  
+  scope :from_pending_to_approved, order('approved ASC')
+  
+  scope :pending, where(:approved => false)
+  scope :approved, where(:approved => true)
+  
   scope :in_bounds, lambda { |p|
     bounds = Geokit::Bounds.normalize(p)
     sw,ne = bounds.sw, bounds.ne
@@ -35,6 +42,11 @@ class Location < ActiveRecord::Base
     if new_record?
       self.state = 'Minnesota'
     end
+  end
+  
+  def approve!
+    self.approved = true
+    self.save(:validate => false)
   end
   
   def full_address

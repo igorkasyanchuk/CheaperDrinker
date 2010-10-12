@@ -2,7 +2,9 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, :polymorphic => true, :counter_cache => true, :touch => true
 
   scope :not_approved, where(:approved => false)
+  scope :approved, where(:approved => true)
   scope :recent, order('created_at DESC')
+  scope :from_pending_to_approved, order('approved ASC')
 
   belongs_to :user
   validates_presence_of :comment

@@ -725,6 +725,14 @@ html dl dt, html dl dl {
 }
 
 /* line 108, ../../app/stylesheets/text.sass */
+.approve_button {
+  padding-left: 18px;
+  padding-left: 18px !important;
+  background: url(/images/fugue/tick-circle.png) no-repeat center left;
+  font-size: 12px;
+}
+
+/* line 111, ../../app/stylesheets/text.sass */
 .bold_text {
   font-weight: bold;
 }
@@ -1576,6 +1584,14 @@ html dl dt, html dl dl {
 }
 
 /* line 108, ../../app/stylesheets/text.sass */
+.approve_button {
+  padding-left: 18px;
+  padding-left: 18px !important;
+  background: url(/images/fugue/tick-circle.png) no-repeat center left;
+  font-size: 12px;
+}
+
+/* line 111, ../../app/stylesheets/text.sass */
 .bold_text {
   font-weight: bold;
 }

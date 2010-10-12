@@ -1,5 +1,5 @@
 .location{ :class => cycle(:odd, :even), :id => "location-#{location.id}" }
-  .name= location.name
+  .name= link_to location.name, place_path(location)
   .full_address= location.full_address
   .specials
     - location.special_days.each do |day|

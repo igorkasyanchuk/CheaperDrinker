@@ -9,6 +9,16 @@ RailsjazzCom::Application.routes.draw do
 
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
+    resources :locations do
+      member do
+        get :approve
+      end
+    end
+    resources :comments do
+      member do
+        get :approve
+      end
+    end
     resources :users do
       member do
         get :toggle_admin
@@ -19,7 +29,11 @@ RailsjazzCom::Application.routes.draw do
     match '/', :to => 'dashboard#welcome'
     resources :users, :only => [:edit, :update, :show] do
       resources :locations do
-        resources :comments, :only => [:show, :index, :destroy]
+        resources :comments, :only => [:index, :destroy] do
+          member do
+            get :approve
+          end
+        end
       end
     end
   end

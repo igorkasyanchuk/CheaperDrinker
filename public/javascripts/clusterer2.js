@@ -426,7 +426,6 @@ Clusterer.PopDown = function ( clusterer )
     
 Clusterer.prototype.ClusterSize = function ( cluster )
 {
-  console.log(cluster);
   if (!cluster.markers) {
     return 0;
   }

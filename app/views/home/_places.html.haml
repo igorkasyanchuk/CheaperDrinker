@@ -1,4 +1,6 @@
 - places.each do |info|
   %li
-    %strong= link_to info.name, place_path(info)
+    %strong.place_name= link_to info.name, place_path(info)
+    .address= info.address
     .description= simple_format info.special_for_day(current_day)
+    .link_to= link_to 'More Details', place_path(info), :title => "more details about #{info.name}"

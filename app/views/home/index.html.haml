@@ -12,8 +12,14 @@
   .right_content
     #global_map.none
 %div.left_content
+  .welcome_message.none
+    %h1 Yould find best bars for you.
+    %strong Using simple 3 steps
+    %ol
+      %li Select on may your region
+      %li Zoom-in to see list of bars
+      %li Find best for you by bar special description
   #sidebar.none
-    %h1 Your happy hour finder
     .select_date
       = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
     .title.text_center

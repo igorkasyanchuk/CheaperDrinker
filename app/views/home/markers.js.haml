@@ -6,7 +6,7 @@ var map_markers = new Array();
   $('#sidebar p').hide();
 - else
   $('#sidebar p').show();
-  
+
 - data = @locations.collect{|l| l.location_info(@current_day)}.to_json
 
 !==$.each(#{data}, function(e, index) { 
@@ -18,3 +18,5 @@ $where.find('li').remove();
 == $where.append($str);
 
 markerClusterer.addMarkers(map_markers);
+
+zoom_processor();

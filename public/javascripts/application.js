@@ -21,14 +21,12 @@ function init_add_form() {
   $('.subnav a').live('click', function() {
     var _this = $(this);
     var to = $(_this.attr('to'));
-    var targetOffset = (to.offset().top + _this.offset().top) - 200 + 'px';
     to.slideDown('fast').find('a').click(function() {
       to.slideUp('fast');
       _this.parent().show();
       return false;
     });
     _this.parent().hide();
-    $('html,body').animate({scrollTop: targetOffset}, 1000);
     return false;
   });
 };
@@ -37,10 +35,9 @@ var CENTER_OF_THE_WORLD_LAT = 44.96;
 var CENTER_OF_THE_WORLD_LNG = -93.3;
 var HEADER_HEIGHT = 60;
 var FOOTER_HEIGHT = 50;
-//var DEFAULT_ZOOM = 5;
-var DEFAULT_ZOOM = 12;
+var DEFAULT_ZOOM = 5;
 
-var USER_LOCATION = {"lat": CENTER_OF_THE_WORLD_LAT, "lng": CENTER_OF_THE_WORLD_LNG};
+var USER_LOCATION = {"lat": CENTER_OF_THE_WORLD_LAT, "lng": CENTER_OF_THE_WORLD_LNG, "zoom": DEFAULT_ZOOM};
 
 var info_window;
 var bar_icon;
@@ -66,7 +63,7 @@ function show_bars_on_map(bars) {
   map.setMapType(G_SATELLITE_MAP);
   map.enableScrollWheelZoom();
   map.addControl(new GLargeMapControl());
-  map.setCenter(new GLatLng(USER_LOCATION.lat, USER_LOCATION.lng), DEFAULT_ZOOM, G_NORMAL_MAP);
+  map.setCenter(new GLatLng(USER_LOCATION.lat, USER_LOCATION.lng), USER_LOCATION.zoom, G_NORMAL_MAP);
   init_resize_map();
   GEvent.addListener(map, "moveend", function() { updateMap('moveend'); });
   var clusterOpt = {
@@ -75,6 +72,7 @@ function show_bars_on_map(bars) {
 		};
   markerClusterer = new MarkerClusterer(map, null, clusterOpt);
   map.checkResize();
+  process_map_zoom();
 };
 
 function get_bar_marker(info) {
@@ -91,7 +89,6 @@ function get_bar_marker(info) {
 }
 
 function updateMap(from) {
-  $('#sidebar').show();
   var bounds = map.getBounds();
   var southWest = bounds.getSouthWest();
   var northEast = bounds.getNorthEast();
@@ -140,4 +137,22 @@ function re_init_comments() {
   $('#comments form').show(); 
   $('#comments h3.thanks').remove();
   $('#comment_comment').val('');
+};
+
+function process_map_zoom() {
+  GEvent.addListener(map, "zoomend", function(l,n) { 
+    zoom_processor();
+  });
+};
+
+function zoom_processor() {
+  if (map.getZoom() <= 5) {
+    // show welcome
+    $('#sidebar').hide();
+    $('.welcome_message').show();
+  } else {
+    // hide welcome
+    $('#sidebar').show();
+    $('.welcome_message').hide();
+  }
 };

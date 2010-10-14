@@ -5,12 +5,12 @@
 $border_for_notice: unquote("1px solid #ccc")
 
 $width = 1000px
-$margin = 10px
+$margin = 0px
 $max_width: 1600px
 
 $border_for_notice: unquote("1px solid #ccc")
 
-$left_column: 350px
+$left_column: 250px
 
 =bordered($color: red)
   border: unquote("1px solid #{$color}")
@@ -26,16 +26,19 @@ $left_column: 350px
 #root
   margin-left: auto
   margin-right: auto
-  width: $width
+  width: $width + 20px
   max-width: $max_width
+  -webkit-box-shadow: 0px 0px 9px rgba(137, 137, 137, 0.5)
+  -moz-box-shadow: 0px 0px 9px rgba(137, 137, 137, 0.5)
+  box-shadow: 0px 0px 9px rgba(137, 137, 137, 0.5)
   #header
     +grid-container
     height: 80px
     #logo
       +grid(6)
-      +alpha
       h1
-        font-size: 2.3em
+        font-size: 32px
+        padding: 0
     #nav_container
       +grid(16)
       +alpha
@@ -47,8 +50,9 @@ $left_column: 350px
         padding-top: 1em
         li
           +text-right
+          padding-right: 6px
           a
-            font-size: 0.9em
+            font-size: 11px
             padding: 2px 2px
   #content
     .container
@@ -58,6 +62,8 @@ $left_column: 350px
       margin-right: $margin
       width: $width - $margin
       max-width: $max_width
+      padding-left: 10px
+      padding-right: 10px
     div.flash
       margin-top: 0.6em
       margin-bottom: 0.6em
@@ -106,13 +112,13 @@ $left_column: 350px
   hr
     margin: 0
   a
-    font-size: 0.9em
+    font-size: 11px
     padding-top: 4px
     float: right
 
 html body
-  font-size: 12px
-  line-height: 1.5em
+  font-size: 11px
+  line-height: 15px
 
 .clear
   clear: both  
@@ -143,7 +149,7 @@ th
   border-radius: $r
       
 .subnav
-  font-size: 14px
+  font-size: 12px
   font-weight: bold
   margin-top: 16px
   margin-right: 36px
@@ -193,7 +199,7 @@ th
 .comments
   padding-bottom: 16px
   .comment
-    font-size: 12px
+    font-size: 11px
     margin-bottom: 6px
     border-bottom: 1px solid #ececec
     border-top: 1px solid #ececec
@@ -226,7 +232,7 @@ div.left_content
   :float left
   :margin-left -100%
   :width= !left_column
-  :padding-left 10px
+  :padding-left 30px
 
 div.right_content
   :margin-left= !left_column + 20px + 10px
@@ -258,18 +264,28 @@ div.right_content
     padding-left: 12px
   ol, ul
     padding-left: 12px
+    margin-left: 0
+  ul li
+    padding-bottom: 12px
+    list-style-type: none
   .description
     p
       padding: 0
       margin: 0
       +description_configuration
+  .address
+    color: $cheaperdrinker_button_color
+    font-size: 11px
+  .link_to a
+    font-size: 11px
+    font-weight: normal
   
 form.formtastic ol li.text .textile
   float: left
   width: 75%
   .markItUpEditor
     background: none
-    font-size: 14px
+    font-size: 12px
   textarea
     width: 100%
   .markItUp
@@ -307,7 +323,7 @@ form.formtastic ol li.text .textile
   display: block
   
 .tooltip span
-  font-size: 12px
+  font-size: 11px
   color: #999 
 
 $sidebar_padding = 3%
@@ -319,25 +335,26 @@ $sidebar_padding = 3%
     padding-right: $sidebar_padding
     margin-bottom: 12px
   .select_date
+    padding-top: 12px
     padding-left: 12px
     text-align: center
     select
-      font-size: 18px
+      font-size: 12px
   .title
     padding-top: 6px
     padding-left: $sidebar_padding
     padding-right: $sidebar_padding
     strong
-      font-size: 16px
+      font-size: 12px
   a
     font-weight: 600
-    font-size: 14px
+    font-size: 12px
       
 .info_window
   h1
     margin: 0
     padding: 2px 0
-    font-size: 14px
+    font-size: 12px
   strong
     font-weight: normal
   p
@@ -353,13 +370,16 @@ $sidebar_padding = 3%
     margin-top: 22px
     height: 350px
   .day
-    font-size: 24px
+    font-size: 12px
     font-weight: bold
   .description
     color: $cheaperdrinker_dark_bg_color
     +description_configuration
+    padding-left: 12px
+    padding-top: 6px
   ul li
     padding-bottom: 2em
+    list-style-type: none
     
 #comments
   text-align: left
@@ -380,3 +400,16 @@ a
   color: $cheaperdrinker_dark_bg_color
   &:visited, &:hover
     color: $cheaperdrinker_dark_bg_color
+    
+.welcome_message
+  padding-top: 12px
+  strong
+    font-size: 12px
+    font-weight: bold    
+  ol
+    li
+      font-size: 12px    
+      font-weight: bold
+      
+h1, h2, h3, h4, strong
+  font-size: 12px

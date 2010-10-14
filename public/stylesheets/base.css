@@ -2065,19 +2065,19 @@ html body {
 }
 /* line 4, ../../app/stylesheets/fonts.sass */
 html h1 {
-  font-size: 2em;
+  font-size: 14px;
 }
 /* line 6, ../../app/stylesheets/fonts.sass */
 html h2 {
-  font-size: 1.5em;
+  font-size: 12px;
 }
 /* line 8, ../../app/stylesheets/fonts.sass */
 html h3 {
-  font-size: 1.2em;
+  font-size: 11px;
 }
 /* line 10, ../../app/stylesheets/fonts.sass */
 html h1, html h2, html h3 {
-  margin: 1em 0;
+  margin: 6px 0;
 }
 /* line 12, ../../app/stylesheets/fonts.sass */
 html h1, html h2, html h3, html h4, html h5, html h6, html strong {

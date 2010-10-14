@@ -29,6 +29,8 @@
 
 - if logged_in?
   %a{:href => '#comments', :id => 'post_comment'} Add Comment
+- else
+  %strong Create an #{link_to 'account', new_user_path} or #{link_to 'login', new_user_session_path} to post comments.
 
 .comments_container
   = render :partial => '/places/comments', :locals => { :location => @location }

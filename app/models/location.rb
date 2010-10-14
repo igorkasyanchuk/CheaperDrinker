@@ -33,6 +33,7 @@ class Location < ActiveRecord::Base
   }
   
   has_many :comments, :dependent => :destroy, :as => :commentable
+  belongs_to :user
 
   before_save :geocode_it!
   
@@ -74,7 +75,7 @@ class Location < ActiveRecord::Base
   end
   
   def location_info(day)
-    map_info.merge({ "id" => self.id, "name" => self.name, "description" => simple_format(special_for_day(day)) })
+    map_info.merge({ "id" => self.id, "name" => self.name, "address" => self.address, "description" => simple_format(special_for_day(day)) })
   end
   
   def map_info

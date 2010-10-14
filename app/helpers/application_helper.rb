@@ -43,5 +43,9 @@ module ApplicationHelper
   def yes_no(b)
     b ? 'yes' : b.nil? ? '' : 'no'
   end
+  
+  def dashboard?
+    controller_name == 'dashboard' && action_name = 'welcome'
+  end
 
 end

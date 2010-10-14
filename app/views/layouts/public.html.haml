@@ -11,7 +11,7 @@
     = yield :markitup
     %script{:type => 'text/javascript', :charset => 'utf-8'}
       - if logged_in?
-        !== var USER_LOCATION = #{current_user.map_info.to_json};
+        !== var USER_LOCATION = #{current_user.map_info.merge(:zoom => 12).to_json};
       $(document).ready(function() {
       = yield :on_ready
       });

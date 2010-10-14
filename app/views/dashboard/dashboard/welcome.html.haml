@@ -2,18 +2,22 @@
 
 - content_for :on_ready do
   init_add_form(); 
-  init_location_form();
+  if (window.location.hash == '#add_bar') { $('.add_button').trigger('click'); }
+  - if dashboard?
+    $('#add_bar_link').click(function() { $('.add_button').trigger('click'); return false; });
   
-%h1 General Dashboard
-
 %h2.left Locations
 .right.subnav= link_to 'Add Location', '#', :class => 'add_button', :to => '.location_form'
 .clear
-= render :partial => '/dashboard/locations/locations', :locals => { :user => @user }
 .add_more_block
   = semantic_form_for [:dashboard, current_user, @user.locations.build], :remote => true, :html => { :class => 'none location_form' } do |f|
+    %h3 Add new Location
     = f.inputs do
       = render :partial => '/dashboard/locations/inputs', :locals => { :f => f }
     = f.buttons do
       = f.submit 'Add new Location'
-      = link_to 'Hide', '#', :class => 'hide cancel_button'
+      = link_to 'Hide', '#', :class => 'hide cancel_button'     
+.clear
+%br
+= render :partial => '/dashboard/locations/locations', :locals => { :user => @user }    
+      

@@ -37,14 +37,6 @@ class Location < ActiveRecord::Base
 
   before_save :geocode_it!
   
-  after_initialize :set_state
-  
-  def set_state
-    if new_record?
-      self.state = 'Minnesota'
-    end
-  end
-  
   def approve!
     self.approved = true
     self.save(:validate => false)

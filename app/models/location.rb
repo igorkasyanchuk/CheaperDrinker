@@ -52,7 +52,7 @@ class Location < ActiveRecord::Base
   end
   
   def geocode_it!
-    if self.address_changed? || self.new_record?
+    if self.address_changed? || self.new_record? || self.city_changed? || self.zip_changed? || self.state_changed?
       logger.info "Geocoding: #{self.full_address}"
       _location = Geokit::Geocoders::MultiGeocoder.geocode(self.full_address)
       if _location.lat && _location.lng && _location.accuracy

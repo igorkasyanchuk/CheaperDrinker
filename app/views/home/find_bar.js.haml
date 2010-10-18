@@ -1,0 +1,11 @@
+- if @location.lat && @location.lng && @location.accuracy
+  !== var center = new GLatLng(#{@location.lat}, #{@location.lng});
+  !== map.setCenter(center, 12, G_NORMAL_MAP);
+  $.colorbox.close();
+  $('#q').val('');
+- else
+  $('.q_result').show();
+  $.colorbox.resize();
+
+$('.ajax_loader').hide();
+

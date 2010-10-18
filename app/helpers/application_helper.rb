@@ -47,5 +47,9 @@ module ApplicationHelper
   def dashboard?
     controller_name == 'dashboard' && action_name = 'welcome'
   end
+  
+  def home_page?
+    controller_name == 'home' && action_name = 'index'
+  end
 
 end

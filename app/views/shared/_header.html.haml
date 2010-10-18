@@ -2,6 +2,8 @@
   %h1 
     = link_to 'CheaperDrinker', root_path
 %ul#nav
+  - if home_page?
+    %li= link_to 'Find Bar', '#', :id => 'find_bar'
   - if logged_in?
     - if dashboard?
       %li= link_to "Add Bar", '', :id => 'add_bar_link'

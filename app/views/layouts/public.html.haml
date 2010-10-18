@@ -5,7 +5,7 @@
     = stylesheet_link_tag 'uniform.default', 'application', 'formtastic', 'formtastic_changes' , 'colorbox'
     = yield :css
     = yield :js
-    = javascript_include_tag 'jquery-1.4.2.min', 'jquery-ui-1.8.4.custom.min', 'rails.jquery', 'jquery.uniform.min', 'jquery.colorbox-min', 'application'
+    = javascript_include_tag 'jquery-1.4.3.min', 'jquery-ui-1.8.5.custom.min', 'rails.jquery', 'jquery.uniform.min', 'jquery.colorbox-min', 'application'
     = csrf_meta_tag
     = yield :map
     = yield :markitup
@@ -23,5 +23,22 @@
         .container.header_container= render '/shared/header'
         .container= yield
         .clear
+        .none
+          #find_bar_container
+            = form_tag '/find_bar', :remote => true, :id => 'find_bar_form' do
+              .q_form
+                %label
+                  type a location or zip code
+                %br
+                = text_field_tag 'q'
+                = submit_tag "Find"
+                = image_tag "remembermilk_orange.gif", :class => 'ajax_loader none'
+                %br
+                - if logged_in?
+                  %label.set_default_address
+                    = check_box_tag 'default', 1
+                    set address above as my default address
+              .q_result.none
+                Couldn't locate address. Please try again.
     - if Rails.env == 'production'
       = render :partial => '/shared/ga'

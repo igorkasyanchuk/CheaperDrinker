@@ -16,5 +16,20 @@ class HomeController < ApplicationController
       end
     end
   end
+  
+  def find_bar
+    @location = Geokit::Geocoders::MultiGeocoder.geocode(params['q'])
+
+    if logged_in? && params["default"] == "1" && @location.lat && @location.lng && @location.accuracy
+      @user = current_user
+      @user.location = params["q"]
+      @user.save
+    end
+
+    respond_to do |format|
+      format.js do
+      end
+    end
+  end
 
 end

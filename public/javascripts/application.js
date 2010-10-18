@@ -14,6 +14,7 @@ $(function() {
     buttonImageOnly: true,
     dateFormat: "yy-mm-dd"
   });
+  init_find_bar();
   $('.flash').delay(2500).slideUp('fast').live('click', function() {$(this).slideUp('fast')});
 });
 
@@ -155,4 +156,11 @@ function zoom_processor() {
     $('#sidebar').show();
     $('.welcome_message').hide();
   }
+};
+
+function init_find_bar() {
+  $('#find_bar').colorbox({width: "350px", inline: true, href: "#find_bar_container", onClosed: function() { $('.q_result').hide(); } });
+  $('#find_bar_form').submit(function() {
+    $('.ajax_loader').show();
+  });
 };

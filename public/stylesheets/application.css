@@ -2188,36 +2188,37 @@ ul#nav li {
 /* line 47, ../../app/stylesheets/_header.sass */
 ul#nav li a {
   color: #78501d;
+  font-weight: bold;
 }
 
-/* line 53, ../../app/stylesheets/_header.sass */
+/* line 55, ../../app/stylesheets/_header.sass */
 ul#general_nav {
   margin: 6px 0 6px 0;
 }
-/* line 57, ../../app/stylesheets/_header.sass */
+/* line 59, ../../app/stylesheets/_header.sass */
 ul#general_nav li {
   float: left;
   list-style-type: none;
   padding-left: 6px;
 }
 
-/* line 67, ../../app/stylesheets/_header.sass */
+/* line 69, ../../app/stylesheets/_header.sass */
 ul#admin_nav {
   margin: 6px 0 6px 0;
 }
-/* line 71, ../../app/stylesheets/_header.sass */
+/* line 73, ../../app/stylesheets/_header.sass */
 ul#admin_nav li {
   float: left;
   list-style-type: none;
   padding-left: 6px;
 }
 
-/* line 81, ../../app/stylesheets/_header.sass */
+/* line 83, ../../app/stylesheets/_header.sass */
 ul#general_nav, ul#admin_nav {
   float: left;
   margin-left: 0;
 }
-/* line 87, ../../app/stylesheets/_header.sass */
+/* line 89, ../../app/stylesheets/_header.sass */
 ul#general_nav li, ul#admin_nav li {
   font-size: 18px;
   float: left;
@@ -2228,12 +2229,12 @@ ul#general_nav li, ul#admin_nav li {
   -webkit-border-radius: 12px;
   background: #cccccc;
 }
-/* line 105, ../../app/stylesheets/_header.sass */
+/* line 107, ../../app/stylesheets/_header.sass */
 ul#general_nav li:hover, ul#general_nav li.selected, ul#admin_nav li:hover, ul#admin_nav li.selected {
   background: #ffde01;
 }
 
-/* line 111, ../../app/stylesheets/_header.sass */
+/* line 113, ../../app/stylesheets/_header.sass */
 .header_container {
   background: #ffad41;
   border-bottom: 2px solid #78501d;
@@ -2754,44 +2755,50 @@ form.formtastic ol li.text .textile .markItUpContainer {
   font-weight: 600;
   font-size: 12px;
 }
+/* line 352, ../../app/stylesheets/application.sass */
+#sidebar .place_name {
+  font-weight: 600;
+  font-size: 12px;
+  color: #78501d;
+}
 
-/* line 354, ../../app/stylesheets/application.sass */
+/* line 358, ../../app/stylesheets/application.sass */
 .info_window h1 {
   margin: 0;
   padding: 2px 0;
   font-size: 12px;
 }
-/* line 358, ../../app/stylesheets/application.sass */
+/* line 362, ../../app/stylesheets/application.sass */
 .info_window strong {
   font-weight: normal;
 }
-/* line 360, ../../app/stylesheets/application.sass */
+/* line 364, ../../app/stylesheets/application.sass */
 .info_window p {
   padding-bottom: 0;
   margin-bottom: 2px;
   font-size: 11px;
   line-height: 13px;
 }
-/* line 364, ../../app/stylesheets/application.sass */
+/* line 368, ../../app/stylesheets/application.sass */
 .info_window a {
   font-size: 11px;
 }
 
-/* line 367, ../../app/stylesheets/application.sass */
+/* line 371, ../../app/stylesheets/application.sass */
 .bar {
   margin-top: 2em;
 }
-/* line 369, ../../app/stylesheets/application.sass */
+/* line 373, ../../app/stylesheets/application.sass */
 .bar #map {
   margin-top: 22px;
   height: 350px;
 }
-/* line 372, ../../app/stylesheets/application.sass */
+/* line 376, ../../app/stylesheets/application.sass */
 .bar .day {
   font-size: 12px;
   font-weight: bold;
 }
-/* line 375, ../../app/stylesheets/application.sass */
+/* line 379, ../../app/stylesheets/application.sass */
 .bar .description {
   color: #a75e00;
   font-size: 11px;
@@ -2799,60 +2806,92 @@ form.formtastic ol li.text .textile .markItUpContainer {
   padding-left: 12px;
   padding-top: 6px;
 }
-/* line 380, ../../app/stylesheets/application.sass */
+/* line 384, ../../app/stylesheets/application.sass */
 .bar ul li {
   padding-bottom: 2em;
   list-style-type: none;
 }
 
-/* line 384, ../../app/stylesheets/application.sass */
+/* line 388, ../../app/stylesheets/application.sass */
 #comments {
   text-align: left;
   padding-bottom: 20px;
 }
-/* line 387, ../../app/stylesheets/application.sass */
+/* line 391, ../../app/stylesheets/application.sass */
 #comments h3.thanks {
   color: #0a64a3;
   font-weight: bold;
   text-align: center;
 }
 
-/* line 392, ../../app/stylesheets/application.sass */
+/* line 396, ../../app/stylesheets/application.sass */
 h1, h2, h3, h4 {
   color: #a75e00;
   font-weight: bold;
 }
 
-/* line 396, ../../app/stylesheets/application.sass */
+/* line 400, ../../app/stylesheets/application.sass */
 strong {
   color: #0a64a3;
 }
 
-/* line 399, ../../app/stylesheets/application.sass */
+/* line 403, ../../app/stylesheets/application.sass */
 a {
   color: #a75e00;
 }
-/* line 401, ../../app/stylesheets/application.sass */
+/* line 405, ../../app/stylesheets/application.sass */
 a:visited, a:hover {
   color: #a75e00;
 }
 
-/* line 404, ../../app/stylesheets/application.sass */
+/* line 408, ../../app/stylesheets/application.sass */
 .welcome_message {
   padding-top: 12px;
 }
-/* line 406, ../../app/stylesheets/application.sass */
+/* line 410, ../../app/stylesheets/application.sass */
 .welcome_message strong {
   font-size: 12px;
   font-weight: bold;
 }
-/* line 410, ../../app/stylesheets/application.sass */
+/* line 414, ../../app/stylesheets/application.sass */
 .welcome_message ol li {
   font-size: 12px;
   font-weight: bold;
 }
 
-/* line 414, ../../app/stylesheets/application.sass */
+/* line 418, ../../app/stylesheets/application.sass */
 h1, h2, h3, h4, strong {
   font-size: 12px;
+}
+
+/* line 421, ../../app/stylesheets/application.sass */
+#find_bar_form {
+  padding: 1em;
+}
+/* line 423, ../../app/stylesheets/application.sass */
+#find_bar_form label {
+  color: #0a64a3;
+  font-weight: bold;
+  font-size: 12px;
+}
+/* line 427, ../../app/stylesheets/application.sass */
+#find_bar_form * {
+  vertical-align: middle;
+}
+/* line 429, ../../app/stylesheets/application.sass */
+#find_bar_form img {
+  padding: 2px;
+}
+/* line 431, ../../app/stylesheets/application.sass */
+#find_bar_form .q_result {
+  margin-top: 12px;
+  padding: 1em 0;
+  color: #a75e00;
+}
+/* line 435, ../../app/stylesheets/application.sass */
+#find_bar_form label.set_default_address {
+  font-size: 11px;
+  vertical-align: middle;
+  margin-top: 12px;
+  display: inline-block;
 }

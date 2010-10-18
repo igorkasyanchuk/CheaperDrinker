@@ -23,6 +23,10 @@
           .description= simple_format(@location.special_for_day(day))
   
   .w49.left
+    .right
+      %strong.grey
+        Last updated on: #{@location.updated_at.to_date}
+    .clear
     #map
   
 .clear

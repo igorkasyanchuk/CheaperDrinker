@@ -2578,12 +2578,12 @@ div.left_content {
   float: left;
   margin-left: -100%;
   width: 250px;
-  padding-left: 30px;
+  padding-left: 15px;
 }
 
 /* line 237, ../../app/stylesheets/application.sass */
 div.right_content {
-  margin-left: 280px;
+  margin-left: 265px;
 }
 
 /* line 240, ../../app/stylesheets/application.sass */
@@ -2783,22 +2783,26 @@ form.formtastic ol li.text .textile .markItUpContainer {
 .info_window a {
   font-size: 11px;
 }
+/* line 370, ../../app/stylesheets/application.sass */
+.info_window address {
+  color: #0a64a3;
+}
 
-/* line 371, ../../app/stylesheets/application.sass */
+/* line 373, ../../app/stylesheets/application.sass */
 .bar {
   margin-top: 2em;
 }
-/* line 373, ../../app/stylesheets/application.sass */
+/* line 375, ../../app/stylesheets/application.sass */
 .bar #map {
   margin-top: 22px;
   height: 350px;
 }
-/* line 376, ../../app/stylesheets/application.sass */
+/* line 378, ../../app/stylesheets/application.sass */
 .bar .day {
   font-size: 12px;
   font-weight: bold;
 }
-/* line 379, ../../app/stylesheets/application.sass */
+/* line 381, ../../app/stylesheets/application.sass */
 .bar .description {
   color: #a75e00;
   font-size: 11px;
@@ -2806,89 +2810,90 @@ form.formtastic ol li.text .textile .markItUpContainer {
   padding-left: 12px;
   padding-top: 6px;
 }
-/* line 384, ../../app/stylesheets/application.sass */
+/* line 386, ../../app/stylesheets/application.sass */
 .bar ul li {
   padding-bottom: 2em;
   list-style-type: none;
 }
 
-/* line 388, ../../app/stylesheets/application.sass */
+/* line 390, ../../app/stylesheets/application.sass */
 #comments {
   text-align: left;
   padding-bottom: 20px;
 }
-/* line 391, ../../app/stylesheets/application.sass */
+/* line 393, ../../app/stylesheets/application.sass */
 #comments h3.thanks {
   color: #0a64a3;
   font-weight: bold;
   text-align: center;
 }
 
-/* line 396, ../../app/stylesheets/application.sass */
+/* line 398, ../../app/stylesheets/application.sass */
 h1, h2, h3, h4 {
   color: #a75e00;
   font-weight: bold;
 }
 
-/* line 400, ../../app/stylesheets/application.sass */
+/* line 402, ../../app/stylesheets/application.sass */
 strong {
   color: #0a64a3;
 }
 
-/* line 403, ../../app/stylesheets/application.sass */
+/* line 405, ../../app/stylesheets/application.sass */
 a {
   color: #a75e00;
 }
-/* line 405, ../../app/stylesheets/application.sass */
+/* line 407, ../../app/stylesheets/application.sass */
 a:visited, a:hover {
   color: #a75e00;
 }
 
-/* line 408, ../../app/stylesheets/application.sass */
+/* line 410, ../../app/stylesheets/application.sass */
 .welcome_message {
   padding-top: 12px;
+  padding-right: 15px;
 }
-/* line 410, ../../app/stylesheets/application.sass */
+/* line 413, ../../app/stylesheets/application.sass */
 .welcome_message strong {
   font-size: 12px;
   font-weight: bold;
 }
-/* line 414, ../../app/stylesheets/application.sass */
-.welcome_message ol li {
-  font-size: 12px;
-  font-weight: bold;
+/* line 417, ../../app/stylesheets/application.sass */
+.welcome_message ol li, .welcome_message ul li {
+  font-size: 11px;
+  padding-bottom: 6px;
 }
 
-/* line 418, ../../app/stylesheets/application.sass */
+/* line 421, ../../app/stylesheets/application.sass */
 h1, h2, h3, h4, strong {
   font-size: 12px;
 }
 
-/* line 421, ../../app/stylesheets/application.sass */
+/* line 424, ../../app/stylesheets/application.sass */
 #find_bar_form {
   padding: 1em;
 }
-/* line 423, ../../app/stylesheets/application.sass */
+/* line 426, ../../app/stylesheets/application.sass */
 #find_bar_form label {
   color: #0a64a3;
   font-weight: bold;
   font-size: 12px;
 }
-/* line 427, ../../app/stylesheets/application.sass */
+/* line 430, ../../app/stylesheets/application.sass */
 #find_bar_form * {
   vertical-align: middle;
 }
-/* line 429, ../../app/stylesheets/application.sass */
+/* line 432, ../../app/stylesheets/application.sass */
 #find_bar_form img {
   padding: 2px;
 }
-/* line 431, ../../app/stylesheets/application.sass */
+/* line 434, ../../app/stylesheets/application.sass */
 #find_bar_form .q_result {
   margin-top: 12px;
   padding: 1em 0;
   color: #a75e00;
 }
-/* line 435, ../../app/stylesheets/application.sass */
+/* line 438, ../../app/stylesheets/application.sass */
 #find_bar_form label.set_default_address {
   font-size: 11px;
   vertical-align: middle;

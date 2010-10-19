@@ -15,12 +15,14 @@
     #global_map.none
 %div.left_content
   .welcome_message.none
-    %h1 Yould find best bars for you.
-    %strong Using simple 3 steps
-    %ol
-      %li Select on may your region
-      %li Zoom-in to see list of bars
-      %li Find best for you by bar special description
+    %h1 Looking for drink specials? You’ve come to the right place. 
+    %strong If this is your first time here please take a moment to read these helpful tips.
+    %ul
+      %li As you zoom in on the map bars will be displayed and their specials will be listed in this area.
+      %li Sign up (link this to sign up form) to have access to advanced features such as adding or editing specials, commenting on bars, and setting a default location so you don’t have to view this message every time you visit.
+      %li Please view our Frequently Asked Questions for more information. (link this to FAQs...to be created)
+    %p.none
+      If you’d rather just view specials without creating an account, enter your location below: (Search box here)
   #sidebar.none
     .select_date
       = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'

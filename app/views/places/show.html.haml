@@ -25,7 +25,7 @@
   .w49.left
     .right
       %strong.grey
-        Last updated on: #{@location.updated_at.to_date}
+        Last updated on: #{@location.updated_at.to_date.strftime("%B %d, %Y")}
     .clear
     #map
   

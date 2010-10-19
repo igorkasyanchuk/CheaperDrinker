@@ -232,10 +232,10 @@ div.left_content
   :float left
   :margin-left -100%
   :width= !left_column
-  :padding-left 30px
+  :padding-left 15px
 
 div.right_content
-  :margin-left= !left_column + 20px + 10px
+  :margin-left= !left_column + 20px + 10px - 15px
 
 .clear
   :clear both
@@ -367,6 +367,8 @@ $sidebar_padding = 3%
     +description_configuration
   a
     font-size: 11px
+  address
+    color: $cheaperdrinker_button_color
     
 .bar
   margin-top: 2em
@@ -407,13 +409,14 @@ a
     
 .welcome_message
   padding-top: 12px
+  padding-right: 15px
   strong
     font-size: 12px
-    font-weight: bold    
-  ol
+    font-weight: bold
+  ol, ul
     li
-      font-size: 12px    
-      font-weight: bold
+      font-size: 11px
+      padding-bottom: 6px
       
 h1, h2, h3, h4, strong
   font-size: 12px

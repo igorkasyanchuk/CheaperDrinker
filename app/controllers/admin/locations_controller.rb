@@ -1,5 +1,5 @@
 class Admin::LocationsController < Admin::DashboardController
-  
+
   def index
     @locations = Location.from_pending_to_approved.all
   end
@@ -18,7 +18,7 @@ class Admin::LocationsController < Admin::DashboardController
     @location = resource
     if @location.update_attributes(params[:location])
       flash[:notice] = "Location successfully updated."
-      redirect_to [:dashboard, current_user, @location]
+      redirect_to [:admin, :locations]
     else
       render :edit
     end

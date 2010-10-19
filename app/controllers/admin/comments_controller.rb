@@ -1,7 +1,13 @@
 class Admin::CommentsController < Admin::DashboardController
+  belongs_to :location, :optional => true
   
   def index
-    @comments = Comment.from_pending_to_approved.all
+    index!
+    if @location
+      @comments = @location.comments.from_pending_to_approved.all
+    else
+      @comments = Comment.from_pending_to_approved.all
+    end
   end
   
   def destroy

@@ -13,6 +13,11 @@ RailsjazzCom::Application.routes.draw do
       member do
         get :approve
       end
+      resources :comments, :only => [:index, :destroy] do
+        member do
+          get :approve
+        end
+      end
     end
     resources :comments do
       member do

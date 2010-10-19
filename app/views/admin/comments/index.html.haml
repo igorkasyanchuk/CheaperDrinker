@@ -5,9 +5,9 @@
 .locations
   .location
     .name 
-      %strong Location Name
+      %strong Location
     .full_address 
-      %strong Status
+      %strong Posted By
     .message_long 
       %strong Comment
     .controls 
@@ -16,7 +16,7 @@
   - @comments.each do |comment|
     .location{ :class => cycle(:odd, :even), :id => "comment-#{comment.id}" }
       .name= link_to comment.commentable.try(:name), place_path(comment.commentable)
-      .full_address= comment.status
+      .full_address= comment.user.name
       .message_long= comment.comment
       .controls
         = (link_to 'approve', [:approve, :admin, comment], :remote => true, :class => 'approve_button') unless comment.approved?

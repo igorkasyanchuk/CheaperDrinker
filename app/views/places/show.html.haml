@@ -14,7 +14,7 @@
 .bar
 
   .w49.left
-    %strong Find your special in #{@location.name}
+    %strong Specials
     %ul
       - DAYS_FOR_SPECIALS.keys.each do |day|
         - next unless @location.special?(day)

@@ -9,7 +9,7 @@
     - else
       %li= link_to "Add a Bar", dashboard_path(:anchor => 'add_bar')
     %li= link_to 'FAQs', page_path('faq')
-    %li= link_to 'Account Settings', dashboard_path
+    %li= link_to 'Account Settings', edit_dashboard_user_path(current_user)
     %li= link_to "Logout", logout_user_session_path
   - else
     %li= link_to 'FAQs', page_path('faq')

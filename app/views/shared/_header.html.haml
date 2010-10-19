@@ -5,13 +5,15 @@
   - if home_page?
     %li= link_to 'Find Bar', '#', :id => 'find_bar'
   - if logged_in?
-    - if dashboard?
+    - if logged_in? && dashboard?
       %li= link_to "Add Bar", '', :id => 'add_bar_link'
     - else
       %li= link_to "Add Bar", dashboard_path(:anchor => 'add_bar')
+    %li= link_to 'Faq', page_path('faq')
     %li= link_to 'Dashboard', dashboard_path
     %li= link_to "Logout", logout_user_session_path
   - else
+    %li= link_to 'Faq', page_path('faq')
     %li= link_to 'Sign up', new_user_path
     %li= link_to 'Login', new_user_session_path
 .clear

@@ -1,0 +1,7 @@
+= title "Edit: #{@location.name}"
+
+%h1.left== Edit: #{@location.name}
+.add.right
+  = link_to 'Back', [:admin, :locations], :class => 'cancel_button'
+.clear
+.add_more_block= render 'form'

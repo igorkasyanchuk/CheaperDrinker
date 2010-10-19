@@ -81,8 +81,9 @@ function get_bar_marker(info) {
   GEvent.addListener(bar_marker, "click", function() {
     var _marker = this;
     var _info = "<div class='info_window'><h1>" + info.name + "</h1>" + 
-      info.description + 
-      "<div class='link_to_place'><a href='/places/" + info.id + "'>more details &rarr;</a></div>"
+      "<address>" + info.address + "</address>" +
+      "<p>" + info.description + "</p>" +
+      "<div class='link_to_place'><a href='/places/" + info.id + "'>More Details</a></div>"
       "</div>";
     _marker.openInfoWindowHtml(_info);
   });

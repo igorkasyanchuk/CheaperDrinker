@@ -2604,14 +2604,9 @@ div.right_content {
   float: right;
   width: 100%;
   height: 800px;
-<<<<<<< HEAD
   border-left: 2px solid #3b5998;
   border-bottom: 2px solid #3b5998;
-=======
-  border-left: 2px solid #78501d;
-  border-bottom: 2px solid #78501d;
-  border-right: 2px solid #78501d;
->>>>>>> 92f3b0d10f5f8a4a1367caffa1fb5e74d3d31178
+  border-right: 2px solid #3b5998;
 }
 
 /* line 256, ../../app/stylesheets/application.sass */
@@ -2650,7 +2645,7 @@ div.right_content {
 }
 /* line 278, ../../app/stylesheets/application.sass */
 #sidebar .address {
-  color: black;
+  color: #3b5998;
   font-size: 11px;
 }
 /* line 281, ../../app/stylesheets/application.sass */
@@ -2793,7 +2788,7 @@ form.formtastic ol li.text .textile .markItUpContainer {
 }
 /* line 372, ../../app/stylesheets/application.sass */
 .info_window address {
-  color: #0a64a3;
+  color: #3b5998;
 }
 
 /* line 375, ../../app/stylesheets/application.sass */

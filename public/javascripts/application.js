@@ -96,6 +96,7 @@ function could_not_drag_map() {
 
 function could_drag_map() {
   $info_window_opened = false;
+  updateMap('info_window_closed');
 }
 
 function updateMap(from) {

@@ -5,7 +5,7 @@
     %li= link_to 'Location Search', '#', :id => 'find_bar'
   - if logged_in?
     - if logged_in? && dashboard?
-      %li= link_to "Add a Bar", '', :id => 'add_bar_link'
+      %li= link_to "Add a Bar", dashboard_path(:anchor => 'add_bar'), :id => 'add_bar_link'
     - else
       %li= link_to "Add a Bar", dashboard_path(:anchor => 'add_bar')
     %li= link_to 'FAQs', page_path('faq')

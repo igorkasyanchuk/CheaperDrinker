@@ -1,5 +1,5 @@
-- if current_user.admin? && !f.object.new_record?
-  = f.input :user_id, :collection => User.all
+- if current_user.admin?
+  = f.input :user_id, :collection => User.all.collect{|u| [ u.short_information, u.id ] }, :selected => nil
 = f.input :name, :label => 'Name'
 = f.input :city
 = f.input :state, :collection => STATES, :include_blank => false

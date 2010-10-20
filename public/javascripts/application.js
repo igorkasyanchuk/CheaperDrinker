@@ -40,11 +40,11 @@ var DEFAULT_ZOOM = 5;
 
 var USER_LOCATION = {"lat": CENTER_OF_THE_WORLD_LAT, "lng": CENTER_OF_THE_WORLD_LNG, "zoom": DEFAULT_ZOOM};
 
-var info_window;
-var bar_icon;
-var map;
+var bar_icon = null;
+var map = null;
 var infos = new Array();
 var markerClusterer = null;
+var $info_window_opened = false;
 
 function init_resize_map() {
   document_height = $(window).height();
@@ -66,7 +66,7 @@ function show_bars_on_map(bars) {
   map.addControl(new GLargeMapControl());
   map.setCenter(new GLatLng(USER_LOCATION.lat, USER_LOCATION.lng), USER_LOCATION.zoom, G_NORMAL_MAP);
   init_resize_map();
-  GEvent.addListener(map, "moveend", function() { updateMap('moveend'); });
+  GEvent.addListener(map, "moveend", function() { if (!$info_window_opened) { updateMap('moveend'); } });
   var clusterOpt = {
 			maxZoom: 14,
 			gridSize: 50
@@ -85,9 +85,17 @@ function get_bar_marker(info) {
       "<p>" + info.description + "</p>" +
       "<div class='link_to_place'><a href='/places/" + info.id + "'>More Details</a></div>"
       "</div>";
-    _marker.openInfoWindowHtml(_info);
+    _marker.openInfoWindowHtml(_info, { onOpenFn: could_not_drag_map, onCloseFn: could_drag_map });
   });
   return bar_marker;
+}
+
+function could_not_drag_map() {
+  $info_window_opened = true;
+}
+
+function could_drag_map() {
+  $info_window_opened = false;
 }
 
 function updateMap(from) {

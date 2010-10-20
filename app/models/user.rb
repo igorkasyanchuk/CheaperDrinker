@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
+  def short_information
+    "#{name} - #{email}"
+  end
+  
   def require_password?
     new_record? || require_password
   end

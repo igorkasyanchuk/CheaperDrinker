@@ -1,7 +1,7 @@
 GOOGLE_KEYS = {
   "development" => "ABQIAAAA-fvnmbkR8BJ_xVoxel7PfhSvcDMizmiBvzrB1F5eJeU6gK2K7RQW3Pfw8DmhMhUuewSuQjcD20SoUA",
   "test" => "ABQIAAAA-fvnmbkR8BJ_xVoxel7PfhSvcDMizmiBvzrB1F5eJeU6gK2K7RQW3Pfw8DmhMhUuewSuQjcD20SoUA",
-  "production" => "ABQIAAAAeGlGRfeULyAPWr3-syWI4xQihcliIwC4o2ci4ydC631Hy3HctxQdN9QjqsAQFk-u6iCqunZDqPywPA"
+  "production" => "ABQIAAAAeGlGRfeULyAPWr3-syWI4xTUvJdBBoS-HuHv63g54CTdGhrVoxRCjaS0Cha9M4XtxuV_NKHRQ7TNCQ"
 }
 
 STATES = [:alabama, :alaska, :arizona, :arkansas,

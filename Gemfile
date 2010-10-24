@@ -24,7 +24,7 @@ gem "auto_html"
 group :development do
   gem 'awesome_print', :require => 'ap'
   gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'mysql'
+  gem 'ruby-mysql'
 end
 
 group :test do

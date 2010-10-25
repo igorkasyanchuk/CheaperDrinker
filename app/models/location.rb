@@ -37,7 +37,7 @@ class Location < ActiveRecord::Base
     where("specials_#{day.downcase} IS NOT NULL AND specials_#{day.downcase} <> ''")
   }
   
-  scope :by_weight_and_random, order('plan desc, random()')
+  scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   
   has_many :comments, :dependent => :destroy, :as => :commentable
   belongs_to :user

@@ -16,7 +16,9 @@
     .clear  
   - @locations.each do |location|
     .location{ :class => cycle(:odd, :even), :id => "location-#{location.id}" }
-      .name= link_to location.name, place_path(location), :target => '_blank'
+      .name
+        = link_to location.name, place_path(location), :target => '_blank'
+        .plan= Location::PLANS[location.plan]
       .full_address= location.full_address
       .specials
         - location.special_days.each do |day|

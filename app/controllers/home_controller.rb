@@ -12,7 +12,7 @@ class HomeController < ApplicationController
         @current_day = params['day']
         ne = params['ne'].split(',').collect{|e|e.to_f}
         sw = params['sw'].split(',').collect{|e|e.to_f}
-        @locations = Location.approved.in_bounds([sw, ne]).by_name.by_day(@current_day).limit(100)
+        @locations = Location.approved.in_bounds([sw, ne]).by_weight_and_random.by_day(@current_day).limit(100)
       end
     end
   end

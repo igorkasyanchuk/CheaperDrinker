@@ -1,6 +1,9 @@
 - places.each do |info|
   %li
-    %strong.place_name #{info.name}
+    %strong.place_name 
+      #{info.name} 
+      - if Rails.env == 'development'
+        (#{info.plan})
     .address= info.address
     .description= simple_format info.special_for_day(current_day)
     .link_to= link_to 'More Details', place_path(info), :title => "more details about #{info.name}"

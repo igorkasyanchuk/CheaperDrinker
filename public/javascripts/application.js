@@ -45,6 +45,7 @@ var map = null;
 var infos = new Array();
 var markerClusterer = null;
 var $info_window_opened = false;
+var $icon_container = null;
 
 function init_resize_map() {
   document_height = $(window).height();
@@ -58,9 +59,14 @@ function init_resize_map() {
   });
 };
 
+function init_map_elements() {
+  $icon_container = IconsContainer.initialize();
+}
+
 function show_bars_on_map(bars) {
   $('#global_map').height($(document).height() - 180).show();
   map = new GMap2(document.getElementById('global_map'));
+  init_map_elements();
   map.setMapType(G_SATELLITE_MAP);
   map.enableScrollWheelZoom();
   map.addControl(new GLargeMapControl());
@@ -77,7 +83,7 @@ function show_bars_on_map(bars) {
 };
 
 function get_bar_marker(info) {
-  bar_marker = new GMarker(new GLatLng(info.lat, info.lng), {title: info.name});
+  bar_marker = new GMarker(new GLatLng(info.lat, info.lng), {icon: $icon_container.icon(info.plan), title: info.name});
   GEvent.addListener(bar_marker, "click", function() {
     var _marker = this;
     var _info = "<div class='info_window'><h1>" + info.name + "</h1>" + 
@@ -173,4 +179,64 @@ function init_find_bar() {
   $('#find_bar_form').submit(function() {
     $('.ajax_loader').show();
   });
+};
+
+var IconsContainer = {
+  _free: null,
+  _premium: null,
+  _premium_plus: null,
+  free_icon: function() {
+    if (!this._free) {
+      var iconOptions = {};
+      iconOptions.width = 32;
+      iconOptions.height = 32;
+      iconOptions.primaryColor = "#FF0000";
+      iconOptions.cornerColor = "#FFFFFF";
+      iconOptions.strokeColor = "#000000";
+      iconOptions.clickable = true;
+      this._free = MapIconMaker.createMarkerIcon(iconOptions);
+    }
+    return this._free;
+  },
+  premium_icon: function() {
+    if (!this._premium) {
+      var iconOptions = {};
+      iconOptions.width = 32;
+      iconOptions.height = 32;
+      iconOptions.primaryColor = "#0000FF";
+      iconOptions.cornerColor = "#FFFFFF";
+      iconOptions.strokeColor = "#000000";
+      iconOptions.clickable = true;
+      this._premium = MapIconMaker.createMarkerIcon(iconOptions);
+    }
+    return this._premium;
+  },
+  premium_plus_icon: function() {
+    if (!this._premium_plus) {
+      var iconOptions = {};
+      iconOptions.width = 32;
+      iconOptions.height = 32;
+      iconOptions.primaryColor = "#00FF00";
+      iconOptions.cornerColor = "#FFFFFF";
+      iconOptions.strokeColor = "#000000";
+      iconOptions.clickable = true;
+      this._premium_plus = MapIconMaker.createMarkerIcon(iconOptions);
+    }
+    return this._premium_plus;
+  },
+  initialize: function() {
+    this.free_icon();
+    this.premium_icon();
+    this.premium_plus_icon();
+    return this;
+  },
+  icon: function(plan) {
+    if (plan == 2) {
+      return this.premium_plus_icon();
+    } else if (plan == 1) {
+      return this.premium_icon();
+    } else {
+      return this.free_icon();
+    }
+  }
 };

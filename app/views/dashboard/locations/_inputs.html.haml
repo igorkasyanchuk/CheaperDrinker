@@ -1,5 +1,6 @@
 - if current_user.admin?
   = f.input :user_id, :collection => User.all.collect{|u| [ u.short_information, u.id ] }, :selected => nil
+  = f.input :plan, :collection => [0,1,2], :as => :select, :include_blank => false
 = f.input :name, :label => 'Name'
 = f.input :city
 = f.input :state, :collection => STATES, :include_blank => false

@@ -3,6 +3,11 @@ class Location < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
   include ActionView::Helpers::SanitizeHelper
   include ActionView::Helpers::TagHelper
+  PLANS = {
+    0 => :free,
+    1 => :premium,
+    2 => :premium_plus
+  }
   
   validates_presence_of :name
   #validates_presence_of :description
@@ -10,7 +15,7 @@ class Location < ActiveRecord::Base
   validates_presence_of :city
   validates_presence_of :address
   validates_presence_of :zip
-  
+    
   scope :forward,  order('created_at ASC')
   scope :backward, order('created_at DESC')
   
@@ -31,6 +36,8 @@ class Location < ActiveRecord::Base
   scope :by_day, lambda { |day|
     where("specials_#{day.downcase} IS NOT NULL AND specials_#{day.downcase} <> ''")
   }
+  
+  scope :by_weight_and_random, order('plan desc, random()')
   
   has_many :comments, :dependent => :destroy, :as => :commentable
   belongs_to :user
@@ -67,7 +74,11 @@ class Location < ActiveRecord::Base
   end
   
   def location_info(day)
-    map_info.merge({ "id" => self.id, "name" => self.name, "address" => self.address, "description" => simple_format(special_for_day(day)) })
+    map_info.merge({ "id" => self.id, 
+                     "name" => self.name, 
+                     "address" => self.address, 
+                     "description" => simple_format(special_for_day(day)),
+                     "plan" => self.plan })
   end
   
   def map_info
@@ -95,4 +106,8 @@ class Location < ActiveRecord::Base
     self.send("specials_#{day}")
   end
   
+  def free?
+    PLANS[self.plan] == :free
+  end
+
 end

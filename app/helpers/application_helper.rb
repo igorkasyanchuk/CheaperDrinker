@@ -51,5 +51,15 @@ module ApplicationHelper
   def home_page?
     controller_name == 'home' && action_name = 'index'
   end
+  
+  def include_google_analytics
+    render :partial => '/shared/ga' if Rails.env == 'production'
+  end
+  
+  def add_admin_nav
+    content_for :admin_nav_items do
+      content_tag(:li, (link_to 'Admin Panel', admin_path))
+    end if current_user.is_admin?
+  end
 
 end

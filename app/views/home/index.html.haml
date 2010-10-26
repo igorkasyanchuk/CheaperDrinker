@@ -10,6 +10,7 @@
   !== show_bars_on_map();
   updateMap('home');
   init_day_filter();
+  init_advanced_search();
 
 .contentwrapper
   .right_content
@@ -32,6 +33,13 @@
   #sidebar.none
     .select_date
       = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
+      [
+      #{link_to '+', '#advanced', :id => 'advanced_search', :title => 'Advanced search'}
+      ]
+    .advanced_search_form.none
+      %label
+        = check_box_tag 'gay_bar', false, false, :id => 'gay_bar_check_box'
+        hide gay bars
     .title.text_center
       %strong Bars Currently Displayed
     %p None

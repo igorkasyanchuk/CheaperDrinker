@@ -1,5 +1,5 @@
 .locations
-  - if user.locations.count > 0
+  - if user.locations.approved.count > 0
     .location
       .name 
         %strong Name
@@ -12,7 +12,7 @@
       .controls 
         %strong Actions
       .clear  
-    - user.locations.backward.each do |location|
+    - user.locations.approved.backward.each do |location|
       = render :partial => '/dashboard/locations/location', :locals => { :location => location }
     .location.summary
       .amount.amount_total

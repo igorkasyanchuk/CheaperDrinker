@@ -2,6 +2,7 @@
   %li
     %strong.place_name 
       #{info.name} 
+      = gay_icon(info)
       - if Rails.env == 'development'
         (#{info.plan})
     .address= info.address

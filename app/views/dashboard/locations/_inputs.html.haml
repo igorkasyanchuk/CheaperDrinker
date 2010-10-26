@@ -1,12 +1,14 @@
+- if current_user.admin? && controller_name == 'locations'
+  = f.input :user_id, :collection => User.all.collect{|u| [ u.short_information, u.id ] }, :selected => f.object.new_record? ? nil : f.object.user_id
 - if current_user.admin?
-  = f.input :user_id, :collection => User.all.collect{|u| [ u.short_information, u.id ] }, :selected => nil
-  = f.input :plan, :collection => [0,1,2], :as => :select, :include_blank => false
+  = f.input :plan, :collection => Location::PLANS.invert, :as => :select, :include_blank => false
 = f.input :name, :label => 'Name'
 = f.input :city
 = f.input :state, :collection => STATES, :include_blank => false
 = f.input :zip
 = f.input :address
 = f.input :description, :input_html => { :rows => '5', :cols => '30' }, :label => 'Provide a brief description:'
+= f.input :gay_bar
 = f.input :specials_monday, :label => 'Monday Specials', :input_html => { :rows => '5', :cols => '30' }
 = f.input :specials_tuesday, :label => 'Tuesday Specials', :input_html => { :rows => '5', :cols => '30' }
 = f.input :specials_wednesday, :label => 'Wednesday Specials', :input_html => { :rows => '5', :cols => '30' }

@@ -86,7 +86,11 @@ function get_bar_marker(info) {
   bar_marker = new GMarker(new GLatLng(info.lat, info.lng), {icon: $icon_container.icon(info.plan), title: info.name});
   GEvent.addListener(bar_marker, "click", function() {
     var _marker = this;
-    var _info = "<div class='info_window'><h1>" + info.name + "</h1>" + 
+    var _info = "<div class='info_window'>" +
+      "<h1>" + 
+      info.name + 
+      ( info.gay ? "<img src='/images/bar/gay_small.png' title='gay bar'/>" : '' ) +
+      "</h1>" + 
       "<address>" + info.address + "</address>" +
       "<p>" + info.description + "</p>" +
       "<div class='link_to_place'><a href='/places/" + info.id + "'>More Details</a></div>"
@@ -115,7 +119,8 @@ function updateMap(from) {
       sw: southWest.toUrlValue(), 
       ne: northEast.toUrlValue(),
       day: get_selected_day(),
-      from: from
+      from: from,
+      gay: $('#gay_bar_check_box:checked').length
     },
     function(data) {
     }
@@ -144,9 +149,6 @@ function show_place_map(location) {
   position = new GLatLng( location.lat, location.lng );
   bar_marker = new GMarker( position, {} );
   map.addOverlay(bar_marker);
-  $(window).scroll(function() {
-    $('#map').css('top', $(window).scrollTop() + 'px');
-  });
 };
 
 function re_init_comments() {
@@ -239,4 +241,28 @@ var IconsContainer = {
       return this.free_icon();
     }
   }
+};
+
+function init_filter_locations() {
+  $('.filter_locations').click(function(){
+    _this = $(this);
+    $(_this.val()).parents('.location').toggle();
+  });
+};
+
+function init_advanced_search() {
+  $('#advanced_search').attr('href', '').click(function() {
+    $(this).toggleClass('expanded');
+    _this = $(this);
+    if (_this.hasClass('expanded')) {
+      _this.text('-');
+    } else {
+      _this.text('+');
+    }
+    $('.advanced_search_form').slideToggle();
+    return false;
+  });
+  $('#gay_bar_check_box').click(function() {
+    updateMap('gay_checkbox');
+  });
 };

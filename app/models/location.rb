@@ -24,6 +24,8 @@ class Location < ActiveRecord::Base
   scope :pending, where(:approved => false)
   scope :approved, where(:approved => true)
   
+  scope :except_gay_bars, where(:gay_bar => false)
+  
   scope :in_bounds, lambda { |p|
     bounds = Geokit::Bounds.normalize(p)
     sw,ne = bounds.sw, bounds.ne
@@ -78,7 +80,8 @@ class Location < ActiveRecord::Base
                      "name" => self.name, 
                      "address" => self.address, 
                      "description" => simple_format(special_for_day(day)),
-                     "plan" => self.plan })
+                     "plan" => self.plan,
+                     "gay" => self.gay_bar })
   end
   
   def map_info

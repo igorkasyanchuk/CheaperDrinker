@@ -1,10 +1,26 @@
 = title 'Manage Locations'
 
+= content_for :on_ready do
+  init_filter_locations();
+
 %h2 Locations
+
+%p
+  %strong show:
+  %label
+    = check_box_tag 'show_free', '.free', 'checked', :class => 'filter_locations'
+    free
+  %label
+    = check_box_tag 'show_premium', '.premium', 'checked', :class => 'filter_locations'
+    premium
+  %label
+    = check_box_tag 'show_premium_plus', '.premium_plus', 'checked', :class => 'filter_locations'
+    premium_plus
+
 .locations
   .location
     .name 
-      %strong Name
+      %strong Name / Date
     .full_address 
       %strong Full Address
     .specials
@@ -18,13 +34,17 @@
     .location{ :class => cycle(:odd, :even), :id => "location-#{location.id}" }
       .name
         = link_to location.name, place_path(location), :target => '_blank'
-        .plan= Location::PLANS[location.plan]
+        .plan{:class => Location::PLANS[location.plan]}= Location::PLANS[location.plan]
+        .date= location.created_at.to_date.to_s(:short_date)
+        .time= location.created_at.to_s(:time_12)
       .full_address= location.full_address
       .specials
         - location.special_days.each do |day|
           %span= day
         &nbsp;
-      .message!= RedCloth.new(location.description).to_html
+      .message
+        != RedCloth.new(location.description).to_html
+        &nbsp;
       .controls
         = link_to 'edit', [:edit, :admin, location], :class => 'edit_button'
         = link_to "comments(#{location.comments_count})", [:admin, location, :comments], :class => 'index_button'

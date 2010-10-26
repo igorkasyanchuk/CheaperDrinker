@@ -195,7 +195,10 @@ th
       width: 14%
     .amount_total
       margin-left: 90%
-      
+
+.controls a
+  font-size: 11px
+
 .comments
   padding-bottom: 16px
   .comment
@@ -355,12 +358,20 @@ $sidebar_padding = 3%
     font-weight: 600
     font-size: 12px
     color: $cheaperdrinker_header_text_color
+    vertical-align: middle
+    *
+      vertical-align: middle
       
 .info_window
   h1
     margin: 0
     padding: 2px 0
     font-size: 12px
+    vertical-align: middle
+    *
+      padding-left: 3px
+      padding-bottom: 3px
+      vertical-align: middle
   strong
     font-weight: normal
   p
@@ -444,10 +455,39 @@ h1, h2, h3, h4, strong
     display: inline-block
     
 .plan
-  background: green
-  color: white
   font-size: 10px
   line-height: 11px
   padding: 1px 2px
   display: inline-block
   +round_me(3px)
+  
+.plan.free
+  background: green
+  color: white
+
+.plan.premium
+  background: yellow
+  color: black
+
+.plan.premium_plus
+  background: purple
+  color: white
+
+.cancel_button
+  margin-left: 15px
+  
+#location_submit
+  display: none
+
+.date, .time
+  font-size: 10px
+  
+#advanced_search
+  font-size: 16px
+  line-height: 16px
+  font-weight: bold
+  text-decoration: none
+  
+.advanced_search_form
+  padding-left: 15px
+  padding-top: 10px

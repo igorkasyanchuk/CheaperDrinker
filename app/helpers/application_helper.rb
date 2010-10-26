@@ -61,5 +61,15 @@ module ApplicationHelper
       content_tag(:li, (link_to 'Admin Panel', admin_path))
     end if current_user && current_user.is_admin?
   end
+  
+  def gay_icon(location, type=:small)
+    if location.gay_bar
+      if type == :small
+        image_tag 'bar/gay_small.png', :title => 'gay bar'
+      else
+        image_tag 'bar/gay.png', :title => 'gay bar'
+      end
+    end
+  end
 
 end

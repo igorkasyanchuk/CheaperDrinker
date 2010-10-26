@@ -46,7 +46,6 @@ var infos = new Array();
 var markerClusterer = null;
 var $info_window_opened = false;
 var $icon_container = null;
-var mcOptions = null;
 
 function init_resize_map() {
   document_height = $(window).height();
@@ -75,11 +74,10 @@ function show_bars_on_map(bars) {
   init_resize_map();
   GEvent.addListener(map, "moveend", function() { if (!$info_window_opened) { updateMap('moveend'); } });
   var clusterOpt = {
-			maxZoom: 14,
+			maxZoom: 11,
 			gridSize: 50
 		};
-  var mcOptions = { gridSize: 50, maxZoom: 10};
-  markerClusterer = new MarkerClusterer(map, null, clusterOpt, mcOptions);
+  markerClusterer = new MarkerClusterer(map, null, clusterOpt);
   map.checkResize();
   process_map_zoom();
 };

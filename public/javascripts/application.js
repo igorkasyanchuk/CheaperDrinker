@@ -78,7 +78,7 @@ function show_bars_on_map(bars) {
 			maxZoom: 14,
 			gridSize: 50
 		};
-  var mcOptions = {maxZoom: 10};
+  var mcOptions = { gridSize: 50, maxZoom: 10};
   markerClusterer = new MarkerClusterer(map, null, clusterOpt, mcOptions);
   map.checkResize();
   process_map_zoom();

@@ -9,6 +9,16 @@ class Location < ActiveRecord::Base
     2 => :premium_plus
   }
   
+  DAYS = {
+    0 => :monday,
+    1 => :tuesday,
+    2 => :wednesday,
+    3 => :thursday,
+    4 => :friday,
+    5 => :saturday,
+    6 => :sunday
+  }
+  
   validates_presence_of :name
   #validates_presence_of :description
   validates_presence_of :state
@@ -36,12 +46,15 @@ class Location < ActiveRecord::Base
   scope :by_name, order('name')
   
   scope :by_day, lambda { |day|
-    where("specials_#{day.downcase} IS NOT NULL AND specials_#{day.downcase} <> ''")
+    day = Location::DAYS.index(day.to_sym) if day.is_a?(String)
+    day = Location::DAYS.index(day) if day.is_a?(Symbol)
+    where(["special_days.day_id = ? AND special_days.description IS NOT NULL AND special_days.description <> ?", day, '']).joins(:specials)
   }
   
   scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   
   has_many :comments, :dependent => :destroy, :as => :commentable
+  has_many :specials, :dependent => :destroy, :class_name => 'SpecialDay'
   belongs_to :user
 
   before_save :geocode_it!
@@ -101,12 +114,20 @@ class Location < ActiveRecord::Base
     end
   end
   
+  def old_day(day)
+    self.send("specials_#{day}")
+  end
+  
   def special_days
     DAYS_FOR_SPECIALS.keys.collect{|e| DAYS_FOR_SPECIALS[e] if self.special?(e) }.compact
   end
   
   def special_for_day(day)
-    self.send("specials_#{day}")
+    specials_for_day(day).collect{|s| s.description}.join("\n")
+  end
+  
+  def specials_for_day(day)
+    self.specials.by_day(day)
   end
   
   def free?

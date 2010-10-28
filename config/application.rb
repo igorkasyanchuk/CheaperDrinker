@@ -41,3 +41,8 @@ module RailsjazzCom
     config.filter_parameters += [:password]
   end
 end
+
+def log_to(stream)
+  ActiveRecord::Base.logger = Logger.new(stream)
+  ActiveRecord::Base.clear_active_connections!
+end

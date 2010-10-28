@@ -50,7 +50,7 @@ class Location < ActiveRecord::Base
     day = Location::DAYS.index(day) if day.is_a?(Symbol)
     where(["special_days.day_id = ? AND special_days.description IS NOT NULL AND special_days.description <> ?", day, '']).joins(:specials)
   }
-  
+
   scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   
   has_many :comments, :dependent => :destroy, :as => :commentable
@@ -102,20 +102,7 @@ class Location < ActiveRecord::Base
   end
   
   def special?(day)
-    return case day
-      when :monday then self.specials_monday.present?
-      when :tuesday then self.specials_tuesday.present?
-      when :wednesday then self.specials_wednesday.present?
-      when :thursday then self.specials_thursday.present?
-      when :friday then self.specials_friday.present?
-      when :saturday then self.specials_saturday.present?
-      when :sunday then self.specials_sunday.present?
-      else false;
-    end
-  end
-  
-  def old_day(day)
-    self.send("specials_#{day}")
+    specials_for_day(day).count > 0
   end
   
   def special_days

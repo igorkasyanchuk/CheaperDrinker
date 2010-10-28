@@ -41,6 +41,9 @@ class LocationTest < ActiveSupport::TestCase
     
     assert_equal loc.special_for_day(0), 'monday day descr'
     assert_equal loc.special_for_day(4), 'friday day descr'
+    
+    assert loc.special?(:monday)
+    assert !loc.special?(:wednesday)
   end
 
 end

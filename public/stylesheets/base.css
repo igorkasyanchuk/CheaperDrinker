@@ -827,30 +827,31 @@ table.zebra th, table.zebra td, table.zebra caption, table.zebra thead {
 table.zebra thead tr th {
   font-weight: bold;
   border: 1px solid #dddddd;
+  background: #ececec;
 }
-/* line 24, ../../app/stylesheets/tables.sass */
+/* line 25, ../../app/stylesheets/tables.sass */
 table.zebra tr.even td {
   background: #ececec;
 }
-/* line 27, ../../app/stylesheets/tables.sass */
+/* line 28, ../../app/stylesheets/tables.sass */
 table.zebra tr.odd td {
   background: white;
 }
-/* line 29, ../../app/stylesheets/tables.sass */
+/* line 30, ../../app/stylesheets/tables.sass */
 table.zebra tfoot {
   font-style: italic;
 }
-/* line 31, ../../app/stylesheets/tables.sass */
+/* line 32, ../../app/stylesheets/tables.sass */
 table.zebra caption {
   background: #eeeeee;
 }
-/* line 34, ../../app/stylesheets/tables.sass */
+/* line 35, ../../app/stylesheets/tables.sass */
 table.zebra td ol {
   margin-top: 0.3em;
   margin-bottom: 0.3em;
 }
 
-/* line 39, ../../app/stylesheets/tables.sass */
+/* line 40, ../../app/stylesheets/tables.sass */
 table td.table_block {
   background: #ececec;
   color: black;

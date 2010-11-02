@@ -6,6 +6,7 @@ class SpecialDay < ActiveRecord::Base
   validates_presence_of :description
   START_TIME_OF_DAY = 0
   AN_HOUR = 60
+  AN_HALF_HOUR = AN_HOUR / 2
   END_TIME_OF_DATE = AN_HOUR * 24
   
   scope :by_day, lambda { |day|

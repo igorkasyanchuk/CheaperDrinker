@@ -281,12 +281,20 @@ function init_add_location_special() {
     $(this).parents('tr').find("span").hide();
     $(this).parents('tr').find(".field").show();
   });
+  $('.cancel_row').live('click', function() {
+    $(this).parents('tr').find(".field").hide();
+    $(this).parents('tr').find("span").show();
+  });
   $('.update_row').live('click', function() {
     _this = $(this);
     url = _this.attr('data-url');
     id= _this.attr('data-id');
     data = {
-      location_id: $('location_' + id).val()
+      special_day: {
+        description: $('#description_' + id).val(),
+        start_time: $('#start_time_' + id).val(),
+        end_time: $('#end_time_' + id).val()
+      }
     };
     $.ajax({
       type: 'put',

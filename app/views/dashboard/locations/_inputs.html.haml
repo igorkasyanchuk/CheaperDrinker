@@ -3,9 +3,9 @@
 - if current_user.admin?
   = f.input :plan, :collection => Location::PLANS.invert, :as => :select, :include_blank => false
 = f.input :name, :label => 'Name'
+= f.input :address
 = f.input :city
 = f.input :state, :collection => STATES, :include_blank => false
 = f.input :zip
-= f.input :address
-= f.input :description, :input_html => { :rows => '6', :cols => '60' }, :label => 'Provide a brief description:'
+= f.input :description, :input_html => { :rows => '6', :cols => '60' }, :label => 'Anything we should know about this site?  (Information here is only visible admins)'
 = f.input :gay_bar

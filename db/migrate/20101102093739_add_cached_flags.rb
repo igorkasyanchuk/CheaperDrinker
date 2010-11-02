@@ -6,7 +6,7 @@ class AddCachedFlags < ActiveRecord::Migration
     Location.reset_column_information
     Location.all.each do |l|
       Location::DAYS.keys.each do |day|
-        l.send("day_#{day}=", l.special?(day))
+        l.send(Location.day_column(day), l.load_specials_for_day(day).count > 0)
       end
       l.save(:validate => false)
     end

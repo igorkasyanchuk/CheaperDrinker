@@ -82,13 +82,13 @@ module ApplicationHelper
   def time_options
     times = ActiveSupport::OrderedHash.new
     TIMES_ARRAY.each_with_index do |t, index|
-      times[t] = index * SpecialDay::AN_HOUR / 2
+      times[t] = index * SpecialDay::AN_HALF_HOUR
     end
     times
   end
   
   def transform_time(time)
-    TIMES_ARRAY[time/SpecialDay::AN_HOUR]
+    TIMES_ARRAY[time / SpecialDay::AN_HALF_HOUR]
   end
   
   def date_select_options

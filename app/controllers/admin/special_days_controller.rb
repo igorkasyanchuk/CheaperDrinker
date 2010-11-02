@@ -6,6 +6,14 @@ class Admin::SpecialDaysController < Admin::DashboardController
   end
   
   def create
+    @location = Location.find(params['location_id'])
+    days = params["special_days"]
+    @result = false
+    days.each do |day|
+      special = @location.special_days.build(params["special_day"])
+      special.day_id = day
+      @result &= special.save
+    end
     create! do |format|
       format.js {}
     end
@@ -18,6 +26,8 @@ class Admin::SpecialDaysController < Admin::DashboardController
   end
   
   def update
+    @special_day = resource
+    @result = @special_day.update_attributes(params['special_day'])
     respond_to do |format|
       format.js {}
     end

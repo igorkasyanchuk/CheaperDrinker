@@ -4,10 +4,10 @@
     - if location.special?(info[1])
       %table.zebra
         %thead
-          %th Start Time
-          %th End Time
+          %th{:width => '100px'} Start Time
+          %th{:width => '100px'} End Time
           %th Description
-          %th
+          %th{:width => '100px'}
         %tbody
           - location.load_specials_for_day(info[1]).each_with_index do |special, index|
             - id = special.id
@@ -24,12 +24,15 @@
               %td
                 %span= special.description
                 .field.none
-                  = text_area_tag "description_#{id}", special.description, :rows => 4, :cols => 60
+                  = text_area_tag "description_#{id}", special.description, :rows => 4, :cols => 70
               %td
                 %span= link_to 'edit', '#', :class => 'edit_row'
+                %span= link_to 'remove', [:admin, location, special], :class => 'remove_row', :remote => true, :method => :delete, :confirm => 'Are you sure?'
                 .field.none
                   = hidden_field_tag "location_#{id}", special.id
                   = submit_tag 'update', :class => 'update_row', "data-url" => url_for([:admin, location, special]), "data-id" => id
+                  = link_to 'cancel', '#', :class => 'cancel_row'
+                  
     - else
       %p
         %strong No specials.

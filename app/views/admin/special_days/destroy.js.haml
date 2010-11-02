@@ -1,1 +1,3 @@
-alert('destroy');
+- @location.reload
+$e = '#{ escape_javascript(render :partial => '/admin/special_days/location_special', :locals => { :location => @location }) }';
+$('#location_special').html($e);

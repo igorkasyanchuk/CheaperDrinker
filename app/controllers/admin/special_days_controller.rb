@@ -7,12 +7,12 @@ class Admin::SpecialDaysController < Admin::DashboardController
   
   def create
     @location = Location.find(params['location_id'])
-    days = params["special_days"]
+    days = params["special_days"] || []
     @result = false
     days.each do |day|
       special = @location.special_days.build(params["special_day"])
       special.day_id = day
-      @result &= special.save
+      @result |= special.save
     end
     create! do |format|
       format.js {}

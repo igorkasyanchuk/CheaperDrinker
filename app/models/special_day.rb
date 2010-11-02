@@ -12,6 +12,7 @@ class SpecialDay < ActiveRecord::Base
   scope :by_day, lambda { |day|
     where(["day_id = ?", Location.get_day(day)])
   }
+  scope :by_time, order(:start_time)
   
   after_save :update_cached_day
   after_destroy :update_cached_day
@@ -19,6 +20,18 @@ class SpecialDay < ActiveRecord::Base
   def update_cached_day
     locations = location.specials_for_day(self.day_id).count
     location.update_attribute(Location.day_column(self.day_id), locations > 0)
+  end
+  
+  def info
+    self.time_info + "\n" + self.description
+  end
+  
+  def time_info
+    "#{SpecialDay.translate_time(start_time)} - #{SpecialDay.translate_time(end_time)}"
+  end
+  
+  def SpecialDay.translate_time(time)
+    TIMES_ARRAY[time / SpecialDay::AN_HALF_HOUR]
   end
 
 end

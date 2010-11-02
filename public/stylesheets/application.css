@@ -3038,7 +3038,7 @@ h1, h2, h3, h4, strong {
 }
 /* line 490, ../../app/stylesheets/application.sass */
 .additional_days label {
-  float: left;
+  display: inline;
 }
 
 /* line 494, ../../app/stylesheets/application.sass */

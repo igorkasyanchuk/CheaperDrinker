@@ -9,7 +9,7 @@
           %th Description
           %th{:width => '100px'}
         %tbody
-          - location.load_specials_for_day(info[1]).each_with_index do |special, index|
+          - location.load_specials_for_day(info[1]).by_time.each_with_index do |special, index|
             - id = special.id
             %tr{ :class => (index % 2 == 0 ? 'odd' : 'even') }
               %td

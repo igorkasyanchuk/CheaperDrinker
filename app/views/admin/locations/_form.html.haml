@@ -1,11 +1,8 @@
 = content_for :on_ready do
   init_add_form(); 
-  init_location_form();
   
 = error_messages_for :location
 
-= semantic_form_for([:admin, @location]) do |f|
-  = f.inputs do
-    = render :partial => '/dashboard/locations/inputs', :locals => { :f => f }
-  = f.buttons do
-    = f.submit 'Update'
+= simple_form_for([:admin, @location]) do |f|
+  = render :partial => '/dashboard/locations/inputs', :locals => { :f => f }
+  = f.submit 'Update'

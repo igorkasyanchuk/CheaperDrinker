@@ -13,11 +13,11 @@ class LocationTest < ActiveSupport::TestCase
     loc.address = 'address'
     loc.zip = '55112'
     assert loc.save
-    special_monday = loc.specials.build
+    special_monday = loc.special_days.build
     special_monday.day_id = 0
     special_monday.description = 'monday day descr'
     special_monday.save
-    special_friday = loc.specials.build
+    special_friday = loc.special_days.build
     special_friday.day_id = 4
     special_friday.description = 'friday day descr'
     special_friday.save
@@ -32,7 +32,7 @@ class LocationTest < ActiveSupport::TestCase
     
     assert_equal Location.count, 1
     assert_equal SpecialDay.count, 2
-    assert_equal loc.specials.count, 2
+    assert_equal loc.special_days.count, 2
     
     #log_to STDOUT
     
@@ -41,6 +41,8 @@ class LocationTest < ActiveSupport::TestCase
     
     assert_equal loc.special_for_day(0), 'monday day descr'
     assert_equal loc.special_for_day(4), 'friday day descr'
+    
+    loc.reload
     
     assert loc.special?(:monday)
     assert !loc.special?(:wednesday)

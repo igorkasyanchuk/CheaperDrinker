@@ -8,6 +8,19 @@ class Dashboard::DashboardController < InheritedResources::Base
     @user = current_user
   end
   
+  def add_bar
+    @location = current_user.locations.build
+  end
+  
+  def create_location
+    @location = current_user.locations.new(params[:location])
+    if @location.save
+      redirect_to root_path, :notice => 'Bar is added. Pending veryfication.'
+    else
+      render :add_bar
+    end
+  end
+  
   protected
     def check_user_permissions
       if params[:user_id]

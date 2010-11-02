@@ -43,10 +43,8 @@
 - if logged_in?
   .none
     #comments
-      = semantic_form_for [@location, @comment], :html => { :id => 'post_comment_form' }, :remote => true do |f|
+      = simple_form_for [@location, @comment], :html => { :id => 'post_comment_form' }, :remote => true do |f|
         %h3 Post Your Comment
-        = f.inputs do
-          = f.input :user_id, :value => current_user.id, :as => :hidden
-          = f.input :comment, :input_html => { :rows => '5', :cols => '40' }
-        = f.buttons do
-          = f.submit "Post", :id => 'post_comment_button'        
+        = f.input :user_id, :value => current_user.id, :as => :hidden
+        = f.input :comment, :input_html => { :rows => '5', :cols => '40' }
+        = f.submit "Post", :id => 'post_comment_button'        

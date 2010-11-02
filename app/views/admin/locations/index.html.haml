@@ -3,9 +3,9 @@
 = content_for :on_ready do
   init_filter_locations();
 
-%h2 Locations
+%h1.left Locations
 
-%p
+.subfilter
   %strong show:
   %label
     = check_box_tag 'show_free', '.free', 'checked', :class => 'filter_locations'
@@ -16,6 +16,8 @@
   %label
     = check_box_tag 'show_premium_plus', '.premium_plus', 'checked', :class => 'filter_locations'
     premium_plus
+
+.clear    
 
 .locations
   .location
@@ -39,7 +41,7 @@
         .time= location.created_at.to_s(:time_12)
       .full_address= location.full_address
       .specials
-        - location.special_days.each do |day|
+        - location.short_name_of_special_days.each do |day|
           %span= day
         &nbsp;
       .message
@@ -47,6 +49,7 @@
         &nbsp;
       .controls
         = link_to 'edit', [:edit, :admin, location], :class => 'edit_button'
+        = link_to "specials(#{location.special_days_count})", [:admin, location, :special_days], :class => 'index_button'
         = link_to "comments(#{location.comments_count})", [:admin, location, :comments], :class => 'index_button'
         = (link_to 'approve', [:approve, :admin, location], :remote => true, :class => 'approve_button') unless location.approved?
         = link_to 'remove', [:admin, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'

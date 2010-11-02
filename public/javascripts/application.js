@@ -7,7 +7,6 @@ $(document).ajaxSend(function(event, request, settings) {
 });
 
 $(function() {
-  $("select[class!=simple], input, textarea, input:checkbox, input:radio, input:file").uniform(); 
   $('.date_picker').datepicker({
     showOn: 'both',
     buttonImage: '/images/calendar_3.png',
@@ -264,5 +263,35 @@ function init_advanced_search() {
   });
   $('#gay_bar_check_box').click(function() {
     updateMap('gay_checkbox');
+  });
+};
+
+function init_add_location_special() {
+  $('#add_location_special_link').click(function() {
+    $('.add_location_special_form').slideDown('fast');
+    $(this).hide();
+    return false;
+  });
+  $('.cancel_add_location_special_link').click(function() {
+    $('.add_location_special_form').slideUp('fast');
+    $('#add_location_special_link').show();
+    return false;
+  });
+  $('.edit_row').live('click', function() {
+    $(this).parents('tr').find("span").hide();
+    $(this).parents('tr').find(".field").show();
+  });
+  $('.update_row').live('click', function() {
+    _this = $(this);
+    url = _this.attr('data-url');
+    id= _this.attr('data-id');
+    data = {
+      location_id: $('location_' + id).val()
+    };
+    $.ajax({
+      type: 'put',
+      url: url,
+      data: data
+    });
   });
 };

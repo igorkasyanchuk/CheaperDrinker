@@ -46,15 +46,16 @@ class Location < ActiveRecord::Base
   scope :by_name, order('name')
   
   scope :by_day, lambda { |day|
-    day = Location::DAYS.index(day.to_sym) if day.is_a?(String)
-    day = Location::DAYS.index(day) if day.is_a?(Symbol)
-    where(["special_days.day_id = ? AND special_days.description IS NOT NULL AND special_days.description <> ?", day, '']).joins(:specials)
+    where(Location.day_column(Location.get_day(day)) => true)
   }
 
   scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   
   has_many :comments, :dependent => :destroy, :as => :commentable
-  has_many :specials, :dependent => :destroy, :class_name => 'SpecialDay'
+  has_many :special_days, :dependent => :destroy
+  
+  accepts_nested_attributes_for :special_days, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:day_id].blank? }
+  
   belongs_to :user
 
   before_save :geocode_it!
@@ -102,10 +103,10 @@ class Location < ActiveRecord::Base
   end
   
   def special?(day)
-    specials_for_day(day).count > 0
+    self.send(Location.day_column(day))
   end
   
-  def special_days
+  def short_name_of_special_days
     DAYS_FOR_SPECIALS.keys.collect{|e| DAYS_FOR_SPECIALS[e] if self.special?(e) }.compact
   end
   
@@ -114,11 +115,25 @@ class Location < ActiveRecord::Base
   end
   
   def specials_for_day(day)
-    self.specials.by_day(day)
+    self.special_days.by_day(day)
   end
+  
+  def load_specials_for_day(day)
+    self.special_days.by_day(day)
+  end  
   
   def free?
     PLANS[self.plan] == :free
+  end
+  
+  def Location.get_day(day)
+    day = Location::DAYS.index(day.to_sym) if day.is_a?(String)
+    day = Location::DAYS.index(day) if day.is_a?(Symbol)
+    day
+  end
+  
+  def Location.day_column(day)
+    "day_#{Location.get_day(day)}"
   end
 
 end

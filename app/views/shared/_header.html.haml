@@ -4,10 +4,7 @@
   - if home_page?
     %li= link_to 'Location Search', '#', :id => 'find_bar'
   - if logged_in?
-    - if logged_in? && dashboard?
-      %li= link_to "Add a Bar", dashboard_path(:anchor => 'add_bar'), :id => 'add_bar_link'
-    - else
-      %li= link_to "Add a Bar", dashboard_path(:anchor => 'add_bar')
+    %li= link_to "Add a Bar", [:dashboard, :add_bar]
     %li= link_to 'FAQs', page_path('faq')
     %li= link_to 'Account Settings', edit_dashboard_user_path(current_user)
     = yield :admin_nav_items

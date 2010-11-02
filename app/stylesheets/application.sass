@@ -1,6 +1,7 @@
 @import "base"
 @import "colors"
 @import "header"
+@import "simple_form"
 
 $border_for_notice: unquote("1px solid #ccc")
 
@@ -148,16 +149,15 @@ th
   -webkit-border-radius: $r
   border-radius: $r
       
-.subnav
-  font-size: 12px
+.subfilter
+  font-size: 11px
   font-weight: bold
-  margin-top: 16px
-  margin-right: 36px
-  padding: 3px 4px
-  background: $subnav_bg_color
-  -moz-border-radius: 12px
-  -webkit-border-radius: 12px
-  
+  padding: 2px
+  vertical-align: middle
+  float: right
+  *
+    vertical-align: middle
+      
 .locations
   padding-bottom: 16px
   .location
@@ -165,6 +165,9 @@ th
     margin-bottom: 6px
     border-bottom: 1px solid #ececec
     border-top: 1px solid #ececec
+    padding: 2px
+    &:hover
+      background: #ececec
     .full_address
       float: left
       width: 24%
@@ -285,22 +288,6 @@ div.right_content
     font-size: 11px
     font-weight: normal
   
-form.formtastic ol li.text .textile
-  float: left
-  width: 75%
-  .markItUpEditor
-    background: none
-    font-size: 12px
-  textarea
-    width: 100%
-  .markItUp
-    margin: 0
-    width: 75%
-    padding: 0
-    border: 0  
-  .markItUpContainer
-    border: 1px solid #ddd
-    
 .public_post
   padding-top: 16px
 
@@ -476,9 +463,6 @@ h1, h2, h3, h4, strong
 .cancel_button
   margin-left: 15px
   
-#location_submit
-  display: none
-
 .date, .time
   font-size: 10px
   
@@ -491,3 +475,22 @@ h1, h2, h3, h4, strong
 .advanced_search_form
   padding-left: 15px
   padding-top: 10px
+  
+.start_time_block, .end_time_block, .day_block
+  float: left
+
+.description_block textarea
+  height: 90px
+
+.admin_location_special
+  p
+    padding-left: 25px
+  table
+    width: 75%  
+    margin-left: 25px
+    
+.add_location_special_form
+  margin-top: 50px
+  display: none
+  div
+    margin-left: 25px

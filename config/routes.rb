@@ -10,34 +10,42 @@ RailsjazzCom::Application.routes.draw do
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
     resources :locations do
-      member do
+      member {
         get :approve
-      end
+      }
       resources :comments, :only => [:index, :destroy] do
-        member do
+        member {
           get :approve
-        end
+        }
+      end
+      resources :special_days do
+        member {
+          get :update_special
+        }
       end
     end
     resources :comments do
-      member do
+      member {
         get :approve
-      end
+      }
     end
     resources :users do
-      member do
+      member {
         get :toggle_admin
-      end
+      }
     end
   end
   namespace :dashboard do
     match '/', :to => 'dashboard#welcome'
+    match '/add_bar', :to => 'dashboard#add_bar'
+    match '/create_location', :to => 'dashboard#create_location'
     resources :users, :only => [:edit, :update, :show] do
       resources :locations do
+        resources :special_days
         resources :comments, :only => [:index, :destroy] do
-          member do
+          member {
             get :approve
-          end
+          }
         end
       end
     end

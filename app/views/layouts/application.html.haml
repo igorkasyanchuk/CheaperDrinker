@@ -2,10 +2,10 @@
   %head
     %title= yield :title
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    = stylesheet_link_tag 'uniform.default', 'application', 'formtastic', 'formtastic_changes' , 'colorbox'
+    = stylesheet_link_tag 'application', 'colorbox'
     = yield :css
     = yield :js
-    = javascript_include_tag 'jquery-1.4.2.min', 'jquery-ui-1.8.4.custom.min', 'rails.jquery', 'jquery.uniform.min', 'jquery.colorbox-min', 'mapiconmaker_packed', 'application'
+    = javascript_include_tag 'jquery-1.4.2.min', 'jquery-ui-1.8.4.custom.min', 'rails.jquery', 'jquery.colorbox-min', 'mapiconmaker_packed', 'application'
     = csrf_meta_tag
     = yield :map
     = yield :markitup

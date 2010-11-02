@@ -15,7 +15,7 @@ class Dashboard::DashboardController < InheritedResources::Base
   def create_location
     @location = current_user.locations.new(params[:location])
     if @location.save
-      redirect_to root_path, :notice => 'Bar is added. Pending veryfication.'
+      redirect_to [:dashboard, current_user, @location, :special_days], :notice => 'Bar is added. Pending veryfication.'
     else
       render :add_bar
     end

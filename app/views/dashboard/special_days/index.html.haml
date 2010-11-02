@@ -1,0 +1,33 @@
+= title "#{@location.name} Specials"
+
+%h1.left #{@location.name} Specials
+
+.subfilter
+  = link_to 'Public View', place_path(@location)
+  
+.clear
+
+#location_special
+  = render :partial => '/dashboard/special_days/location_special', :locals => { :location => @location }
+
+= simple_form_for [:dashboard, current_user, @location, @special_day], :remote => true, :html => { :class => 'add_location_special_form' } do |s_form|
+  %h2 Add Special
+  = s_form.input :start_time, :as => :select, :collection => time_options, :wrapper_html => { :class => 'start_time_block' }, :include_blank => false
+  = s_form.input :end_time, :as => :select, :collection => time_options, :wrapper_html => { :class => 'end_time_block' }, :include_blank => false
+  .additional_days
+    - Location::DAYS.keys.sort.each do |day|
+      %label
+        = Location::DAYS[day].to_s.titleize[0..2]
+        = check_box_tag 'special_days[]', day
+  .clear
+  = s_form.input :description, :input_html => { :rows => '5', :cols => '80' }, :wrapper_html => { :class => 'description_block' }
+  .clear
+  .buttons
+    = s_form.submit "Add"
+    = link_to 'Cancel', '#', :class => 'cancel_add_location_special_link'
+  
+#add_location_special
+  = link_to 'Add Special', '#', :id => 'add_location_special_link'
+  
+= content_for :on_ready do
+  init_add_location_special();

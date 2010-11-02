@@ -41,7 +41,11 @@ RailsjazzCom::Application.routes.draw do
     match '/create_location', :to => 'dashboard#create_location'
     resources :users, :only => [:edit, :update, :show] do
       resources :locations do
-        resources :special_days
+        resources :special_days do
+          member {
+            get :update_special
+          }
+        end
         resources :comments, :only => [:index, :destroy] do
           member {
             get :approve

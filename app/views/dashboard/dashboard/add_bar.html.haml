@@ -9,4 +9,5 @@
 
 = simple_form_for @location, :url => [:dashboard, :create_location] do |f|
   = render :partial => '/dashboard/locations/inputs', :locals => { :f => f }
-  = f.submit 'Create'
+  = f.submit 'Add Bar & Continue to Edit Specials'
+  = link_to 'Cancel', root_path

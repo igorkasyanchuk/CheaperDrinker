@@ -9,6 +9,13 @@
   $("#post_comment").colorbox({width:"50%", inline:true, href:"#comments" });
 
 %h1= @location.name
+
+- if logged_in? && current_user.admin?
+  .right
+    = link_to 'Edit Details', [:edit, :admin, @location]
+    |
+    = link_to 'Edit Specials', [:admin, @location, :special_days]
+  .clear
 %address= @location.full_address
 
 .bar

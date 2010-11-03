@@ -12,6 +12,7 @@ class SpecialDay < ActiveRecord::Base
   scope :by_day, lambda { |day|
     where(["day_id = ?", Location.get_day(day)])
   }
+  
   scope :by_time, order(:start_time)
   
   after_save :update_cached_day

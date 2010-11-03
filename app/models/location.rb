@@ -51,7 +51,7 @@ class Location < ActiveRecord::Base
 
   scope :occurs_between, lambda { |*args|
     where(["GREATEST(special_days.start_time, ?) < LEAST(special_days.end_time, ?)", 
-    args.shift || 0, args.shift || SpecialDay::END_TIME_OF_DATE]).joins(:special_days) } 
+    args.shift || 0, args.shift || SpecialDay::END_TIME_OF_DATE]).includes(:special_days) } 
 
   scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   

@@ -1,0 +1,89 @@
+.sliderWrap
+  margin-top: 20px
+  padding-top: 30px  
+  float: left
+  width: 170px  
+  position: relative
+  color: #9d9994
+  margin-bottom: 20px
+
+.sliderWrap .amount_item  
+  background: transparent url(/images/slider_grade.gif) 50% bottom no-repeat
+
+#amount
+  position: absolute
+  top: -14px
+  left: 47%
+  background: transparent
+  color: #6f6d69
+  border: none
+  margin-left: -70px
+  font-weight: bold
+  text-align: center
+
+.ui-slider .ui-slider-handle
+  background-color: transparent
+  background-image: url(http://snapknot.com/images/slider_item.png)
+  background-repeat: no-repeat
+  border-color: #1C94C4
+  border-style: none
+  border-width: 0px
+  color: #1C94C4
+  cursor: pointer
+  display: block
+  float: none
+  height: 22px
+  left: 100%
+  line-height: 25px
+  margin-bottom: 0px
+  margin-left: -11px
+  margin-right: 0px
+  margin-top: 0px
+  outline-color: #1C94C4
+  outline-style: none
+  outline-width: 0px
+  padding-top: 0px
+  position: absolute
+  top: -21px
+  width: 22px
+  z-index: 2
+
+#slider-range
+  cursor: pointer
+  height: 2px
+  border: none
+  
+.ui-slider-horizontal
+  height: 2px
+  background: #9e9a96
+
+.ui-widget-header
+  background: #1cbbf7   
+  border: none  
+  
+.slider_container
+  margin-left: 20px  
+  
+=grade
+  bottom: 2px
+  text-align: center
+  width: 63px
+  vertical-align: top
+  color: #555
+  font-style: Georgia
+  font-size: 11px
+  position: absolute
+  margin-left: -30px
+  padding-bottom: 3px
+  
+.sliderWrap .minAmount
+  +grade
+  left: 25%
+
+.sliderWrap .averageAmount
+  +grade
+  left: 50%
+
+.sliderWrap .maxAmount
+  +grade
+  left: 75%

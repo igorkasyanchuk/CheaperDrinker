@@ -14,6 +14,7 @@ class HomeController < ApplicationController
         sw = params['sw'].split(',').collect{|e|e.to_f}
         @locations = Location.approved.in_bounds([sw, ne]).by_weight_and_random.by_day(@current_day).limit(130)
         @locations = @locations.except_gay_bars if params['gay'].present? && params['gay'] == '1'
+        @locations = @locations.occurs_between(params['start'], params['end'])
       end
     end
   end

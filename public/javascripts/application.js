@@ -119,7 +119,9 @@ function updateMap(from) {
       ne: northEast.toUrlValue(),
       day: get_selected_day(),
       from: from,
-      gay: $('#gay_bar_check_box:checked').length
+      gay: $('#gay_bar_check_box:checked').length,
+      start: $('#current_min').val(),
+      end: $('#current_max').val()
     },
     function(data) {
     }
@@ -302,4 +304,36 @@ function init_add_location_special() {
       data: data
     });
   });
+};
+
+function time(t) {
+  if (t == 1440)
+    return 'Close'
+  else
+    return TIMES_ARRAY[t];
+} 
+
+function init_slider() {
+  $("#slider-range").slider({
+    range: true,
+    min: 0,
+    max: 1440,
+    values: [0, 1440],
+    step: 30,
+    slide: function(event, ui) {
+      if (Math.abs(ui.values[0] - ui.values[1]) < 60) {
+        return false;
+      }
+      else {
+        $('#current_min').attr('value', ui.values[0]);
+        $('#current_max').attr('value', ui.values[1]);
+        var postfix = ui.values[1] == 10000 ? 'close' : ''
+        $("#amount").val(time(ui.values[0]) + ' — ' + time(ui.values[1]) + postfix);
+        return true;
+      }
+    },
+    stop: function(event, ui) {
+      updateMap("slider");
+    }
+  }); 
 };

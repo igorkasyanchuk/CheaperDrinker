@@ -1,0 +1,16 @@
+.sliderWrap 
+  %div
+    %input#amount{ :type => "text", :readonly => 'true', :value => '6am - Close' }
+
+  %span.amount_item.minAmount noon
+  %span.amount_item.averageAmount 6pm
+  %span.amount_item.maxAmount midn.
+    
+  #slider-range
+  = hidden_field_tag 'min_price', params[:min_price] || 0, :id => 'current_min'
+  = hidden_field_tag 'max_price', params[:max_price] || 1440, :id => 'current_max'
+  
+  
+= content_for :on_ready do
+  init_slider();
+  

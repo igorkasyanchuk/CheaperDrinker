@@ -12,19 +12,14 @@ class LocationTest < ActiveSupport::TestCase
     @location = Factory(:location)
     @special_day_0_1 = Factory(:special_day, :start_time => 0, :end_time => 600)
     @special_day_0_2 = Factory(:special_day, :start_time => 0, :end_time => 720)
-    @special_day_0_3 = Factory(:special_day, :start_time => 600, :end_time => 720)
-    @special_day_0_4 = Factory(:special_day, :start_time => 660, :end_time => 780)
-    @special_day_0_5 = Factory(:special_day, :start_time => 900, :end_time => SpecialDay::END_TIME_OF_DATE)
-    
-    log_to STDOUT
-    #assert_equal Location.by_time(0,600).count, 2
-    ap Location.timed(0,600)
-    ap Location.timed(0,600).count
-    ap Location.timed(0,600)[0]
-    ap Location.timed(0,600)[1]
-    ap Location.timed(0,600)[2]
-    
-    log_to nil
+    @special_day_0_3 = Factory(:special_day, :start_time => 400, :end_time => 500)
+    @special_day_0_4 = Factory(:special_day, :start_time => 600, :end_time => 720)
+    @special_day_0_5 = Factory(:special_day, :start_time => 660, :end_time => 780)
+    @special_day_0_6 = Factory(:special_day, :start_time => 900, :end_time => 1020)
+    @special_day_0_7 = Factory(:special_day, :start_time => 1080, :end_time => SpecialDay::END_TIME_OF_DATE)
+    assert_equal Location.occurs_between(0,600).count, 3
+    assert_equal Location.occurs_between(920,980).count, 1
+    assert_equal Location.occurs_between(0,SpecialDay::END_TIME_OF_DATE).count, 7
   end
 
   test "could load correct location for day" do

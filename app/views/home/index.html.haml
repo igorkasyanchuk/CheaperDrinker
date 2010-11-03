@@ -40,6 +40,8 @@
       %label
         = check_box_tag 'gay_bar', false, false, :id => 'gay_bar_check_box'
         hide gay bars
+    .slider_container= render :partial => '/shared/slider'
+    .clear
     .title.text_center
       %strong Bars Currently Displayed
     %p None

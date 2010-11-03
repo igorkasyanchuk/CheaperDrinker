@@ -27,5 +27,5 @@ FILE_FOR_UPLOAD = "#{Rails.root}/test/upload.txt"
 IMAGE_FILE_FOR_UPLOAD = "#{Rails.root}/test/test_image.png"
 VIDEO_FILE_FOR_UPLOAD = "#{Rails.root}/test/video.flv"
 
-Location.any_instance.stubs(:geocode_it!).returns(nil)
+Location.any_instance.stubs(:geocode_it!).returns(true)
 

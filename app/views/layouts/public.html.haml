@@ -2,14 +2,15 @@
   %head
     %title= yield :title
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    = stylesheet_link_tag 'uniform.default', 'application', 'formtastic', 'formtastic_changes' , 'colorbox'
+    = stylesheet_link_tag 'ui-lightness/jquery-ui-1.7.2.custom', 'uniform.default', 'application', 'formtastic', 'formtastic_changes' , 'colorbox'
     = yield :css
     = yield :js
-    = javascript_include_tag 'jquery-1.4.3.min', 'jquery-ui-1.8.5.custom.min', 'rails.jquery', 'jquery.uniform.min', 'jquery.colorbox-min', 'mapiconmaker_packed', 'application'
+    = javascript_include_tag 'jquery-1.4.3.min', 'jquery-ui-1.8.6.custom.min', 'rails.jquery', 'jquery.colorbox-min', 'mapiconmaker_packed', 'application'
     = csrf_meta_tag
     = yield :map
     = yield :markitup
     %script{:type => 'text/javascript', :charset => 'utf-8'}
+      !== var TIMES_ARRAY = #{time_options.invert.to_json};
       - if logged_in?
         !== var USER_LOCATION = #{current_user.map_info.merge(:zoom => 12).to_json};
       $(document).ready(function() {

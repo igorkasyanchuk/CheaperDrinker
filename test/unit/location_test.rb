@@ -1,6 +1,31 @@
 require 'test_helper'
+require "ap"
 
 class LocationTest < ActiveSupport::TestCase
+  
+  test "search Locations by special time" do
+    @location = Factory(:location)
+    assert_not_nil @location
+  end
+  
+  test "seatch locations by search time" do
+    @location = Factory(:location)
+    @special_day_0_1 = Factory(:special_day, :start_time => 0, :end_time => 600)
+    @special_day_0_2 = Factory(:special_day, :start_time => 0, :end_time => 720)
+    @special_day_0_3 = Factory(:special_day, :start_time => 600, :end_time => 720)
+    @special_day_0_4 = Factory(:special_day, :start_time => 660, :end_time => 780)
+    @special_day_0_5 = Factory(:special_day, :start_time => 900, :end_time => SpecialDay::END_TIME_OF_DATE)
+    
+    log_to STDOUT
+    #assert_equal Location.by_time(0,600).count, 2
+    ap Location.timed(0,600)
+    ap Location.timed(0,600).count
+    ap Location.timed(0,600)[0]
+    ap Location.timed(0,600)[1]
+    ap Location.timed(0,600)[2]
+    
+    log_to nil
+  end
 
   test "could load correct location for day" do
     assert_equal SpecialDay.count, 0
@@ -39,8 +64,8 @@ class LocationTest < ActiveSupport::TestCase
     assert_equal loc.specials_for_day(:monday).count, 1
     assert_equal loc.specials_for_day(:friday).count, 1
     
-    assert_equal loc.special_for_day(0), 'monday day descr'
-    assert_equal loc.special_for_day(4), 'friday day descr'
+    assert_equal loc.specials_for_day(0).first.description, 'monday day descr'
+    assert_equal loc.specials_for_day(4).first.description, 'friday day descr'
     
     loc.reload
     

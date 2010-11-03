@@ -48,6 +48,15 @@ class Location < ActiveRecord::Base
   scope :by_day, lambda { |day|
     where(Location.day_column(Location.get_day(day)) => true)
   }
+  
+  scope :by_time, lambda { |_start, _end|
+    where(['(special_days.start_time >= ? and special_days.end_time <= ?) or ' +
+           '(special_days.start_time >= ?)', _start, _end, _start]).joins(:special_days)
+  }
+  
+  named_scope :timed, lambda { |*args|
+    where(["GREATEST(special_days.start_time, ?) <= LEAST(special_days.end_time, ?)", 
+    args.shift || 0, args.shift || SpecialDay::END_TIME_OF_DATE]).joins(:special_days) } 
 
   scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   

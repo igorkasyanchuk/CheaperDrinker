@@ -51,7 +51,7 @@ class Location < ActiveRecord::Base
 
   scope :occurs_between, lambda { |*args|
     where(["GREATEST(special_days.start_time, ?) < LEAST(special_days.end_time, ?)", 
-    args.shift || 0, args.shift || SpecialDay::END_TIME_OF_DATE]).includes(:special_days) } 
+    args.shift || 0, args.shift || SpecialDay::END_TIME_OF_DATE]).joins(:special_days).group("locations.id").select("locations.id") }
 
   scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   
@@ -82,7 +82,7 @@ class Location < ActiveRecord::Base
     if self.address_changed? || self.new_record? || self.city_changed? || self.zip_changed? || self.state_changed?
       logger.info "Geocoding: #{self.full_address}"
       _location = Geokit::Geocoders::MultiGeocoder.geocode(self.full_address)
-      if _location.lat && _location.lng && _location.accuracy
+      if _location && _location.lat && _location.lng && _location.accuracy
         self.lat = _location.lat
         self.lng = _location.lng
         self.accuracy = _location.accuracy

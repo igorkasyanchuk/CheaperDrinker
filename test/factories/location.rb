@@ -5,4 +5,5 @@ Factory.define :location, :class => Location do |f|
   f.state { Factory.next(:state_name) }
   f.zip "12345"
   f.plan 0
+  f.approved true
 end

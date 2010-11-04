@@ -12,9 +12,10 @@ class HomeController < ApplicationController
         @current_day = params['day']
         ne = params['ne'].split(',').collect{|e|e.to_f}
         sw = params['sw'].split(',').collect{|e|e.to_f}
-        @locations = Location.approved.in_bounds([sw, ne]).by_weight_and_random.by_day(@current_day).limit(130)
-        @locations = @locations.except_gay_bars if params['gay'].present? && params['gay'] == '1'
-        @locations = @locations.occurs_between(params['start'], params['end'])
+        @location_ids = Location.approved.in_bounds([sw, ne]).by_day(@current_day).limit(100)
+        @location_ids = @location_ids.except_gay_bars if params['gay'].present? && params['gay'] == '1'
+        @location_ids = @location_ids.occurs_between(params['start'], params['end'])
+        @locations = Location.where(:id => @location_ids).by_weight_and_random
       end
     end
   end

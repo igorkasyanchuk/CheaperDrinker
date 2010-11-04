@@ -28,4 +28,4 @@ IMAGE_FILE_FOR_UPLOAD = "#{Rails.root}/test/test_image.png"
 VIDEO_FILE_FOR_UPLOAD = "#{Rails.root}/test/video.flv"
 
 Location.any_instance.stubs(:geocode_it!).returns(true)
-
+Geokit::Geocoders::MultiGeocoder.stubs(:geocode).returns(nil)

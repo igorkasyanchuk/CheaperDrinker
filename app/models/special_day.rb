@@ -12,8 +12,8 @@ class SpecialDay < ActiveRecord::Base
   scope :by_day, lambda { |day|
     where(["day_id = ?", Location.get_day(day)])
   }
-  
   scope :by_time, order(:start_time)
+  scope :by_location, group("special_days.location_id")
   
   after_save :update_cached_day
   after_destroy :update_cached_day

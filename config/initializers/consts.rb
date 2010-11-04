@@ -40,3 +40,5 @@ TIMES_ARRAY = [ "6am", "6:30am", "7am", "7:30am", "8am", "8:30am",
 "6pm", "6:30pm", "7pm", "7:30pm", "8pm", "8:30pm", "9pm", "9:30pm", "10pm",
 "10:30pm", "11pm", "11:30pm", 'Midnight', "12:30am", "1am", "1:30am", "2am", "2:30am", "3am", "3:30am", "4am",
 "4:30am", "5am", "5:30am" ]
+
+TIME_NOW = Time.now.to_i

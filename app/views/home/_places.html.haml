@@ -1,5 +1,5 @@
 - places.each do |info|
-  - cache "location-#{info.updated_at.to_i}-html" do
+  - cache "#{TIME_NOW}-location-#{info.updated_at.to_i}-html" do
     %li
       %strong.place_name 
         #{info.name} 

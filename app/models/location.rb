@@ -148,21 +148,23 @@ class Location < ActiveRecord::Base
     "day_#{Location.get_day(day)}"
   end
   
-  def uuid
-    "location-#{self.id}-#{self.updated_at.to_i}-json"
+  def uuid(day)
+    "#{TIME_NOW}-location-#{self.id}-#{self.updated_at.to_i}-json-#{day}"
   end
   
-  def cached_location
-    info = Rails.cache.read(self.uuid)
+  def cached_location(day)
+    info = Rails.cache.read(self.uuid(day))
     unless info
-      info = self.location_info(@current_day)
-      Rails.cache.write(self.uuid, info, :expires_in => 5.minutes)
+      info = self.location_info(day)
+      Rails.cache.write(self.uuid(day), info, :expires_in => 5.minutes)
     end
     info
   end
 
   def expire_cached_location
-    Rails.cache.write(self.uuid, nil)
+    DAYS.keys.each do |day|
+      Rails.cache.write(self.uuid(day), nil)
+    end
   end
 
 end

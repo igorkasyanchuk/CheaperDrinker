@@ -15,7 +15,7 @@ class HomeController < ApplicationController
         @location_ids = Location.approved.in_bounds([sw, ne]).by_day(@current_day).limit(100)
         @location_ids = @location_ids.except_gay_bars if params['gay'].present? && params['gay'] == '1'
         @location_ids = @location_ids.occurs_between(params['start'], params['end'])
-        @locations = Location.where(:id => @location_ids).by_weight_and_random
+        @locations = Location.locations_by_ids(@location_ids)
       end
     end
   end

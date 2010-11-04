@@ -46,6 +46,8 @@ RailsjazzCom::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  config.cache_store = :dalli_store
 end
 
 Sass::Plugin.options[:never_update] = true

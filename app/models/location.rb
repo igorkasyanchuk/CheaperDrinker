@@ -46,7 +46,6 @@ class Location < ActiveRecord::Base
   scope :by_name, order('name')
   
   scope :by_day, lambda { |day|
-    #where(Location.day_column(Location.get_day(day)) => true)
     where(["special_days.day_id = ?", Location.get_day(day)])
   }
 
@@ -56,6 +55,9 @@ class Location < ActiveRecord::Base
 
   scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
   
+  scope :by_plan, order("plan desc")
+  scope :by_random, order(SqlFunction.random)
+  
   has_many :comments, :dependent => :destroy, :as => :commentable
   has_many :special_days, :dependent => :destroy
   
@@ -64,6 +66,10 @@ class Location < ActiveRecord::Base
   belongs_to :user
 
   before_save :geocode_it!
+  
+  def Location.locations_by_ids(ids)
+    Location.where(:id => ids).by_weight_and_random
+  end
   
   def approve!
     self.approved = true

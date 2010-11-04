@@ -38,3 +38,7 @@ group :development, :test do
   gem 'compass', '0.10.5'
   gem "compass-960-plugin", '0.9.13'
 end
+
+group :production do
+  gem 'dalli'
+end

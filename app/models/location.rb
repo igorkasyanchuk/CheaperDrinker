@@ -148,8 +148,8 @@ class Location < ActiveRecord::Base
     "day_#{Location.get_day(day)}"
   end
   
-  def uuid(day)
-    "#{TIME_NOW}-location-#{self.id}-#{self.updated_at.to_i}-json-#{day}"
+  def uuid(day, type='json')
+    "#{TIME_NOW}-location-#{self.id}-#{self.updated_at.to_i}-#{type}-#{day}"
   end
   
   def cached_location(day)

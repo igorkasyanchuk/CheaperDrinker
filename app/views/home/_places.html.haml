@@ -1,11 +1,11 @@
-- places.each do |info|
-  - cache "#{TIME_NOW}-location-#{info.updated_at.to_i}-html" do
+- places.each do |location|
+  - cache location.uuid(current_day, 'html') do
     %li
       %strong.place_name 
-        #{info.name} 
-        = gay_icon(info)
+        #{location.name} 
+        = gay_icon(location)
         - if Rails.env == 'development'
-          (#{info.plan})
-      .address= info.address
-      .description= simple_format info.special_for_day(current_day)
-      .link_to= link_to 'More Details', place_path(info), :title => "more details about #{info.name}"
+          (#{location.plan})
+      .address= location.address
+      .description= simple_format location.special_for_day(current_day)
+      .link_to= link_to 'More Details', place_path(location), :title => "more details about #{location.name}"

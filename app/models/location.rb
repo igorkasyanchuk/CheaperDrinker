@@ -46,7 +46,8 @@ class Location < ActiveRecord::Base
   scope :by_name, order('name')
   
   scope :by_day, lambda { |day|
-    where(Location.day_column(Location.get_day(day)) => true)
+    #where(Location.day_column(Location.get_day(day)) => true)
+    where(["special_days.day_id = ?", Location.get_day(day)])
   }
 
   scope :occurs_between, lambda { |*args|

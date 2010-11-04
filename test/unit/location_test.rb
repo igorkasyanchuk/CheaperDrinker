@@ -12,8 +12,9 @@ class LocationTest < ActiveSupport::TestCase
     assert_equal Location.count, 2
     assert_equal SpecialDay.count, 3
     log_to STDOUT
-    array = Location.approved.by_weight_and_random.by_day(1).except_gay_bars.occurs_between(0,SpecialDay::END_TIME_OF_DATE)
-    assert_equal array.size, 2
+    ids = Location.approved.by_day(1).except_gay_bars.occurs_between(0,SpecialDay::END_TIME_OF_DATE).limit(100)
+    locations = Location.where(:id => ids).by_weight_and_random
+    assert_equal locations.count, 2
   end
   
   # test "search Locations by special time" do

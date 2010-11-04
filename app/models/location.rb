@@ -66,7 +66,8 @@ class Location < ActiveRecord::Base
   belongs_to :user
 
   before_save :geocode_it!
-  
+  before_update :expire_cached_location
+
   def Location.locations_by_ids(ids)
     Location.where(:id => ids).by_weight_and_random
   end
@@ -145,6 +146,23 @@ class Location < ActiveRecord::Base
   
   def Location.day_column(day)
     "day_#{Location.get_day(day)}"
+  end
+  
+  def uuid
+    "location-#{self.id}-#{self.updated_at.to_i}-json"
+  end
+  
+  def cached_location
+    info = Rails.cache.read(self.uuid)
+    unless info
+      info = self.location_info(@current_day)
+      Rails.cache.write(self.uuid, info, :expires_in => 5.minutes)
+    end
+    info
+  end
+
+  def expire_cached_location
+    Rails.cache.write(self.uuid, nil)
   end
 
 end

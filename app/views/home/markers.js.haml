@@ -7,7 +7,7 @@ var map_markers = new Array();
 - else
   $('#sidebar p').show();
 
-- data = @locations.collect{|l| l.location_info(@current_day)}.to_json
+- data = @locations.collect { |location| location.cached_location }.to_json
 
 !==$.each(#{data}, function(e, index) { 
 map_markers.push(get_bar_marker(this));

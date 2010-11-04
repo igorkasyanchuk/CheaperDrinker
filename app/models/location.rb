@@ -116,7 +116,7 @@ class Location < ActiveRecord::Base
   end
   
   def special_for_day(day)
-    load_specials_for_day(day).collect{|s| s.info}.join("\n")
+    load_specials_for_day(day).collect{|s| s.info}.join("\n\n")
   end
   
   def specials_for_day(day)

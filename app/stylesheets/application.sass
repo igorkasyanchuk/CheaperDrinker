@@ -14,7 +14,7 @@ $border_for_notice: unquote("1px solid #ccc")
 
 $left_column: 250px
 
-$sidebar_padding = 3%
+$sidebar_padding: 3%
 
 =bordered($color: red)
   border: unquote("1px solid #{$color}")
@@ -26,6 +26,11 @@ $sidebar_padding = 3%
 =alpha-omega
   +alpha
   +omega
+  
+=round_me($r)
+  -moz-border-radius: $r
+  -webkit-border-radius: $r
+  border-radius: $r  
 
 #root
   margin-left: auto
@@ -146,12 +151,6 @@ th
   .desc
     background-image: url(/images/sort-desc1.png)
     
-    
-=round_me($r)
-  -moz-border-radius: $r
-  -webkit-border-radius: $r
-  border-radius: $r
-      
 .subfilter
   font-size: 11px
   font-weight: bold
@@ -240,12 +239,12 @@ div.content
 div.left_content
   :float left
   :margin-left -100%
-  :width= $left_column
+  width: $left_column
   :padding-left 25px
 
 div.right_content
-  :margin-left= $left_column + 20px + 10px
-  :padding-right 4px
+  margin-left: $left_column + 20px + 10px
+  padding-right: 4px
 
 .clear
   :clear both

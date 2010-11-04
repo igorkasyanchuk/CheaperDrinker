@@ -14,6 +14,8 @@ $border_for_notice: unquote("1px solid #ccc")
 
 $left_column: 250px
 
+$sidebar_padding = 3%
+
 =bordered($color: red)
   border: unquote("1px solid #{$color}")
   
@@ -238,11 +240,11 @@ div.content
 div.left_content
   :float left
   :margin-left -100%
-  :width= !left_column
+  :width= $left_column
   :padding-left 25px
 
 div.right_content
-  :margin-left= !left_column + 20px + 10px
+  :margin-left= $left_column + 20px + 10px
   :padding-right 4px
 
 .clear
@@ -318,8 +320,6 @@ div.right_content
 .tooltip span
   font-size: 11px
   color: #999 
-
-$sidebar_padding = 3%
 
 #sidebar
   h1

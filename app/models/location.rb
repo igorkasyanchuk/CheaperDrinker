@@ -122,16 +122,16 @@ class Location < ActiveRecord::Base
     DAYS_FOR_SPECIALS.keys.collect{|e| DAYS_FOR_SPECIALS[e] if self.special?(e) }.compact
   end
   
-  def special_for_day(day)
-    load_specials_for_day(day).collect{|s| s.info}.join("\n\n")
+  def special_for_day(day, _start = 0, _end = SpecialDay::END_TIME_OF_DATE)
+    load_specials_for_day(day, _start, _end).collect{|s| s.info}.join("\n\n")
   end
   
-  def specials_for_day(day)
+  def specials_for_day(day, _start = 0, _end = SpecialDay::END_TIME_OF_DATE)
     load_specials_for_day(day)
   end
   
-  def load_specials_for_day(day)
-    self.special_days.by_day(day).by_time
+  def load_specials_for_day(day, _start = 0, _end = SpecialDay::END_TIME_OF_DATE)
+    self.special_days.by_day(day).occurs_between(_start, _end).by_time
   end  
   
   def free?
@@ -148,22 +148,22 @@ class Location < ActiveRecord::Base
     "day_#{Location.get_day(day)}"
   end
   
-  def uuid(day, type='json')
-    "#{TIME_NOW}-location-#{self.id}-#{self.updated_at.to_i}-#{type}-#{day}"
+  def uuid(day, type='json', options = {})
+    "#{TIME_NOW}-location-#{self.id}-#{self.updated_at.to_i}-#{type}-#{day}-#{options}"
   end
   
-  def cached_location(day)
-    info = Rails.cache.read(self.uuid(day))
+  def cached_location(day, options = {})
+    info = Rails.cache.read(self.uuid(day, options))
     unless info
       info = self.location_info(day)
-      Rails.cache.write(self.uuid(day), info, :expires_in => 5.minutes)
+      Rails.cache.write(self.uuid(day, options), info, :expires_in => 5.minutes)
     end
     info
   end
 
   def expire_cached_location
     DAYS.keys.each do |day|
-      Rails.cache.write(self.uuid(day), nil)
+      Rails.cache.write(self.uuid(day) + '*', nil)
     end
   end
 

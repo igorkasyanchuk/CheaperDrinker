@@ -1,5 +1,5 @@
 - places.each do |location|
-  - cache location.uuid(current_day, 'html') do
+  - cache location.uuid(current_day, 'html', {:start => params['start'], :end => params['end']}) do
     %li
       %strong.place_name 
         #{location.name} 
@@ -7,5 +7,5 @@
         - if Rails.env == 'development'
           (#{location.plan})
       .address= location.address
-      .description= simple_format location.special_for_day(current_day)
+      .description= simple_format location.special_for_day(current_day, params["start"], params["end"])
       .link_to= link_to 'More Details', place_path(location), :title => "more details about #{location.name}"

@@ -15,6 +15,10 @@ class SpecialDay < ActiveRecord::Base
   scope :by_time, order(:start_time)
   scope :by_location, group("special_days.location_id")
   
+  scope :occurs_between, lambda { |*args|
+    where(["GREATEST(special_days.start_time, ?) < LEAST(special_days.end_time, ?)", 
+    args.shift || 0, args.shift || SpecialDay::END_TIME_OF_DATE]) }
+  
   after_save :update_cached_day
   after_destroy :update_cached_day
   

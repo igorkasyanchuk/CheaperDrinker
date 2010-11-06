@@ -11,13 +11,10 @@ class LocationTest < ActiveSupport::TestCase
     @special_day_0_3 = Factory(:special_day, :location => @location_2, :day_id => 1)
     assert_equal Location.count, 2
     assert_equal SpecialDay.count, 3
-    log_to STDOUT
     
     ids = Location.approved.by_day(1).except_gay_bars.occurs_between(0,SpecialDay::END_TIME_OF_DATE).by_plan.limit(100)
     locations = Location.locations_by_ids(ids)
     assert_equal locations.count, 2
-    
-    log_to nil
   end
   
    test "search Locations by special time" do

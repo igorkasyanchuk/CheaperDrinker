@@ -137,6 +137,7 @@ function get_selected_day() {
 
 function init_day_filter() {
   $('#select_date').live('change', function() {
+    update_hash_value();
     total_map_clean();
     updateMap('filter');
   });
@@ -316,12 +317,17 @@ function time(t) {
     return TIMES_ARRAY[t];
 } 
 
+var SLIDER_MIN = 0;
+var SLIDER_MAX = 1440;
+var SLIDER_CURRENT_MIN = SLIDER_MIN;
+var SLIDER_CURRENT_MAX = SLIDER_MAX;
+
 function init_slider() {
   $("#slider-range").slider({
     range: true,
-    min: 0,
-    max: 1440,
-    values: [0, 1440],
+    min: SLIDER_MIN,
+    max: SLIDER_MAX,
+    values: [SLIDER_CURRENT_MIN, SLIDER_CURRENT_MAX],
     step: 30,
     slide: function(event, ui) {
       if (Math.abs(ui.values[0] - ui.values[1]) < 60) {
@@ -330,13 +336,33 @@ function init_slider() {
       else {
         $('#current_min').attr('value', ui.values[0]);
         $('#current_max').attr('value', ui.values[1]);
-        var postfix = ui.values[1] == 10000 ? 'close' : ''
-        $("#amount").val(time(ui.values[0]) + ' — ' + time(ui.values[1]) + postfix);
+        $("#amount").val(time(ui.values[0]) + ' — ' + time(ui.values[1]));
         return true;
       }
     },
     stop: function(event, ui) {
+      update_hash_value();
       updateMap("slider");
     }
   }); 
+};
+
+function get_hash_value() {
+  return '#' + $('#current_min').val() + '/' + $('#current_max').val() + '/' + $('#select_date').val();
+};
+
+function update_hash_value() {
+  window.location.hash = get_hash_value();
+};
+
+function set_url_options() {
+  hash = window.location.hash;
+  info = hash.replace('#', '').split('/');
+  if (info.length >= 3) {
+    SLIDER_CURRENT_MIN = info[0];
+    SLIDER_CURRENT_MAX = info[1];
+    $('#current_min').val(info[0]);
+    $('#current_max').val(info[1]);
+    $("#select_date option[vlaue='"+ info[2] +"']").attr('selected', 'selected');
+  }
 };

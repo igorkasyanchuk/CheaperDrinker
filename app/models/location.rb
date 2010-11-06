@@ -101,11 +101,11 @@ class Location < ActiveRecord::Base
     true
   end
   
-  def location_info(day)
+  def location_info(day, _start = 0, _end = SpecialDay::END_TIME_OF_DATE)
     map_info.merge({ "id" => self.id, 
                      "name" => self.name, 
                      "address" => self.address, 
-                     "description" => simple_format(special_for_day(day)),
+                     "description" => simple_format(special_for_day(day, _start, _end)),
                      "plan" => self.plan,
                      "gay" => self.gay_bar })
   end
@@ -153,10 +153,13 @@ class Location < ActiveRecord::Base
   end
   
   def cached_location(day, options = {})
-    info = Rails.cache.read(self.uuid(day, options))
+    _key = self.uuid(day, options)
+    #logger.info "looking for: #{_key}"
+    info = Rails.cache.read(_key)
     unless info
-      info = self.location_info(day)
-      Rails.cache.write(self.uuid(day, options), info, :expires_in => 5.minutes)
+      #logger.info "not found: #{_key}"
+      info = self.location_info(day, options[:start], options[:end])
+      Rails.cache.write(_key, info, :expires_in => 5.minutes)
     end
     info
   end

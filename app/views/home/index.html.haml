@@ -7,6 +7,7 @@
   = javascript_include_tag 'markerclusterer_packed'
   
 - content_for :on_ready do
+  set_url_options();
   !== show_bars_on_map();
   updateMap('home');
   init_day_filter();

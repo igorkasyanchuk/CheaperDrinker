@@ -50,7 +50,7 @@
       .controls
         = link_to 'edit', [:edit, :admin, location], :class => 'edit_button'
         = link_to "specials(#{location.special_days_count})", [:admin, location, :special_days], :class => 'index_button'
-        = link_to "comments(#{location.comments_count})", [:admin, location, :comments], :class => 'index_button'
+        = link_to "reviews(#{location.reviews_count})", [:admin, location, :reviews], :class => 'index_button'
         = (link_to 'approve', [:approve, :admin, location], :remote => true, :class => 'approve_button') unless location.approved?
         = link_to 'remove', [:admin, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
       .clear

@@ -1,5 +1,5 @@
-class Comment < ActiveRecord::Base
-  belongs_to :commentable, :polymorphic => true, :counter_cache => true, :touch => true
+class Review < ActiveRecord::Base
+  belongs_to :reviewable, :polymorphic => true, :counter_cache => true
 
   scope :not_approved, where(:approved => false)
   scope :approved, where(:approved => true)
@@ -7,7 +7,7 @@ class Comment < ActiveRecord::Base
   scope :from_pending_to_approved, order('approved ASC')
 
   belongs_to :user
-  validates_presence_of :comment
+  validates_presence_of :review
   
   def approve!
     self.approved = true
@@ -21,5 +21,4 @@ class Comment < ActiveRecord::Base
   def by_author
     user.try(:user_name)
   end
-
 end

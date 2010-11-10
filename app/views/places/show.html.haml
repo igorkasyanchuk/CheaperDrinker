@@ -2,11 +2,11 @@
 
 = content_for :map do
   == <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{GOOGLE_KEYS[Rails.env.to_s]}" type="text/javascript"></script>
-  = javascript_include_tag 'Tooltip.v2'  
 
 = content_for :on_ready do
   !== show_place_map(#{@location.map_info.to_json});
-  $("#post_comment").colorbox({width:"50%", inline:true, href:"#comments" });
+  $("#post_review").colorbox({width:"50%", inline:true, href:"#reviews" });
+  $('#default').raty({path: '/images'});
 
 %h1= @location.name
 
@@ -19,7 +19,6 @@
 %address= @location.full_address
 
 .bar
-
   .w49.left
     %strong Specials
     %ul
@@ -40,18 +39,19 @@
 .clear
 
 - if logged_in?
-  %a{:href => '#comments', :id => 'post_comment'} Add Comment
+  %a{:href => '#reviews', :id => 'post_review'} Post Review
 - else
-  %strong Create an #{link_to 'account', new_user_path} or #{link_to 'login', new_user_session_path} to post comments.
+  %strong Create an #{link_to 'account', new_user_path} or #{link_to 'login', new_user_session_path} to post review.
 
-.comments_container
-  = render :partial => '/places/comments', :locals => { :location => @location }
+.reviews_container
+  = render :partial => '/reviews/reviews', :locals => { :location => @location }
 
 - if logged_in?
   .none
-    #comments
-      = simple_form_for [@location, @comment], :html => { :id => 'post_comment_form' }, :remote => true do |f|
-        %h3 Post Your Comment
+    #reviews
+      = simple_form_for [@location, @review], :html => { :id => 'post_review_form' }, :remote => true do |f|
+        %h3 Add Your Review
         = f.input :user_id, :value => current_user.id, :as => :hidden
-        = f.input :comment, :input_html => { :rows => '5', :cols => '40' }
-        = f.submit "Post", :id => 'post_comment_button'        
+        = f.input :review, :input_html => { :rows => '5', :cols => '40' }
+        #default
+        = f.submit "Post", :id => 'post_review_button'

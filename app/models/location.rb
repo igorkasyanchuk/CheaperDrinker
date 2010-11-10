@@ -58,7 +58,6 @@ class Location < ActiveRecord::Base
   scope :by_plan, order("plan desc")
   scope :by_random, order(SqlFunction.random)
   
-  has_many :comments, :dependent => :destroy, :as => :commentable
   has_many :special_days, :dependent => :destroy
   
   accepts_nested_attributes_for :special_days, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:day_id].blank? }
@@ -67,6 +66,8 @@ class Location < ActiveRecord::Base
 
   before_save :geocode_it!
   before_update :expire_cached_location
+  
+  has_many :reviews, :as => :reviewable, :dependent => :destroy
 
   def Location.locations_by_ids(ids)
     Location.where(:id => ids).by_weight_and_random

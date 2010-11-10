@@ -1,0 +1,9 @@
+- if @review.valid?
+  $('#reviews form').hide();
+  $('#reviews').append("<h3 class='thanks'>Thanks for your review. Soon review will be published.</h3>");
+  == $('.reviews_container').html('#{escape_javascript(render :partial => '/reviews/reviews', :locals => { :location => @location})}');
+  $.colorbox.resize();
+  setTimeout ( "re_init_reviews();", 1500 );
+- else
+  $('#review_review').css('border', '1px solid red');
+  alert('please leave a review');

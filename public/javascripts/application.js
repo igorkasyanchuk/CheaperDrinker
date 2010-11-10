@@ -72,7 +72,7 @@ function show_bars_on_map(bars) {
   map.addControl(new GLargeMapControl());
   map.setCenter(new GLatLng(USER_LOCATION.lat, USER_LOCATION.lng), USER_LOCATION.zoom, G_NORMAL_MAP);
   init_resize_map();
-  GEvent.addListener(map, "moveend", function() { if ($current_stage != 1) { updateMap('moveend'); } });
+  GEvent.addListener(map, "moveend", function() { update_hash_value(); if ($current_stage != 1) { updateMap('moveend'); } });
   var clusterOpt = {
 			maxZoom: 13,
 			gridSize: 50
@@ -156,11 +156,11 @@ function show_place_map(location) {
   map.addOverlay(bar_marker);
 };
 
-function re_init_comments() {
+function re_init_reviews() {
   $.colorbox.close(); 
-  $('#comments form').show(); 
-  $('#comments h3.thanks').remove();
-  $('#comment_comment').val('');
+  $('#reviews form').show(); 
+  $('#reviews h3.thanks').remove();
+  $('#review_review').val('');
 };
 
 function process_map_zoom() {
@@ -348,7 +348,15 @@ function init_slider() {
 };
 
 function get_hash_value() {
-  return '#' + $('#current_min').val() + '/' + $('#current_max').val() + '/' + $('#select_date').val();
+  map_center = map.getCenter();
+  zoom = map.getZoom();
+  return '#' + 
+    $('#current_min').val() + '/' + 
+    $('#current_max').val() + '/' + 
+    $('#select_date').val() + '/' + 
+    map_center.lat() + '/' + 
+    map_center.lng() + '/' + 
+    zoom;
 };
 
 function update_hash_value() {
@@ -358,11 +366,15 @@ function update_hash_value() {
 function set_url_options() {
   hash = window.location.hash;
   info = hash.replace('#', '').split('/');
-  if (info.length >= 3) {
+  if (info.length >= 6) {
     SLIDER_CURRENT_MIN = info[0];
     SLIDER_CURRENT_MAX = info[1];
     $('#current_min').val(info[0]);
     $('#current_max').val(info[1]);
     $("#select_date option[vlaue='"+ info[2] +"']").attr('selected', 'selected');
+    USER_LOCATION.lat = parseFloat(info[3]);
+    USER_LOCATION.lng = parseFloat(info[4]);
+    USER_LOCATION.zoom = parseInt(info[5]);
+    console.log(USER_LOCATION);
   }
 };

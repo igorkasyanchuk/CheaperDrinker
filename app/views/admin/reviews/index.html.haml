@@ -1,0 +1,28 @@
+= title "Manage Reviews"
+
+%h1 Manage Reviews
+
+.locations
+  .location
+    .name 
+      %strong Location
+    .full_address 
+      %strong Posted By
+    .message_long 
+      %strong Reviews
+    .controls 
+      %strong Actions
+    .clear  
+  - @reviews.each do |review|
+    .location{ :class => cycle(:odd, :even), :id => "review-#{review.id}" }
+      .name= link_to review.reviewable.try(:name), place_path(review.reviewable)
+      .full_address= review.user.name
+      .message_long= review.review
+      .controls
+        = (link_to 'approve', [:approve, :admin, review], :remote => true, :class => 'approve_button') unless review.approved?
+        = link_to 'remove', [:admin, review], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+      .clear
+  .location.summary
+    .amount.message
+      %strong Total: #{pluralize(@reviews.count, 'review')}
+    .clear

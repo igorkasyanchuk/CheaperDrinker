@@ -1,0 +1,5 @@
+.when
+  .user= review.try(:user).try(:name)
+  .date= review.created_at.to_s(:short)
+.message= review.review
+.clear

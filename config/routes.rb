@@ -13,7 +13,7 @@ RailsjazzCom::Application.routes.draw do
       member {
         get :approve
       }
-      resources :comments, :only => [:index, :destroy] do
+      resources :reviews, :only => [:index, :destroy] do
         member {
           get :approve
         }
@@ -24,7 +24,7 @@ RailsjazzCom::Application.routes.draw do
         }
       end
     end
-    resources :comments do
+    resources :reviews do
       member {
         get :approve
       }
@@ -46,7 +46,7 @@ RailsjazzCom::Application.routes.draw do
             get :update_special
           }
         end
-        resources :comments, :only => [:index, :destroy] do
+        resources :reviews, :only => [:index, :destroy] do
           member {
             get :approve
           }
@@ -56,7 +56,7 @@ RailsjazzCom::Application.routes.draw do
   end
   
   resources :locations, :only => [] do
-    resources :comments, :only => [:create]
+    resources :reviews, :only => [:create]
   end
   
   root :controller => 'home', :action => 'index'

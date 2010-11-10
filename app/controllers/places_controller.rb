@@ -6,7 +6,7 @@ class PlacesController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    @comment = @location.comments.build
+    @review = @location.reviews.build
   end
 
 end

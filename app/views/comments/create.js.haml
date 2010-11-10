@@ -1,9 +1,0 @@
-- if @comment.valid?
-  $('#comments form').hide();
-  $('#comments').append("<h3 class='thanks'>Thanks for your comment. Soon comment will be published.</h3>");
-  == $('.comments_container').html('#{escape_javascript(render :partial => '/places/comments', :locals => { :location => @location})}');
-  $.colorbox.resize();
-  setTimeout ( "re_init_comments();", 1500 );
-- else
-  $('#comment_comment').css('border', '1px solid red');
-  alert('please leave a comment');

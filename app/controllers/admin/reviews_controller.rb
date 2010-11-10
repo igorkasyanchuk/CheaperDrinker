@@ -1,12 +1,12 @@
-class Admin::CommentsController < Admin::DashboardController
+class Admin::ReviewsController < Admin::DashboardController
   belongs_to :location, :optional => true
   
   def index
     index!
     if @location
-      @comments = @location.comments.from_pending_to_approved.all
+      @reviews = @location.reviews.from_pending_to_approved.all
     else
-      @comments = Comment.from_pending_to_approved.all
+      @reviews = Review.from_pending_to_approved.all
     end
   end
   
@@ -17,8 +17,8 @@ class Admin::CommentsController < Admin::DashboardController
   end
   
   def approve
-    @comment = resource
-    @comment.approve!
+    @review = resource
+    @review.approve!
     respond_to do |format|
       format.js {}
     end

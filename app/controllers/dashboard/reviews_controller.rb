@@ -1,4 +1,4 @@
-class Dashboard::CommentsController < Dashboard::DashboardController
+class Dashboard::ReviewsController < Dashboard::DashboardController
   belongs_to :location
   
   def destroy
@@ -8,8 +8,8 @@ class Dashboard::CommentsController < Dashboard::DashboardController
   end
   
   def approve
-    @comment = resource
-    @comment.approve!
+    @review = resource
+    @review.approve!
     respond_to do |format|
       format.js {}
     end

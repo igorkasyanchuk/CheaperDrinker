@@ -1,0 +1,28 @@
+= title "Manage #{@location.name} Reviews"
+
+%h1 Manage #{@location.name} Reviews
+
+- if @location.reviews.count > 0
+  .locations
+    .location
+      .name 
+        %strong Location Name
+      .full_address 
+        %strong Status
+      .message_long
+        %strong Review
+      .controls 
+        %strong Actions
+      .clear  
+    - @location.reviews.each do |review|
+      .location{ :class => cycle(:odd, :even), :id => "review-#{review.id}" }
+        .name= link_to review.reviewable.try(:name), place_path(review.reviewable)
+        .full_address= review.status
+        .message_long= review.review
+        .controls
+          = (link_to 'approve', [:approve, :dashboard, current_user, @location, review], :remote => true, :class => 'approve_button') unless review.approved?
+          = link_to 'remove', [:dashboard, current_user, @location, review], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+        .clear
+- else
+  %p Reviews list is blank.    
+      

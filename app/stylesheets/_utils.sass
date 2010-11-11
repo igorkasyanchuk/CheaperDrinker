@@ -1,0 +1,27 @@
+$border_for_notice: unquote("1px solid #ccc")
+
+$width: 1000px
+$margin: 0px
+$max_width: 1600px
+
+$border_for_notice: unquote("1px solid #ccc")
+
+$left_column: 250px
+
+$sidebar_padding: 3%
+
+=bordered($color: red)
+  border: unquote("1px solid #{$color}")
+  
+=description_configuration
+  font-size: 11px
+  line-height: 13px
+
+=alpha-omega
+  +alpha
+  +omega
+  
+=round_me($r)
+  -moz-border-radius: $r
+  -webkit-border-radius: $r
+  border-radius: $r

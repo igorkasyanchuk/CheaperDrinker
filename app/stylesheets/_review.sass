@@ -1,0 +1,48 @@
+#reviews
+  text-align: left
+  h3
+    font-size: 14px
+  h3.thanks
+    color: $cheaperdrinker_button_color
+    font-weight: bold
+    text-align: center
+  label
+    display: none
+    
+.rating_container
+  .rating_title
+    float: left
+    width: 80px
+    font-weight: bold
+  .rating_field
+    float: left
+    
+#all_reviews
+  margin-top: 12px
+  h2
+    font-size: 16px
+  .public_overall
+    .public_overall_title
+      float: left
+      width: 100px
+      font-weight: bold
+    .public_overall_value
+      float: left
+  .public_review
+    padding: 3px 0
+    margin-bottom: 6px
+    border-bottom: 1px solid #ddd
+    .review_message
+      padding: 6px 0
+      font-size: 12px
+    .review_by_when
+      padding: 3px 0
+    .review_rating_description
+      opacity: 0.5
+    &:hover
+      .review_rating_description
+        opacity: 1  
+    &:last-child
+      border-bottom: 0 none        
+  
+      

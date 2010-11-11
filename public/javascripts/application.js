@@ -378,3 +378,9 @@ function set_url_options() {
     console.log(USER_LOCATION);
   }
 };
+
+function init_bar_rating() {
+  $('#service_rating').raty({path: '/images', onClick: function(score) { $('#service_rating_value').val(score); } });
+  $('#atmosphere_rating').raty({path: '/images', onClick: function(score) { $('#atmosphere_rating_value').val(score); } });
+  $('#value_rating').raty({path: '/images', onClick: function(score) { $('#value_rating_value').val(score); } });
+};

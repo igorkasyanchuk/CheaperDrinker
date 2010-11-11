@@ -1,5 +1,5 @@
 - if location.reviews.approved.count > 0
-  %h3 Reviews
-  #all_reviews.reviews
+  #all_reviews
+    %h2 #{location.name} reviews
     - location.reviews.recent.approved.all.each do |review|
-      .review= render :partial => '/reviews/review', :locals => { :review => review }
+      .public_review= render :partial => '/reviews/review', :locals => { :review => review }

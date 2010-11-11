@@ -1,5 +1,22 @@
-.when
-  .user= review.try(:user).try(:name)
-  .date= review.created_at.to_s(:short)
-.message= review.review
+.public_overall
+  .public_overall_title Overall Rating
+  .public_overall_value= static_rating(review.overall_rating)
+  .clear
+.review_message
+  "#{review.review}"
+.review_rating_description
+  .rating_container
+    .rating_title Service
+    .rating_field= static_rating(review.service_rating)
+    .clear
+  .rating_container
+    .rating_title Atmosphere
+    .rating_field= static_rating(review.atmosphere_rating)
+    .clear
+  .rating_container
+    .rating_title Value
+    .rating_field= static_rating(review.value_rating)
+    .clear
+.review_by_when
+  submitted by #{review.try(:user).try(:name)} on #{review.created_at.to_s(:short)}
 .clear

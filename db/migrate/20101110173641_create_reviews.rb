@@ -6,7 +6,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :reviewable_type
       t.text :review
       t.integer :service_rating
-      t.integer :overall_rating
+      t.float :overall_rating
       t.integer :atmosphere_rating
       t.integer :value_rating
       t.boolean :approved, :default => false

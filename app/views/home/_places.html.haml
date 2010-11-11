@@ -6,6 +6,7 @@
         = gay_icon(location)
         - if Rails.env == 'development'
           (#{location.plan})
+      .static_rating= static_rating(location.average_rating)
       .address= location.address
       .description= simple_format location.special_for_day(current_day, params["start"], params["end"])
       .link_to= link_to 'More Details', place_path(location), :title => "more details about #{location.name}"

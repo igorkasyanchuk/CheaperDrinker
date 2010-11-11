@@ -2,7 +2,9 @@
   %li.users_menu= link_to 'Users', admin_users_path
   %li.locations_menu= link_to 'Locations', admin_locations_path
   %li.reviews_menu= link_to 'Reviews', admin_reviews_path
-  %li.back_menu= link_to 'Back to Dashboard'.html_safe, dashboard_path
+
+.right_menu
+  = link_to 'Back to Dashboard'.html_safe, dashboard_path
 .clear
 
 - content_for :on_ready do

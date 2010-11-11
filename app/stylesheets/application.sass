@@ -1,37 +1,13 @@
 @import "base"
+@import "utils"
 @import "colors"
 @import "header"
 @import "simple_form"
 @import "slider"
+@import "review"
+@import "rating"
+@import "lists"
 @import "colorbox"
-
-$border_for_notice: unquote("1px solid #ccc")
-
-$width: 1000px
-$margin: 0px
-$max_width: 1600px
-
-$border_for_notice: unquote("1px solid #ccc")
-
-$left_column: 250px
-
-$sidebar_padding: 3%
-
-=bordered($color: red)
-  border: unquote("1px solid #{$color}")
-  
-=description_configuration
-  font-size: 11px
-  line-height: 13px
-
-=alpha-omega
-  +alpha
-  +omega
-  
-=round_me($r)
-  -moz-border-radius: $r
-  -webkit-border-radius: $r
-  border-radius: $r  
 
 #root
   margin-left: auto
@@ -161,47 +137,6 @@ th
   *
     vertical-align: middle
       
-.locations
-  padding-bottom: 16px
-  .location
-    font-size: 12px
-    margin-bottom: 6px
-    border-bottom: 1px solid #ececec
-    border-top: 1px solid #ececec
-    padding: 2px
-    &:hover
-      background: #ececec
-    .full_address
-      float: left
-      width: 24%
-      padding-right: 1%
-    .message
-      float: left
-      width: 40%
-    .message_long
-      float: left
-      width: 50%
-    .specials
-      float: left
-      width: 10%
-      span
-        display: inline-block
-        padding: 1px 2px
-        background: #4778b2
-        color: white
-        font-size: 10px
-        height: 12px
-        line-height: 12px
-        +round_me(4px)
-    .controls
-      float: left
-      width: 10%
-    .name
-      float: left
-      width: 14%
-    .amount_total
-      margin-left: 90%
-
 .controls a
   font-size: 11px
 
@@ -387,14 +322,6 @@ div.right_content
   ul li
     padding-bottom: 2em
     list-style-type: none
-    
-#reviews
-  text-align: left
-  padding-bottom: 20px
-  h3.thanks
-    color: $cheaperdrinker_button_color
-    font-weight: bold
-    text-align: center
     
 h1, h2, h3, h4
   color: $cheaperdrinker_dark_bg_color    

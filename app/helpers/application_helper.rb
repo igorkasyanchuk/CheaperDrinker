@@ -88,4 +88,20 @@ module ApplicationHelper
     Location::DAYS.keys.sort.collect{|d| [Location::DAYS[d].to_s.titleize, d]}
   end
   
+  def static_rating(value)
+    whole = value.to_i
+    rest = value - whole
+    imgs = ""
+    [0,1,2,3,4].each do |i|
+      imgs += if whole > i
+        "<img src='/images/star-on.png' alt='#{i}' title='#{i}' />"
+      elsif value > i
+        "<img src='/images/star-half.png' alt='#{i}' title='#{i}' />"
+      else
+        "<img src='/images/star-off.png' alt='#{i}' title='#{i}' />"
+      end
+    end
+    imgs.html_safe
+  end
+  
 end

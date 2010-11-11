@@ -19,6 +19,8 @@ class Location < ActiveRecord::Base
     6 => :sunday
   }
   
+  has_friendly_id :name, :use_slug => true, :sequence_separator => ":"
+  
   validates_presence_of :name
   #validates_presence_of :description
   validates_presence_of :state
@@ -103,7 +105,7 @@ class Location < ActiveRecord::Base
   end
   
   def location_info(day, _start = 0, _end = SpecialDay::END_TIME_OF_DATE)
-    map_info.merge({ "id" => self.id, 
+    map_info.merge({ "id" => self.cached_slug, 
                      "name" => self.name, 
                      "address" => self.address, 
                      "description" => simple_format(special_for_day(day, _start, _end)),

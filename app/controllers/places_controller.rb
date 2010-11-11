@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  before_filter :store_location
 
   def index
     redirect_to root_path

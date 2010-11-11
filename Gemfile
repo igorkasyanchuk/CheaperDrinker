@@ -18,6 +18,7 @@ gem 'geokit'
 gem 'acts-as-taggable-on'
 gem "auto_html"
 gem 'awesome_print', :require => 'ap'
+gem "friendly_id", "~> 3.1"
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'

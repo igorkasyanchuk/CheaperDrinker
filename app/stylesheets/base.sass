@@ -33,16 +33,15 @@
       height: $footer_height
   #footer
     text-align: center
-    +grid-system
     clear: both
     position: relative
-    height: $footer_height - 25px
+    height: $footer_height
 
 $base_color: #887733
 
 html
   +global-reset
-  +attach_footer(75px)
+  +attach_footer(26px)
   +tag-cloud
   +fonts
   font-size: 12px

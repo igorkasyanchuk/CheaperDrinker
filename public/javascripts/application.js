@@ -33,8 +33,9 @@ function init_add_form() {
 
 var CENTER_OF_THE_WORLD_LAT = 44.96;
 var CENTER_OF_THE_WORLD_LNG = -93.3;
-var HEADER_HEIGHT = 60;
-var FOOTER_HEIGHT = 50;
+var HEADER_HEIGHT = 100;
+var FOOTER_HEIGHT = 24;
+var AVAILABLE_HEIGHT = HEADER_HEIGHT + FOOTER_HEIGHT - 4;
 var DEFAULT_ZOOM = 5;
 
 var USER_LOCATION = {"lat": CENTER_OF_THE_WORLD_LAT, "lng": CENTER_OF_THE_WORLD_LNG, "zoom": DEFAULT_ZOOM};
@@ -49,12 +50,12 @@ var $current_stage = 0;
 
 function init_resize_map() {
   document_height = $(window).height();
-  $('#global_map').css({'height':(document_height-HEADER_HEIGHT)+'px'});
-  $('#sidebar').css({'height':(document_height-HEADER_HEIGHT)+'px'});
+  $('#global_map').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
+  $('#sidebar').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
   $(window).resize(function(){
     document_height = $(window).height();
-    $('#global_map').css({'height':(document_height-HEADER_HEIGHT)+'px'});
-    $('#sidebar').css({'height':(document_height-HEADER_HEIGHT)+'px'});
+    $('#global_map').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
+    $('#sidebar').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
     map.checkResize();
   });
 };

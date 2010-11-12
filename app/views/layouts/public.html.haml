@@ -43,5 +43,8 @@
                     set address above as my default address
               .q_result.none
                 Couldn't locate address. Please try again.
-    - if Rails.env == 'production'
-      = render :partial => '/shared/ga'
+      #root_footer
+    #footer                
+      footer          
+      - if Rails.env == 'production'
+        = render :partial => '/shared/ga'

@@ -1741,7 +1741,7 @@ html dl dt, html dl dl {
   width: 33%;
 }
 
-/* line 43, ../../app/stylesheets/base.sass */
+/* line 42, ../../app/stylesheets/base.sass */
 html {
   height: 100%;
   font-size: 1em;
@@ -1814,223 +1814,21 @@ html body {
 html #root {
   text-align: left;
   min-height: 100%;
-  margin-bottom: -75px;
+  margin-bottom: -26px;
   overflow: hidden;
   *zoom: 1;
 }
 /* line 31, ../../app/stylesheets/base.sass */
 html #root #root_footer {
   clear: both;
-  height: 75px;
+  height: 26px;
 }
 /* line 34, ../../app/stylesheets/base.sass */
 html #footer {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
   clear: both;
   position: relative;
-  height: 50px;
-}
-/* line 33, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_1, html #footer .grid_2, html #footer .grid_3, html #footer .grid_4, html #footer .grid_5, html #footer .grid_6, html #footer .grid_7, html #footer .grid_8, html #footer .grid_9, html #footer .grid_10, html #footer .grid_11, html #footer .grid_12, html #footer .grid_13, html #footer .grid_14, html #footer .grid_15, html #footer .grid_16 {
-  display: inline;
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_1 {
-  width: 40px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_2 {
-  width: 100px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_3 {
-  width: 160px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_4 {
-  width: 220px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_5 {
-  width: 280px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_6 {
-  width: 340px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_7 {
-  width: 400px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_8 {
-  width: 460px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_9 {
-  width: 520px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_10 {
-  width: 580px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_11 {
-  width: 640px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_12 {
-  width: 700px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_13 {
-  width: 760px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_14 {
-  width: 820px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_15 {
-  width: 880px;
-}
-/* line 36, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .grid_16 {
-  width: 940px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_1 {
-  padding-left: 60px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_2 {
-  padding-left: 120px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_3 {
-  padding-left: 180px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_4 {
-  padding-left: 240px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_5 {
-  padding-left: 300px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_6 {
-  padding-left: 360px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_7 {
-  padding-left: 420px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_8 {
-  padding-left: 480px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_9 {
-  padding-left: 540px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_10 {
-  padding-left: 600px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_11 {
-  padding-left: 660px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_12 {
-  padding-left: 720px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_13 {
-  padding-left: 780px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_14 {
-  padding-left: 840px;
-}
-/* line 44, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .prefix_15 {
-  padding-left: 900px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_1 {
-  padding-right: 60px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_2 {
-  padding-right: 120px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_3 {
-  padding-right: 180px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_4 {
-  padding-right: 240px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_5 {
-  padding-right: 300px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_6 {
-  padding-right: 360px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_7 {
-  padding-right: 420px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_8 {
-  padding-right: 480px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_9 {
-  padding-right: 540px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_10 {
-  padding-right: 600px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_11 {
-  padding-right: 660px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_12 {
-  padding-right: 720px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_13 {
-  padding-right: 780px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_14 {
-  padding-right: 840px;
-}
-/* line 52, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .suffix_15 {
-  padding-right: 900px;
-}
-/* line 56, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .alpha {
-  margin-left: 0;
-}
-/* line 58, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-960-plugin-0.9.13/stylesheets/960/_grid.sass */
-html #footer .omega {
-  margin-right: 0;
+  height: 26px;
 }
 /* line 5, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_tag-cloud.scss */
 html .xxs, html .xs, html .s, html .l, html .xl, html .xxl {
@@ -2138,7 +1936,7 @@ html p, html fieldset, html table {
   margin-bottom: 1em;
 }
 
-/* line 50, ../../app/stylesheets/base.sass */
+/* line 49, ../../app/stylesheets/base.sass */
 a {
   color: #1d75bb;
 }
@@ -2147,12 +1945,12 @@ a:hover {
   color: #1d75cc;
 }
 
-/* line 53, ../../app/stylesheets/base.sass */
+/* line 52, ../../app/stylesheets/base.sass */
 .none {
   display: none;
 }
 
-/* line 57, ../../app/stylesheets/base.sass */
+/* line 56, ../../app/stylesheets/base.sass */
 dd.body img {
   padding: 5px 6px;
 }
@@ -2243,15 +2041,19 @@ ul#general_nav li.selected a, ul#admin_nav li.selected a {
 
 /* line 113, ../../app/stylesheets/_header.sass */
 .header_container {
-  background: #3b5998;
-  border-bottom: 2px solid #3b5998;
+  background: transparent url(/images/bg_header.png) repeat-x;
 }
 
-/* line 121, ../../app/stylesheets/_header.sass */
+/* line 119, ../../app/stylesheets/_header.sass */
 .right_menu {
   float: right;
   padding-top: 12px;
   font-size: 14px;
+}
+
+/* line 1, ../../app/stylesheets/_footer.sass */
+#footer {
+  background: transparent url(/images/bg_footer.png) repeat-x;
 }
 
 /* line 3, ../../app/stylesheets/_simple_form.sass */
@@ -2669,24 +2471,24 @@ body #cboxContent #cboxclose {
   font-size: 16px;
 }
 
-/* line 12, ../../app/stylesheets/application.sass */
+/* line 13, ../../app/stylesheets/application.sass */
 #root {
   margin-left: auto;
   margin-right: auto;
-  width: 1020px;
-  max-width: 1600px;
+  width: 100%;
+  max-width: 100%;
   -webkit-box-shadow: 0px 0px 9px rgba(137, 137, 137, 0.5);
   -moz-box-shadow: 0px 0px 9px rgba(137, 137, 137, 0.5);
   box-shadow: 0px 0px 9px rgba(137, 137, 137, 0.5);
 }
-/* line 20, ../../app/stylesheets/application.sass */
+/* line 21, ../../app/stylesheets/application.sass */
 #root #header {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
-  height: 80px;
+  height: 100px;
 }
-/* line 23, ../../app/stylesheets/application.sass */
+/* line 24, ../../app/stylesheets/application.sass */
 #root #header #logo {
   display: inline;
   float: left;
@@ -2694,12 +2496,12 @@ body #cboxContent #cboxclose {
   margin-right: 10px;
   width: 340px;
 }
-/* line 25, ../../app/stylesheets/application.sass */
+/* line 26, ../../app/stylesheets/application.sass */
 #root #header #logo h1 {
   font-size: 32px;
   padding: 0;
 }
-/* line 28, ../../app/stylesheets/application.sass */
+/* line 29, ../../app/stylesheets/application.sass */
 #root #header #nav_container {
   display: inline;
   float: left;
@@ -2709,7 +2511,7 @@ body #cboxContent #cboxclose {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 32, ../../app/stylesheets/application.sass */
+/* line 33, ../../app/stylesheets/application.sass */
 #root #header #nav_container ul#nav {
   display: inline;
   float: right;
@@ -2741,28 +2543,33 @@ body #cboxContent #cboxclose {
 #root #header #nav_container ul#nav li:last-child, #root #header #nav_container ul#nav li.last {
   padding-right: 0px;
 }
-/* line 37, ../../app/stylesheets/application.sass */
+/* line 38, ../../app/stylesheets/application.sass */
 #root #header #nav_container ul#nav li {
   text-align: right;
   padding-right: 6px;
 }
-/* line 40, ../../app/stylesheets/application.sass */
+/* line 41, ../../app/stylesheets/application.sass */
 #root #header #nav_container ul#nav li a {
   font-size: 11px;
   padding: 2px 2px;
 }
-/* line 44, ../../app/stylesheets/application.sass */
+/* line 45, ../../app/stylesheets/application.sass */
 #root #content .container {
   display: inline;
   float: left;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 1000px;
-  max-width: 1600px;
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 100%;
+  max-width: 100%;
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 53, ../../app/stylesheets/application.sass */
+/* line 54, ../../app/stylesheets/application.sass */
+#root #content .content_container {
+  width: 960px;
+  margin: 0 auto;
+}
+/* line 57, ../../app/stylesheets/application.sass */
 #root #content div.flash {
   margin-top: 0.6em;
   margin-bottom: 0.6em;
@@ -2773,19 +2580,19 @@ body #cboxContent #cboxclose {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
 }
-/* line 61, ../../app/stylesheets/application.sass */
+/* line 65, ../../app/stylesheets/application.sass */
 #root #content div.flash.error {
   color: #8a1f11;
   background: #fff6bf;
   border-color: #ffd324;
 }
-/* line 65, ../../app/stylesheets/application.sass */
+/* line 69, ../../app/stylesheets/application.sass */
 #root #content div.flash.notice {
   color: #514721;
   background: #fff6bf;
   border-color: #ffd324;
 }
-/* line 69, ../../app/stylesheets/application.sass */
+/* line 73, ../../app/stylesheets/application.sass */
 #root #content #admin_menu {
   display: inline;
   float: left;
@@ -2799,7 +2606,7 @@ body #cboxContent #cboxclose {
   position: relative;
   z-index: 11;
 }
-/* line 77, ../../app/stylesheets/application.sass */
+/* line 81, ../../app/stylesheets/application.sass */
 #root #content #admin_section {
   display: inline;
   float: left;
@@ -2810,19 +2617,19 @@ body #cboxContent #cboxclose {
   margin-right: 0;
   padding-bottom: 1em;
 }
-/* line 82, ../../app/stylesheets/application.sass */
+/* line 86, ../../app/stylesheets/application.sass */
 #root #content #admin_section h1, #root #content #admin_section h2, #root #content #admin_section h3 {
   margin: 0.5em 0;
 }
 
-/* line 85, ../../app/stylesheets/application.sass */
+/* line 89, ../../app/stylesheets/application.sass */
 #root.full_screen {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 100%;
 }
-/* line 91, ../../app/stylesheets/application.sass */
+/* line 95, ../../app/stylesheets/application.sass */
 #root.full_screen #content .container {
   margin: 0;
   width: 100%;
@@ -2830,59 +2637,55 @@ body #cboxContent #cboxclose {
   padding: 0;
 }
 
-/* line 98, ../../app/stylesheets/application.sass */
-#footer hr {
-  margin: 0;
-}
-/* line 100, ../../app/stylesheets/application.sass */
+/* line 102, ../../app/stylesheets/application.sass */
 #footer a {
   font-size: 11px;
   padding-top: 4px;
   float: right;
 }
 
-/* line 105, ../../app/stylesheets/application.sass */
+/* line 107, ../../app/stylesheets/application.sass */
 html body {
   font-size: 11px;
   line-height: 15px;
 }
 
-/* line 109, ../../app/stylesheets/application.sass */
+/* line 111, ../../app/stylesheets/application.sass */
 .clear {
   clear: both;
 }
 
-/* line 112, ../../app/stylesheets/application.sass */
+/* line 114, ../../app/stylesheets/application.sass */
 .left {
   float: left;
 }
 
-/* line 115, ../../app/stylesheets/application.sass */
+/* line 117, ../../app/stylesheets/application.sass */
 .right {
   float: right;
 }
 
-/* line 118, ../../app/stylesheets/application.sass */
+/* line 120, ../../app/stylesheets/application.sass */
 .block {
   display: block;
 }
 
-/* line 122, ../../app/stylesheets/application.sass */
+/* line 124, ../../app/stylesheets/application.sass */
 th .current {
   padding-right: 20px;
   background-repeat: no-repeat;
   background-position: right center;
 }
-/* line 126, ../../app/stylesheets/application.sass */
+/* line 128, ../../app/stylesheets/application.sass */
 th .asc {
   background-image: url(/images/sort-asc1.png);
 }
-/* line 128, ../../app/stylesheets/application.sass */
+/* line 130, ../../app/stylesheets/application.sass */
 th .desc {
   background-image: url(/images/sort-desc1.png);
 }
 
-/* line 131, ../../app/stylesheets/application.sass */
+/* line 133, ../../app/stylesheets/application.sass */
 .subfilter {
   font-size: 11px;
   font-weight: bold;
@@ -2890,49 +2693,49 @@ th .desc {
   vertical-align: middle;
   float: right;
 }
-/* line 137, ../../app/stylesheets/application.sass */
+/* line 139, ../../app/stylesheets/application.sass */
 .subfilter * {
   vertical-align: middle;
 }
 
-/* line 140, ../../app/stylesheets/application.sass */
+/* line 142, ../../app/stylesheets/application.sass */
 .controls a {
   font-size: 11px;
 }
 
-/* line 143, ../../app/stylesheets/application.sass */
+/* line 145, ../../app/stylesheets/application.sass */
 .reviews {
   padding-bottom: 16px;
 }
-/* line 145, ../../app/stylesheets/application.sass */
+/* line 147, ../../app/stylesheets/application.sass */
 .reviews .review {
   font-size: 11px;
   margin-bottom: 6px;
   border-bottom: 1px solid #ececec;
   border-top: 1px solid #ececec;
 }
-/* line 150, ../../app/stylesheets/application.sass */
+/* line 152, ../../app/stylesheets/application.sass */
 .reviews .review .when {
   float: left;
   width: 14%;
   padding-right: 1%;
 }
-/* line 154, ../../app/stylesheets/application.sass */
+/* line 156, ../../app/stylesheets/application.sass */
 .reviews .review .when .user {
   color: black;
   font-weight: bold;
 }
-/* line 157, ../../app/stylesheets/application.sass */
+/* line 159, ../../app/stylesheets/application.sass */
 .reviews .review .when .date {
   font-size: 10px;
 }
-/* line 159, ../../app/stylesheets/application.sass */
+/* line 161, ../../app/stylesheets/application.sass */
 .reviews .review .message {
   float: left;
   width: 85%;
 }
 
-/* line 163, ../../app/stylesheets/application.sass */
+/* line 165, ../../app/stylesheets/application.sass */
 #map {
   margin-top: 0px;
   margin-bottom: 20px;
@@ -2943,12 +2746,12 @@ th .desc {
   box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 172, ../../app/stylesheets/application.sass */
+/* line 174, ../../app/stylesheets/application.sass */
 div.content {
   display: block;
 }
 
-/* line 175, ../../app/stylesheets/application.sass */
+/* line 177, ../../app/stylesheets/application.sass */
 div.left_content {
   float: left;
   margin-left: -100%;
@@ -2956,34 +2759,33 @@ div.left_content {
   padding-left: 25px;
 }
 
-/* line 181, ../../app/stylesheets/application.sass */
+/* line 183, ../../app/stylesheets/application.sass */
 div.right_content {
   margin-left: 280px;
   padding-right: 4px;
 }
 
-/* line 185, ../../app/stylesheets/application.sass */
+/* line 187, ../../app/stylesheets/application.sass */
 .clear {
   clear: both;
 }
 
-/* line 188, ../../app/stylesheets/application.sass */
+/* line 190, ../../app/stylesheets/application.sass */
 .contentwrapper {
   float: left;
   width: 100%;
 }
 
-/* line 192, ../../app/stylesheets/application.sass */
+/* line 194, ../../app/stylesheets/application.sass */
 #global_map {
+  margin-top: 3px;
   float: right;
   width: 100%;
   height: 800px;
-  border-left: 2px solid #3b5998;
-  border-bottom: 2px solid #3b5998;
-  border-right: 2px solid #3b5998;
+  border: 1px solid #5f6972;
 }
 
-/* line 200, ../../app/stylesheets/application.sass */
+/* line 201, ../../app/stylesheets/application.sass */
 #sidebar {
   width: 100%;
   float: left;
@@ -2992,48 +2794,48 @@ div.right_content {
   overflow-y: auto;
   font-size: 12px;
 }
-/* line 207, ../../app/stylesheets/application.sass */
+/* line 208, ../../app/stylesheets/application.sass */
 #sidebar h1 {
   padding: 0 10px;
 }
-/* line 209, ../../app/stylesheets/application.sass */
+/* line 210, ../../app/stylesheets/application.sass */
 #sidebar p {
   padding-left: 12px;
 }
-/* line 211, ../../app/stylesheets/application.sass */
+/* line 212, ../../app/stylesheets/application.sass */
 #sidebar ol, #sidebar ul {
   padding-left: 12px;
   margin-left: 0;
 }
-/* line 214, ../../app/stylesheets/application.sass */
+/* line 215, ../../app/stylesheets/application.sass */
 #sidebar ul li {
   padding-bottom: 12px;
   list-style-type: none;
 }
-/* line 218, ../../app/stylesheets/application.sass */
+/* line 219, ../../app/stylesheets/application.sass */
 #sidebar .description p {
   padding: 0;
   margin: 0;
   font-size: 11px;
   line-height: 13px;
 }
-/* line 222, ../../app/stylesheets/application.sass */
+/* line 223, ../../app/stylesheets/application.sass */
 #sidebar .address {
   color: #3b5998;
   font-size: 11px;
 }
-/* line 225, ../../app/stylesheets/application.sass */
+/* line 226, ../../app/stylesheets/application.sass */
 #sidebar .link_to a {
   font-size: 11px;
   font-weight: normal;
 }
 
-/* line 229, ../../app/stylesheets/application.sass */
+/* line 230, ../../app/stylesheets/application.sass */
 .public_post {
   padding-top: 16px;
 }
 
-/* line 232, ../../app/stylesheets/application.sass */
+/* line 233, ../../app/stylesheets/application.sass */
 .tooltip {
   background-color: white;
   border: 2px solid #cccccc;
@@ -3041,131 +2843,131 @@ div.right_content {
   white-space: nowrap;
 }
 
-/* line 238, ../../app/stylesheets/application.sass */
+/* line 239, ../../app/stylesheets/application.sass */
 .googleMarkerTab .address {
   margin-bottom: 0.6em;
 }
 
-/* line 241, ../../app/stylesheets/application.sass */
+/* line 242, ../../app/stylesheets/application.sass */
 .tooltip dl, .tooltip dd, .tooltip dt {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 245, ../../app/stylesheets/application.sass */
+/* line 246, ../../app/stylesheets/application.sass */
 .tooltip dt {
   font-weight: bold;
 }
 
-/* line 248, ../../app/stylesheets/application.sass */
+/* line 249, ../../app/stylesheets/application.sass */
 .tooltip dd {
   margin-left: 1em;
 }
 
-/* line 251, ../../app/stylesheets/application.sass */
+/* line 252, ../../app/stylesheets/application.sass */
 .tooltip img {
   border: 1px solid #aaaaaa;
   display: block;
 }
 
-/* line 255, ../../app/stylesheets/application.sass */
+/* line 256, ../../app/stylesheets/application.sass */
 .tooltip span {
   font-size: 11px;
   color: #999999;
 }
 
-/* line 260, ../../app/stylesheets/application.sass */
+/* line 261, ../../app/stylesheets/application.sass */
 #sidebar h1 {
   text-align: center;
   padding-left: 3%;
   padding-right: 3%;
   margin-bottom: 12px;
 }
-/* line 265, ../../app/stylesheets/application.sass */
+/* line 266, ../../app/stylesheets/application.sass */
 #sidebar .select_date {
   padding-top: 12px;
   padding-left: 12px;
   text-align: center;
 }
-/* line 269, ../../app/stylesheets/application.sass */
+/* line 270, ../../app/stylesheets/application.sass */
 #sidebar .select_date select {
   font-size: 12px;
 }
-/* line 271, ../../app/stylesheets/application.sass */
+/* line 272, ../../app/stylesheets/application.sass */
 #sidebar .title {
   padding-top: 6px;
   padding-left: 3%;
   padding-right: 3%;
 }
-/* line 275, ../../app/stylesheets/application.sass */
+/* line 276, ../../app/stylesheets/application.sass */
 #sidebar .title strong {
   font-size: 12px;
 }
-/* line 277, ../../app/stylesheets/application.sass */
+/* line 278, ../../app/stylesheets/application.sass */
 #sidebar a {
   font-weight: 600;
   font-size: 12px;
 }
-/* line 280, ../../app/stylesheets/application.sass */
+/* line 281, ../../app/stylesheets/application.sass */
 #sidebar .place_name {
   font-weight: 600;
   font-size: 12px;
   color: #3b5998;
   vertical-align: middle;
 }
-/* line 285, ../../app/stylesheets/application.sass */
+/* line 286, ../../app/stylesheets/application.sass */
 #sidebar .place_name * {
   vertical-align: middle;
 }
 
-/* line 289, ../../app/stylesheets/application.sass */
+/* line 290, ../../app/stylesheets/application.sass */
 .info_window h1 {
   margin: 0;
   padding: 2px 0;
   font-size: 12px;
   vertical-align: middle;
 }
-/* line 294, ../../app/stylesheets/application.sass */
+/* line 295, ../../app/stylesheets/application.sass */
 .info_window h1 * {
   padding-left: 3px;
   padding-bottom: 3px;
   vertical-align: middle;
 }
-/* line 298, ../../app/stylesheets/application.sass */
+/* line 299, ../../app/stylesheets/application.sass */
 .info_window strong {
   font-weight: normal;
 }
-/* line 300, ../../app/stylesheets/application.sass */
+/* line 301, ../../app/stylesheets/application.sass */
 .info_window p {
   padding-bottom: 0;
   margin-bottom: 2px;
   font-size: 11px;
   line-height: 13px;
 }
-/* line 304, ../../app/stylesheets/application.sass */
+/* line 305, ../../app/stylesheets/application.sass */
 .info_window a {
   font-size: 11px;
 }
-/* line 306, ../../app/stylesheets/application.sass */
+/* line 307, ../../app/stylesheets/application.sass */
 .info_window address {
   color: #3b5998;
 }
 
-/* line 309, ../../app/stylesheets/application.sass */
+/* line 310, ../../app/stylesheets/application.sass */
 .bar {
   margin-top: 2em;
 }
-/* line 311, ../../app/stylesheets/application.sass */
+/* line 312, ../../app/stylesheets/application.sass */
 .bar #map {
   margin-top: 22px;
   height: 350px;
 }
-/* line 314, ../../app/stylesheets/application.sass */
+/* line 315, ../../app/stylesheets/application.sass */
 .bar .day {
   font-size: 12px;
   font-weight: bold;
 }
-/* line 317, ../../app/stylesheets/application.sass */
+/* line 318, ../../app/stylesheets/application.sass */
 .bar .description {
   color: #3b5998;
   font-size: 11px;
@@ -3173,78 +2975,78 @@ div.right_content {
   padding-left: 12px;
   padding-top: 6px;
 }
-/* line 322, ../../app/stylesheets/application.sass */
+/* line 323, ../../app/stylesheets/application.sass */
 .bar ul li {
   padding-bottom: 2em;
   list-style-type: none;
 }
 
-/* line 326, ../../app/stylesheets/application.sass */
+/* line 327, ../../app/stylesheets/application.sass */
 h1, h2, h3, h4 {
   color: #3b5998;
   font-weight: bold;
 }
 
-/* line 330, ../../app/stylesheets/application.sass */
+/* line 331, ../../app/stylesheets/application.sass */
 strong {
   color: black;
 }
 
-/* line 333, ../../app/stylesheets/application.sass */
+/* line 334, ../../app/stylesheets/application.sass */
 a {
   color: #3b5998;
 }
-/* line 335, ../../app/stylesheets/application.sass */
+/* line 336, ../../app/stylesheets/application.sass */
 a:visited, a:hover {
   color: #3b5998;
 }
 
-/* line 338, ../../app/stylesheets/application.sass */
+/* line 339, ../../app/stylesheets/application.sass */
 .welcome_message {
   padding-top: 12px;
   padding-right: 15px;
 }
-/* line 341, ../../app/stylesheets/application.sass */
+/* line 342, ../../app/stylesheets/application.sass */
 .welcome_message strong {
   font-size: 12px;
   font-weight: bold;
 }
-/* line 345, ../../app/stylesheets/application.sass */
+/* line 346, ../../app/stylesheets/application.sass */
 .welcome_message ol li, .welcome_message ul li {
   font-size: 11px;
   padding-bottom: 6px;
 }
 
-/* line 349, ../../app/stylesheets/application.sass */
+/* line 350, ../../app/stylesheets/application.sass */
 h1, h2, h3, h4, strong {
   font-size: 12px;
 }
 
-/* line 352, ../../app/stylesheets/application.sass */
+/* line 353, ../../app/stylesheets/application.sass */
 #find_bar_form {
   padding: 1em;
 }
-/* line 354, ../../app/stylesheets/application.sass */
+/* line 355, ../../app/stylesheets/application.sass */
 #find_bar_form label {
   color: black;
   font-weight: bold;
   font-size: 12px;
 }
-/* line 358, ../../app/stylesheets/application.sass */
+/* line 359, ../../app/stylesheets/application.sass */
 #find_bar_form * {
   vertical-align: middle;
 }
-/* line 360, ../../app/stylesheets/application.sass */
+/* line 361, ../../app/stylesheets/application.sass */
 #find_bar_form img {
   padding: 2px;
 }
-/* line 362, ../../app/stylesheets/application.sass */
+/* line 363, ../../app/stylesheets/application.sass */
 #find_bar_form .q_result {
   margin-top: 12px;
   padding: 1em 0;
   color: #3b5998;
 }
-/* line 366, ../../app/stylesheets/application.sass */
+/* line 367, ../../app/stylesheets/application.sass */
 #find_bar_form label.set_default_address {
   font-size: 11px;
   vertical-align: middle;
@@ -3252,7 +3054,7 @@ h1, h2, h3, h4, strong {
   display: inline-block;
 }
 
-/* line 372, ../../app/stylesheets/application.sass */
+/* line 373, ../../app/stylesheets/application.sass */
 .plan {
   font-size: 10px;
   line-height: 11px;
@@ -3263,35 +3065,35 @@ h1, h2, h3, h4, strong {
   border-radius: 3px;
 }
 
-/* line 379, ../../app/stylesheets/application.sass */
+/* line 380, ../../app/stylesheets/application.sass */
 .plan.free {
   background: green;
   color: white;
 }
 
-/* line 383, ../../app/stylesheets/application.sass */
+/* line 384, ../../app/stylesheets/application.sass */
 .plan.premium {
   background: yellow;
   color: black;
 }
 
-/* line 387, ../../app/stylesheets/application.sass */
+/* line 388, ../../app/stylesheets/application.sass */
 .plan.premium_plus {
   background: purple;
   color: white;
 }
 
-/* line 391, ../../app/stylesheets/application.sass */
+/* line 392, ../../app/stylesheets/application.sass */
 .cancel_button {
   margin-left: 15px;
 }
 
-/* line 394, ../../app/stylesheets/application.sass */
+/* line 395, ../../app/stylesheets/application.sass */
 .date, .time {
   font-size: 10px;
 }
 
-/* line 397, ../../app/stylesheets/application.sass */
+/* line 398, ../../app/stylesheets/application.sass */
 #advanced_search {
   font-size: 16px;
   line-height: 16px;
@@ -3299,52 +3101,52 @@ h1, h2, h3, h4, strong {
   text-decoration: none;
 }
 
-/* line 403, ../../app/stylesheets/application.sass */
+/* line 404, ../../app/stylesheets/application.sass */
 .advanced_search_form {
   padding-left: 15px;
   padding-top: 10px;
 }
 
-/* line 407, ../../app/stylesheets/application.sass */
+/* line 408, ../../app/stylesheets/application.sass */
 .start_time_block, .end_time_block, .day_block, .additional_days {
   float: left;
 }
 
-/* line 410, ../../app/stylesheets/application.sass */
+/* line 411, ../../app/stylesheets/application.sass */
 .description_block textarea {
   height: 90px;
 }
 
-/* line 413, ../../app/stylesheets/application.sass */
+/* line 414, ../../app/stylesheets/application.sass */
 .additional_days {
   padding-top: 20px;
   vertical-align: middle;
 }
-/* line 416, ../../app/stylesheets/application.sass */
+/* line 417, ../../app/stylesheets/application.sass */
 .additional_days * {
   vertical-align: middle;
 }
-/* line 418, ../../app/stylesheets/application.sass */
+/* line 419, ../../app/stylesheets/application.sass */
 .additional_days label {
   display: inline;
 }
 
-/* line 422, ../../app/stylesheets/application.sass */
+/* line 423, ../../app/stylesheets/application.sass */
 .admin_location_special p {
   padding-left: 25px;
 }
-/* line 424, ../../app/stylesheets/application.sass */
+/* line 425, ../../app/stylesheets/application.sass */
 .admin_location_special table {
   width: 95%;
   margin-left: 25px;
 }
 
-/* line 428, ../../app/stylesheets/application.sass */
+/* line 429, ../../app/stylesheets/application.sass */
 .add_location_special_form {
   margin-top: 50px;
   display: none;
 }
-/* line 431, ../../app/stylesheets/application.sass */
+/* line 432, ../../app/stylesheets/application.sass */
 .add_location_special_form div {
   margin-left: 25px;
 }

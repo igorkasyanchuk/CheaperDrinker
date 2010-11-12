@@ -21,10 +21,12 @@
       #content
         .container= raw(flash_messages)
         .container.header_container= render '/shared/header'
-        .container= yield
+        .container
+          .content_container= yield
         .clear
       #root_footer
     #footer
+      aaaaaaaaa
       = render :partial => '/shared/footer'
     - if Rails.env == 'production'
       = render :partial => '/shared/ga'

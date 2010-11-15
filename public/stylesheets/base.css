@@ -1860,19 +1860,19 @@ html .xxl {
 }
 /* line 2, ../../app/stylesheets/fonts.sass */
 html body {
-  font-family: "Helvetica Neue (TT)", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "PT Sans", "Sans Serif";
 }
 /* line 4, ../../app/stylesheets/fonts.sass */
 html h1 {
-  font-size: 14px;
+  font-size: 20px;
 }
 /* line 6, ../../app/stylesheets/fonts.sass */
 html h2 {
-  font-size: 12px;
+  font-size: 16px;
 }
 /* line 8, ../../app/stylesheets/fonts.sass */
 html h3 {
-  font-size: 11px;
+  font-size: 14px;
 }
 /* line 10, ../../app/stylesheets/fonts.sass */
 html h1 {

@@ -1,8 +1,8 @@
 %html
   %head
     %title= yield :title
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.6.custom', 'application', 'colorbox'
+    <link  href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold" rel="stylesheet" type="text/css" />
     = yield :css
     = yield :js
     = javascript_include_tag 'jquery-1.4.2.min', 'jquery-ui-1.8.6.custom.min', 'rails.jquery', 'jquery.colorbox-min', 'mapiconmaker_packed', 'jquery.raty.min.js', 'application'
@@ -26,7 +26,6 @@
         .clear
       #root_footer
     #footer
-      aaaaaaaaa
       = render :partial => '/shared/footer'
     - if Rails.env == 'production'
       = render :partial => '/shared/ga'

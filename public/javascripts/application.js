@@ -31,11 +31,11 @@ function init_add_form() {
   });
 };
 
-var CENTER_OF_THE_WORLD_LAT = 44.96;
-var CENTER_OF_THE_WORLD_LNG = -93.3;
+var CENTER_OF_THE_WORLD_LAT = 39.96;
+var CENTER_OF_THE_WORLD_LNG = -95.3;
 var HEADER_HEIGHT = 100;
 var FOOTER_HEIGHT = 24;
-var AVAILABLE_HEIGHT = HEADER_HEIGHT + FOOTER_HEIGHT - 4;
+var AVAILABLE_HEIGHT = HEADER_HEIGHT + FOOTER_HEIGHT + 10;
 var DEFAULT_ZOOM = 5;
 
 var USER_LOCATION = {"lat": CENTER_OF_THE_WORLD_LAT, "lng": CENTER_OF_THE_WORLD_LNG, "zoom": DEFAULT_ZOOM};
@@ -125,7 +125,8 @@ function updateMap(from) {
       from: from,
       gay: $('#gay_bar_check_box:checked').length,
       start: $('#current_min').val(),
-      end: $('#current_max').val()
+      end: $('#current_max').val(),
+      zoom: map.getZoom()
     },
     function(data) {
     }
@@ -171,7 +172,7 @@ function process_map_zoom() {
 };
 
 function zoom_processor() {
-  if (map.getZoom() <= 5) {
+  if (map.getZoom() <= 6) {
     // show welcome
     $('#sidebar').hide();
     $('.welcome_message').show();

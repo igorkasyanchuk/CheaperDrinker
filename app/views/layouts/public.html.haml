@@ -44,7 +44,7 @@
               .q_result.none
                 Couldn't locate address. Please try again.
       #root_footer
-    #footer                
-      footer          
+    #footer
+      = render :partial => '/shared/footer'
       - if Rails.env == 'production'
         = render :partial => '/shared/ga'

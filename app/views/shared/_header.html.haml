@@ -1,16 +1,29 @@
 #logo
   = link_to image_tag('/images/logo.png'), root_path
-%ul#nav
+
+#section1.header_section
+  = link_to 'All Cities', '#'
+  = link_to 'My Favorites', '#'
   - if home_page?
-    %li= link_to 'Location Search', '#', :id => 'find_bar'
+    =# link_to 'Location Search', '#', :id => 'find_bar'
+
+#section2.header_section
   - if logged_in?
-    %li= link_to "Add a Bar", [:dashboard, :add_bar]
-    %li= link_to 'FAQs', page_path('faq')
-    %li= link_to 'Account Settings', edit_dashboard_user_path(current_user)
+    = link_to "Add a Bar", [:dashboard, :add_bar]
+    =# link_to 'FAQs', page_path('faq')
+    = link_to 'Account Settings', edit_dashboard_user_path(current_user)
     = yield :admin_nav_items
-    %li= link_to "Logout", logout_user_session_path
+    = link_to "Logout", logout_user_session_path
   - else
-    %li= link_to 'FAQs', page_path('faq')
-    %li= link_to 'Sign up', new_user_path
-    %li= link_to 'Login', new_user_session_path
+    =# link_to 'FAQs', page_path('faq')
+    = link_to 'Sign up', new_user_path
+    = link_to 'Login', new_user_session_path
+
+#section3.header_section
+  .q_bg_container
+    .q_bg
+    .q_controls
+      = text_field_tag 'q'
+      = link_to 'Advanced Search &rarr;'.html_safe, '#'
+    
 .clear

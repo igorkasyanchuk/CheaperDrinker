@@ -24,7 +24,7 @@
     #logo
       +grid(6)
       h1
-        font-size: 32px
+        font-size: $base_font_size * 2
         padding: 0
     #nav_container
       +grid(16)
@@ -39,7 +39,7 @@
           +text-right
           padding-right: 6px
           a
-            font-size: 11px
+            font-size: $base_font_size
             padding: 2px 2px
   #content
     .container
@@ -100,13 +100,13 @@
 
 #footer
   a
-    font-size: 11px
+    font-size: $base_font_size
     padding-top: 4px
     float: right
 
 html body
-  font-size: 11px
-  line-height: 15px
+  font-size: $base_font_size
+  line-height: $base_font_size + 2px
 
 .clear
   clear: both  
@@ -131,7 +131,7 @@ th
     background-image: url(/images/sort-desc1.png)
     
 .subfilter
-  font-size: 11px
+  font-size: $base_font_size
   font-weight: bold
   padding: 2px
   vertical-align: middle
@@ -140,12 +140,12 @@ th
     vertical-align: middle
       
 .controls a
-  font-size: 11px
+  font-size: $base_font_size
 
 .reviews
   padding-bottom: 16px
   .review
-    font-size: 11px
+    font-size: $base_font_size
     margin-bottom: 6px
     border-bottom: 1px solid #ececec
     border-top: 1px solid #ececec
@@ -157,7 +157,7 @@ th
         color: $cheaperdrinker_button_color
         font-weight: bold
       .date
-        font-size: 10px
+        font-size: $base_font_size - 1px
     .message
       float: left
       width: 85%
@@ -204,7 +204,7 @@ div.right_content
   background: white
   overflow-x: hidden
   overflow-y: auto 
-  font-size: 12px
+  font-size: $base_font_size - 1px
   h1
     padding: 0 10px
   p
@@ -221,11 +221,22 @@ div.right_content
       margin: 0
       +description_configuration
   .address
-    color: $cheaperdrinker_header_bg_color
-    font-size: 11px
-  .link_to a
-    font-size: 11px
-    font-weight: normal
+    color: $light
+    font-size: $base_font_size - 1px
+  .link_to 
+    text-align: right
+    padding-right: 36px
+    a
+      font-size: $base_font_size - 2px
+      font-weight: normal
+      color: $dark2
+      
+.bar_specials_info
+  p
+    span
+      font-weight: bold
+      display: inline-block
+      padding-top: 4px
   
 .public_post
   padding-top: 16px
@@ -254,7 +265,7 @@ div.right_content
   display: block
   
 .tooltip span
-  font-size: 11px
+  font-size: $base_font_size - 1px
   color: #999 
 
 #sidebar
@@ -268,20 +279,20 @@ div.right_content
     padding-left: 12px
     text-align: center
     select
-      font-size: 12px
+      font-size: $base_font_size
   .title
     padding-top: 6px
     padding-left: $sidebar_padding
     padding-right: $sidebar_padding
     strong
-      font-size: 12px
+      font-size: $base_font_size
   a
     font-weight: 600
-    font-size: 12px
+    font-size: $base_font_size
   .place_name
     font-weight: 600
-    font-size: 12px
-    color: $cheaperdrinker_header_text_color
+    font-size: $base_font_size + 2px
+    color: $dark
     vertical-align: middle
     *
       vertical-align: middle
@@ -290,8 +301,9 @@ div.right_content
   h1
     margin: 0
     padding: 2px 0
-    font-size: 12px
+    font-size: $base_font_size + 4px
     vertical-align: middle
+    color: $dark
     *
       padding-left: 3px
       padding-bottom: 3px
@@ -302,10 +314,15 @@ div.right_content
     padding-bottom: 0
     margin-bottom: 2px
     +description_configuration
+    span
+      font-weight: bold
+      display: inline-block
+      padding-top: 4px    
   a
-    font-size: 11px
+    font-size: $base_font_size - 1px
+    color: $dark2
   address
-    color: $cheaperdrinker_header_bg_color
+    color: $light
     
 .bar
   margin-top: 2em
@@ -313,7 +330,7 @@ div.right_content
     margin-top: 22px
     height: 350px
   .day
-    font-size: 12px
+    font-size: $base_font_size
     font-weight: bold
   .description
     color: $cheaperdrinker_dark_bg_color
@@ -340,22 +357,19 @@ a
   padding-top: 12px
   padding-right: 15px
   strong
-    font-size: 12px
+    font-size: $base_font_size
     font-weight: bold
   ol, ul
     li
-      font-size: 11px
+      font-size: $base_font_size - 1px
       padding-bottom: 6px
-      
-h1, h2, h3, h4, strong
-  font-size: 12px
   
 #find_bar_form
   padding: 1em
   label
     color: $cheaperdrinker_button_color
     font-weight: bold
-    font-size: 12px
+    font-size: $base_font_size
   *
     vertical-align: middle
   img
@@ -365,13 +379,13 @@ h1, h2, h3, h4, strong
     padding: 1em 0
     color: $cheaperdrinker_dark_bg_color
   label.set_default_address
-    font-size: 11px
+    font-size: $base_font_size - 1px
     vertical-align: middle
     margin-top: 12px
     display: inline-block
     
 .plan
-  font-size: 10px
+  font-size: $base_font_size - 1px
   line-height: 11px
   padding: 1px 2px
   display: inline-block
@@ -393,10 +407,10 @@ h1, h2, h3, h4, strong
   margin-left: 15px
   
 .date, .time
-  font-size: 10px
+  font-size: $base_font_size - 2px
   
 #advanced_search
-  font-size: 16px
+  font-size: $base_font_size + 2px
   line-height: 16px
   font-weight: bold
   text-decoration: none

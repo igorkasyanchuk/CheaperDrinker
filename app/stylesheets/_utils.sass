@@ -10,12 +10,16 @@ $left_column: 250px
 
 $sidebar_padding: 3%
 
+$map_border_color: #5f6972
+
+$base_font_size: 13px
+
 =bordered($color: red)
   border: unquote("1px solid #{$color}")
   
 =description_configuration
-  font-size: 11px
-  line-height: 13px
+  font-size: $base_font_size
+  line-height: $base_font_size + 2px
 
 =alpha-omega
   +alpha
@@ -27,4 +31,3 @@ $sidebar_padding: 3%
   border-radius: $r
   
   
-$map_border_color: #5f6972  

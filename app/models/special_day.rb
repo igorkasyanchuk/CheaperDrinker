@@ -32,7 +32,7 @@ class SpecialDay < ActiveRecord::Base
   end
   
   def time_info
-    "#{SpecialDay.translate_time(start_time)} - #{SpecialDay.translate_time(end_time)}"
+    "<span>#{SpecialDay.translate_time(start_time)} - #{SpecialDay.translate_time(end_time)}</span>"
   end
   
   def SpecialDay.translate_time(time)

@@ -6,16 +6,15 @@
   = link_to 'My Favorites', '#'
   - if home_page?
     =# link_to 'Location Search', '#', :id => 'find_bar'
+  - if logged_in?
+    = link_to "Add a Bar", [:dashboard, :add_bar]
 
 #section2.header_section
   - if logged_in?
-    = link_to "Add a Bar", [:dashboard, :add_bar]
-    =# link_to 'FAQs', page_path('faq')
     = link_to 'Account Settings', edit_dashboard_user_path(current_user)
     = yield :admin_nav_items
     = link_to "Logout", logout_user_session_path
   - else
-    =# link_to 'FAQs', page_path('faq')
     = link_to 'Sign up', new_user_path
     = link_to 'Login', new_user_session_path
 

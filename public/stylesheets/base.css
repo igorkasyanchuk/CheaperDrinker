@@ -1741,6 +1741,16 @@ html dl dt, html dl dl {
   width: 33%;
 }
 
+/* line 78, ../../app/stylesheets/layout.sass */
+.container .w66 {
+  width: 66%;
+}
+
+/* line 81, ../../app/stylesheets/layout.sass */
+.container .w65 {
+  width: 65%;
+}
+
 /* line 42, ../../app/stylesheets/base.sass */
 html {
   height: 100%;

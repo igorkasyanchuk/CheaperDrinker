@@ -17,11 +17,6 @@ STATES = [:alabama, :alaska, :arizona, :arkansas,
           :rhode_island, :south_carolina, :south_dakota,
           :tennessee, :texas, :utah, :vermont, :virginia,
           :washington, :west_virginia, :wisconsin, :wyoming].collect{|e| e.to_s.camelize.titleize }
-          
-          
-AutoHtml.add_filter(:red_cloth) do |text|
-  RedCloth.new(text).to_html
-end
 
 days_for_specials = ActiveSupport::OrderedHash.new
 days_for_specials[:monday] = 'MON'

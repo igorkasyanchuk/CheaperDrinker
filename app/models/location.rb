@@ -55,7 +55,7 @@ class Location < ActiveRecord::Base
     where(["GREATEST(special_days.start_time, ?) < LEAST(special_days.end_time, ?)", 
     args.shift || 0, args.shift || SpecialDay::END_TIME_OF_DATE]).joins(:special_days).group("locations.id").select("locations.id") }
 
-  scope :by_weight_and_random, order("plan desc, #{SqlFunction.random}")
+  scope :by_weight_and_random, order("plan DESC, #{SqlFunction.random}")
   
   scope :by_plan, order("plan desc")
   scope :by_random, order(SqlFunction.random)
@@ -67,12 +67,11 @@ class Location < ActiveRecord::Base
   belongs_to :user
 
   before_save :geocode_it!
-  before_update :expire_cached_location
   
   has_many :reviews, :as => :reviewable, :dependent => :destroy
 
   def Location.locations_by_ids(ids)
-    Location.where(:id => ids).by_weight_and_random
+    Location.where(:id => ids).by_plan
   end
   
   def approve!
@@ -149,29 +148,6 @@ class Location < ActiveRecord::Base
   
   def Location.day_column(day)
     "day_#{Location.get_day(day)}"
-  end
-  
-  def uuid(day, type='json', options = {})
-    "#{TIME_NOW}-location-#{self.id}-#{self.updated_at.to_i}-#{type}-#{day}-#{options}"
-  end
-  
-  def cached_location(day, options = {})
-    return self.location_info(day, options[:start], options[:end])
-    _key = self.uuid(day, options)
-    #logger.info "looking for: #{_key}"
-    info = Rails.cache.read(_key)
-    unless info
-      #logger.info "not found: #{_key}"
-      info = self.location_info(day, options[:start], options[:end])
-      Rails.cache.write(_key, info, :expires_in => 5.minutes)
-    end
-    info
-  end
-
-  def expire_cached_location
-    DAYS.keys.each do |day|
-      Rails.cache.write(self.uuid(day) + '*', nil)
-    end
   end
 
 end

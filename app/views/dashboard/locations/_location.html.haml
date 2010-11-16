@@ -11,7 +11,7 @@
       %span= day
     &nbsp;
   .message
-    != RedCloth.new(location.description).to_html
+    = location.description
     &nbsp;
   .controls
     = link_to 'edit', [:edit, :dashboard, current_user, location], :class => 'edit_button'

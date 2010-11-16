@@ -11,13 +11,10 @@ gem 'inherited_resources', '1.1.2'
 gem "has_scope", '0.5.0'
 gem "responders", '0.6.2'
 gem "high_voltage" 
-gem "bcrypt-ruby", :require => "bcrypt"
 gem "simple_form"
 gem 'RedCloth'
 gem 'geokit'
 gem 'acts-as-taggable-on'
-gem "auto_html"
-gem 'awesome_print', :require => 'ap'
 gem "friendly_id", "~> 3.1"
 
 group :development do
@@ -41,6 +38,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'dalli'
   gem 'smurf'
 end

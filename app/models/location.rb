@@ -156,6 +156,7 @@ class Location < ActiveRecord::Base
   end
   
   def cached_location(day, options = {})
+    return self.location_info(day, options[:start], options[:end])
     _key = self.uuid(day, options)
     #logger.info "looking for: #{_key}"
     info = Rails.cache.read(_key)

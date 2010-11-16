@@ -51,6 +51,10 @@ var $current_stage = 0;
 
 function init_resize_map() {
   document_height = $(window).height();
+  if ($.browser.msie || $.browser.mozilla || $.browser.opera) {
+    //AVAILABLE_HEIGHT += 20;
+    // TODO FIX IE ISSUE with vertical scroller
+  }
   $('#global_map').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
   $('#sidebar').css({'height':(document_height-AVAILABLE_HEIGHT - SIDERBAR_FILTER)+'px'});
   $(window).resize(function(){
@@ -400,6 +404,7 @@ function hide_ajax() {
 
 function hide_results() {
   $('#sidebar ul').hide();
+  $('#sidebar p').hide();
 }
 
 function show_results() {

@@ -21,16 +21,23 @@
     %h1 Looking for drink specials? 
     %strong If this is your first time here please take a moment to read these helpful tips.
     %ul
-      %li As you zoom in on the map bars will be displayed and their specials will be listed in this area.
-      %li
-        = link_to 'Sign up', new_user_path 
-        to have access to advanced features such as adding or editing specials, reviewing bars, and setting a default location so you don’t have to view this message every time you visit.
       %li 
-        Please view our 
-        = link_to 'Frequently Asked Questions', page_path('faq')
-        for more information.
-    %p.none
-      If you’d rather just view specials without creating an account, enter your location below: (Search box here)
+        .icon= image_tag 'binoculars.png'
+        .text As you zoom in on the map bars will be displayed and their specials will be listed in this area.
+        .clear
+      %li
+        .icon= image_tag 'user.png'
+        .text
+          = link_to 'Sign up', new_user_path 
+          to have access to advanced features such as adding or editing specials, reviewing bars, and setting a default location so you don’t have to view this message every time you visit.
+        .clear
+      %li 
+        .icon= image_tag 'faq.png'
+        .text
+          Please view our 
+          = link_to 'Frequently Asked Questions', page_path('faq')
+          for more information.
+    .clear
   #siderbar_filter.none
     .select_date
       = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
@@ -42,4 +49,6 @@
     = image_tag 'ajax.gif', :id => 'ajax', :class => 'none'
     %p.none None
     %ul.none
+  .none
+    = render :partial => '/shared/advanced_filter'
 %div.clear

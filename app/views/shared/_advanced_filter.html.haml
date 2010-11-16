@@ -1,7 +1,13 @@
-[
-#{link_to '+', '#advanced', :id => 'advanced_search', :title => 'Advanced search'}
-]
-.advanced_search_form.none
-%label
-  = check_box_tag 'gay_bar', false, false, :id => 'gay_bar_check_box'
-  hide gay bars
+#advanced_filter
+  .advanced_search_form
+    %h1 Advanced Filter
+    .field
+      %label
+        = check_box_tag 'gay_bar', false, false, :id => 'gay_bar_check_box'
+        hide gay bars
+    .field
+      = submit_tag 'Close', :id => 'close_advanced_filter'
+      
+= content_for :on_ready do
+  $('#advanced_filter_link').attr('href', '').colorbox({width: "300px", inline: true, href: "#advanced_filter" });
+  $('#close_advanced_filter').live('click', function() { $.colorbox.close(); });

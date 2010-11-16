@@ -73,10 +73,35 @@
   padding-top: 12px
   padding-right: 15px
   padding-left: 12px
+  h1
+    color: $dark
+    font-size: $base_font_size + 10px
+    line-height: $base_font_size + 12px
+    text-transform: uppercase
   strong
     font-size: $base_font_size
     font-weight: bold
+    color: $light
   ol, ul
+    padding-left: 0
+    margin-left: 0
     li
-      font-size: $base_font_size - 1px
-      padding-bottom: 6px    
+      font-size: $base_font_size + 1px
+      line-height: $base_font_size + 3px
+      padding-bottom: 16px
+      list-style-type: none
+      vertical-align: middle
+      .icon
+        float: left
+        padding-right: 8px
+        width: 26%
+        vertical-align: middle
+        padding-top: 6px
+        img
+          padding-left: 8px
+          padding-top: 4px
+          vertical-align: middle
+      .text
+        float: left
+        width: 70%
+        vertical-align: middle

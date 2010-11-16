@@ -31,20 +31,15 @@
         for more information.
     %p.none
       If you’d rather just view specials without creating an account, enter your location below: (Search box here)
-  #sidebar.none
+  #siderbar_filter.none
     .select_date
       = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
-      [
-      #{link_to '+', '#advanced', :id => 'advanced_search', :title => 'Advanced search'}
-      ]
-    .advanced_search_form.none
-      %label
-        = check_box_tag 'gay_bar', false, false, :id => 'gay_bar_check_box'
-        hide gay bars
     .slider_container= render :partial => '/shared/slider'
     .clear
     .title.text_center
-      %strong Bars Currently Displayed
-    %p None
-    %ul  
+      %strong Bars
+  #sidebar.none
+    = image_tag 'ajax.gif', :id => 'ajax', :class => 'none'
+    %p.none None
+    %ul.none
 %div.clear

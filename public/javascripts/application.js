@@ -35,6 +35,7 @@ var CENTER_OF_THE_WORLD_LAT = 39.96;
 var CENTER_OF_THE_WORLD_LNG = -95.3;
 var HEADER_HEIGHT = 100;
 var FOOTER_HEIGHT = 24;
+var SIDERBAR_FILTER = 133;
 var AVAILABLE_HEIGHT = HEADER_HEIGHT + FOOTER_HEIGHT + 10;
 var DEFAULT_ZOOM = 5;
 
@@ -51,11 +52,11 @@ var $current_stage = 0;
 function init_resize_map() {
   document_height = $(window).height();
   $('#global_map').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
-  $('#sidebar').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
+  $('#sidebar').css({'height':(document_height-AVAILABLE_HEIGHT - SIDERBAR_FILTER)+'px'});
   $(window).resize(function(){
     document_height = $(window).height();
     $('#global_map').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
-    $('#sidebar').css({'height':(document_height-AVAILABLE_HEIGHT)+'px'});
+    $('#sidebar').css({'height':(document_height-AVAILABLE_HEIGHT - SIDERBAR_FILTER)+'px'});
     map.checkResize();
   });
 };
@@ -116,6 +117,8 @@ function updateMap(from) {
   var bounds = map.getBounds();
   var southWest = bounds.getSouthWest();
   var northEast = bounds.getNorthEast();
+  show_ajax();
+  hide_results();
   $.get(
     '/markers.js', 
     {  
@@ -174,11 +177,11 @@ function process_map_zoom() {
 function zoom_processor() {
   if (map.getZoom() <= 6) {
     // show welcome
-    $('#sidebar').hide();
+    $('#sidebar, #siderbar_filter').hide();
     $('.welcome_message').show();
   } else {
     // hide welcome
-    $('#sidebar').show();
+    $('#sidebar, #siderbar_filter').show();
     $('.welcome_message').hide();
   }
 };
@@ -386,3 +389,19 @@ function init_bar_rating() {
   $('#atmosphere_rating').raty({path: '/images', onClick: function(score) { $('#atmosphere_rating_value').val(score); } });
   $('#value_rating').raty({path: '/images', onClick: function(score) { $('#value_rating_value').val(score); } });
 };
+
+function show_ajax() {
+  $('#ajax').show();
+};
+
+function hide_ajax() {
+  $('#ajax').hide();
+}
+
+function hide_results() {
+  $('#sidebar ul').hide();
+}
+
+function show_results() {
+  $('#sidebar ul').show();
+}

@@ -9,6 +9,8 @@
 @import "rating"
 @import "lists"
 @import "colorbox"
+@import "sidebar"
+@import "info_window"
 
 #root
   margin-left: auto
@@ -177,8 +179,7 @@ div.content
 div.left_content
   :float left
   :margin-left -100%
-  width: $left_column
-  :padding-left 25px
+  width: $left_column + 25px
 
 div.right_content
   margin-left: $left_column + 20px + 10px
@@ -198,39 +199,6 @@ div.right_content
   height: 800px
   border: 1px solid $map_border_color
   
-#sidebar
-  width: 100%
-  float: left
-  background: white
-  overflow-x: hidden
-  overflow-y: auto 
-  font-size: $base_font_size - 1px
-  h1
-    padding: 0 10px
-  p
-    padding-left: 12px
-  ol, ul
-    padding-left: 12px
-    margin-left: 0
-  ul li
-    padding-bottom: 12px
-    list-style-type: none
-  .description
-    p
-      padding: 0
-      margin: 0
-      +description_configuration
-  .address
-    color: $light
-    font-size: $base_font_size - 1px
-  .link_to 
-    text-align: right
-    padding-right: 36px
-    a
-      font-size: $base_font_size - 2px
-      font-weight: normal
-      color: $dark2
-      
 .bar_specials_info
   p
     span
@@ -267,62 +235,6 @@ div.right_content
 .tooltip span
   font-size: $base_font_size - 1px
   color: #999 
-
-#sidebar
-  h1
-    text-align: center
-    padding-left: $sidebar_padding
-    padding-right: $sidebar_padding
-    margin-bottom: 12px
-  .select_date
-    padding-top: 12px
-    padding-left: 12px
-    text-align: center
-    select
-      font-size: $base_font_size
-  .title
-    padding-top: 6px
-    padding-left: $sidebar_padding
-    padding-right: $sidebar_padding
-    strong
-      font-size: $base_font_size
-  a
-    font-weight: 600
-    font-size: $base_font_size
-  .place_name
-    font-weight: 600
-    font-size: $base_font_size + 2px
-    color: $dark
-    vertical-align: middle
-    *
-      vertical-align: middle
-      
-.info_window
-  h1
-    margin: 0
-    padding: 2px 0
-    font-size: $base_font_size + 4px
-    vertical-align: middle
-    color: $dark
-    *
-      padding-left: 3px
-      padding-bottom: 3px
-      vertical-align: middle
-  strong
-    font-weight: normal
-  p
-    padding-bottom: 0
-    margin-bottom: 2px
-    +description_configuration
-    span
-      font-weight: bold
-      display: inline-block
-      padding-top: 4px    
-  a
-    font-size: $base_font_size - 1px
-    color: $dark2
-  address
-    color: $light
     
 .bar
   margin-top: 2em
@@ -353,17 +265,6 @@ a
   &:visited, &:hover
     color: $cheaperdrinker_dark_bg_color
     
-.welcome_message
-  padding-top: 12px
-  padding-right: 15px
-  strong
-    font-size: $base_font_size
-    font-weight: bold
-  ol, ul
-    li
-      font-size: $base_font_size - 1px
-      padding-bottom: 6px
-  
 #find_bar_form
   padding: 1em
   label

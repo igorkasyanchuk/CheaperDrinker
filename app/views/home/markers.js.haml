@@ -16,7 +16,8 @@ map_markers.push(get_bar_marker(this));
 - if params['zoom'].to_i > 6
   $where.find('li').remove();
   !== $str = '#{escape_javascript(render :partial => '/home/places', :locals => {:places => @locations, :current_day => @current_day})}';
-  == $where.append($str);
+  == $where.append($str).show();
+  hide_ajax();
 
 markerClusterer.addMarkers(map_markers);
 

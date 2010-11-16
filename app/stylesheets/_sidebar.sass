@@ -1,0 +1,82 @@
+#siderbar_filter
+  height: 133px
+  .select_date
+    padding-top: 12px
+    padding-left: 12px
+    text-align: center
+    select
+      font-size: $base_font_size
+  .title
+    text-transform: uppercase
+    text-align: left
+    padding: 4px
+    padding-left: 12px
+    background: $dark3
+    width: 100%
+    strong
+      color: white
+      font-size: $base_font_size + 2px
+
+#sidebar
+  width: 100%
+  float: left
+  background: white
+  overflow-x: hidden
+  overflow-y: auto 
+  font-size: $base_font_size - 1px
+  h1
+    padding: 0 10px
+  p
+    padding-left: 12px
+  ol, ul
+    padding-left: 12px
+    margin-left: 0
+  ul li
+    padding-bottom: 12px
+    list-style-type: none
+  .description
+    p
+      padding: 0
+      margin: 0
+      +description_configuration
+  .address
+    color: $light
+    font-size: $base_font_size - 1px
+  .link_to 
+    text-align: right
+    padding-right: 6px
+    a
+      font-size: $base_font_size - 2px
+      font-weight: normal
+      color: $dark2
+  h1
+    text-align: center
+    padding-left: $sidebar_padding
+    padding-right: $sidebar_padding
+    margin-bottom: 12px
+  a
+    font-weight: 600
+    font-size: $base_font_size
+  .place_name
+    font-weight: 600
+    font-size: $base_font_size + 2px
+    color: $dark
+    vertical-align: middle
+    *
+      vertical-align: middle
+  #ajax
+    margin: 0 auto
+    display: block
+    margin-top: 16px
+    
+.welcome_message
+  padding-top: 12px
+  padding-right: 15px
+  padding-left: 12px
+  strong
+    font-size: $base_font_size
+    font-weight: bold
+  ol, ul
+    li
+      font-size: $base_font_size - 1px
+      padding-bottom: 6px    

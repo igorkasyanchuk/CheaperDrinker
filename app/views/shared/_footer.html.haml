@@ -1,11 +1,11 @@
 %ul
   %li= link_to 'Contact Us', '#'
-  %li= link_to 'About Us', '#'
-  %li= link_to 'FAQ', '#'
-  %li= link_to 'Terms and Services', '#'
-  %li= link_to 'Privacy Policy', '#'
+  %li= link_to 'About Us', page_path('about')
+  %li= link_to 'FAQ', page_path('faq')
+  %li= link_to 'Terms and Services', page_path('terms')
+  %li= link_to 'Privacy Policy', page_path('privacy')
 
-#twitter
-#facebook
+%a#twitter{:href => '#'}
+%a#facebook{:href => '#'}
 
 .clear

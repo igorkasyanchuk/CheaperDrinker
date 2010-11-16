@@ -49,5 +49,3 @@ RailsjazzCom::Application.configure do
   
   config.cache_store = :dalli_store
 end
-
-Sass::Plugin.options[:never_update] = true

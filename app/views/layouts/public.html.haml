@@ -2,10 +2,11 @@
   %head
     %title= yield :title
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    = stylesheet_link_tag 'ui-lightness/jquery-ui-1.7.2.custom', 'uniform.default', 'application', 'formtastic', 'formtastic_changes' , 'colorbox'
+    = stylesheet_link_tag 'ui-lightness/jquery-ui-1.7.2.custom', 'application', 'formtastic', 'formtastic_changes' , 'colorbox', :cache => 'public_bundle'
     = yield :css
     = yield :js
-    = javascript_include_tag 'jquery-1.4.3.min', 'jquery-ui-1.8.6.custom.min', 'rails.jquery', 'jquery.colorbox-min', 'mapiconmaker_packed', 'jquery.raty.min.js', 'application'
+    = javascript_include_tag 'jquery-1.4.3.min', 'jquery-ui-1.8.6.custom.min', 'rails.jquery', 'jquery.colorbox-min', 'mapiconmaker_packed', 'jquery.raty.min.js', 'utils', :cache => 'public_bundle_static'
+    = javascript_include_tag 'z', :cache => 'public_bundle'
     = csrf_meta_tag
     = yield :map
     = yield :markitup
@@ -46,5 +47,3 @@
       #root_footer
     #footer
       = render :partial => '/shared/footer'
-      - if Rails.env == 'production'
-        = render :partial => '/shared/ga'

@@ -42,4 +42,5 @@ end
 
 group :production do
   gem 'dalli'
+  gem 'smurf'
 end

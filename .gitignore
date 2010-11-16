@@ -71,3 +71,7 @@ public/data/videos/*
 public/javascripts/adminjs.js
 public/stylesheets/admincss.css
 tmp/restart.txt
+public/stylesheets/application_bundle*
+public/stylesheets/application_*
+public/javascripts/public_bundle*
+public/javascripts/public_*

@@ -12,7 +12,7 @@
       padding: 0 4px
       padding-right: 8px
       margin: 0 4px
-      margin-top: 3px
+      margin-top: 5px
       border-right: 1px solid #5F6972
       vertical-align: top
       padding-bottom: 2px
@@ -25,17 +25,12 @@
         border-right: 0px none
 
 #twitter
-  margin-top: 4px
-  float: right
-  background: transparent url(/images/twitter.png) no-repeat top left
-  width: 78px
-  height: 18px
-  margin-right: 6px
+  +image_button(78, 18, 'twitter.png')
 
 #facebook
+  +image_button(80, 18, 'facebook.png')
+  
+.own_socials
   float: right
-  background: transparent url(/images/facebook.png) no-repeat top left
-  width: 80px
-  height: 18px
-  margin-top: 4px
-  margin-right: 16px
+  margin-right: 10px
+  margin-top: 3px

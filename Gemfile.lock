@@ -35,6 +35,7 @@ GEM
     authlogic (2.1.6)
       activesupport
     babosa (0.2.0)
+    bcrypt-ruby (2.1.2)
     builder (2.1.2)
     compass (0.10.5)
       haml (>= 3.0.4)
@@ -118,6 +119,7 @@ DEPENDENCIES
   acts-as-taggable-on
   attribute_normalizer
   authlogic
+  bcrypt-ruby
   compass (= 0.10.5)
   compass-960-plugin (= 0.9.13)
   dynamic_form

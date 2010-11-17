@@ -43,8 +43,8 @@
     
       #bar_right
         .menu
-          = link_to @location.name, place_path(@location), :id => 'bar_show'
-          = link_to @location.name, reviews_place_path(@location), :id => 'bar_reviews'
+          = link_to @location.name, place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive'
+          = link_to @location.name, reviews_place_path(@location), :id => 'bar_reviews', :class => action_name == 'reviews' ? '' : 'inactive'
         .clear
         .bar_content= yield
     .clear

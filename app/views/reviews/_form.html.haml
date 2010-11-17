@@ -1,0 +1,28 @@
+.none
+  #reviews.popup
+    .popup_header
+      %strong Review this bar
+    .popup_body
+      %h3= location.name
+      = simple_form_for [location, review], :html => { :id => 'post_review_form' }, :remote => true do |f|
+        = f.input :user_id, :value => current_user.id, :as => :hidden
+        .rating_container
+          .rating_title Service
+          .rating_field
+            = f.hidden_field :service_rating, :id => 'service_rating_value'
+            %span#service_rating
+          .clear
+        .rating_container
+          .rating_title Atmosphere
+          .rating_field
+            = f.hidden_field :atmosphere_rating, :id => 'atmosphere_rating_value'
+            %span#atmosphere_rating
+          .clear
+        .rating_container
+          .rating_title Value
+          .rating_field
+            = f.hidden_field :value_rating, :id => 'value_rating_value'
+            %span#value_rating
+          .clear
+        = f.input :review, :input_html => { :rows => '8', :cols => '64' }
+        = f.submit "Post review", :id => 'post_review_button'

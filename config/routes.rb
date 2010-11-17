@@ -7,7 +7,11 @@ RailsjazzCom::Application.routes.draw do
   
   match '/autocomplete_location_name' => 'home#autocomplete_location_name'
 
-  resources :places, :only => [:index, :show]
+  resources :places, :only => [:index, :show] do
+    member {
+      get :reviews
+    }
+  end
 
   namespace :admin do
     match '/', :to => 'dashboard#welcome'

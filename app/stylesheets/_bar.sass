@@ -1,3 +1,14 @@
+#bar_left
+  width: 280px
+  float: left
+  
+#bar_right
+  width: 643px
+  float: right
+  .bar_content
+    width: 642px
+    background: $light3
+  
 #bar
   background: $dark2
   margin: 16px 0
@@ -21,6 +32,11 @@
       padding-top: 3px
   .bar
     padding: 12px
+    .menu
+      #bar_show
+        +image_button(320, 31, 'bar_specials_hover.png')
+      #bar_reviews
+        +image_button(320, 31, 'reviews.png')
     #map
       height: 210px
       margin-bottom: 0
@@ -42,14 +58,29 @@
       line-height: $base_font_size * 2
     .bar_specials_list
       padding-left: 12px
-      background: $light3
+      ul
+        margin-top: 0
     .bar_info
       background: $dark3
       padding: 12px
       color: white
-      font-size: $base_font_size
+      font-size: $base_font_size + 1px
       font-weight: bold
-      address
-        background: transparent url(/images/icon_adress.png) no-repeat top left
-        padding-left: 45px
-        min-height: 36px
+      .row
+        width: 100%
+        vertical-align: middle
+        padding-bottom: 6px
+        float: left
+        img
+          padding-right: 6px
+          width: 46px
+          vertical-align: middle
+          float: left
+        address, strong
+          padding-top: 6px
+          float: left
+          vertical-align: middle
+          color: white
+          width: 202px
+        strong
+          padding-top: 9px

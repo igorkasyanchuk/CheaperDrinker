@@ -1,0 +1,53 @@
+= content_for :map do
+  == <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{GOOGLE_KEYS[Rails.env.to_s]}" type="text/javascript"></script>
+
+= content_for :on_ready do
+  !== show_place_map(#{@location.map_info.to_json});
+  $("#post_review").colorbox({width:"550px", inline:true, href:"#reviews" });
+  init_bar_rating();
+
+= inside_layout 'application' do
+  - if logged_in? && current_user.admin?
+    .right
+      = link_to 'Edit Details', [:edit, :admin, @location]
+      |
+      = link_to 'Edit Specials', [:admin, @location, :special_days]
+    .clear
+    
+  #bar
+    .bar_name
+      %h1= @location.name
+      .location_rating
+        .overall_rating= static_rating(@location.average_rating)
+        .rating_info based on #{pluralize(@location.reviews.approved.count, 'review')}
+        .clear
+      .social= render :partial => '/shared/add_this'
+      .clear
+    .bar
+      #bar_left
+        #map
+        .last_updated
+          Last updated on: #{@location.updated_at.to_date.strftime("%B %d, %Y")}
+        .bar_info
+          .row
+            = image_tag 'icon_adress.png', :title => "#{@location.name} Address", :alt => "#{@location.name} Address"
+            %address= @location.full_address
+          .row
+            = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
+            %strong 555-99-77
+          .row
+            = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
+            %strong #{@location.name} Schedule
+          .clear
+        = gay_icon(@location, :large)
+    
+      #bar_right
+        .menu
+          = link_to @location.name, place_path(@location), :id => 'bar_show'
+          = link_to @location.name, reviews_place_path(@location), :id => 'bar_reviews'
+        .clear
+        .bar_content= yield
+    .clear
+
+    - if logged_in?
+      = render :partial => '/reviews/form', :locals => { :location => @location, :review => @review }

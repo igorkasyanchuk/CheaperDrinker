@@ -2854,17 +2854,34 @@ body #cboxloadedcontent {
 }
 
 /* line 1, ../../app/stylesheets/_bar.sass */
+#bar_left {
+  width: 280px;
+  float: left;
+}
+
+/* line 9, ../../app/stylesheets/_bar.sass */
+#bar_right {
+  width: 643px;
+  float: right;
+}
+/* line 15, ../../app/stylesheets/_bar.sass */
+#bar_right .bar_content {
+  width: 642px;
+  background: #ededed;
+}
+
+/* line 23, ../../app/stylesheets/_bar.sass */
 #bar {
   background: #6b8093;
   margin: 16px 0;
 }
-/* line 7, ../../app/stylesheets/_bar.sass */
+/* line 29, ../../app/stylesheets/_bar.sass */
 #bar .bar_name {
   padding: 8px 6px;
   margin: 0;
   background: #303940;
 }
-/* line 15, ../../app/stylesheets/_bar.sass */
+/* line 37, ../../app/stylesheets/_bar.sass */
 #bar .bar_name h1 {
   color: white;
   float: left;
@@ -2872,33 +2889,75 @@ body #cboxloadedcontent {
   margin-bottom: 6px;
   margin-top: 6px;
 }
-/* line 27, ../../app/stylesheets/_bar.sass */
+/* line 49, ../../app/stylesheets/_bar.sass */
 #bar .bar_name .location_rating {
   padding-top: 6px;
   float: left;
   color: white;
 }
-/* line 35, ../../app/stylesheets/_bar.sass */
+/* line 57, ../../app/stylesheets/_bar.sass */
 #bar .bar_name .social {
   float: right;
   padding-right: 8px;
   padding-top: 3px;
 }
-/* line 43, ../../app/stylesheets/_bar.sass */
+/* line 65, ../../app/stylesheets/_bar.sass */
 #bar .bar {
   padding: 12px;
 }
-/* line 47, ../../app/stylesheets/_bar.sass */
+/* line 71, ../../app/stylesheets/_bar.sass */
+#bar .bar .menu #bar_show {
+  color: red;
+  width: 320px;
+  height: 31px;
+  display: inline-block;
+  text-indent: -9999px;
+  background: url("/images/bar_specials_hover.png") 0px 0px no-repeat;
+  color: transparent;
+  border-style: none;
+  border-width: 0;
+  line-height: 0px !important;
+  font-size: 0px;
+  overflow: hidden;
+  vertical-align: middle;
+  *padding-left: 1000px;
+}
+/* line 95, ../../app/stylesheets/_utils.sass */
+#bar .bar .menu #bar_show:hover {
+  background-position: 0px -31px;
+}
+/* line 75, ../../app/stylesheets/_bar.sass */
+#bar .bar .menu #bar_reviews {
+  color: red;
+  width: 320px;
+  height: 31px;
+  display: inline-block;
+  text-indent: -9999px;
+  background: url("/images/reviews.png") 0px 0px no-repeat;
+  color: transparent;
+  border-style: none;
+  border-width: 0;
+  line-height: 0px !important;
+  font-size: 0px;
+  overflow: hidden;
+  vertical-align: middle;
+  *padding-left: 1000px;
+}
+/* line 95, ../../app/stylesheets/_utils.sass */
+#bar .bar .menu #bar_reviews:hover {
+  background-position: 0px -31px;
+}
+/* line 79, ../../app/stylesheets/_bar.sass */
 #bar .bar #map {
   height: 210px;
   margin-bottom: 0;
 }
-/* line 53, ../../app/stylesheets/_bar.sass */
+/* line 85, ../../app/stylesheets/_bar.sass */
 #bar .bar .day {
   font-size: 13px;
   font-weight: bold;
 }
-/* line 59, ../../app/stylesheets/_bar.sass */
+/* line 91, ../../app/stylesheets/_bar.sass */
 #bar .bar .description {
   color: #3b5998;
   font-size: 13px;
@@ -2906,36 +2965,59 @@ body #cboxloadedcontent {
   padding-left: 12px;
   padding-top: 6px;
 }
-/* line 69, ../../app/stylesheets/_bar.sass */
+/* line 101, ../../app/stylesheets/_bar.sass */
 #bar .bar ul li {
   padding-bottom: 2em;
   list-style-type: none;
 }
-/* line 75, ../../app/stylesheets/_bar.sass */
+/* line 107, ../../app/stylesheets/_bar.sass */
 #bar .bar .last_updated {
   color: white;
   text-align: right;
   font-size: 12px;
   line-height: 26px;
 }
-/* line 85, ../../app/stylesheets/_bar.sass */
+/* line 117, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_specials_list {
   padding-left: 12px;
-  background: #ededed;
 }
-/* line 91, ../../app/stylesheets/_bar.sass */
+/* line 121, ../../app/stylesheets/_bar.sass */
+#bar .bar .bar_specials_list ul {
+  margin-top: 0;
+}
+/* line 125, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info {
   background: #303940;
   padding: 12px;
   color: white;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
 }
-/* line 103, ../../app/stylesheets/_bar.sass */
-#bar .bar .bar_info address {
-  background: transparent url(/images/icon_adress.png) no-repeat top left;
-  padding-left: 45px;
-  min-height: 36px;
+/* line 137, ../../app/stylesheets/_bar.sass */
+#bar .bar .bar_info .row {
+  width: 100%;
+  vertical-align: middle;
+  padding-bottom: 6px;
+  float: left;
+}
+/* line 147, ../../app/stylesheets/_bar.sass */
+#bar .bar .bar_info .row img {
+  padding-right: 6px;
+  width: 46px;
+  vertical-align: middle;
+  float: left;
+}
+/* line 157, ../../app/stylesheets/_bar.sass */
+#bar .bar .bar_info .row address, #bar .bar .bar_info .row strong {
+  padding-top: 6px;
+  float: left;
+  vertical-align: middle;
+  color: white;
+  width: 202px;
+}
+/* line 169, ../../app/stylesheets/_bar.sass */
+#bar .bar .bar_info .row strong {
+  padding-top: 9px;
 }
 
 /* line 18, ../../app/stylesheets/application.sass */

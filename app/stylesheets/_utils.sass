@@ -30,4 +30,20 @@ $base_font_size: 13px
   -webkit-border-radius: $r
   border-radius: $r
   
-  
+=image_button($w,$h,$image)
+  color: red
+  width: #{$w}px
+  height: #{$h}px
+  display: inline-block
+  text-indent: -9999px
+  background: url("/images/#{$image}") 0px 0px no-repeat
+  color: transparent
+  border-style: none
+  border-width: 0
+  line-height: 0px !important
+  font-size: 0px
+  overflow: hidden
+  vertical-align: middle
+  *padding-left: 1000px
+  &:hover
+    background-position: 0px -#{$h}px

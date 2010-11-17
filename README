@@ -1,5 +1,6 @@
 == Update script
 
+git pull igor master
 bundle install
 RAILS_ENV=production rake db:migrate
 rm public/javascripts/application_bundle*

@@ -19,7 +19,7 @@ class Location < ActiveRecord::Base
     6 => :sunday
   }
   
-  has_friendly_id :name, :use_slug => true, :sequence_separator => ":"
+  has_friendly_id :name_and_city, :use_slug => true, :sequence_separator => ":"
   
   validates_presence_of :name
   #validates_presence_of :description
@@ -75,6 +75,10 @@ class Location < ActiveRecord::Base
     Location.where(:id => ids).by_plan
   end
   
+  def name_and_city
+    "#{name} #{city}"
+  end
+
   def approve!
     self.approved = true
     self.save(:validate => false)

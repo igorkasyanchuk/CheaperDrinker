@@ -1,8 +1,4 @@
-class CitiesController < ApplicationController
+class CitiesController < InheritedResources::Base
   before_filter :store_location
-
-  def index
-    @cities = City.all
-  end
-
+  belongs_to :state
 end

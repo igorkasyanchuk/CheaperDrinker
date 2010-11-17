@@ -1751,6 +1751,17 @@ html dl dt, html dl dl {
   width: 65%;
 }
 
+/* line 84, ../../app/stylesheets/layout.sass */
+.cols {
+  margin: 0 auto;
+}
+/* line 86, ../../app/stylesheets/layout.sass */
+.cols .col {
+  float: left;
+  margin: 0px 0px 0px 20px;
+  width: 140px;
+}
+
 /* line 42, ../../app/stylesheets/base.sass */
 html {
   height: 100%;

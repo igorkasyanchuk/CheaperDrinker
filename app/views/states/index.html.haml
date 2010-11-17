@@ -1,0 +1,11 @@
+%h1 Find Specials
+
+.cols.cities
+  - @states.in_groups_of(6, false) do |states_row|
+    .col
+      - states_row.each do |state|
+        %h3= state.name
+        %ul
+          - state.cities.by_name.each do |city|
+            %li= link_to city.name, [state, city]
+.clear

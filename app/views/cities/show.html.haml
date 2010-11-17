@@ -1,0 +1,6 @@
+%h1 #{@city.name}
+
+.cities
+  %ul
+    - @city.locations.each do |location|
+      %li= link_to location.name, place_path(location)

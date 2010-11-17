@@ -4,6 +4,8 @@ RailsjazzCom::Application.routes.draw do
   end
   resources :password_resets
   resources :users
+  
+  match '/autocomplete_location_name' => 'home#autocomplete_location_name'
 
   resources :places, :only => [:index, :show]
 

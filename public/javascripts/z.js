@@ -90,7 +90,6 @@ function show_bars_on_map(bars) {
 };
 
 function get_bar_marker(info) {
-  console.log(info);
   bar_marker = new GMarker(new GLatLng(info.lat, info.lng), {icon: $icon_container.icon(info.plan), title: info.name});
   GEvent.addListener(bar_marker, "click", function() {
     $current_stage = 1;
@@ -327,7 +326,6 @@ function set_url_options() {
     USER_LOCATION.lat = parseFloat(info[3]);
     USER_LOCATION.lng = parseFloat(info[4]);
     USER_LOCATION.zoom = parseInt(info[5]);
-    console.log(USER_LOCATION);
   }
 };
 
@@ -348,8 +346,24 @@ function hide_ajax() {
 function hide_results() {
   $("#sidebar ul").hide();
   $("#sidebar p").hide();
-}
+};
 
 function show_results() {
   $("#sidebar ul").show();
-}
+};
+
+function init_header_autocomplete() {
+  $('#q').autocomplete({
+    minLength: 3,
+    source: $('#q').attr('data-autocomplete'),
+    select: function(event, ui) {
+      window.location = ui.item.href;
+      return false;
+    }
+  }).data( "autocomplete" )._renderItem = function( ul, item ) {
+    return $( "<li></li>" )
+      .data( "item.autocomplete", item )
+      .append( "<a><strong>" + item.name + "</strong><span>" + item.address + "</span></a>")
+      .appendTo( ul );
+	};
+};

@@ -149,5 +149,9 @@ class Location < ActiveRecord::Base
   def Location.day_column(day)
     "day_#{Location.get_day(day)}"
   end
+  
+  def self.autocomplete(term, limit, order)
+    Location.where(["LOWER(name) LIKE ?", "#{term.downcase}%"]).limit(limit).order(order)
+  end
 
 end

@@ -7,13 +7,6 @@
   init_bar_rating();
 
 = inside_layout 'application' do
-  - if logged_in? && current_user.admin?
-    .right
-      = link_to 'Edit Details', [:edit, :admin, @location]
-      |
-      = link_to 'Edit Specials', [:admin, @location, :special_days]
-    .clear
-    
   #bar
     .bar_name
       %h1= @location.name
@@ -40,6 +33,12 @@
             %strong #{@location.name} Schedule
           .clear
         = gay_icon(@location, :large)
+        
+        - if logged_in? && current_user.admin?
+          %p.actions
+            = link_to 'Edit Details', [:edit, :admin, @location]
+            |
+            = link_to 'Edit Specials', [:admin, @location, :special_days]
     
       #bar_right
         .menu

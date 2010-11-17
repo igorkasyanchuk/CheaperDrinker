@@ -4,7 +4,7 @@ class MoveToCities < ActiveRecord::Migration
       city = City.find_or_create_by_name_and_state_id(location.city, location.state_id)
       location.city_id = city.id
       location.save(:validate => false)
-    end    
+    end
   end
 
   def self.down

@@ -9,3 +9,9 @@ rm public/stylesheets/application_bundle.css
 rm public/stylesheets/public_bundle.css
 touch tmp/restart.txt
 free
+
+
+-------
+
+rake friendly_id:make_slugs MODEL=State
+rake friendly_id:make_slugs MODEL=City

@@ -66,6 +66,7 @@ class Location < ActiveRecord::Base
   
   belongs_to :user
 
+  before_create :create_state_city!
   before_save :geocode_it!
   
   has_many :reviews, :as => :reviewable, :dependent => :destroy
@@ -88,6 +89,13 @@ class Location < ActiveRecord::Base
     _address
   end
   
+  def create_state_city!
+    _state = State.find_or_create_by_name(self.state)
+    self.state_id = _state.id
+    _city = City.find_or_create_by_name_and_state_id(self.city, self.state_id)
+    self.city_id = _city.id
+  end
+
   def geocode_it!
     if self.address_changed? || self.new_record? || self.city_changed? || self.zip_changed? || self.state_changed?
       logger.info "Geocoding: #{self.full_address}"

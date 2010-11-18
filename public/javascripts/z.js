@@ -265,7 +265,7 @@ function time(t) {
     return "Close"
   else
     return TIMES_ARRAY[t];
-} 
+};
 
 var SLIDER_MIN = 0;
 var SLIDER_MAX = 1440;
@@ -325,7 +325,7 @@ function set_url_options() {
     USER_LOCATION.lat = parseFloat(info[3]);
     USER_LOCATION.lng = parseFloat(info[4]);
     USER_LOCATION.zoom = parseInt(info[5]);
-  }
+  };
 };
 
 function init_bar_rating() {
@@ -340,7 +340,7 @@ function show_ajax() {
 
 function hide_ajax() {
   $("#ajax").hide();
-}
+};
 
 function hide_results() {
   $("#sidebar ul").hide();
@@ -368,10 +368,10 @@ function init_header_autocomplete() {
 };
 
 function init_favorites() {
-  $('a.add_to_favorites_button').live('click', function() {
-    $.get($(this).attr('data-url'), {}, function(data){});
+  $("a.add_to_favorites_button").live("click", function() {
+    $.get($(this).attr("data-url"), {}, function(data){});
   });
-  $('a.remove_from_favorites_button').live('click', function() {
-    $.get($(this).attr('data-url'), {}, function(data){});
+  $("a.remove_from_favorites_button").live("click", function() {
+    $.get($(this).attr("data-url"), {}, function(data){});
   });
 };

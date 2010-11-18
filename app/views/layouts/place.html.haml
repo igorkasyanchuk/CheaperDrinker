@@ -3,9 +3,9 @@
 
 = content_for :on_ready do
   !== show_place_map(#{@location.map_info.to_json});
-  $("#post_review").colorbox({width:"550px", inline:true, href:"#reviews" });
-  init_bar_rating();
+  $("#post_review").colorbox({width: "550px", inline: true, href:"#reviews"});
   init_favorites();
+  init_bar_rating();
 
 = inside_layout 'application' do
   #bar

@@ -1,5 +1,5 @@
 #logo
-  = link_to image_tag('/images/logo.png'), root_path
+  = link_to image_tag('/images/logo_smaller.png'), root_path
 
 #section1.header_section
   = link_to 'All Cities', states_path
@@ -22,7 +22,7 @@
   .q_bg_container
     .q_bg
     .q_controls
-      = text_field_tag 'q', params["q"], "data-autocomplete" => autocomplete_location_name_path, :id => 'q'
+      = text_field_tag 'q', params["q"], "data-autocomplete" => autocomplete_location_name_path, :id => 'q', :placeholder => 'enter bar name'
       = link_to 'Advanced Search &rarr;'.html_safe, '#advanced_filter', :id => 'advanced_filter_link'
     
 .clear

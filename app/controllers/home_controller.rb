@@ -38,7 +38,7 @@ class HomeController < ApplicationController
   
   def autocomplete_location_name
     @locations = Location.autocomplete(params['term'], 15, :name)
-    render :json => @locations.collect{|location| {:name => location.name, :href => place_path(location), :address => location.address}}.to_json
+    render :json => @locations.collect{|location| {:name => location.name, :href => place_path(location), :address => "#{location.city}, #{location.address}"}}.to_json
   end
 
 end

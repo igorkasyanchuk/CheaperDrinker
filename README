@@ -19,7 +19,7 @@ rake friendly_id:make_slugs MODEL=City
 
 -------
 
-rake friendly_id:redo_slugs MODEL=Location
-rake friendly_id:redo_slugs MODEL=State
-rake friendly_id:redo_slugs MODEL=City
+RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Location
+RAILS_ENV=production rake friendly_id:redo_slugs MODEL=State
+RAILS_ENV=production rake friendly_id:redo_slugs MODEL=City
 

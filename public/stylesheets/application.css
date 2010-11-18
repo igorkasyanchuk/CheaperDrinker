@@ -2224,8 +2224,21 @@ html .header_section a {
 /* line 65, ../../app/stylesheets/_footer.sass */
 .own_socials {
   float: right;
-  margin-right: 10px;
   margin-top: 3px;
+  padding-right: 320px;
+}
+
+/* line 75, ../../app/stylesheets/_footer.sass */
+.social {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 23px;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  line-height: 13px;
+  overflow: hidden;
 }
 
 /* line 3, ../../app/stylesheets/_simple_form.sass */

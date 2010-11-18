@@ -1,12 +1,16 @@
 %ul
-  %li= link_to 'Contact Us', '#'
+  %li= link_to 'Contact Us', new_contact_path
   %li= link_to 'About Us', page_path('about')
   %li= link_to 'FAQ', page_path('faq')
   %li= link_to 'Terms and Services', page_path('terms')
   %li= link_to 'Privacy Policy', page_path('privacy')
 
+.social= render :partial => '/shared/add_this'  
+
 .own_socials
   %a#twitter.inactive{:href => 'http://twitter.com/HappyHourScout', :target => '_blank'}
+  &nbsp;
+  &nbsp;
   &nbsp;
   &nbsp;
   %a#facebook.inactive{:href => 'http://www.facebook.com/pages/HappyHourScoutcom/129908880398975', :target => '_blank'}

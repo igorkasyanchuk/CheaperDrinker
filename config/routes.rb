@@ -5,6 +5,8 @@ RailsjazzCom::Application.routes.draw do
   resources :password_resets
   resources :users
   
+  resources :contacts, :only => [:new, :create, :index]
+  
   resources :states, :only => [:index, :show] do
     resources :cities, :only => [:index, :show]
   end
@@ -19,6 +21,7 @@ RailsjazzCom::Application.routes.draw do
 
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
+    resources :contacts, :only => [:index, :destroy]
     resources :locations do
       member {
         get :approve

@@ -17,6 +17,7 @@ gem 'geokit'
 gem 'acts-as-taggable-on'
 gem "friendly_id", "~> 3.1"
 gem 'bcrypt-ruby', :require => 'bcrypt' 
+gem 'rack-recaptcha', :require => 'rack/recaptcha'
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'

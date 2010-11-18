@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Rack::Recaptcha::Helpers
   protect_from_forgery
 
   helper_method :current_user_session, :current_user, :logged_in?, :require_admin_user

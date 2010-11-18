@@ -7,7 +7,11 @@ class ContactsController < InheritedResources::Base
   
   def create
     @contact = Contact.new(params[:contact])
-    if verify_recaptcha && @contact.save
+    _captcha_valid = recaptcha_valid?
+    logger.info _captcha_valid
+    logger.info _captcha_valid
+    logger.info _captcha_valid
+    if _captcha_valid && @contact.save
       redirect_to root_path, :notice => "You message sent successfully."
     else
       render :new

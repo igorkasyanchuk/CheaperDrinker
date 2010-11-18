@@ -7,6 +7,7 @@ rm public/javascripts/application_bundle*
 rm public/javascripts/public_bundle*
 rm public/stylesheets/application_bundle.css
 rm public/stylesheets/public_bundle.css
+chown -R deployer:deployer .
 touch tmp/restart.txt
 free
 

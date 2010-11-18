@@ -2,6 +2,6 @@
 = f.input :email
 = f.input :message, :input_html => { :rows => 6, :cols => 60 }
 
-%p= recaptcha_tags
+%p!= recaptcha_tag(:challenge)
 
 = f.button :submit, "Send"

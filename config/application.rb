@@ -8,7 +8,6 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module RailsjazzCom
   class Application < Rails::Application
-    config.middleware.use Rack::Recaptcha, :public_key => '6Lcf3L4SAAAAAGucx4zccJDUE1_Ct0Zn2RiSSqwI', :private_key => '6Lcf3L4SAAAAAIuvB6nr0lslV_Tuoz2FYbShhuGi', :paths => 'happyhourscout.com'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

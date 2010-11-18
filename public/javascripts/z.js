@@ -354,7 +354,7 @@ function show_results() {
 
 function init_header_autocomplete() {
   $('#q').autocomplete({
-    minLength: 3,
+    minLength: 2,
     source: $('#q').attr('data-autocomplete'),
     select: function(event, ui) {
       window.location = ui.item.href;

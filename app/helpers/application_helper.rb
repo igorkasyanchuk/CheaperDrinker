@@ -1,6 +1,5 @@
 module ApplicationHelper
-  include Rack::Recaptcha::Helpers
-  
+
   def flash_messages
     messages = []
     %w(notice warning error).each do |msg|

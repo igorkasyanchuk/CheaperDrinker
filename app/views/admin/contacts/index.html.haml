@@ -13,7 +13,7 @@
     %tbody
       - for contact in @contacts
         %tr{ :class => cycle(:odd, :even) }
-          %td= contact.created_at.to_date
+          %td= contact.created_at.to_s(:short)
           %td= contact.name
           %td= contact.email
           %td= contact.message

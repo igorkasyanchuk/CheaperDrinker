@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   has_many :locations, :dependent => :destroy
   has_many :reviews, :dependent => :destroy
   
+  has_many :user_favorites, :dependent => :destroy
+  has_many :favorites, :through => :user_favorites
+  
   scope :admins, where(:admin => true)
   scope :forward,  order('created_at ASC')
   scope :backward, order('created_at DESC')  

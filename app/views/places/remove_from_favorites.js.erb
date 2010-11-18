@@ -1,0 +1,6 @@
+<%
+  current_user.favorites.delete(@location);
+%>
+alert('Removed');
+$('.add_to_favorites_button').parent().show();
+$('.remove_from_favorites_button').parent().hide();

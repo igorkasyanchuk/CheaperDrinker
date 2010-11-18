@@ -1,0 +1,16 @@
+= title "My Favorites"
+
+%h1 My Favorites
+
+- if logged_in?
+  .favorites_list
+    - if current_user.favorites.count > 0
+      %ul
+        - current_user.favorites.each do |location|
+          %li= link_to location.name, place_path(location)
+    - else
+      %p
+        You favorites list is empty.
+- else
+  %p
+    You need to be #{link_to 'registered', new_user_path} to use this feature.        

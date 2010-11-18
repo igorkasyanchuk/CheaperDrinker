@@ -5,6 +5,7 @@
   !== show_place_map(#{@location.map_info.to_json});
   $("#post_review").colorbox({width:"550px", inline:true, href:"#reviews" });
   init_bar_rating();
+  init_favorites();
 
 = inside_layout 'application' do
   #bar
@@ -39,7 +40,16 @@
             = link_to 'Edit Details', [:edit, :admin, @location]
             |
             = link_to 'Edit Specials', [:admin, @location, :special_days]
-    
+
+        .favorites
+          - if logged_in?
+            - favorite = current_user.favorites.include?(@location)
+            .f{:class => (favorite ? ' none' : '')}= link_to 'Add To Favorites', '#', 'data-url' => add_to_favorites_place_path(@location), :class => 'add_to_favorites_button', :rel => 'nofollow'
+            .f{:class => (favorite ? '' : ' none')}= link_to 'Remove From Favorites', '#', 'data-url' => remove_from_favorites_place_path(@location), :class => 'remove_from_favorites_button', :rel => 'nofollow'
+          - else
+            %p
+              You must be #{link_to 'logged in', new_user_session_path} to add this bar to favorites list.
+
       #bar_right
         .menu
           = link_to @location.name, place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive'

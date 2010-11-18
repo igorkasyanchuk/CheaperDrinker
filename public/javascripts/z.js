@@ -366,3 +366,12 @@ function init_header_autocomplete() {
       .appendTo( ul );
 	};
 };
+
+function init_favorites() {
+  $('a.add_to_favorites_button').live('click', function() {
+    $.get($(this).attr('data-url'), {}, function(data){});
+  });
+  $('a.remove_from_favorites_button').live('click', function() {
+    $.get($(this).attr('data-url'), {}, function(data){});
+  });
+};

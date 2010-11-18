@@ -52,6 +52,10 @@ module ApplicationHelper
     controller_name == 'home' && action_name = 'index'
   end
   
+  def bar_page?
+    controller_name == 'places' && action_name =~ /show|reviews/
+  end
+  
   def include_google_analytics
     render :partial => '/shared/ga' if Rails.env == 'production'
   end

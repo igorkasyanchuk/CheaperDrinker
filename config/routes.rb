@@ -16,6 +16,8 @@ RailsjazzCom::Application.routes.draw do
   resources :places, :only => [:index, :show] do
     member {
       get :reviews
+      get :add_to_favorites
+      get :remove_from_favorites
     }
   end
 

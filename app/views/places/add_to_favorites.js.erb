@@ -1,0 +1,10 @@
+<% unless logged_in? %>
+  alert('You must be registered');
+<% else %>
+  <%
+    current_user.favorites << @location;
+  %>
+  alert('Added');
+  $('.add_to_favorites_button').parent().hide();
+  $('.remove_from_favorites_button').parent().show();  
+<% end %>

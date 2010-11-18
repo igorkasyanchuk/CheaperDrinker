@@ -98,7 +98,6 @@ function get_bar_marker(info) {
     var _info = "<div class='info_window'>" +
       "<h1>" + 
       info.name + 
-       + _gay +
       "</h1>" + 
       "<address>" + info.address + "</address>" +
       "<p>" + info.description + "</p>" +

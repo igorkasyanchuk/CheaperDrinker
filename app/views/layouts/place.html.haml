@@ -26,12 +26,14 @@
           .row
             = image_tag 'icon_adress.png', :title => "#{@location.name} Address", :alt => "#{@location.name} Address"
             %address= @location.full_address
-          .row
-            = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
-            %strong 555-99-77
-          .row
-            = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
-            %strong #{@location.name} Schedule
+          - if @location.phone.present?
+            .row
+              = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
+              %strong 555-99-77
+          - if @location.schedule_present?
+            .row
+              = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
+              %strong #{@location.name} Schedule
           .clear
         = gay_icon(@location, :large)
         

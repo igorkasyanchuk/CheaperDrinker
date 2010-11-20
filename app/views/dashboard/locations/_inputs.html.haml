@@ -3,6 +3,7 @@
 - if current_user.admin?
   = f.input :plan, :collection => Location::PLANS.invert, :as => :select, :include_blank => false
 = f.input :name, :label => 'Name'
+= f.input :phone
 = f.input :address
 = f.input :city
 = f.input :state, :collection => STATES, :include_blank => false

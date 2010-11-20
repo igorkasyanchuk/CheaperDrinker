@@ -1881,7 +1881,7 @@ html .xxl {
 }
 /* line 2, ../../app/stylesheets/fonts.sass */
 html body {
-  font-family: "PT Sans", "Sans Serif";
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
 }
 /* line 4, ../../app/stylesheets/fonts.sass */
 html h1 {

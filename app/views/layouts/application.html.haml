@@ -1,7 +1,6 @@
 %html
   %head
     %title= yield :title
-    <link  href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold" rel="stylesheet" type="text/css" />
     = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.6.custom', 'application', 'colorbox', :cache => 'application_bundle'
     = yield :css
     = yield :js

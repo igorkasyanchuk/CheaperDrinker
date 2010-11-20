@@ -37,3 +37,5 @@ TIMES_ARRAY = [ "6am", "6:30am", "7am", "7:30am", "8am", "8:30am",
 "4:30am", "5am", "5:30am" ]
 
 TIME_NOW = Time.now.to_i
+
+DEFAULT_DETAILED_ZOOM = 13

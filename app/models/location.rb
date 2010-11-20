@@ -66,10 +66,11 @@ class Location < ActiveRecord::Base
   
   belongs_to :user
 
-  before_create :create_state_city!
+  before_save :check_state_city!
   before_save :geocode_it!
   
   has_many :reviews, :as => :reviewable, :dependent => :destroy
+  has_one :location_schedule
 
   def Location.locations_by_ids(ids)
     Location.where(:id => ids).by_plan
@@ -93,7 +94,7 @@ class Location < ActiveRecord::Base
     _address
   end
   
-  def create_state_city!
+  def check_state_city!
     _state = State.find_or_create_by_name(self.state)
     self.state_id = _state.id
     _city = City.find_or_create_by_name_and_state_id(self.city, self.state_id)
@@ -164,6 +165,10 @@ class Location < ActiveRecord::Base
   
   def self.autocomplete(term, limit, order)
     Location.where(["LOWER(name) LIKE ?", "#{term.downcase}%"]).limit(limit).order(order)
+  end
+  
+  def schedule_present?
+    self.location_schedule.present? && self.location_schedule.has_shedule?
   end
 
 end

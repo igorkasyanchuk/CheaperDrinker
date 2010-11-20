@@ -12,13 +12,13 @@
 = f.input :gay_bar
 
 = f.simple_fields_for :location_schedule do |s|
-  %h3 Schedule
+  %h3 Hours
   %table.edit_schedule.zebra
     %thead
       %tr
         %th Day
-        %th Start
-        %th End
+        %th Open
+        %th Close
     %tbody
       - LocationSchedule::DAYS.each do |d|
         %tr

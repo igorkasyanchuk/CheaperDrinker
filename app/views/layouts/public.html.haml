@@ -1,8 +1,8 @@
 %html
   %head
     %title= (yield :title) || SEO_TITLE
-    == <meta content="#{h((yield :description) || SEO_DESCRIPTION)}" name="description" />
-    == <meta content="#{h((yield :keywords) || SEO_KEYWORDS)}" name="keywords" />
+    == <meta content="#{SEO_DESCRIPTION}" name="description" />
+    == <meta content="#{SEO_KEYWORDS}" name="keywords" />
     %meta{ 'http-equiv' => 'imagetoolbar', :content => 'no' }
     %meta{ :name => 'distribution', :content => 'global' }
     %meta{ :name => 'robots', :content => 'all' }

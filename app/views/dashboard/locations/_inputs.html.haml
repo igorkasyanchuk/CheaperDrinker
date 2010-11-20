@@ -10,3 +10,18 @@
 = f.input :zip
 = f.input :description, :input_html => { :rows => '6', :cols => '60' }, :label => 'Anything we should know about this site?  (Information here is only visible admins)'
 = f.input :gay_bar
+
+= f.simple_fields_for :location_schedule do |s|
+  %h3 Schedule
+  %table.edit_schedule.zebra
+    %thead
+      %tr
+        %th Day
+        %th Start
+        %th End
+    %tbody
+      - LocationSchedule::DAYS.each do |d|
+        %tr
+          %td= d.to_s.titleize 
+          %td= s.input "starts_#{d}_at", :as => :select, :collection => time_options, :include_blank => true
+          %td= s.input "ends_#{d}_at", :as => :select, :collection => time_options, :include_blank => true

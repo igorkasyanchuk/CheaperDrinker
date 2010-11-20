@@ -1,6 +1,17 @@
 %html
   %head
-    %title= yield :title
+    %title= (yield :title) || SEO_TITLE
+    == <meta content="#{h((yield :description) || SEO_DESCRIPTION)}" name="description" />
+    == <meta content="#{h((yield :keywords) || SEO_KEYWORDS)}" name="keywords" />
+    %meta{ 'http-equiv' => 'imagetoolbar', :content => 'no' }
+    %meta{ :name => 'distribution', :content => 'global' }
+    %meta{ :name => 'robots', :content => 'all' }
+    %meta{ :name => 'resource-type', :content => 'document' }
+    %meta{ :name => 'MSSmartTagsPreventParsing', :content => 'true' }
+    <meta content="en" http-equiv="Content-Language" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="audience" content="all" />
+    <meta name="revisit-after" content="7 days" />
     = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.6.custom', 'application', 'formtastic', 'formtastic_changes' , 'colorbox', :cache => 'public_bundle'
     = yield :css
     = yield :js

@@ -39,3 +39,8 @@ TIMES_ARRAY = [ "6am", "6:30am", "7am", "7:30am", "8am", "8:30am",
 TIME_NOW = Time.now.to_i
 
 DEFAULT_DETAILED_ZOOM = 13
+
+SEO_TITLE = "Happy Hour Scout - Finding Happy Hours and Bar Specials for You!"
+SEO_TITLE_SHORT = "HappyHourScout.com"
+SEO_DESCRIPTION = "Happy Hour Scout - Finding Happy Hours and Bar Specials for You!"
+SEO_KEYWORDS = "happy hour, bars, specials, drinks, find bar, find specials, friends, fun"

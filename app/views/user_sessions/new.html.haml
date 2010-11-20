@@ -1,3 +1,6 @@
+= title "Login | #{SEO_TITLE_SHORT}"
+= description "Login #{SEO_TITLE_SHORT}"
+
 %h1 Login
 
 - simple_form_for :user_session, @user_session, :url => user_session_path do |f|
@@ -7,7 +10,7 @@
   = f.input :remember_me, :as => :boolean
   = f.submit "Sign in"
 
-.trailer
+%p
   = link_to 'Forgot your password?', new_password_reset_path
   %br
   = link_to 'Sign up', new_user_path

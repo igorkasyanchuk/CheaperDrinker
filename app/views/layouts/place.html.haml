@@ -34,6 +34,15 @@
             .row
               = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
               %strong #{@location.name} Schedule
+              %table.bar_schedule
+                %tbody
+                  - LocationSchedule::DAYS.each do |d|
+                    - next unless @location.location_schedule.send("#{d}?")
+                    %tr
+                      %td= d.to_s.titleize 
+                      %td= SpecialDay.translate_time(@location.location_schedule.send("starts_#{d}_at"))
+                      %td &mdash;
+                      %td= SpecialDay.translate_time(@location.location_schedule.send("ends_#{d}_at"))
           .clear
         = gay_icon(@location, :large)
         

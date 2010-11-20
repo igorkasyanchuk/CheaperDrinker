@@ -21,7 +21,19 @@ module ApplicationHelper
     content_for :title do
       t
     end
-  end   
+  end
+  
+  def description(t)
+    content_for :description do
+      t
+    end
+  end
+  
+  def keywords(t)
+    content_for :keywords do
+      t
+    end
+  end
   
   def sortable(column, title = nil)
     title ||= column.titleize

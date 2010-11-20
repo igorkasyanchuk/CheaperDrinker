@@ -3168,7 +3168,7 @@ body #cboxloadedcontent {
   background: #303940;
   padding: 12px;
   color: white;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
 }
 /* line 283, ../../app/stylesheets/_bar.sass */
@@ -3195,6 +3195,22 @@ body #cboxloadedcontent {
 /* line 313, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info .row strong {
   padding-top: 7px;
+}
+
+/* line 319, ../../app/stylesheets/_bar.sass */
+table.bar_schedule {
+  width: 200px;
+  clear: both;
+  margin-top: 0px;
+  margin-left: 42px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+/* line 335, ../../app/stylesheets/_bar.sass */
+table.bar_schedule tr td, table.bar_schedule tr th {
+  padding: 2px 3px;
+  color: white;
 }
 
 /* line 5, ../../app/stylesheets/_cities.sass */
@@ -3715,4 +3731,13 @@ a:visited, a:hover {
 html body a#uservoice-feedback-tab, html body a#uservoice-feedback-tab:link {
   top: 50%;
   top: 50% !important;
+}
+
+/* line 334, ../../app/stylesheets/application.sass */
+table.edit_schedule {
+  width: 300px;
+}
+/* line 336, ../../app/stylesheets/application.sass */
+table.edit_schedule label {
+  display: none;
 }

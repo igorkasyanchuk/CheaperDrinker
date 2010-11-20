@@ -71,6 +71,7 @@ class Location < ActiveRecord::Base
   
   has_many :reviews, :as => :reviewable, :dependent => :destroy
   has_one :location_schedule
+  accepts_nested_attributes_for :location_schedule
 
   def Location.locations_by_ids(ids)
     Location.where(:id => ids).by_plan

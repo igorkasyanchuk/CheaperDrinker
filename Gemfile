@@ -19,6 +19,7 @@ gem "friendly_id", "~> 3.1"
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'tlsmail'
+gem 'mysql2'
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
@@ -35,7 +36,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'mysql'
   gem 'compass', '0.10.5'
   gem "compass-960-plugin", '0.9.13'
 end

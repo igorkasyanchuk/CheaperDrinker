@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
+gem 'mysql2'
 gem 'dynamic_form'
 gem 'attribute_normalizer'
 gem 'authlogic'
@@ -19,11 +20,6 @@ gem "friendly_id", "~> 3.1"
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'tlsmail'
-gem 'mysql2'
-
-group :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
 
 group :test do
   gem "shoulda"
@@ -41,6 +37,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'mysql2'
   gem 'smurf'
 end

@@ -1761,6 +1761,12 @@ html dl dt, html dl dl {
   margin: 0px 0px 0px 20px;
   width: 140px;
 }
+/* line 90, ../../app/stylesheets/layout.sass */
+.cols .col4 {
+  float: left;
+  margin: 0px 0px 0px 20px;
+  width: 250px;
+}
 
 /* line 42, ../../app/stylesheets/base.sass */
 html {
@@ -2093,17 +2099,21 @@ html .header_section a {
   color: white;
   padding: 2px 0;
 }
+/* line 163, ../../app/stylesheets/_header.sass */
+html .header_section a:hover {
+  text-decoration: underline;
+}
 
-/* line 173, ../../app/stylesheets/_header.sass */
+/* line 177, ../../app/stylesheets/_header.sass */
 #section3 {
   padding-top: 0;
   height: 100px;
 }
-/* line 179, ../../app/stylesheets/_header.sass */
+/* line 183, ../../app/stylesheets/_header.sass */
 #section3 .q_bg_container {
   position: relative;
 }
-/* line 183, ../../app/stylesheets/_header.sass */
+/* line 187, ../../app/stylesheets/_header.sass */
 #section3 .q_bg_container .q_bg {
   background: transparent url(/images/search_zoom.png) no-repeat top right;
   width: 63px;
@@ -2113,19 +2123,19 @@ html .header_section a {
   left: 165px;
   top: 15px;
 }
-/* line 199, ../../app/stylesheets/_header.sass */
+/* line 203, ../../app/stylesheets/_header.sass */
 #section3 .q_bg_container .q_controls {
   position: absolute;
   left: 1px;
   top: 25px;
   z-index: 2;
 }
-/* line 209, ../../app/stylesheets/_header.sass */
+/* line 213, ../../app/stylesheets/_header.sass */
 #section3 .q_bg_container .q_controls a {
   font-size: 11px;
   text-decoration: underline;
 }
-/* line 215, ../../app/stylesheets/_header.sass */
+/* line 219, ../../app/stylesheets/_header.sass */
 #section3 .q_bg_container .q_controls input {
   border: 0 none;
   z-index: 10;
@@ -2782,60 +2792,64 @@ body #cboxloadedcontent {
   text-decoration: none;
 }
 /* line 109, ../../app/stylesheets/_sidebar.sass */
+#sidebar .link_to a:hover {
+  text-decoration: underline;
+}
+/* line 113, ../../app/stylesheets/_sidebar.sass */
 #sidebar h1 {
   text-align: center;
   padding-left: 3%;
   padding-right: 3%;
   margin-bottom: 12px;
 }
-/* line 119, ../../app/stylesheets/_sidebar.sass */
+/* line 123, ../../app/stylesheets/_sidebar.sass */
 #sidebar a {
   font-weight: 600;
   font-size: 11px;
 }
-/* line 125, ../../app/stylesheets/_sidebar.sass */
+/* line 129, ../../app/stylesheets/_sidebar.sass */
 #sidebar .place_name {
   font-weight: 600;
   font-size: 13px;
   color: #c90316;
   vertical-align: middle;
 }
-/* line 135, ../../app/stylesheets/_sidebar.sass */
+/* line 139, ../../app/stylesheets/_sidebar.sass */
 #sidebar .place_name * {
   vertical-align: middle;
 }
-/* line 139, ../../app/stylesheets/_sidebar.sass */
+/* line 143, ../../app/stylesheets/_sidebar.sass */
 #sidebar #ajax {
   margin: 0 auto;
   display: block;
   margin-top: 16px;
 }
 
-/* line 149, ../../app/stylesheets/_sidebar.sass */
+/* line 153, ../../app/stylesheets/_sidebar.sass */
 .welcome_message {
   padding-top: 12px;
   padding-right: 15px;
   padding-left: 26px;
 }
-/* line 157, ../../app/stylesheets/_sidebar.sass */
+/* line 161, ../../app/stylesheets/_sidebar.sass */
 .welcome_message h1 {
   color: #c90316;
   font-size: 21px;
   line-height: 23px;
   text-transform: uppercase;
 }
-/* line 167, ../../app/stylesheets/_sidebar.sass */
+/* line 171, ../../app/stylesheets/_sidebar.sass */
 .welcome_message strong {
   font-size: 11px;
   font-weight: bold;
   color: #e70418;
 }
-/* line 175, ../../app/stylesheets/_sidebar.sass */
+/* line 179, ../../app/stylesheets/_sidebar.sass */
 .welcome_message ol, .welcome_message ul {
   padding-left: 0;
   margin-left: 0;
 }
-/* line 181, ../../app/stylesheets/_sidebar.sass */
+/* line 185, ../../app/stylesheets/_sidebar.sass */
 .welcome_message ol li, .welcome_message ul li {
   font-size: 12px;
   line-height: 14px;
@@ -2843,7 +2857,7 @@ body #cboxloadedcontent {
   list-style-type: none;
   vertical-align: middle;
 }
-/* line 193, ../../app/stylesheets/_sidebar.sass */
+/* line 197, ../../app/stylesheets/_sidebar.sass */
 .welcome_message ol li .icon, .welcome_message ul li .icon {
   float: left;
   padding-right: 8px;
@@ -2851,13 +2865,13 @@ body #cboxloadedcontent {
   vertical-align: middle;
   padding-top: 6px;
 }
-/* line 205, ../../app/stylesheets/_sidebar.sass */
+/* line 209, ../../app/stylesheets/_sidebar.sass */
 .welcome_message ol li .icon img, .welcome_message ul li .icon img {
   padding-left: 8px;
   padding-top: 4px;
   vertical-align: middle;
 }
-/* line 213, ../../app/stylesheets/_sidebar.sass */
+/* line 217, ../../app/stylesheets/_sidebar.sass */
 .welcome_message ol li .text, .welcome_message ul li .text {
   float: left;
   width: 70%;
@@ -3213,26 +3227,64 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   color: white;
 }
 
+/* line 343, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest {
+  padding-top: 12px;
+  color: white;
+}
+/* line 351, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest p strong {
+  font-size: 13px;
+}
+/* line 357, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest ul li {
+  list-style-type: circle;
+  padding-bottom: 8px;
+}
+/* line 363, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest ul li a {
+  color: white;
+  text-decoration: none;
+}
+/* line 369, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest ul li a:hover {
+  text-decoration: underline;
+}
+/* line 373, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest ul li a span {
+  font-size: 9px;
+}
+
 /* line 5, ../../app/stylesheets/_cities.sass */
 .cities ul li {
   list-style-type: none;
 }
 
-/* line 19, ../../app/stylesheets/application.sass */
+/* line 3, ../../app/stylesheets/_places.sass */
+.places .place {
+  padding-bottom: 8px;
+}
+/* line 9, ../../app/stylesheets/_places.sass */
+.places .place strong a {
+  color: #6b8093;
+  font-size: 13px;
+}
+
+/* line 20, ../../app/stylesheets/application.sass */
 #root {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 100%;
 }
-/* line 24, ../../app/stylesheets/application.sass */
+/* line 25, ../../app/stylesheets/application.sass */
 #root #header {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
   height: 100px;
 }
-/* line 27, ../../app/stylesheets/application.sass */
+/* line 28, ../../app/stylesheets/application.sass */
 #root #header #logo {
   display: inline;
   float: left;
@@ -3240,12 +3292,12 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   margin-right: 10px;
   width: 340px;
 }
-/* line 29, ../../app/stylesheets/application.sass */
+/* line 30, ../../app/stylesheets/application.sass */
 #root #header #logo h1 {
   font-size: 22px;
   padding: 0;
 }
-/* line 32, ../../app/stylesheets/application.sass */
+/* line 33, ../../app/stylesheets/application.sass */
 #root #header #nav_container {
   display: inline;
   float: left;
@@ -3255,7 +3307,7 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 36, ../../app/stylesheets/application.sass */
+/* line 37, ../../app/stylesheets/application.sass */
 #root #header #nav_container ul#nav {
   display: inline;
   float: right;
@@ -3287,17 +3339,17 @@ table.bar_schedule tr td, table.bar_schedule tr th {
 #root #header #nav_container ul#nav li:last-child, #root #header #nav_container ul#nav li.last {
   padding-right: 0px;
 }
-/* line 41, ../../app/stylesheets/application.sass */
+/* line 42, ../../app/stylesheets/application.sass */
 #root #header #nav_container ul#nav li {
   text-align: right;
   padding-right: 6px;
 }
-/* line 44, ../../app/stylesheets/application.sass */
+/* line 45, ../../app/stylesheets/application.sass */
 #root #header #nav_container ul#nav li a {
   font-size: 11px;
   padding: 2px 2px;
 }
-/* line 48, ../../app/stylesheets/application.sass */
+/* line 49, ../../app/stylesheets/application.sass */
 #root #content .container {
   display: inline;
   float: left;
@@ -3308,12 +3360,12 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 57, ../../app/stylesheets/application.sass */
+/* line 58, ../../app/stylesheets/application.sass */
 #root #content .content_container {
   width: 960px;
   margin: 0 auto;
 }
-/* line 60, ../../app/stylesheets/application.sass */
+/* line 61, ../../app/stylesheets/application.sass */
 #root #content div.flash {
   margin-top: 0.6em;
   margin-bottom: 0.6em;
@@ -3325,19 +3377,19 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
 }
-/* line 69, ../../app/stylesheets/application.sass */
+/* line 70, ../../app/stylesheets/application.sass */
 #root #content div.flash.error {
   color: #8a1f11;
   background: #fff6bf;
   border-color: #ffd324;
 }
-/* line 73, ../../app/stylesheets/application.sass */
+/* line 74, ../../app/stylesheets/application.sass */
 #root #content div.flash.notice {
   color: #514721;
   background: #fff6bf;
   border-color: #ffd324;
 }
-/* line 77, ../../app/stylesheets/application.sass */
+/* line 78, ../../app/stylesheets/application.sass */
 #root #content #admin_menu {
   display: inline;
   float: left;
@@ -3351,7 +3403,7 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   position: relative;
   z-index: 11;
 }
-/* line 85, ../../app/stylesheets/application.sass */
+/* line 86, ../../app/stylesheets/application.sass */
 #root #content #admin_section {
   display: inline;
   float: left;
@@ -3362,19 +3414,19 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   margin-right: 0;
   padding-bottom: 1em;
 }
-/* line 90, ../../app/stylesheets/application.sass */
+/* line 91, ../../app/stylesheets/application.sass */
 #root #content #admin_section h1, #root #content #admin_section h2, #root #content #admin_section h3 {
   margin: 0.5em 0;
 }
 
-/* line 93, ../../app/stylesheets/application.sass */
+/* line 94, ../../app/stylesheets/application.sass */
 #root.full_screen {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 100%;
 }
-/* line 99, ../../app/stylesheets/application.sass */
+/* line 100, ../../app/stylesheets/application.sass */
 #root.full_screen #content .container {
   margin: 0;
   width: 100%;
@@ -3382,48 +3434,48 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   padding: 0;
 }
 
-/* line 105, ../../app/stylesheets/application.sass */
+/* line 106, ../../app/stylesheets/application.sass */
 html body {
   font-size: 11px;
   line-height: 13px;
 }
 
-/* line 109, ../../app/stylesheets/application.sass */
+/* line 110, ../../app/stylesheets/application.sass */
 .clear {
   clear: both;
 }
 
-/* line 112, ../../app/stylesheets/application.sass */
+/* line 113, ../../app/stylesheets/application.sass */
 .left {
   float: left;
 }
 
-/* line 115, ../../app/stylesheets/application.sass */
+/* line 116, ../../app/stylesheets/application.sass */
 .right {
   float: right;
 }
 
-/* line 118, ../../app/stylesheets/application.sass */
+/* line 119, ../../app/stylesheets/application.sass */
 .block {
   display: block;
 }
 
-/* line 122, ../../app/stylesheets/application.sass */
+/* line 123, ../../app/stylesheets/application.sass */
 th .current {
   padding-right: 20px;
   background-repeat: no-repeat;
   background-position: right center;
 }
-/* line 126, ../../app/stylesheets/application.sass */
+/* line 127, ../../app/stylesheets/application.sass */
 th .asc {
   background-image: url(/images/sort-asc1.png);
 }
-/* line 128, ../../app/stylesheets/application.sass */
+/* line 129, ../../app/stylesheets/application.sass */
 th .desc {
   background-image: url(/images/sort-desc1.png);
 }
 
-/* line 131, ../../app/stylesheets/application.sass */
+/* line 132, ../../app/stylesheets/application.sass */
 .subfilter {
   font-size: 11px;
   font-weight: bold;
@@ -3431,49 +3483,49 @@ th .desc {
   vertical-align: middle;
   float: right;
 }
-/* line 137, ../../app/stylesheets/application.sass */
+/* line 138, ../../app/stylesheets/application.sass */
 .subfilter * {
   vertical-align: middle;
 }
 
-/* line 140, ../../app/stylesheets/application.sass */
+/* line 141, ../../app/stylesheets/application.sass */
 .controls a {
   font-size: 11px;
 }
 
-/* line 143, ../../app/stylesheets/application.sass */
+/* line 144, ../../app/stylesheets/application.sass */
 .reviews {
   padding-bottom: 16px;
 }
-/* line 145, ../../app/stylesheets/application.sass */
+/* line 146, ../../app/stylesheets/application.sass */
 .reviews .review {
   font-size: 11px;
   margin-bottom: 6px;
   border-bottom: 1px solid #ececec;
   border-top: 1px solid #ececec;
 }
-/* line 150, ../../app/stylesheets/application.sass */
+/* line 151, ../../app/stylesheets/application.sass */
 .reviews .review .when {
   float: left;
   width: 14%;
   padding-right: 1%;
 }
-/* line 154, ../../app/stylesheets/application.sass */
+/* line 155, ../../app/stylesheets/application.sass */
 .reviews .review .when .user {
   color: black;
   font-weight: bold;
 }
-/* line 157, ../../app/stylesheets/application.sass */
+/* line 158, ../../app/stylesheets/application.sass */
 .reviews .review .when .date {
   font-size: 10px;
 }
-/* line 159, ../../app/stylesheets/application.sass */
+/* line 160, ../../app/stylesheets/application.sass */
 .reviews .review .message {
   float: left;
   width: 85%;
 }
 
-/* line 163, ../../app/stylesheets/application.sass */
+/* line 164, ../../app/stylesheets/application.sass */
 #map {
   margin-top: 0px;
   margin-bottom: 20px;
@@ -3481,36 +3533,36 @@ th .desc {
   height: 200px;
 }
 
-/* line 169, ../../app/stylesheets/application.sass */
+/* line 170, ../../app/stylesheets/application.sass */
 div.content {
   display: block;
 }
 
-/* line 172, ../../app/stylesheets/application.sass */
+/* line 173, ../../app/stylesheets/application.sass */
 div.left_content {
   float: left;
   margin-left: -100%;
   width: 278px;
 }
 
-/* line 177, ../../app/stylesheets/application.sass */
+/* line 178, ../../app/stylesheets/application.sass */
 div.right_content {
   margin-left: 280px;
   padding-right: 4px;
 }
 
-/* line 181, ../../app/stylesheets/application.sass */
+/* line 182, ../../app/stylesheets/application.sass */
 .clear {
   clear: both;
 }
 
-/* line 184, ../../app/stylesheets/application.sass */
+/* line 185, ../../app/stylesheets/application.sass */
 .contentwrapper {
   float: left;
   width: 100%;
 }
 
-/* line 188, ../../app/stylesheets/application.sass */
+/* line 189, ../../app/stylesheets/application.sass */
 #global_map {
   margin-top: 3px;
   float: right;
@@ -3519,19 +3571,19 @@ div.right_content {
   border: 1px solid #5f6972;
 }
 
-/* line 197, ../../app/stylesheets/application.sass */
+/* line 198, ../../app/stylesheets/application.sass */
 .bar_specials_info p span {
   font-weight: bold;
   display: inline-block;
   padding-top: 4px;
 }
 
-/* line 202, ../../app/stylesheets/application.sass */
+/* line 203, ../../app/stylesheets/application.sass */
 .public_post {
   padding-top: 16px;
 }
 
-/* line 205, ../../app/stylesheets/application.sass */
+/* line 206, ../../app/stylesheets/application.sass */
 .tooltip {
   background-color: white;
   border: 2px solid #cccccc;
@@ -3539,90 +3591,90 @@ div.right_content {
   white-space: nowrap;
 }
 
-/* line 211, ../../app/stylesheets/application.sass */
+/* line 212, ../../app/stylesheets/application.sass */
 .googleMarkerTab .address {
   margin-bottom: 0.6em;
 }
 
-/* line 214, ../../app/stylesheets/application.sass */
+/* line 215, ../../app/stylesheets/application.sass */
 .tooltip dl, .tooltip dd, .tooltip dt {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 218, ../../app/stylesheets/application.sass */
+/* line 219, ../../app/stylesheets/application.sass */
 .tooltip dt {
   font-weight: bold;
 }
 
-/* line 221, ../../app/stylesheets/application.sass */
+/* line 222, ../../app/stylesheets/application.sass */
 .tooltip dd {
   margin-left: 1em;
 }
 
-/* line 224, ../../app/stylesheets/application.sass */
+/* line 225, ../../app/stylesheets/application.sass */
 .tooltip img {
   border: 1px solid #aaaaaa;
   display: block;
 }
 
-/* line 228, ../../app/stylesheets/application.sass */
+/* line 229, ../../app/stylesheets/application.sass */
 .tooltip span {
   font-size: 10px;
   color: #999999;
 }
 
-/* line 232, ../../app/stylesheets/application.sass */
+/* line 233, ../../app/stylesheets/application.sass */
 h1 {
   color: #c90316;
   font-weight: bold;
 }
 
-/* line 236, ../../app/stylesheets/application.sass */
+/* line 237, ../../app/stylesheets/application.sass */
 h2, h3, h4 {
   color: #e70418;
   font-weight: bold;
 }
 
-/* line 240, ../../app/stylesheets/application.sass */
+/* line 241, ../../app/stylesheets/application.sass */
 strong {
   color: black;
 }
 
-/* line 243, ../../app/stylesheets/application.sass */
+/* line 244, ../../app/stylesheets/application.sass */
 a {
   color: #6b8093;
 }
-/* line 245, ../../app/stylesheets/application.sass */
+/* line 246, ../../app/stylesheets/application.sass */
 a:visited, a:hover {
   color: #6b8093;
 }
 
-/* line 248, ../../app/stylesheets/application.sass */
+/* line 249, ../../app/stylesheets/application.sass */
 #find_bar_form {
   padding: 1em;
 }
-/* line 250, ../../app/stylesheets/application.sass */
+/* line 251, ../../app/stylesheets/application.sass */
 #find_bar_form label {
   color: black;
   font-weight: bold;
   font-size: 11px;
 }
-/* line 254, ../../app/stylesheets/application.sass */
+/* line 255, ../../app/stylesheets/application.sass */
 #find_bar_form * {
   vertical-align: middle;
 }
-/* line 256, ../../app/stylesheets/application.sass */
+/* line 257, ../../app/stylesheets/application.sass */
 #find_bar_form img {
   padding: 2px;
 }
-/* line 258, ../../app/stylesheets/application.sass */
+/* line 259, ../../app/stylesheets/application.sass */
 #find_bar_form .q_result {
   margin-top: 12px;
   padding: 1em 0;
   color: #3b5998;
 }
-/* line 262, ../../app/stylesheets/application.sass */
+/* line 263, ../../app/stylesheets/application.sass */
 #find_bar_form label.set_default_address {
   font-size: 10px;
   vertical-align: middle;
@@ -3630,7 +3682,7 @@ a:visited, a:hover {
   display: inline-block;
 }
 
-/* line 268, ../../app/stylesheets/application.sass */
+/* line 269, ../../app/stylesheets/application.sass */
 .plan {
   font-size: 10px;
   line-height: 11px;
@@ -3641,35 +3693,35 @@ a:visited, a:hover {
   border-radius: 3px;
 }
 
-/* line 275, ../../app/stylesheets/application.sass */
+/* line 276, ../../app/stylesheets/application.sass */
 .plan.free {
   background: green;
   color: white;
 }
 
-/* line 279, ../../app/stylesheets/application.sass */
+/* line 280, ../../app/stylesheets/application.sass */
 .plan.premium {
   background: yellow;
   color: black;
 }
 
-/* line 283, ../../app/stylesheets/application.sass */
+/* line 284, ../../app/stylesheets/application.sass */
 .plan.premium_plus {
   background: purple;
   color: white;
 }
 
-/* line 287, ../../app/stylesheets/application.sass */
+/* line 288, ../../app/stylesheets/application.sass */
 .cancel_button {
   margin-left: 15px;
 }
 
-/* line 290, ../../app/stylesheets/application.sass */
+/* line 291, ../../app/stylesheets/application.sass */
 .date, .time {
   font-size: 9px;
 }
 
-/* line 293, ../../app/stylesheets/application.sass */
+/* line 294, ../../app/stylesheets/application.sass */
 #advanced_search {
   font-size: 13px;
   line-height: 16px;
@@ -3677,67 +3729,67 @@ a:visited, a:hover {
   text-decoration: none;
 }
 
-/* line 299, ../../app/stylesheets/application.sass */
+/* line 300, ../../app/stylesheets/application.sass */
 .advanced_search_form {
   padding-left: 15px;
   padding-top: 10px;
 }
 
-/* line 303, ../../app/stylesheets/application.sass */
+/* line 304, ../../app/stylesheets/application.sass */
 .start_time_block, .end_time_block, .day_block, .additional_days {
   float: left;
 }
 
-/* line 306, ../../app/stylesheets/application.sass */
+/* line 307, ../../app/stylesheets/application.sass */
 .description_block textarea {
   height: 90px;
 }
 
-/* line 309, ../../app/stylesheets/application.sass */
+/* line 310, ../../app/stylesheets/application.sass */
 .additional_days {
   padding-top: 20px;
   vertical-align: middle;
 }
-/* line 312, ../../app/stylesheets/application.sass */
+/* line 313, ../../app/stylesheets/application.sass */
 .additional_days * {
   vertical-align: middle;
 }
-/* line 314, ../../app/stylesheets/application.sass */
+/* line 315, ../../app/stylesheets/application.sass */
 .additional_days label {
   display: inline;
 }
 
-/* line 318, ../../app/stylesheets/application.sass */
+/* line 319, ../../app/stylesheets/application.sass */
 .admin_location_special p {
   padding-left: 25px;
 }
-/* line 320, ../../app/stylesheets/application.sass */
+/* line 321, ../../app/stylesheets/application.sass */
 .admin_location_special table {
   width: 95%;
   margin-left: 25px;
 }
 
-/* line 324, ../../app/stylesheets/application.sass */
+/* line 325, ../../app/stylesheets/application.sass */
 .add_location_special_form {
   margin-top: 50px;
   display: none;
 }
-/* line 327, ../../app/stylesheets/application.sass */
+/* line 328, ../../app/stylesheets/application.sass */
 .add_location_special_form div {
   margin-left: 25px;
 }
 
-/* line 330, ../../app/stylesheets/application.sass */
+/* line 331, ../../app/stylesheets/application.sass */
 html body a#uservoice-feedback-tab, html body a#uservoice-feedback-tab:link {
   top: 50%;
   top: 50% !important;
 }
 
-/* line 334, ../../app/stylesheets/application.sass */
+/* line 335, ../../app/stylesheets/application.sass */
 table.edit_schedule {
   width: 300px;
 }
-/* line 336, ../../app/stylesheets/application.sass */
+/* line 337, ../../app/stylesheets/application.sass */
 table.edit_schedule label {
   display: none;
 }

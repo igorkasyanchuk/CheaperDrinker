@@ -60,7 +60,14 @@
           - else
             %p
               You must be #{link_to 'logged in', new_user_session_path} to add this bar to favorites list.
-
+        .nearest
+          - nearest = Location.find(:all, :origin=> [@location.lat, @location.lng], :within => 5, :limit => 10, :conditions => ['(id not in (?))', @location.id], :order => 'rand()')
+          - if nearest.size > 0
+            %p
+              %strong What is close to #{@location.name}
+            %ul
+              - nearest.sort{|a,b| a.distance <=> b.distance}.each do |location|
+                %li= link_to "#{location.name} <span>(#{number_with_precision location.distance, :precision => 2} miles)</span>".html_safe, place_path(location), :title => location.title
       #bar_right
         .menu
           = link_to @location.name, place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive'

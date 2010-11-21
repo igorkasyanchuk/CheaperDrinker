@@ -2,16 +2,13 @@
 = description "My Favorites #{SEO_TITLE_SHORT}"
 
 %h1 My Favorites
-
-- if logged_in?
-  .favorites_list
-    - if current_user.favorites.count > 0
-      %ul
-        - current_user.favorites.each do |location|
-          %li= link_to location.name, place_path(location)
-    - else
-      %p
-        You favorites list is empty.
+    
+- if logged_in? && current_user.favorites.count > 0
+  .cols.cities.places
+    - current_user.favorites.by_name.in_groups_of(6, false) do |places|
+      .col4
+        - places.each do |place|
+          = render :partial => '/places/place', :locals => { :place => place }
 - else
   %p
-    You need to be #{link_to 'registered', new_user_path} to use this feature.        
+    You need to be #{link_to 'registered', new_user_path} to use this feature.

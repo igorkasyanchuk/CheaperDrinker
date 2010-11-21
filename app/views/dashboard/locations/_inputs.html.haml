@@ -10,6 +10,8 @@
 = f.input :zip
 = f.input :description, :input_html => { :rows => '6', :cols => '60' }, :label => 'Anything we should know about this site?  (Information here is only visible admins)'
 = f.input :gay_bar
+= f.input :twitter
+= f.input :facebook
 
 = f.simple_fields_for :location_schedule do |s|
   %h3 Hours

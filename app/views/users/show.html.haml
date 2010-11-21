@@ -1,11 +1,15 @@
-%h1.left #{@user.name}
+%h1 #{@user.name} on HappyHourScout.com
 
-- if logged_in? && current_user == @user
-  .subnav.right= link_to 'Edit', edit_dashboard_user_path(@user), :class => 'edit_button'
+%br
 
-.clear
-
-- if @user.locations.count > 0
-  %ul
-    - @user.locations.each do |p|
-      %li= link_to p.name, place_path(p)
+%h2 #{@user.name} Favorites
+    
+- if @user.favorites.count > 0
+  .cols.cities.places
+    - @user.favorites.by_name.in_groups_of(6, false) do |places|
+      .col4
+        - places.each do |place|
+          = render :partial => '/places/place', :locals => { :place => place }
+- else
+  %p
+    #{@user.name} doesn't have any favorite places.

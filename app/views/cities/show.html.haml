@@ -3,7 +3,8 @@
 
 %h1 #{@city.name}
 
-.cities
-  %ul
-    - @city.locations.each do |location|
-      %li= link_to location.name, place_path(location)
+.cols.cities.places
+  - @city.locations.by_name.in_groups_of(6, false) do |places|
+    .col4
+      - places.each do |place|
+        = render :partial => '/places/place', :locals => { :place => place }

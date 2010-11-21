@@ -3,6 +3,9 @@ class Location < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
   include ActionView::Helpers::SanitizeHelper
   include ActionView::Helpers::TagHelper
+  
+  acts_as_mappable
+  
   PLANS = {
     0 => :free,
     1 => :premium,
@@ -65,6 +68,7 @@ class Location < ActiveRecord::Base
   accepts_nested_attributes_for :special_days, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:day_id].blank? }
   
   belongs_to :user
+  belongs_to :bar_network
 
   before_save :check_state_city!
   before_save :geocode_it!
@@ -170,6 +174,10 @@ class Location < ActiveRecord::Base
   
   def schedule_present?
     self.location_schedule.present? && self.location_schedule.has_shedule?
+  end
+  
+  def title
+    "#{self.name} #{self.city}"
   end
 
 end

@@ -6,7 +6,7 @@ class LocationSchedule < ActiveRecord::Base
   belongs_to :location
   
   def has_shedule?
-    FIELDS.any?{|f| self.send(f) > 0}
+    FIELDS.any?{|f| self.send(f) && self.send(f) > 0}
   end
   
   DAYS.each do |d|

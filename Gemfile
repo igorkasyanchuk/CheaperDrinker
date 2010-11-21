@@ -20,6 +20,7 @@ gem "friendly_id", "~> 3.1"
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'tlsmail'
+gem 'hoptoad_notifier'
 
 group :test do
   gem "shoulda"

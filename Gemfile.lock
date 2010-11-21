@@ -60,6 +60,8 @@ GEM
       railties (~> 3.0)
     has_scope (0.5.0)
     high_voltage (0.9.2)
+    hoptoad_notifier (2.3.3)
+      activesupport
     i18n (0.4.2)
     inherited_resources (1.1.2)
       has_scope (~> 0.5.0)
@@ -131,6 +133,7 @@ DEPENDENCIES
   haml-rails
   has_scope (= 0.5.0)
   high_voltage
+  hoptoad_notifier
   inherited_resources (= 1.1.2)
   mocha
   mysql

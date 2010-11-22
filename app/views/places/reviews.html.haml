@@ -12,3 +12,6 @@
   - if @location.reviews.approved.count > 1
     .reviews_container
       = render :partial => '/reviews/reviews', :locals => { :location => @location }
+  - else
+    .reviews_container
+      Be first who reviewed #{@location.name}.

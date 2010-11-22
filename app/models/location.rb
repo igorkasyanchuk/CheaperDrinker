@@ -179,5 +179,9 @@ class Location < ActiveRecord::Base
   def title
     "#{self.name} #{self.city}"
   end
+  
+  def any_icon?
+    self.gay_bar
+  end
 
 end

@@ -44,30 +44,31 @@
                       %td &mdash;
                       %td= SpecialDay.translate_time(@location.location_schedule.send("ends_#{d}_at"))
           .clear
-        = gay_icon(@location, :large)
-        
+        - if @location.any_icon?
+          .bar_info
+            = gay_icon(@location, :large)
         - if logged_in? && current_user.admin?
-          %p.actions
+          .bar_info
             = link_to 'Edit Details', [:edit, :admin, @location]
             |
             = link_to 'Edit Specials', [:admin, @location, :special_days]
-
-        .favorites
+        .bar_info.favorites
           - if logged_in?
             - favorite = current_user.favorites.include?(@location)
             .f{:class => (favorite ? ' none' : '')}= link_to 'Add To Favorites', '#', 'data-url' => add_to_favorites_place_path(@location), :class => 'add_to_favorites_button', :rel => 'nofollow'
             .f{:class => (favorite ? '' : ' none')}= link_to 'Remove From Favorites', '#', 'data-url' => remove_from_favorites_place_path(@location), :class => 'remove_from_favorites_button', :rel => 'nofollow'
           - else
-            %p
-              You must be #{link_to 'logged in', new_user_session_path} to add this bar to favorites list.
-        .nearest
+            .f.must_be_logged_in You must be #{link_to 'logged in', new_user_session_path} to add this bar to favorites list.
+        .bar_info.nearest
           - nearest = Location.find(:all, :origin=> [@location.lat, @location.lng], :within => 5, :limit => 10, :conditions => ['(id not in (?))', @location.id], :order => 'rand()')
           - if nearest.size > 0
-            %p
+            .row
+              = image_tag 'compass_36.png', :title => "Near #{@location.name}", :alt => "Near #{@location.name}"
               %strong What is close to #{@location.name}
             %ul
               - nearest.sort{|a,b| a.distance <=> b.distance}.each do |location|
                 %li= link_to "#{location.name} <span>(#{number_with_precision location.distance, :precision => 2} miles)</span>".html_safe, place_path(location), :title => location.title
+            .clear
       #bar_right
         .menu
           = link_to @location.name, place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive'

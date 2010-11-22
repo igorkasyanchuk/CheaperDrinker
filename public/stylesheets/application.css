@@ -2981,45 +2981,56 @@ body #cboxloadedcontent {
   color: white;
 }
 /* line 63, ../../app/stylesheets/_bar.sass */
-#bar .favorites .add_to_favorites_button {
+#bar .favorites .must_be_logged_in {
   vertical-align: middle;
   display: inline-block;
   color: white;
   padding-left: 36px;
+  height: 32px;
+  background: transparent url(/images/favorite/1290434803_favorites-add.png) no-repeat bottom left;
+  font-size: 11px;
+  line-height: 14px;
+}
+/* line 81, ../../app/stylesheets/_bar.sass */
+#bar .favorites .add_to_favorites_button {
+  vertical-align: middle;
+  display: inline-block;
+  color: white;
+  padding-left: 42px;
   height: 32px;
   background: transparent url(/images/favorite/1290121991_favorites-add2.png) no-repeat bottom left;
   font-size: 15px;
   line-height: 32px;
 }
-/* line 81, ../../app/stylesheets/_bar.sass */
+/* line 99, ../../app/stylesheets/_bar.sass */
 #bar .favorites .remove_from_favorites_button {
   vertical-align: middle;
   display: inline-block;
   color: white;
-  padding-left: 36px;
+  padding-left: 42px;
   height: 32px;
   background: transparent url(/images/favorite/1290121993_favorites-delete2.png) no-repeat center left;
   font-size: 15px;
   line-height: 32px;
 }
-/* line 99, ../../app/stylesheets/_bar.sass */
+/* line 117, ../../app/stylesheets/_bar.sass */
 #bar p.actions {
   padding: 12px 0px;
 }
-/* line 103, ../../app/stylesheets/_bar.sass */
+/* line 121, ../../app/stylesheets/_bar.sass */
 #bar p.actions a {
   color: white;
   font-weight: bold;
   font-size: 13px;
 }
-/* line 111, ../../app/stylesheets/_bar.sass */
+/* line 129, ../../app/stylesheets/_bar.sass */
 #bar .bar_name {
   margin: 0;
   background: transparent url(/images/bg_bar_title.png) repeat-x top left;
   width: 100%;
   height: 36px;
 }
-/* line 121, ../../app/stylesheets/_bar.sass */
+/* line 139, ../../app/stylesheets/_bar.sass */
 #bar .bar_name h1 {
   color: white;
   float: left;
@@ -3027,30 +3038,30 @@ body #cboxloadedcontent {
   margin-right: 12px;
   margin-top: 12px;
 }
-/* line 133, ../../app/stylesheets/_bar.sass */
+/* line 151, ../../app/stylesheets/_bar.sass */
 #bar .bar_name .location_rating {
   padding-top: 10px;
   float: left;
   color: white;
 }
-/* line 141, ../../app/stylesheets/_bar.sass */
+/* line 159, ../../app/stylesheets/_bar.sass */
 #bar .bar_name .social {
   float: right;
   padding-right: 12px;
   padding-top: 8px;
   height: 18px;
 }
-/* line 151, ../../app/stylesheets/_bar.sass */
+/* line 169, ../../app/stylesheets/_bar.sass */
 #bar .bar {
   min-height: 600px;
   padding: 12px;
 }
-/* line 157, ../../app/stylesheets/_bar.sass */
+/* line 175, ../../app/stylesheets/_bar.sass */
 #bar .bar .menu {
   width: 643px;
   overflow: hidden;
 }
-/* line 163, ../../app/stylesheets/_bar.sass */
+/* line 181, ../../app/stylesheets/_bar.sass */
 #bar .bar .menu #bar_show {
   color: red;
   width: 320px;
@@ -3076,7 +3087,7 @@ body #cboxloadedcontent {
 #bar .bar .menu #bar_show:hover {
   background-position: 0px 0px;
 }
-/* line 169, ../../app/stylesheets/_bar.sass */
+/* line 187, ../../app/stylesheets/_bar.sass */
 #bar .bar .menu #bar_reviews {
   color: red;
   width: 320px;
@@ -3102,17 +3113,17 @@ body #cboxloadedcontent {
 #bar .bar .menu #bar_reviews:hover {
   background-position: 0px 0px;
 }
-/* line 175, ../../app/stylesheets/_bar.sass */
+/* line 193, ../../app/stylesheets/_bar.sass */
 #bar .bar #map {
   height: 210px;
   margin-bottom: 0;
 }
-/* line 181, ../../app/stylesheets/_bar.sass */
+/* line 199, ../../app/stylesheets/_bar.sass */
 #bar .bar .day {
   font-size: 11px;
   font-weight: bold;
 }
-/* line 187, ../../app/stylesheets/_bar.sass */
+/* line 205, ../../app/stylesheets/_bar.sass */
 #bar .bar .description {
   color: #3b5998;
   font-size: 11px;
@@ -3120,73 +3131,75 @@ body #cboxloadedcontent {
   padding-left: 12px;
   padding-top: 6px;
 }
-/* line 197, ../../app/stylesheets/_bar.sass */
+/* line 215, ../../app/stylesheets/_bar.sass */
 #bar .bar ul li {
   padding-bottom: 2em;
   list-style-type: none;
 }
-/* line 203, ../../app/stylesheets/_bar.sass */
+/* line 221, ../../app/stylesheets/_bar.sass */
 #bar .bar .last_updated {
   color: white;
   text-align: right;
   font-size: 10px;
   line-height: 22px;
 }
-/* line 213, ../../app/stylesheets/_bar.sass */
+/* line 231, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_reviews_list {
   min-height: 600px;
   padding: 12px 0 12px 12px;
 }
-/* line 219, ../../app/stylesheets/_bar.sass */
+/* line 237, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_reviews_list h1 {
   margin-top: 0;
   color: #c90316;
   text-transform: uppercase;
 }
-/* line 227, ../../app/stylesheets/_bar.sass */
+/* line 245, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_specials_list {
   min-height: 600px;
   padding: 12px 0 12px 12px;
 }
-/* line 233, ../../app/stylesheets/_bar.sass */
+/* line 251, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_specials_list ul {
   margin: 0 12px;
   margin-left: 0;
 }
-/* line 239, ../../app/stylesheets/_bar.sass */
+/* line 257, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_specials_list ul li {
   margin: 6px 0;
   background: white;
   padding: 6px 12px;
   border: 1px solid #e4e3e3;
 }
-/* line 249, ../../app/stylesheets/_bar.sass */
+/* line 267, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_specials_list ul li .day {
   text-transform: uppercase;
   font-size: 14px;
   color: #c90316;
 }
-/* line 257, ../../app/stylesheets/_bar.sass */
+/* line 275, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_specials_list ul li .description {
   color: #555555;
   padding-left: 12px;
 }
-/* line 263, ../../app/stylesheets/_bar.sass */
+/* line 281, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_specials_list ul li .description span {
   text-transform: uppercase;
   padding-top: 6px;
   display: inline-block;
   font-weight: bold;
 }
-/* line 273, ../../app/stylesheets/_bar.sass */
+/* line 291, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info {
   background: #303940;
   padding: 12px;
   color: white;
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 13px;
   font-weight: bold;
+  margin-bottom: 6px;
 }
-/* line 285, ../../app/stylesheets/_bar.sass */
+/* line 307, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info .row {
   width: 100%;
   vertical-align: middle;
@@ -3194,13 +3207,13 @@ body #cboxloadedcontent {
   padding-bottom: 3px;
   float: left;
 }
-/* line 297, ../../app/stylesheets/_bar.sass */
+/* line 319, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info .row img {
   padding-right: 6px;
   vertical-align: middle;
   float: left;
 }
-/* line 305, ../../app/stylesheets/_bar.sass */
+/* line 327, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info .row address, #bar .bar .bar_info .row strong {
   padding-top: 2px;
   float: left;
@@ -3208,12 +3221,12 @@ body #cboxloadedcontent {
   color: white;
   width: 202px;
 }
-/* line 317, ../../app/stylesheets/_bar.sass */
+/* line 339, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info .row strong {
   padding-top: 7px;
 }
 
-/* line 323, ../../app/stylesheets/_bar.sass */
+/* line 345, ../../app/stylesheets/_bar.sass */
 table.bar_schedule {
   width: 200px;
   clear: both;
@@ -3223,36 +3236,45 @@ table.bar_schedule {
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
-/* line 339, ../../app/stylesheets/_bar.sass */
+/* line 361, ../../app/stylesheets/_bar.sass */
 table.bar_schedule tr td, table.bar_schedule tr th {
   padding: 2px 3px;
   color: white;
 }
 
-/* line 347, ../../app/stylesheets/_bar.sass */
+/* line 369, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest {
   padding-top: 12px;
   color: white;
 }
-/* line 355, ../../app/stylesheets/_bar.sass */
-#bar .bar .nearest p strong {
-  font-size: 13px;
+/* line 375, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest strong {
+  font-size: 15px;
 }
-/* line 361, ../../app/stylesheets/_bar.sass */
+/* line 379, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest ul {
+  float: left;
+  margin-left: 32px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+/* line 389, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li {
-  list-style-type: circle;
+  list-style-type: disc;
   padding-bottom: 8px;
+  color: #85a9c9;
 }
-/* line 367, ../../app/stylesheets/_bar.sass */
+/* line 397, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a {
-  color: white;
+  color: #85a9c9;
   text-decoration: none;
+  font-size: 11px;
 }
-/* line 373, ../../app/stylesheets/_bar.sass */
+/* line 405, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a:hover {
   text-decoration: underline;
 }
-/* line 377, ../../app/stylesheets/_bar.sass */
+/* line 409, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a span {
   font-size: 9px;
 }

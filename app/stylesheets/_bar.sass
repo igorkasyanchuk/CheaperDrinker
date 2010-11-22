@@ -29,11 +29,20 @@
       font-size: $base_font_size + 1px
       a
         color: white
-    .add_to_favorites_button
+    .must_be_logged_in
       vertical-align: middle
       display: inline-block
       color: white
       padding-left: 36px
+      height: 32px
+      background: transparent url(/images/favorite/1290434803_favorites-add.png) no-repeat bottom left
+      font-size: $base_font_size
+      line-height: $base_font_size + 3px
+    .add_to_favorites_button
+      vertical-align: middle
+      display: inline-block
+      color: white
+      padding-left: 42px
       height: 32px
       background: transparent url(/images/favorite/1290121991_favorites-add2.png) no-repeat bottom left
       font-size: $base_font_size + 4px
@@ -42,7 +51,7 @@
       vertical-align: middle
       display: inline-block
       color: white
-      padding-left: 36px
+      padding-left: 42px
       height: 32px
       background: transparent url(/images/favorite/1290121993_favorites-delete2.png) no-repeat center left
       font-size: $base_font_size + 4px
@@ -138,8 +147,10 @@
       background: $dark3
       padding: 12px
       color: white
-      font-size: $base_font_size
+      font-size: $base_font_size + 1px
+      line-height: $base_font_size + 2px
       font-weight: bold
+      margin-bottom: 6px
       .row
         width: 100%
         vertical-align: middle
@@ -174,16 +185,21 @@ table.bar_schedule
 #bar .bar .nearest
   padding-top: 12px
   color: white
-  p
-    strong
-      font-size: $base_font_size + 2px
+  strong
+    font-size: $base_font_size + 4px
   ul
+    float: left
+    margin-left: 32px
+    padding-bottom: 0
+    margin-bottom: 0
     li
-      list-style-type: circle
+      list-style-type: disc
       padding-bottom: 8px
+      color: $light2
       a
-        color: white
+        color: $light2
         text-decoration: none
+        font-size: $base_font_size
         &:hover
           text-decoration: underline
         span

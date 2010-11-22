@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
+gem 'capistrano'
 gem 'mysql'
 gem 'dynamic_form'
 gem 'attribute_normalizer'

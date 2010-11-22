@@ -1,6 +1,8 @@
 = title "Login | #{SEO_TITLE_SHORT}"
 = description "Login #{SEO_TITLE_SHORT}"
 
+= no_index_me
+
 %h1 Login
 
 - simple_form_for :user_session, @user_session, :url => user_session_path do |f|

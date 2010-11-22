@@ -3,9 +3,31 @@ xml.instruct!
 xml.urlset "xmlns" => "http://www.google.com/schemas/sitemap/0.84" do
   
   xml.url do
-    xml.loc         "http://railsjazz.com/"
+    xml.loc         "http://happyhourscout.com/"
     xml.lastmod     w3c_date(Time.now)
     xml.changefreq  "always"
+  end
+  
+  xml.url do
+    xml.loc "http://happyhourscout.com/states"
+    xml.lastmod     w3c_date(Time.now)
+    xml.changefreq  "always"
+  end
+  
+  @places.each do |place|
+    xml.url do
+      xml.loc         url_for(:only_path => false, :controller => :places, :action => :show, :id => place, :host => 'happyhourscout.com')
+      xml.changefreq  "weekly"
+      xml.priority    1
+    end
+  end
+  
+  @cities.each do |city|
+    xml.url do
+      xml.loc         url_for(:only_path => false, :controller => :cities, :action => :show, :state_id => city.state, :id => city, :host => 'happyhourscout.com')
+      xml.changefreq  "weekly"
+      xml.priority    1
+    end
   end
   
 end

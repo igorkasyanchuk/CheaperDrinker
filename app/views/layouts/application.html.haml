@@ -5,17 +5,18 @@
     == <meta content="#{h((yield :keywords) || SEO_KEYWORDS)}" name="keywords" />
     %meta{ 'http-equiv' => 'imagetoolbar', :content => 'no' }
     %meta{ :name => 'distribution', :content => 'global' }
-    %meta{ :name => 'robots', :content => 'all' }
+    - if (yield :noindex).blank?
+      %meta{ :name => 'robots', :content => 'all' }
+    - else
+      %meta{ :name => 'robots', :content => 'noindex' }
     %meta{ :name => 'resource-type', :content => 'document' }
     %meta{ :name => 'MSSmartTagsPreventParsing', :content => 'true' }
     <meta content="en" http-equiv="Content-Language" />
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="audience" content="all" />
     <meta name="revisit-after" content="7 days" />
-    
-    <link rel="icon" href="/favicon.ico" type="image/x-icon"> 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.6.custom', 'application', 'colorbox', :cache => 'application_bundle'
     = yield :css
     = yield :js

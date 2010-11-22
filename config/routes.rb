@@ -75,7 +75,7 @@ RailsjazzCom::Application.routes.draw do
   end
   
   root :controller => 'home', :action => 'index'
-  match "/sitemap.xml" , :controller => "sitemap", :action => "sitemap", :format => 'xml' 
+  match "/thisissitmemap.xml" , :controller => "sitemap", :action => "sitemap", :format => 'xml' 
   match '/markers', :controller => 'home', :action => 'markers'
   match '/find_bar', :controller => 'home', :action => 'find_bar'
 end

@@ -12,6 +12,7 @@ RailsjazzCom::Application.routes.draw do
   end
   
   match '/autocomplete_location_name' => 'home#autocomplete_location_name'
+  match '/autocomplete_city_name' => 'home#autocomplete_city_name'
 
   resources :places, :only => [:index, :show] do
     member {

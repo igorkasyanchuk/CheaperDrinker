@@ -27,3 +27,6 @@
           %td= d.to_s.titleize 
           %td= s.input "starts_#{d}_at", :as => :select, :collection => time_options, :include_blank => true
           %td= s.input "ends_#{d}_at", :as => :select, :collection => time_options, :include_blank => true
+          
+= content_for :on_ready do
+  $('#location_city').autocomplete({ minLength: 1, source: '/autocomplete_city_name' });

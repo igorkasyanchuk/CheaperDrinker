@@ -7,7 +7,7 @@ xml.urlset "xmlns" => "http://www.google.com/schemas/sitemap/0.84" do
     xml.lastmod     w3c_date(Time.now)
     xml.changefreq  "always"
   end
-  
+
   xml.url do
     xml.loc "http://happyhourscout.com/states"
     xml.lastmod     w3c_date(Time.now)

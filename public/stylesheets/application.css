@@ -3223,7 +3223,7 @@ body #cboxloadedcontent {
 }
 /* line 339, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info .row strong {
-  padding-top: 7px;
+  padding-top: 2px;
 }
 
 /* line 345, ../../app/stylesheets/_bar.sass */
@@ -3240,41 +3240,43 @@ table.bar_schedule {
 table.bar_schedule tr td, table.bar_schedule tr th {
   padding: 2px 3px;
   color: white;
+  font-size: 11px;
 }
 
-/* line 369, ../../app/stylesheets/_bar.sass */
+/* line 371, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest {
   padding-top: 12px;
   color: white;
 }
-/* line 375, ../../app/stylesheets/_bar.sass */
+/* line 377, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest strong {
   font-size: 15px;
+  line-height: 17px;
 }
-/* line 379, ../../app/stylesheets/_bar.sass */
+/* line 383, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul {
   float: left;
   margin-left: 32px;
   padding-bottom: 0;
   margin-bottom: 0;
 }
-/* line 389, ../../app/stylesheets/_bar.sass */
+/* line 393, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li {
   list-style-type: disc;
   padding-bottom: 8px;
   color: #85a9c9;
 }
-/* line 397, ../../app/stylesheets/_bar.sass */
+/* line 401, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a {
   color: #85a9c9;
   text-decoration: none;
   font-size: 11px;
 }
-/* line 405, ../../app/stylesheets/_bar.sass */
+/* line 409, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a:hover {
   text-decoration: underline;
 }
-/* line 409, ../../app/stylesheets/_bar.sass */
+/* line 413, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a span {
   font-size: 9px;
 }

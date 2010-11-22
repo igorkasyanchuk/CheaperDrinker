@@ -3263,22 +3263,33 @@ table.bar_schedule tr td, table.bar_schedule tr th {
   margin-bottom: 0;
 }
 /* line 397, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest ul li.strong {
+  color: white;
+}
+/* line 401, ../../app/stylesheets/_bar.sass */
+#bar .bar .nearest ul li.strong a {
+  font-weight: bold;
+  color: white;
+  font-weight: 13px;
+}
+/* line 409, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li {
   list-style-type: disc;
   padding-bottom: 6px;
   color: #85a9c9;
 }
-/* line 405, ../../app/stylesheets/_bar.sass */
+/* line 417, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a {
   color: #85a9c9;
   text-decoration: none;
   font-size: 11px;
+  font-weight: normal;
 }
-/* line 413, ../../app/stylesheets/_bar.sass */
+/* line 427, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a:hover {
   text-decoration: underline;
 }
-/* line 417, ../../app/stylesheets/_bar.sass */
+/* line 431, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a span {
   font-size: 9px;
 }

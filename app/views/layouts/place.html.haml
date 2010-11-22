@@ -59,15 +59,16 @@
             .f{:class => (favorite ? '' : ' none')}= link_to 'Remove From Favorites', '#', 'data-url' => remove_from_favorites_place_path(@location), :class => 'remove_from_favorites_button', :rel => 'nofollow'
           - else
             .f.must_be_logged_in You must be #{link_to 'logged in', new_user_session_path} to add this bar to favorites list.
-        .bar_info.nearest
-          - nearest = Location.find(:all, :origin=> [@location.lat, @location.lng], :within => 5, :limit => 10, :conditions => ['(id not in (?))', @location.id], :order => 'rand()')
-          - if nearest.size > 0
+        - nearest = Location.find(:all, :origin=> [@location.lat, @location.lng], :within => 5, :limit => 10, :conditions => ['(id not in (?))', @location.id], :order => 'rand()')
+        - if nearest.size > 0
+          .bar_info.nearest
             .row
               = image_tag 'compass_36.png', :title => "Near #{@location.name}", :alt => "Near #{@location.name}"
               %strong What is close to #{@location.name}
             %ul
               - nearest.sort{|a,b| a.distance <=> b.distance}.each do |location|
                 %li= link_to "#{location.name} <span>(#{number_with_precision location.distance, :precision => 2} miles)</span>".html_safe, place_path(location), :title => location.title
+              %li.strong= link_to "Browse all #{@location.city} bars", [@location.parent_city.state, @location.parent_city] rescue nil
             .clear
       #bar_right
         .menu

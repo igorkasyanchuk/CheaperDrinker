@@ -1,0 +1,14 @@
+= title "Find specials in #{@state.name} bars | #{SEO_TITLE_SHORT}"
+= description "Find specials in #{@state.name} | #{SEO_TITLE_SHORT}"
+
+%h1 Happy Hour in #{@state.name}
+
+%p
+  = link_to "Browser all cities", '/states'
+
+.cols.cities.places
+  - @state.cities.by_name.in_groups_of(6, false) do |cities|
+    .col4
+      - cities.each do |city|
+        .r= link_to city.name, [city.state, city]
+        

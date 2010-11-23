@@ -9,3 +9,4 @@
     .address= location.address
     .description= simple_format location.special_for_day(current_day, params["start"], params["end"])
     .link_to= link_to 'More Details', place_path(location), :title => "#{location.name} specials"
+    %hr

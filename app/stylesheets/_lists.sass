@@ -10,25 +10,28 @@
       background: #ececec
     .full_address
       float: left
-      width: 24%
+      width: 22%
       padding-right: 1%
     .message
       float: left
-      width: 40%
+      width: 30%
     .message_long
       float: left
-      width: 50%
+      width: 45%
     .specials
       float: left
-      width: 10%
+      width: 12%
       span
+        text-transform: lowercase
         display: inline-block
+        margin-bottom: 1px
         padding: 1px 2px
-        background: #4778b2
+        background: $dark2
         color: white
-        font-size: 10px
+        font-size: 9px
         height: 12px
-        line-height: 12px
+        line-height: 10px
+        margin-right: 1px
         +round_me(4px)
     .controls
       float: left
@@ -36,6 +39,9 @@
     .name
       float: left
       width: 14%
+    .secret_code
+      width: 10%
+      float: left
     .amount_total
       margin-left: 90%
       

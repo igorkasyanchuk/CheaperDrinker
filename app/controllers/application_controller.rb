@@ -1,7 +1,34 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user, :logged_in?, :require_admin_user
+  helper_method :current_user_session, :current_user, :logged_in?, :require_admin_user, :is_mobile?
+  
+  MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
+                        'audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|' +
+                        'x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|' +
+                        'pdxgw|netfront|xiino|vodafone|portalmmm|sagem|mot-|sie-|ipod|up\\.b|' +
+                        'webos|amoi|novarra|cdm|alcatel|pocket|ipad|iphone|mobileexplorer|' +
+                        'mobile'
+  MOBILE_BROWSERS = [
+    "iphone", "android", "ipod", "opera mini", "blackberry", 
+    "palm", "hiptop", "avantgo", "plucker", "xiino", "blazer", "elaine", "windows ce; ppc;", 
+    "windows ce; smartphone;", "windows ce; iemobile", "up.browser", "up.link", "mmp", "symbian",
+    "smartphone", "midp", "wap", "vodafone", "o2", "pocket", "kindle", "mobile", "pda", "psp", "treo"
+  ] << MOBILE_USER_AGENTS
+
+  MOBILE_BROWSERS_REGEXP = Regexp.new(MOBILE_BROWSERS.join('|'))
+  
+  # before_filter :log_device
+
+  protected
+    def is_mobile?
+      agent = request.headers["HTTP_USER_AGENT"].to_s.downcase
+      (agent =~ MOBILE_BROWSERS_REGEXP)
+    end
+
+    def log_device
+      logger.info "device mobile => #{is_mobile?}".red
+    end   
 
   private
 

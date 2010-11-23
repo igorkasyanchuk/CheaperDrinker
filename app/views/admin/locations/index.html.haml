@@ -23,6 +23,8 @@
   .location
     .name 
       %strong Name / Date
+    .secret_code
+      %strong Code
     .full_address 
       %strong Full Address
     .specials
@@ -39,11 +41,13 @@
         .plan{:class => Location::PLANS[location.plan]}= Location::PLANS[location.plan]
         .date= location.created_at.to_date.to_s(:short_date)
         .time= location.created_at.to_s(:time_12)
+      .secret_code= location.activation_code        
       .full_address= location.full_address
       .specials
         - location.short_name_of_special_days.each do |day|
           %span= day
-        &nbsp;
+        - if location.short_name_of_special_days.size == 0
+          &nbsp;
       .message
         = location.description
         &nbsp;

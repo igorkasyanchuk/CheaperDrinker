@@ -72,6 +72,7 @@ class Location < ActiveRecord::Base
 
   before_save :check_state_city!
   before_save :geocode_it!
+  before_create :generate_activation_code!
   
   has_many :reviews, :as => :reviewable, :dependent => :destroy
   has_one :location_schedule
@@ -85,6 +86,11 @@ class Location < ActiveRecord::Base
   
   def name_and_city
     "#{name} #{city}"
+  end
+  
+  def generate_activation_code!
+    chars = ['a'..'z', '0'..'9'].map{|r|r.to_a}.flatten
+    self.activation_code = Array.new(8).map{chars[rand(chars.size)]}.join
   end
 
   def approve!

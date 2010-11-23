@@ -39,7 +39,7 @@
         .container= raw(flash_messages)
         .container.header_container= render '/shared/header'
         .container
-          .content_container= yield
+          %div{:class => "content_container #{yield :admin_css_class}"}= yield
         .clear
       #root_footer
     #footer

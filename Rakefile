@@ -4,4 +4,8 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+#require 'thinking_sphinx/tasks' 
+require 'thinking_sphinx/deltas/delayed_delta/tasks' 
+
 RailsjazzCom::Application.load_tasks
+

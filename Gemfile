@@ -22,6 +22,9 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'tlsmail'
 gem 'hoptoad_notifier'
+gem 'thinking-sphinx', "~> 2.0.0", :require => 'thinking_sphinx'
+gem 'delayed_job'
+gem 'ts-delayed-delta', '>= 1.0.0', :require   => 'thinking_sphinx/deltas/delayed_delta'
 
 group :test do
   gem "shoulda"

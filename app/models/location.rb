@@ -24,6 +24,14 @@ class Location < ActiveRecord::Base
   
   has_friendly_id :name_and_city, :use_slug => true, :sequence_separator => ":"
   
+  define_index do
+    indexes :name, :sortable => true
+    indexes :city
+    indexes :state
+    
+    set_property :delta => :delayed
+  end
+  
   validates_presence_of :name
   #validates_presence_of :description
   validates_presence_of :state
@@ -177,7 +185,11 @@ class Location < ActiveRecord::Base
   end
   
   def self.autocomplete(term, limit, order)
-    Location.where(["LOWER(name) LIKE ?", "#{term.downcase}%"]).limit(limit).order(order)
+    term ||= ''
+    term.gsub(".", ' ')
+    term.gsub(",", ' ')
+    #Location.where(["LOWER(name) LIKE ?", "#{term.downcase}%"]).limit(limit).order(order)
+    Location.search "#{term}*", :limit => limit, :order => :name
   end
   
   def schedule_present?

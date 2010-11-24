@@ -1,0 +1,23 @@
+= title "Search: #{params[:q]}"
+
+= make_page_flyid
+
+%h1 Search for "#{params[:q]}"
+
+- if @locations.size > 0
+  .search_results
+    .cols.places
+      - @locations.in_groups_of(8, false) do |places|
+        .col3
+          - places.each do |place|
+            = render :partial => '/places/place_ext', :locals => { :place => place }    
+    .clear
+    = will_paginate @locations
+
+- else
+  %p
+    Can't find anything.
+  %p
+    Try to #{link_to 'add bar', '/dashboard/add_bar'} or #{link_to 'contact us', new_contact_path}.
+  %o
+    Or search on #{link_to 'map', root_path}.

@@ -35,6 +35,12 @@ module ApplicationHelper
     end
   end
   
+  def make_page_flyid
+    content_for :admin_css_class do
+      'admin_css_class'
+    end
+  end
+
   def no_index_me
     content_for :noindex do
       'noindex'

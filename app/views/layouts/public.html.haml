@@ -38,7 +38,8 @@
       #content
         .container= raw(flash_messages)
         .container.header_container= render '/shared/header'
-        .container= yield
+        .container
+          %div{:class => "#{yield :admin_css_class}"}= yield
         .clear
         .none
           #find_bar_container

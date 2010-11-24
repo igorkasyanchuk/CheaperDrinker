@@ -1,0 +1,4 @@
+.place.place_ext
+  %strong= link_to place.name, place_path(place), :title => place.title
+  .static_rating= static_rating(place.average_rating)
+  .address= place.full_address

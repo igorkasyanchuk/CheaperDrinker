@@ -45,5 +45,10 @@ class HomeController < ApplicationController
     @cities = City.autocomplete(params['term'])
     render :json => @cities.collect{|city| city.name}.to_json
   end
+  
+  def search
+    query = params[:q]
+    @locations = Location.search "#{query}*", :page => params[:page], :per_page => 24
+  end
 
 end

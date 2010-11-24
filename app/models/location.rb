@@ -28,6 +28,8 @@ class Location < ActiveRecord::Base
     indexes :name, :sortable => true
     indexes :city
     indexes :state
+    indexes :address
+    indexes :zip
     
     set_property :delta => :delayed
   end
@@ -188,8 +190,11 @@ class Location < ActiveRecord::Base
     term ||= ''
     term.gsub(".", ' ')
     term.gsub(",", ' ')
-    #Location.where(["LOWER(name) LIKE ?", "#{term.downcase}%"]).limit(limit).order(order)
-    Location.search "#{term}*", :limit => limit, :order => :name
+    Location.search "#{term}*", :limit => limit, :order => order, :field_weights => {
+      :name => 10,
+      :city => 6,
+      :state => 3
+    }
   end
   
   def schedule_present?

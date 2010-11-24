@@ -1767,6 +1767,12 @@ html dl dt, html dl dl {
   margin: 0px 0px 0px 20px;
   width: 250px;
 }
+/* line 94, ../../app/stylesheets/layout.sass */
+.cols .col3 {
+  float: left;
+  margin: 0px 0px 0px 20px;
+  width: 320px;
+}
 
 /* line 42, ../../app/stylesheets/base.sass */
 html {

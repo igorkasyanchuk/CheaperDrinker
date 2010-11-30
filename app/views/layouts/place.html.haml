@@ -29,7 +29,7 @@
           - if @location.phone.present?
             .row
               = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
-              %strong 555-99-77
+              %strong= @location.phone
           - if @location.schedule_present?
             .row
               = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"

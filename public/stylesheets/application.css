@@ -3252,8 +3252,12 @@ body #cboxloadedcontent {
   padding-top: 2px;
   line-height: 14px;
 }
-
 /* line 349, ../../app/stylesheets/_bar.sass */
+#bar .bar .bar_info .phone_row strong {
+  padding-top: 8px;
+}
+
+/* line 355, ../../app/stylesheets/_bar.sass */
 table.bar_schedule {
   width: 200px;
   clear: both;
@@ -3263,58 +3267,58 @@ table.bar_schedule {
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
-/* line 365, ../../app/stylesheets/_bar.sass */
+/* line 371, ../../app/stylesheets/_bar.sass */
 table.bar_schedule tr td, table.bar_schedule tr th {
   padding: 2px 3px;
   color: white;
   font-size: 11px;
 }
 
-/* line 375, ../../app/stylesheets/_bar.sass */
+/* line 381, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest {
   padding-top: 12px;
   color: white;
 }
-/* line 381, ../../app/stylesheets/_bar.sass */
+/* line 387, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest strong {
   font-size: 15px;
   line-height: 17px;
 }
-/* line 387, ../../app/stylesheets/_bar.sass */
+/* line 393, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul {
   float: left;
   margin-left: 32px;
   padding-bottom: 0;
   margin-bottom: 0;
 }
-/* line 397, ../../app/stylesheets/_bar.sass */
+/* line 403, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li.strong {
   color: white;
 }
-/* line 401, ../../app/stylesheets/_bar.sass */
+/* line 407, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li.strong a {
   font-weight: bold;
   color: white;
   font-weight: 13px;
 }
-/* line 409, ../../app/stylesheets/_bar.sass */
+/* line 415, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li {
   list-style-type: disc;
   padding-bottom: 6px;
   color: #85a9c9;
 }
-/* line 417, ../../app/stylesheets/_bar.sass */
+/* line 423, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a {
   color: #85a9c9;
   text-decoration: none;
   font-size: 11px;
   font-weight: normal;
 }
-/* line 427, ../../app/stylesheets/_bar.sass */
+/* line 433, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a:hover {
   text-decoration: underline;
 }
-/* line 431, ../../app/stylesheets/_bar.sass */
+/* line 437, ../../app/stylesheets/_bar.sass */
 #bar .bar .nearest ul li a span {
   font-size: 9px;
 }

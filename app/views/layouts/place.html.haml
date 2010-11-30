@@ -27,7 +27,7 @@
             = image_tag 'icon_adress.png', :title => "#{@location.name} Address", :alt => "#{@location.name} Address"
             %address= @location.full_address
           - if @location.phone.present?
-            .row
+            .row.phone_row
               = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
               %strong= @location.phone
           - if @location.schedule_present?

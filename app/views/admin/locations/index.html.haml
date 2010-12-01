@@ -5,60 +5,62 @@
 
 %h1.left Locations
 
-.subfilter
-  %strong show:
-  %label
-    = check_box_tag 'show_free', '.free', 'checked', :class => 'filter_locations'
-    free
-  %label
-    = check_box_tag 'show_premium', '.premium', 'checked', :class => 'filter_locations'
-    premium
-  %label
-    = check_box_tag 'show_premium_plus', '.premium_plus', 'checked', :class => 'filter_locations'
-    premium_plus
+/.subfilter
 
 .clear    
 
-.locations
-  .location
-    .name 
-      %strong Name / Date
-    .secret_code
-      %strong Code
-    .full_address 
-      %strong Full Address
-    .specials
-      %strong Specials
-    .message 
-      %strong Description
-    .controls 
-      %strong Actions
-    .clear  
-  - @locations.each do |location|
-    .location{ :class => cycle(:odd, :even), :id => "location-#{location.id}" }
-      .name
-        = link_to location.name, place_path(location), :target => '_blank'
-        .plan{:class => Location::PLANS[location.plan]}= Location::PLANS[location.plan]
-        .date= location.created_at.to_date.to_s(:short_date)
-        .time= location.created_at.to_s(:time_12)
-      .secret_code= location.activation_code        
-      .full_address= location.full_address
+= form_tag admin_locations_path, :method => :get, :id => 'admin_quick_filter' do
+  = text_field_tag :name, params[:name]
+  = select_tag :plan, options_for_select(Location::PLANS.invert, params[:plan]), :include_blank => true
+  = submit_tag "Search"
+  
+- if @total > 0
+  .locations
+    .location.summary
+      .name 
+        %strong Name / Date
+      .secret_code
+        %strong Code
+      .full_address 
+        %strong Full Address
       .specials
-        - location.short_name_of_special_days.each do |day|
-          %span= day
-        - if location.short_name_of_special_days.size == 0
+        %strong Specials
+      .message 
+        %strong Description
+      .controls 
+        %strong Actions
+      .clear  
+    - @locations.each do |location|
+      .location{ :class => cycle(:odd, :even), :id => "location-#{location.id}" }
+        .name
+          = link_to location.name, place_path(location), :target => '_blank'
+          .plan{:class => Location::PLANS[location.plan]}= Location::PLANS[location.plan]
+          .date= location.created_at.to_date.to_s(:short_date)
+          .time= location.created_at.to_s(:time_12)
+        .secret_code= location.activation_code        
+        .full_address= location.full_address
+        .specials
+          - location.short_name_of_special_days.each do |day|
+            %span= day
+          - if location.short_name_of_special_days.size == 0
+            &nbsp;
+        .message
+          = location.description
           &nbsp;
-      .message
-        = location.description
-        &nbsp;
-      .controls
-        = link_to 'edit', [:edit, :admin, location], :class => 'edit_button'
-        = link_to "specials(#{location.special_days_count})", [:admin, location, :special_days], :class => 'index_button'
-        = link_to "reviews(#{location.reviews_count})", [:admin, location, :reviews], :class => 'index_button'
-        = (link_to 'approve', [:approve, :admin, location], :remote => true, :class => 'approve_button') unless location.approved?
-        = link_to 'remove', [:admin, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+        .controls
+          = link_to 'edit', [:edit, :admin, location], :class => 'edit_button'
+          = link_to "specials(#{location.special_days_count})", [:admin, location, :special_days], :class => 'index_button'
+          = link_to "reviews(#{location.reviews_count})", [:admin, location, :reviews], :class => 'index_button'
+          = (link_to 'approve', [:approve, :admin, location], :remote => true, :class => 'approve_button') unless location.approved?
+          = link_to 'remove', [:admin, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+        .clear
+    .location.summary
+      .paginate
+        = will_paginate @locations
+    .location.summary
+      .amount.message
+        %strong Total: #{pluralize(@total, 'location')}
       .clear
-  .location.summary
-    .amount.message
-      %strong Total: #{pluralize(@locations.count, 'location')}
-    .clear
+- else
+  %p
+    List with results is empty.

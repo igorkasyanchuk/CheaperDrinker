@@ -824,7 +824,7 @@ table.zebra th, table.zebra td, table.zebra caption, table.zebra thead {
   border-style: inset;
 }
 /* line 20, ../../app/stylesheets/tables.sass */
-table.zebra thead tr th {
+table.zebra thead tr th, table.zebra th tr th {
   font-weight: bold;
   border: 1px solid #dddddd;
   background: #ececec;
@@ -850,8 +850,12 @@ table.zebra td ol {
   margin-top: 0.3em;
   margin-bottom: 0.3em;
 }
+/* line 39, ../../app/stylesheets/tables.sass */
+table.zebra tr th {
+  font-weight: bold;
+}
 
-/* line 40, ../../app/stylesheets/tables.sass */
+/* line 43, ../../app/stylesheets/tables.sass */
 table td.table_block {
   background: #ececec;
   color: black;
@@ -1973,7 +1977,7 @@ html p, html fieldset, html table {
 a {
   color: #1d75bb;
 }
-/* line 26, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
+/* line 24, ../../../../../opt/ruby-enterprise-1.8.7-2010.01/lib/ruby/gems/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/links/_link-colors.scss */
 a:hover {
   color: #1d75cc;
 }
@@ -2573,11 +2577,11 @@ html .header_section a:hover {
   vertical-align: middle;
 }
 
-/* line 1, ../../app/stylesheets/_lists.sass */
+/* line 13, ../../app/stylesheets/_lists.sass */
 .locations {
   padding-bottom: 16px;
 }
-/* line 5, ../../app/stylesheets/_lists.sass */
+/* line 17, ../../app/stylesheets/_lists.sass */
 .locations .location {
   font-size: 12px;
   margin-bottom: 6px;
@@ -2585,32 +2589,40 @@ html .header_section a:hover {
   border-top: 1px solid #ececec;
   padding: 2px;
 }
-/* line 17, ../../app/stylesheets/_lists.sass */
+/* line 3, ../../app/stylesheets/_lists.sass */
+.locations .location.summary {
+  border: 0 none;
+}
+/* line 7, ../../app/stylesheets/_lists.sass */
+.locations .location.summary:hover {
+  background: none;
+}
+/* line 31, ../../app/stylesheets/_lists.sass */
 .locations .location:hover {
   background: #ececec;
 }
-/* line 21, ../../app/stylesheets/_lists.sass */
+/* line 35, ../../app/stylesheets/_lists.sass */
 .locations .location .full_address {
   float: left;
   width: 22%;
   padding-right: 1%;
 }
-/* line 29, ../../app/stylesheets/_lists.sass */
+/* line 43, ../../app/stylesheets/_lists.sass */
 .locations .location .message {
   float: left;
   width: 30%;
 }
-/* line 35, ../../app/stylesheets/_lists.sass */
+/* line 49, ../../app/stylesheets/_lists.sass */
 .locations .location .message_long {
   float: left;
   width: 45%;
 }
-/* line 41, ../../app/stylesheets/_lists.sass */
+/* line 55, ../../app/stylesheets/_lists.sass */
 .locations .location .specials {
   float: left;
   width: 12%;
 }
-/* line 47, ../../app/stylesheets/_lists.sass */
+/* line 61, ../../app/stylesheets/_lists.sass */
 .locations .location .specials span {
   text-transform: lowercase;
   display: inline-block;
@@ -2626,31 +2638,31 @@ html .header_section a:hover {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 71, ../../app/stylesheets/_lists.sass */
+/* line 85, ../../app/stylesheets/_lists.sass */
 .locations .location .controls {
   float: left;
   width: 10%;
 }
-/* line 77, ../../app/stylesheets/_lists.sass */
+/* line 91, ../../app/stylesheets/_lists.sass */
 .locations .location .name {
   float: left;
   width: 14%;
 }
-/* line 83, ../../app/stylesheets/_lists.sass */
+/* line 97, ../../app/stylesheets/_lists.sass */
 .locations .location .secret_code {
   width: 10%;
   float: left;
 }
-/* line 89, ../../app/stylesheets/_lists.sass */
+/* line 103, ../../app/stylesheets/_lists.sass */
 .locations .location .amount_total {
   margin-left: 90%;
 }
 
-/* line 95, ../../app/stylesheets/_lists.sass */
+/* line 109, ../../app/stylesheets/_lists.sass */
 .admin_reviews {
   padding-bottom: 16px;
 }
-/* line 99, ../../app/stylesheets/_lists.sass */
+/* line 113, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review {
   font-size: 12px;
   margin-bottom: 6px;
@@ -2658,42 +2670,50 @@ html .header_section a:hover {
   border-top: 1px solid #ececec;
   padding: 2px;
 }
-/* line 111, ../../app/stylesheets/_lists.sass */
+/* line 3, ../../app/stylesheets/_lists.sass */
+.admin_reviews .admin_review.summary {
+  border: 0 none;
+}
+/* line 7, ../../app/stylesheets/_lists.sass */
+.admin_reviews .admin_review.summary:hover {
+  background: none;
+}
+/* line 127, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review:hover {
   background: #ececec;
 }
-/* line 115, ../../app/stylesheets/_lists.sass */
+/* line 131, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .by {
   float: left;
   width: 14%;
   padding-right: 1%;
 }
-/* line 123, ../../app/stylesheets/_lists.sass */
+/* line 139, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .message {
   float: left;
   width: 50%;
 }
-/* line 129, ../../app/stylesheets/_lists.sass */
+/* line 145, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .rating_value {
   float: left;
   width: 10%;
 }
-/* line 135, ../../app/stylesheets/_lists.sass */
+/* line 151, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .rating_value span {
   font-size: 11px;
   line-height: 12px;
 }
-/* line 141, ../../app/stylesheets/_lists.sass */
+/* line 157, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .controls {
   float: left;
   width: 10%;
 }
-/* line 147, ../../app/stylesheets/_lists.sass */
+/* line 163, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .name {
   float: left;
   width: 14%;
 }
-/* line 153, ../../app/stylesheets/_lists.sass */
+/* line 169, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .amount_total {
   margin-left: 90%;
 }
@@ -3254,7 +3274,7 @@ body #cboxloadedcontent {
 }
 /* line 349, ../../app/stylesheets/_bar.sass */
 #bar .bar .bar_info .phone_row strong {
-  padding-top: 8px;
+  padding-top: 9px;
 }
 
 /* line 355, ../../app/stylesheets/_bar.sass */
@@ -3346,18 +3366,15 @@ table.bar_schedule tr td, table.bar_schedule tr th {
 .search_results {
   padding-top: 16px;
 }
-/* line 5, ../../app/stylesheets/_search_results.sass */
-.search_results div.pagination {
-  padding-top: 32px;
-}
+
 /* line 9, ../../app/stylesheets/_search_results.sass */
-.search_results div.pagination a, .search_results div.pagination span, .search_results div.pagination em {
+div.pagination a, div.pagination span, div.pagination em {
   font-size: 15px;
   line-height: 15px;
   padding: 2px 3px;
 }
 /* line 17, ../../app/stylesheets/_search_results.sass */
-.search_results div.pagination em {
+div.pagination em {
   background: #e70418;
   color: white;
   padding: 2px 6px;
@@ -3891,4 +3908,9 @@ table.edit_schedule {
 /* line 342, ../../app/stylesheets/application.sass */
 table.edit_schedule label {
   display: none;
+}
+
+/* line 345, ../../app/stylesheets/application.sass */
+#admin_quick_filter {
+  padding: 10px 0;
 }

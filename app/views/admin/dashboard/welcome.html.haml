@@ -1,3 +1,17 @@
 = title "Admin Dashboard"
 
 %h1 Admin Dashboard
+
+%table.zebra.w33
+  %tr
+    %th Users
+    %td= User.count
+  %tr
+    %th Contacts
+    %td= Contact.count
+  %tr
+    %th Reviews
+    %td= Review.count
+  %tr
+    %th Locations
+    %td= Location.count        

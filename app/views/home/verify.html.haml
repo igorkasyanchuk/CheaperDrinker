@@ -1,0 +1,10 @@
+.verify_ownership_panel
+  %h1 Verify Bar Ownership
+  
+  = form_tag '/check_verify' do
+    %label 
+      Verifycation Code
+      %br
+      = text_field_tag :code
+    %br
+    = submit_tag 'Verify'

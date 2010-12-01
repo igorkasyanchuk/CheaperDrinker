@@ -7,8 +7,19 @@
   .full_address
     = location.full_address
   .specials
-    - location.special_days.each do |day|
+    - location.short_name_of_special_days.each do |day|
       %span= day
+    - if location.short_name_of_special_days.size == 0
+      &nbsp;
+  .model_field
+    = location.schedule_present? ? (image_tag 'green.png') : (image_tag 'red.png')
+  .model_field
+    = location.phone.blank? ? (image_tag 'red.png') : (image_tag 'green.png')
+  .model_field
+    = location.facebook.blank? ? (image_tag 'red.png') : (image_tag 'green.png')
+  .model_field
+    = location.twitter.blank? ? (image_tag 'red.png') : (image_tag 'green.png')      
+  .model_field
     &nbsp;
   .message
     = location.description
@@ -18,4 +29,6 @@
     = link_to 'remove', [:dashboard, current_user, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
     =# link_to "manage specials", [:dashboard, current_user, location, :special_days], :class => 'index_button'
     = link_to "reviews(#{location.reviews_count})", [:dashboard, current_user, location, :reviews], :class => 'index_button'
-  .clear
+  .clear  
+  
+  

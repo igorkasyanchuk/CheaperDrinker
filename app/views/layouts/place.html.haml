@@ -31,7 +31,7 @@
               = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
               %strong= @location.phone
           - if @location.schedule_present?
-            .row
+            .row.schedule_row
               = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
               %strong #{@location.name} Schedule
               %table.bar_schedule

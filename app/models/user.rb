@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
-  attr_accessor :require_password
+  attr_accessor :require_password, :code
   
   # setup authlogic and use bcrypt to store passwords
   acts_as_authentic do |config|
     config.crypto_provider = Authlogic::CryptoProviders::BCrypt
   end
 
-  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :admin, :location
+  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :admin, :location, :code, :facebook, :twitter
 
   validates_presence_of :email
   validates_presence_of :first_name
@@ -27,6 +27,16 @@ class User < ActiveRecord::Base
   scope :backward, order('created_at DESC')  
   
   before_save :geocode_it!
+  after_create :map_to_location_if_code!
+  
+  def map_to_location_if_code!
+    unless self.code.blank?
+      @location = Location.find_by_activation_code_and_is_code_used(self.code, false)
+      @location.user_id = self.id
+      @location.is_code_used = true
+      @location.save(:validate => false)
+    end
+  end
   
   def name
     "#{first_name} #{last_name}"

@@ -27,7 +27,9 @@
       .specials
         %strong Specials
       .model_field
-        = image_tag 'phone.png'
+        = image_tag 'clock_16.png'
+      .model_field
+        = image_tag 'phone_16.png'
       .model_field
         = image_tag 'facebook_16.png'
       .model_field
@@ -51,6 +53,8 @@
             %span= day
           - if location.short_name_of_special_days.size == 0
             &nbsp;
+        .model_field
+          = location.schedule_present? ? (image_tag 'green.png') : (image_tag 'red.png')
         .model_field
           = location.phone.blank? ? (image_tag 'red.png') : (image_tag 'green.png')
         .model_field

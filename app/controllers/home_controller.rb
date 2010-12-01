@@ -21,6 +21,11 @@ class HomeController < ApplicationController
     end
   end
   
+  def check_verify
+    @location = Location.find_by_activation_code_and_is_code_used(params[:code], false)
+    redirect_to new_user_path(:code => params[:code]) if @location
+  end
+  
   def find_bar
     @location = Geokit::Geocoders::MultiGeocoder.geocode(params['q'])
 

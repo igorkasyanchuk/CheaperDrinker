@@ -103,7 +103,7 @@ class Location < ActiveRecord::Base
   end
   
   def generate_activation_code!
-    chars = ['a'..'z', '0'..'9'].map{|r|r.to_a}.flatten
+    chars = ['A'..'Z', '0'..'9'].map{|r|r.to_a}.flatten
     self.activation_code = Array.new(8).map{chars[rand(chars.size)]}.join
   end
 

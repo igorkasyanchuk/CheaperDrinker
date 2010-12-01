@@ -4,4 +4,7 @@
 
 - simple_form_for [:dashboard, @user] do |f|
   = f.error_messages
-  = render :partial => 'form', :locals => { :f => f }  
+  = render :partial => 'form', :locals => { :f => f }
+  
+%p
+  = link_to 'Dashboard', dashboard_path

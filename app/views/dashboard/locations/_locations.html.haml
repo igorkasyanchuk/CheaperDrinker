@@ -1,12 +1,22 @@
 .locations
   - if user.locations.approved.count > 0
-    .location
+    .location.summary
       .name 
         %strong Name
       .full_address 
         %strong Full Address
       .specials
         %strong Specials
+      .model_field
+        = image_tag 'clock_16.png'
+      .model_field
+        = image_tag 'phone_16.png'
+      .model_field
+        = image_tag 'facebook_16.png'
+      .model_field
+        = image_tag 'twitter_16.png'
+      .model_field
+        &nbsp;
       .message 
         %strong Description
       .controls 
@@ -15,8 +25,8 @@
     - user.locations.approved.backward.each do |location|
       = render :partial => '/dashboard/locations/location', :locals => { :location => location }
     .location.summary
-      .amount.amount_total
-        %strong Total: #{pluralize(user.locations.count, 'location')}
+      .amount.message
+        %strong Total: #{pluralize(@total, 'location')}
       .clear
   - else
     .locations_list_is_empty

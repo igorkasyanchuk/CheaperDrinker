@@ -8,4 +8,6 @@
 = f.input :twitter, :hint => "(optional)"
 = f.input :facebook, :hint => "(optional)"
 
+= f.hidden_field :code, :value => params[:code]
+
 = f.button :submit, "Sign up"

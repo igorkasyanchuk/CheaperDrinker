@@ -59,12 +59,10 @@ class Location < ActiveRecord::Base
     where(bounds_sql)
   }
   scope :by_name, order('name')
-  scope :search_by_name, lambda { |name| 
-    where(:name.matches => "#{name}%")
-  }
-  scope :search_by_plan, lambda { |plan| 
-    where(:plan=> plan)
-  }  
+
+  scope :search_by_name, lambda { |name| where(:name.matches => "#{name}%") }
+  scope :search_by_plan, lambda { |plan| where(:plan=> plan) }
+  scope :search_by_city, lambda { |city| where(:city => city) }  
 
   scope :by_day, lambda { |day|
     where(["special_days.day_id = ?", Location.get_day(day)])

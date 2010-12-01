@@ -4,6 +4,7 @@ class Admin::LocationsController < Admin::DashboardController
     scope = Location.from_pending_to_approved
     scope = scope.search_by_name(params[:name]) if params[:name].present?
     scope = scope.search_by_plan(params[:plan]) if params[:plan].present?
+    scope = scope.search_by_city(params[:city]) if params[:city].present?
     @total = scope.count
     @locations = scope.paginate :per_page => 30, :page => params[:page]
   end

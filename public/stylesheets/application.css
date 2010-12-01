@@ -2608,21 +2608,26 @@ html .header_section a:hover {
   padding-right: 1%;
 }
 /* line 43, ../../app/stylesheets/_lists.sass */
-.locations .location .message {
+.locations .location .model_field {
   float: left;
-  width: 30%;
+  width: 2%;
 }
 /* line 49, ../../app/stylesheets/_lists.sass */
+.locations .location .message {
+  float: left;
+  width: 24%;
+}
+/* line 55, ../../app/stylesheets/_lists.sass */
 .locations .location .message_long {
   float: left;
   width: 45%;
 }
-/* line 55, ../../app/stylesheets/_lists.sass */
+/* line 61, ../../app/stylesheets/_lists.sass */
 .locations .location .specials {
   float: left;
   width: 12%;
 }
-/* line 61, ../../app/stylesheets/_lists.sass */
+/* line 67, ../../app/stylesheets/_lists.sass */
 .locations .location .specials span {
   text-transform: lowercase;
   display: inline-block;
@@ -2638,31 +2643,31 @@ html .header_section a:hover {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 85, ../../app/stylesheets/_lists.sass */
+/* line 91, ../../app/stylesheets/_lists.sass */
 .locations .location .controls {
   float: left;
   width: 10%;
 }
-/* line 91, ../../app/stylesheets/_lists.sass */
+/* line 97, ../../app/stylesheets/_lists.sass */
 .locations .location .name {
   float: left;
   width: 14%;
 }
-/* line 97, ../../app/stylesheets/_lists.sass */
+/* line 103, ../../app/stylesheets/_lists.sass */
 .locations .location .secret_code {
   width: 10%;
   float: left;
 }
-/* line 103, ../../app/stylesheets/_lists.sass */
+/* line 109, ../../app/stylesheets/_lists.sass */
 .locations .location .amount_total {
   margin-left: 90%;
 }
 
-/* line 109, ../../app/stylesheets/_lists.sass */
+/* line 115, ../../app/stylesheets/_lists.sass */
 .admin_reviews {
   padding-bottom: 16px;
 }
-/* line 113, ../../app/stylesheets/_lists.sass */
+/* line 119, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review {
   font-size: 12px;
   margin-bottom: 6px;
@@ -2678,42 +2683,42 @@ html .header_section a:hover {
 .admin_reviews .admin_review.summary:hover {
   background: none;
 }
-/* line 127, ../../app/stylesheets/_lists.sass */
+/* line 133, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review:hover {
   background: #ececec;
 }
-/* line 131, ../../app/stylesheets/_lists.sass */
+/* line 137, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .by {
   float: left;
   width: 14%;
   padding-right: 1%;
 }
-/* line 139, ../../app/stylesheets/_lists.sass */
+/* line 145, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .message {
   float: left;
   width: 50%;
 }
-/* line 145, ../../app/stylesheets/_lists.sass */
+/* line 151, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .rating_value {
   float: left;
   width: 10%;
 }
-/* line 151, ../../app/stylesheets/_lists.sass */
+/* line 157, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .rating_value span {
   font-size: 11px;
   line-height: 12px;
 }
-/* line 157, ../../app/stylesheets/_lists.sass */
+/* line 163, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .controls {
   float: left;
   width: 10%;
 }
-/* line 163, ../../app/stylesheets/_lists.sass */
+/* line 169, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .name {
   float: left;
   width: 14%;
 }
-/* line 169, ../../app/stylesheets/_lists.sass */
+/* line 175, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .amount_total {
   margin-left: 90%;
 }

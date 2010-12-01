@@ -5,13 +5,13 @@
 %table.zebra.w33
   %tr
     %th Users
-    %td= User.count
+    %td #{User.count}
   %tr
     %th Contacts
-    %td= Contact.count
+    %td #{Contact.count}
   %tr
     %th Reviews
-    %td= Review.count
+    %td #{Review.not_approved.count}/#{Review.count}
   %tr
     %th Locations
-    %td= Location.count        
+    %td #{Location.pending.count}/#{Location.count}

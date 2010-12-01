@@ -12,6 +12,7 @@
 = form_tag admin_locations_path, :method => :get, :id => 'admin_quick_filter' do
   = text_field_tag :name, params[:name]
   = select_tag :plan, options_for_select(Location::PLANS.invert, params[:plan]), :include_blank => true
+  = select_tag :city, options_for_select((Location.all :select => :city).collect{|c| c.city}.uniq.sort, params[:city]), :include_blank => true
   = submit_tag "Search"
   
 - if @total > 0
@@ -25,11 +26,17 @@
         %strong Full Address
       .specials
         %strong Specials
-      .message 
+      .model_field
+        = image_tag 'phone.png'
+      .model_field
+        = image_tag 'facebook_16.png'
+      .model_field
+        = image_tag 'twitter_16.png'
+      .message
         %strong Description
       .controls 
         %strong Actions
-      .clear  
+      .clear
     - @locations.each do |location|
       .location{ :class => cycle(:odd, :even), :id => "location-#{location.id}" }
         .name
@@ -44,6 +51,12 @@
             %span= day
           - if location.short_name_of_special_days.size == 0
             &nbsp;
+        .model_field
+          = location.phone.blank? ? (image_tag 'red.png') : (image_tag 'green.png')
+        .model_field
+          = location.facebook.blank? ? (image_tag 'red.png') : (image_tag 'green.png')
+        .model_field
+          = location.twitter.blank? ? (image_tag 'red.png') : (image_tag 'green.png')
         .message
           = location.description
           &nbsp;

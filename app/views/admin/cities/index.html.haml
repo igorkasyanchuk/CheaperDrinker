@@ -1,0 +1,26 @@
+= title "Cities, Set TOP Cities"
+
+%h1 Cities
+
+- if @cities.count > 0
+
+  - @cities_grouped.sort.each do |state, cities|
+    %h2= state
+    %table.zebra.w33
+      %thead
+        %tr
+          %th.w10 TOP
+          %th Name
+      
+      %tbody
+        - for city in cities
+          %tr{ :class => cycle(:odd, :even), :id => "cb_row_#{city.id}" }
+            %td= check_box_tag "c#{city.id}", city.is_top_city, city.is_top_city, "data-url" => resource_path(city), :class => 'top_cb'
+            %td= city.name
+          
+- else
+  %p
+    Empty list.
+    
+= content_for :on_ready do
+  init_top_cb();

@@ -10,7 +10,13 @@
 = inside_layout 'application' do
   #bar
     .bar_name
-      %h1= @location.name
+      %h1
+        = @location.name
+        - if logged_in? && current_user.admin?
+          %span.edit_bar
+            = link_to 'Edit Details', [:edit, :admin, @location]
+            |
+            = link_to 'Edit Specials', [:admin, @location, :special_days]
       .location_rating
         .overall_rating= static_rating(@location.average_rating)
         .rating_info based on #{pluralize(@location.reviews.approved.count, 'review')}
@@ -29,7 +35,8 @@
           - if @location.phone.present?
             .row.phone_row
               = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
-              %strong= @location.phone
+              %strong
+                = (number_to_phone @location.phone, :area_code => true) rescue @location.phone
           - if @location.schedule_present?
             .row.schedule_row
               = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
@@ -47,11 +54,6 @@
         - if @location.any_icon?
           .bar_info
             = gay_icon(@location, :large)
-        - if logged_in? && current_user.admin?
-          .bar_info
-            = link_to 'Edit Details', [:edit, :admin, @location]
-            |
-            = link_to 'Edit Specials', [:admin, @location, :special_days]
         .bar_info.favorites
           - if logged_in?
             - favorite = current_user.favorites.include?(@location)

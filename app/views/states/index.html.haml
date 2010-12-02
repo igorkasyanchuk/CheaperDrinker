@@ -3,6 +3,13 @@
 
 %h1 Find Specials
 
+- if City.top.count > 0
+  .top_cities
+    %h2 Top Cities, Top Specials
+    - City.top.by_name.each do |city|
+      .city= link_to city.name, [city.state, city], :title => "specials in #{city.name}"
+    .clear
+
 .cols.cities
   - @states.in_groups_of(6, false) do |states_row|
     .col

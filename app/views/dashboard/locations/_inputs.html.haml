@@ -13,6 +13,9 @@
 = f.input :twitter
 = f.input :facebook
 
+- if current_user.admin?
+  = f.input :synopsis, :input_html => { :rows => '6', :cols => '60' }, :label => 'Our Review'
+
 = f.simple_fields_for :location_schedule, f.object.location_schedule || f.object.build_location_schedule do |s|
   %h3 Hours
   %table.edit_schedule.zebra

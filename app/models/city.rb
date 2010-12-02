@@ -7,6 +7,7 @@ class City < ActiveRecord::Base
   has_many :locations
   scope :by_name, order(:name)
   
+  scope :top, where(:is_top_city => true)
   
   def City.autocomplete(name)
     City.where(["LOWER(name) LIKE ?", "#{name.downcase}%"]).limit(15).order(:name).select(:name)

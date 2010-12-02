@@ -376,3 +376,9 @@ function init_favorites() {
     $.get($(this).attr("data-url"), {}, function(data){});
   });
 };
+
+function init_top_cb() {
+  $('.top_cb').live('click', function() {
+    $.get($(this).attr("data-url"), {}, function(data){});
+  });
+};

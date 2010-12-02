@@ -86,6 +86,7 @@ class Location < ActiveRecord::Base
 
   before_save :check_state_city!
   before_save :geocode_it!
+  before_save :check_fields!
   before_create :generate_activation_code!
   
   has_many :reviews, :as => :reviewable, :dependent => :destroy
@@ -105,6 +106,10 @@ class Location < ActiveRecord::Base
   def generate_activation_code!
     chars = ['A'..'Z', '0'..'9'].map{|r|r.to_a}.flatten
     self.activation_code = Array.new(8).map{chars[rand(chars.size)]}.join
+  end
+  
+  def check_fields!
+    self.phone.gsub!(/\D/, '') unless self.phone.blank?
   end
 
   def approve!

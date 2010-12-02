@@ -80,5 +80,21 @@ class LocationTest < ActiveSupport::TestCase
     assert loc.special?(:monday)
     assert !loc.special?(:wednesday)
   end
+  
+  test "phone numbers" do
+    @location = Factory(:location)
+    @location.phone = "(555) 777-8888"
+    @location.save
+    @location.reload
+    assert_equal @location.phone, "5557778888"
+    @location.phone = "555.333.8888"
+    @location.save
+    @location.reload
+    assert_equal @location.phone, "5553338888"
+    @location.phone = "555-222-8888"
+    @location.save
+    @location.reload
+    assert_equal @location.phone, "5552228888"
+  end
 
 end

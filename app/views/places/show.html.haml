@@ -9,3 +9,6 @@
       %li
         .day= day.to_s.titleize
         .description= simple_format(@location.special_for_day(day))
+        
+  - if @location.synopsis.present?
+    .synopsis.text_containter= simple_format @location.synopsis

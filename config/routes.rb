@@ -28,6 +28,7 @@ RailsjazzCom::Application.routes.draw do
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
     resources :contacts, :only => [:index, :destroy]
+    resources :cities, :only => [:index, :show, :destroy]
     resources :locations do
       member {
         get :approve

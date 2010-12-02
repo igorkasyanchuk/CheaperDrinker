@@ -3,12 +3,12 @@
 = keywords "#{@location.name}, #{@location.city}, #{SEO_KEYWORDS}"
 
 .bar_specials_list
+  - if @location.synopsis.present?
+    .synopsis.text_containter= simple_format @location.synopsis
+
   %ul
     - DAYS_FOR_SPECIALS.keys.each do |day|
       - next unless @location.special?(day)
       %li
         .day= day.to_s.titleize
         .description= simple_format(@location.special_for_day(day))
-        
-  - if @location.synopsis.present?
-    .synopsis.text_containter= simple_format @location.synopsis

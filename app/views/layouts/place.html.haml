@@ -1,3 +1,5 @@
+= disable_social
+
 = content_for :map do
   == <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{GOOGLE_KEYS[Rails.env.to_s]}" type="text/javascript"></script>
 
@@ -40,7 +42,7 @@
           - if @location.schedule_present?
             .row.schedule_row
               = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
-              %strong #{@location.name} Schedule
+              %strong #{@location.name} Hours
               %table.bar_schedule
                 %tbody
                   - LocationSchedule::DAYS.each do |d|

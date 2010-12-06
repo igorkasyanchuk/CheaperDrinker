@@ -99,6 +99,9 @@ GEM
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
+    paperclip (2.3.6)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -171,6 +174,7 @@ DEPENDENCIES
   meta_where
   mocha
   mysql
+  paperclip (= 2.3.6)
   rails (= 3.0.3)
   recaptcha
   redgreen

@@ -5,7 +5,8 @@
   %li= link_to 'Terms and Services', page_path('terms')
   %li= link_to 'Privacy Policy', page_path('privacy')
 
-.social= render :partial => '/shared/add_this'  
+- if (yield(:social_footer)).blank?
+  .social= render :partial => '/shared/add_this'
 
 .own_socials
   %a#twitter.inactive{:href => 'http://twitter.com/HappyHourScout', :target => '_blank'}

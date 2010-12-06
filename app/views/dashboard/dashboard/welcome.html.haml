@@ -1,4 +1,7 @@
 = title 'Manage Your Locations'
 
-%h1 Locations
+%h1.left Locations
+.add.right= link_to "Add Bar", [:new, :dashboard, current_user, :location], :class => 'add_button'
+.clear
+
 = render :partial => '/dashboard/locations/locations', :locals => { :user => @user }

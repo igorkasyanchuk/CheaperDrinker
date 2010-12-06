@@ -1,0 +1,25 @@
+= title "My Events"
+
+%h1.left Events
+.add.right= link_to "Add Event", new_resource_path, :class => 'add_button'
+.clear
+
+%table.zebra
+  %thead
+    %tr
+      %th Title
+      %th Start
+      %th
+      %th
+  
+  %tbody
+    - for event in @events
+      %tr{ :class => cycle(:odd, :even) }
+        %td= link_to event.title, resource_path(event)
+        %td= event.start
+        %td
+          = link_to 'show', resource_path(event), :class => 'show_button'
+          = link_to 'edit', edit_resource_path(event), :class => 'edit_button'
+          = link_to 'remove', resource_path(event), :class => 'delete_button', :method => :delete, :confirm => 'Delete Event?'
+        %td
+          = link_to 'puplic view', event, :class => 'public_view'

@@ -24,6 +24,8 @@ RailsjazzCom::Application.routes.draw do
       get :remove_from_favorites
     }
   end
+  
+  resources :events, :only => [:index, :show]
 
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
@@ -60,6 +62,7 @@ RailsjazzCom::Application.routes.draw do
     match '/add_bar', :to => 'dashboard#add_bar'
     match '/create_location', :to => 'dashboard#create_location'
     resources :users, :only => [:edit, :update, :show] do
+      resources :events
       resources :locations do
         resources :special_days do
           member {

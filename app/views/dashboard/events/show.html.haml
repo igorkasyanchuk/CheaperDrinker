@@ -1,0 +1,22 @@
+= title @event.title
+
+%h1.left #{@event.title}
+.add.right
+  = link_to "Edit", [:edit, :dashboard, current_user, @event], :class => 'edit_button'  
+.clear
+
+%dl.w50.strict
+  %dt Description
+  %dd= simple_format @event.description
+  %dt Start
+  %dd= @event.start
+  %dt End
+  %dd= @event.end
+  %dt Start Time
+  %dd= @event.start_time.to_s(:time_12)
+  %dt Photo
+  %dd= image_tag @event.photo.url(:medium)
+  
+%p
+  = link_to "My Events", [:dashboard, current_user, :events], :class => 'index_button'
+  

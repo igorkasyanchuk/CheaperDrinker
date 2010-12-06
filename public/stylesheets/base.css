@@ -1736,52 +1736,57 @@ html dl dt, html dl dl {
 }
 
 /* line 72, ../../app/stylesheets/layout.sass */
+.container .strict {
+  min-width: 960px;
+}
+
+/* line 75, ../../app/stylesheets/layout.sass */
 .container .w49 {
   width: 49%;
 }
 
-/* line 75, ../../app/stylesheets/layout.sass */
+/* line 78, ../../app/stylesheets/layout.sass */
 .container .w59 {
   width: 59%;
 }
 
-/* line 78, ../../app/stylesheets/layout.sass */
+/* line 81, ../../app/stylesheets/layout.sass */
 .container .w39 {
   width: 39%;
 }
 
-/* line 81, ../../app/stylesheets/layout.sass */
+/* line 84, ../../app/stylesheets/layout.sass */
 .container .w33 {
   width: 33%;
 }
 
-/* line 84, ../../app/stylesheets/layout.sass */
+/* line 87, ../../app/stylesheets/layout.sass */
 .container .w66 {
   width: 66%;
 }
 
-/* line 87, ../../app/stylesheets/layout.sass */
+/* line 90, ../../app/stylesheets/layout.sass */
 .container .w65 {
   width: 65%;
 }
 
-/* line 90, ../../app/stylesheets/layout.sass */
+/* line 93, ../../app/stylesheets/layout.sass */
 .cols {
   margin: 0 auto;
 }
-/* line 92, ../../app/stylesheets/layout.sass */
+/* line 95, ../../app/stylesheets/layout.sass */
 .cols .col {
   float: left;
   margin: 0px 0px 0px 20px;
   width: 140px;
 }
-/* line 96, ../../app/stylesheets/layout.sass */
+/* line 99, ../../app/stylesheets/layout.sass */
 .cols .col4 {
   float: left;
   margin: 0px 0px 0px 20px;
   width: 250px;
 }
-/* line 100, ../../app/stylesheets/layout.sass */
+/* line 103, ../../app/stylesheets/layout.sass */
 .cols .col3 {
   float: left;
   margin: 0px 0px 0px 20px;

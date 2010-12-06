@@ -1,0 +1,7 @@
+= title "Edit: #{@event.title}"
+
+%h1.left== Edit: #{@event.title}
+.add.right
+  = link_to 'Back', [:dashboard, current_user, :events], :class => 'cancel_button'
+.clear
+= render 'form'

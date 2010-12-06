@@ -40,10 +40,20 @@ module ApplicationHelper
       'admin_css_class'
     end
   end
+  
+  def disable_social
+    content_for :social_footer do "yes" end
+  end
 
   def no_index_me
     content_for :noindex do
       'noindex'
+    end
+  end
+  
+  def add_city_name_autocomplete(field)
+    content_for :on_ready do
+      "$('##{field}').autocomplete({ minLength: 1, source: '/autocomplete_city_name' });"
     end
   end
   

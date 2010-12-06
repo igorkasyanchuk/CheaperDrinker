@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   
   has_many :locations, :dependent => :destroy
   has_many :reviews, :dependent => :destroy
+  has_many :events
   
   has_many :user_favorites, :dependent => :destroy
   has_many :favorites, :through => :user_favorites

@@ -78,8 +78,9 @@ class Location < ActiveRecord::Base
   scope :by_random, order(SqlFunction.random)
   
   has_many :special_days, :dependent => :destroy
-  
   accepts_nested_attributes_for :special_days, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:day_id].blank? }
+  
+  has_many :events
   
   belongs_to :user
   belongs_to :bar_network
@@ -94,6 +95,8 @@ class Location < ActiveRecord::Base
   accepts_nested_attributes_for :location_schedule
   
   belongs_to :parent_city, :class_name => "City", :foreign_key => "city_id"
+  
+  has_attached_file :logo, :styles => { :medium => ["280x119>", :png], :thumb => ["94x40>", :png] }
 
   def Location.locations_by_ids(ids)
     Location.where(:id => ids).by_plan

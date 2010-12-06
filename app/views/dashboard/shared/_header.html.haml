@@ -1,2 +1,8 @@
+%ul#general_nav
+  %li.dashboard_menu= link_to 'Locations', dashboard_path
+  %li.events_menu= link_to "Events", [:dashboard, current_user, :events]
+
+.clear
+
 - content_for :on_ready do
   == $('#general_nav .#{controller_name}_menu').addClass('selected');

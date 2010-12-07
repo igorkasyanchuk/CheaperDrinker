@@ -1,5 +1,5 @@
 .locations
-  - if user.locations.approved.count > 0
+  - if user.locations.count > 0
     .location.summary
       .name 
         %strong Name
@@ -19,10 +19,12 @@
         &nbsp;
       .message 
         %strong Description
+      .status
+        %strong Status
       .controls 
         %strong Actions
       .clear  
-    - user.locations.approved.backward.each do |location|
+    - user.locations.backward.each do |location|
       = render :partial => '/dashboard/locations/location', :locals => { :location => location }
     .location.summary
       .amount.message

@@ -51,4 +51,4 @@
   - if current_user.admin?
     = link_to 'Browse All Locations', [:admin, :locations], :class => 'index_button'
   - else
-    = link_to 'My Locations', [:dashboard, current_user, :locations], :class => 'index_button'
+    = link_to 'My Locations', [:dashboard], :class => 'index_button'

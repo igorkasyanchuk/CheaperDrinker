@@ -1,9 +1,13 @@
 = title "Manage Events"
 
 - if params[:location_id]
-  %h1 Manage #{(Location.find params[:location_id]).name} Events
+  %h1.left Manage #{(Location.find params[:location_id]).name} Events
 - else
-  %h1 Manage Events
+  %h1.left Manage Events
+  
+.add.right
+  = link_to "Add Event", [:new, :admin, :event], :class => 'add_button'
+.clear  
 
 = form_tag admin_events_path, :method => :get, :id => 'admin_quick_filter' do
   %span Title
@@ -20,8 +24,6 @@
         %strong Title
       .date 
         %strong Start Date
-      .date 
-        %strong End Date
       .location
         %strong Location
       .photo
@@ -33,7 +35,6 @@
       .admin_event{ :class => cycle(:odd, :even), :id => "event-#{event.id}" }
         .name= link_to event.title, event
         .date= event.start
-        .date= event.end
         .location
           - if event.in_location?
             = link_to event.location_name, place_path(event.location), :class => 'public_button'

@@ -1,6 +1,10 @@
 class Dashboard::LocationsController < Dashboard::DashboardController
   belongs_to :user
   
+  def index
+    redirect_to dashboard_path
+  end
+  
   def create
     create! do |format|
       format.js {}

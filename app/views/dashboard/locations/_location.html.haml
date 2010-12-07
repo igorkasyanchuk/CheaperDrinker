@@ -24,6 +24,8 @@
   .message
     = location.description
     &nbsp;
+  .status
+    = location.approved ? (image_tag 'green.png') : (image_tag 'red.png')
   .controls
     = link_to 'show', [:dashboard, current_user, location], :class => 'show_button'
     = link_to 'edit', [:edit, :dashboard, current_user, location], :class => 'edit_button'

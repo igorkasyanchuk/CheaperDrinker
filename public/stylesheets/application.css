@@ -2649,11 +2649,16 @@ html .header_section a:hover {
   width: 45%;
 }
 /* line 61, ../../app/stylesheets/_lists.sass */
+.locations .location .status {
+  float: left;
+  width: 7%;
+}
+/* line 67, ../../app/stylesheets/_lists.sass */
 .locations .location .specials {
   float: left;
   width: 12%;
 }
-/* line 67, ../../app/stylesheets/_lists.sass */
+/* line 73, ../../app/stylesheets/_lists.sass */
 .locations .location .specials span {
   text-transform: lowercase;
   display: inline-block;
@@ -2669,31 +2674,31 @@ html .header_section a:hover {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 91, ../../app/stylesheets/_lists.sass */
+/* line 97, ../../app/stylesheets/_lists.sass */
 .locations .location .controls {
   float: left;
   width: 12%;
 }
-/* line 97, ../../app/stylesheets/_lists.sass */
+/* line 103, ../../app/stylesheets/_lists.sass */
 .locations .location .name {
   float: left;
   width: 14%;
 }
-/* line 103, ../../app/stylesheets/_lists.sass */
+/* line 109, ../../app/stylesheets/_lists.sass */
 .locations .location .secret_code {
   width: 8%;
   float: left;
 }
-/* line 109, ../../app/stylesheets/_lists.sass */
+/* line 115, ../../app/stylesheets/_lists.sass */
 .locations .location .amount_total {
   margin-left: 90%;
 }
 
-/* line 115, ../../app/stylesheets/_lists.sass */
+/* line 121, ../../app/stylesheets/_lists.sass */
 .admin_reviews {
   padding-bottom: 16px;
 }
-/* line 119, ../../app/stylesheets/_lists.sass */
+/* line 125, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review {
   font-size: 12px;
   margin-bottom: 6px;
@@ -2709,51 +2714,51 @@ html .header_section a:hover {
 .admin_reviews .admin_review.summary:hover {
   background: none;
 }
-/* line 133, ../../app/stylesheets/_lists.sass */
+/* line 139, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review:hover {
   background: #ececec;
 }
-/* line 137, ../../app/stylesheets/_lists.sass */
+/* line 143, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .by {
   float: left;
   width: 14%;
   padding-right: 1%;
 }
-/* line 145, ../../app/stylesheets/_lists.sass */
+/* line 151, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .message {
   float: left;
   width: 50%;
 }
-/* line 151, ../../app/stylesheets/_lists.sass */
+/* line 157, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .rating_value {
   float: left;
   width: 10%;
 }
-/* line 157, ../../app/stylesheets/_lists.sass */
+/* line 163, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .rating_value span {
   font-size: 11px;
   line-height: 12px;
 }
-/* line 163, ../../app/stylesheets/_lists.sass */
+/* line 169, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .controls {
   float: left;
   width: 10%;
 }
-/* line 169, ../../app/stylesheets/_lists.sass */
+/* line 175, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .name {
   float: left;
   width: 14%;
 }
-/* line 175, ../../app/stylesheets/_lists.sass */
+/* line 181, ../../app/stylesheets/_lists.sass */
 .admin_reviews .admin_review .amount_total {
   margin-left: 90%;
 }
 
-/* line 181, ../../app/stylesheets/_lists.sass */
+/* line 187, ../../app/stylesheets/_lists.sass */
 .admin_events {
   padding-bottom: 16px;
 }
-/* line 185, ../../app/stylesheets/_lists.sass */
+/* line 191, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event {
   font-size: 12px;
   margin-bottom: 6px;
@@ -2769,41 +2774,41 @@ html .header_section a:hover {
 .admin_events .admin_event.summary:hover {
   background: none;
 }
-/* line 199, ../../app/stylesheets/_lists.sass */
+/* line 205, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event:hover {
   background: #ececec;
 }
-/* line 203, ../../app/stylesheets/_lists.sass */
+/* line 209, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event .date {
   float: left;
   width: 15%;
 }
-/* line 209, ../../app/stylesheets/_lists.sass */
+/* line 215, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event .location {
   float: left;
   width: 15%;
 }
-/* line 215, ../../app/stylesheets/_lists.sass */
+/* line 221, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event .message {
   float: left;
   width: 50%;
 }
-/* line 221, ../../app/stylesheets/_lists.sass */
+/* line 227, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event .controls {
   float: left;
   width: 10%;
 }
-/* line 227, ../../app/stylesheets/_lists.sass */
+/* line 233, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event .photo {
   float: left;
   width: 10%;
 }
-/* line 233, ../../app/stylesheets/_lists.sass */
+/* line 239, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event .name {
   float: left;
   width: 20%;
 }
-/* line 239, ../../app/stylesheets/_lists.sass */
+/* line 245, ../../app/stylesheets/_lists.sass */
 .admin_events .admin_event .amount_total {
   margin-left: 90%;
 }

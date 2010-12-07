@@ -17,8 +17,8 @@
   .additional_days
     - Location::DAYS.keys.sort.each do |day|
       %label
-        = Location::DAYS[day].to_s.titleize[0..2]
         = check_box_tag 'special_days[]', day
+        = Location::DAYS[day].to_s.titleize[0..2]
   .clear
   = s_form.input :description, :input_html => { :rows => '5', :cols => '80' }, :wrapper_html => { :class => 'description_block' }
   .clear

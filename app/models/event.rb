@@ -42,5 +42,9 @@ class Event < ActiveRecord::Base
   def has_owner?
     self.user && self.user.present?
   end
+  
+  def has_time?
+    self.start_time.present?
+  end
 
 end

@@ -4,8 +4,7 @@
 = f.input :title
 = f.input :description, :input_html => { :rows => '12', :cols => '80' }
 = f.input :photo
-= f.input :start, :as => :string, :input_html => { :class => 'date_picker' }
-= f.input :end, :include_blank => true, :as => :string, :input_html => { :class => 'date_picker' }
-= f.input :start_time, :include_blank => true
+= f.input :start, :as => :string, :input_html => { :class => 'date_picker' }, :label => "Date"
+= f.input :start_time, :include_blank => true, :label => "Time"
 
 = add_city_name_autocomplete("location_city")

@@ -120,6 +120,10 @@ class Location < ActiveRecord::Base
     self.save(:validate => false)
   end
   
+  def status
+    approved ? "approved" : "pending"
+  end
+  
   def full_address
     _address = ''
     _address += self.address + ', ' unless self.address.blank?

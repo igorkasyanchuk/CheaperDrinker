@@ -17,8 +17,12 @@
     - for event in @events
       %tr{ :class => cycle(:odd, :even) }
         %td= link_to event.title, resource_path(event)
-        %td= event.start
-        %td= event.location.try(:name)
+        %td
+          = event.start
+          &nbsp;
+        %td
+          = event.location.try(:name)
+          &nbsp;
         %td
           = link_to 'show', resource_path(event), :class => 'show_button'
           = link_to 'edit', edit_resource_path(event), :class => 'edit_button'

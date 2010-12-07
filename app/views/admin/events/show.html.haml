@@ -10,15 +10,15 @@
     %dt Owner
     %dd= @event.user.name
   %dt Description
-  %dd= simple_format @event.description
-  %dt Start
+  %dd= @event.description
+  %dt Date
   %dd= @event.start
-  %dt End
-  %dd= @event.end
-  %dt Start Time
-  %dd= @event.start_time.to_s(:time_12)
-  %dt Photo
-  %dd= image_tag @event.photo.url(:medium)
+  - if @event.has_time?
+    %dt Time
+    %dd= @event.start_time.to_s(:time_12)
+  - if @event.has_photo?
+    %dt Photo
+    %dd= image_tag @event.photo.url(:medium)
   
 %p
   = link_to "All Events", [:admin, :events], :class => 'index_button'

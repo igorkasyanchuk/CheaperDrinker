@@ -30,31 +30,24 @@ RailsjazzCom::Application.routes.draw do
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
     resources :contacts, :only => [:index, :destroy]
+    resources :events do
+      member {  get :approve  }
+    end
     resources :cities, :only => [:index, :show, :destroy]
     resources :locations do
-      member {
-        get :approve
-      }
+      member {  get :approve  }
       resources :reviews, :only => [:index, :destroy] do
-        member {
-          get :approve
-        }
+        member {  get :approve  }
       end
       resources :special_days do
-        member {
-          get :update_special
-        }
+        member {  get :update_special  }
       end
     end
     resources :reviews do
-      member {
-        get :approve
-      }
+      member {  get :approve  }
     end
     resources :users do
-      member {
-        get :toggle_admin
-      }
+      member {  get :toggle_admin  }
     end
   end
   namespace :dashboard do
@@ -65,14 +58,10 @@ RailsjazzCom::Application.routes.draw do
       resources :events
       resources :locations do
         resources :special_days do
-          member {
-            get :update_special
-          }
+          member {  get :update_special  }
         end
         resources :reviews, :only => [:index, :destroy] do
-          member {
-            get :approve
-          }
+          member {  get :approve  }
         end
       end
     end

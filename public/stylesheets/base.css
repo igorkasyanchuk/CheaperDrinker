@@ -1761,32 +1761,42 @@ html dl dt, html dl dl {
 }
 
 /* line 87, ../../app/stylesheets/layout.sass */
+.container .w25 {
+  width: 25%;
+}
+
+/* line 90, ../../app/stylesheets/layout.sass */
+.container .w20 {
+  width: 20%;
+}
+
+/* line 93, ../../app/stylesheets/layout.sass */
 .container .w66 {
   width: 66%;
 }
 
-/* line 90, ../../app/stylesheets/layout.sass */
+/* line 96, ../../app/stylesheets/layout.sass */
 .container .w65 {
   width: 65%;
 }
 
-/* line 93, ../../app/stylesheets/layout.sass */
+/* line 99, ../../app/stylesheets/layout.sass */
 .cols {
   margin: 0 auto;
 }
-/* line 95, ../../app/stylesheets/layout.sass */
+/* line 101, ../../app/stylesheets/layout.sass */
 .cols .col {
   float: left;
   margin: 0px 0px 0px 20px;
   width: 140px;
 }
-/* line 99, ../../app/stylesheets/layout.sass */
+/* line 105, ../../app/stylesheets/layout.sass */
 .cols .col4 {
   float: left;
   margin: 0px 0px 0px 20px;
   width: 250px;
 }
-/* line 103, ../../app/stylesheets/layout.sass */
+/* line 109, ../../app/stylesheets/layout.sass */
 .cols .col3 {
   float: left;
   margin: 0px 0px 0px 20px;

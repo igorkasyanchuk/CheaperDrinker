@@ -4,14 +4,14 @@
   init_filter_locations();
 
 %h1.left Locations
-
-/.subfilter
-
 .clear    
 
 = form_tag admin_locations_path, :method => :get, :id => 'admin_quick_filter' do
+  %span Name
   = text_field_tag :name, params[:name]
+  %span Plan
   = select_tag :plan, options_for_select(Location::PLANS.invert, params[:plan]), :include_blank => true
+  %span City
   = select_tag :city, options_for_select((Location.all :select => :city).collect{|c| c.city}.uniq.sort, params[:city]), :include_blank => true
   = submit_tag "Search"
   
@@ -27,13 +27,15 @@
       .specials
         %strong Specials
       .model_field
-        = image_tag 'clock_16.png'
+        = image_tag 'logo_16_1.png', :title => 'Logo'
       .model_field
-        = image_tag 'phone_16.png'
+        = image_tag 'clock_16.png', :title => 'Hours'
       .model_field
-        = image_tag 'facebook_16.png'
+        = image_tag 'phone_16.png', :title => 'Phone'
       .model_field
-        = image_tag 'twitter_16.png'
+        = image_tag 'facebook_16.png', :title => 'Facebook'
+      .model_field
+        = image_tag 'twitter_16.png', :title => 'Twitter'
       .message
         %strong Description
       .controls 
@@ -54,6 +56,8 @@
           - if location.short_name_of_special_days.size == 0
             &nbsp;
         .model_field
+          = location.has_logo? ? (image_tag 'green.png') : (image_tag 'red.png')
+        .model_field
           = location.schedule_present? ? (image_tag 'green.png') : (image_tag 'red.png')
         .model_field
           = location.phone.blank? ? (image_tag 'red.png') : (image_tag 'green.png')
@@ -65,9 +69,11 @@
           = location.description
           &nbsp;
         .controls
+          = link_to 'show', [:admin, location], :class => 'show_button'
           = link_to 'edit', [:edit, :admin, location], :class => 'edit_button'
           = link_to "specials(#{location.special_days_count})", [:admin, location, :special_days], :class => 'index_button'
-          = link_to "reviews(#{location.reviews_count})", [:admin, location, :reviews], :class => 'index_button'
+          = link_to "reviews(#{location.reviews_count || 0})", [:admin, location, :reviews], :class => 'index_button'
+          = link_to "events(#{location.events.count})", admin_events_path(:location_id => location.id), :class => 'index_button'
           = (link_to 'approve', [:approve, :admin, location], :remote => true, :class => 'approve_button') unless location.approved?
           = link_to 'remove', [:admin, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
         .clear

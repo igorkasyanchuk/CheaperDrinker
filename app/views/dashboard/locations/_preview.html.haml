@@ -1,0 +1,54 @@
+= title "Location: #{location.name}"
+
+%h1 #{location.name}
+
+%dl.w50.strict
+  - if location.has_logo?
+    %dt Logo
+    %dd= image_tag location.logo.url(:medium) 
+  %dt Description
+  %dd= location.description 
+  - if location.from_user?
+    %dt User
+    %dd= location.user.try(:name)
+  %dt Plan
+  %dd= location.plan_name
+  %dt Phone
+  %dd= location.phone
+  %dt Address
+  %dd= location.full_address
+  %dt Gay Bar
+  %dd= yes_no(location.gay_bar)
+  %dt Twitter
+  %dd= location.twitter
+  %dt Facebook
+  %dd= location.facebook
+  %dt Synopsis
+  %dd= location.synopsis
+
+- if location.schedule_present?
+  %p
+    %strong #{location.name} Hours
+  %table.zebra.w25
+    %tbody
+      - LocationSchedule::DAYS.each do |d|
+        - next unless location.location_schedule.send("#{d}?")
+        %tr
+          %td= d.to_s.titleize 
+          %td= SpecialDay.translate_time(location.location_schedule.send("starts_#{d}_at"))
+          %td &mdash;
+          %td= SpecialDay.translate_time(location.location_schedule.send("ends_#{d}_at"))
+
+.links
+  - if current_user.admin?
+    = link_to 'edit', [:edit, :admin, location], :class => 'edit_button'
+    = link_to "specials(#{location.special_days_count})", [:admin, location, :special_days], :class => 'index_button'
+    = link_to "reviews(#{location.reviews_count || 0})", [:admin, location, :reviews], :class => 'index_button'
+    = (link_to 'approve', [:approve, :admin, location], :remote => true, :class => 'approve_button') unless location.approved?
+    = link_to 'remove', [:admin, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+
+.links
+  - if current_user.admin?
+    = link_to 'Browse All Locations', [:admin, :locations], :class => 'index_button'
+  - else
+    = link_to 'My Locations', [:dashboard, current_user, :locations], :class => 'index_button'

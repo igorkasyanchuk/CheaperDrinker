@@ -9,10 +9,6 @@ class Admin::LocationsController < Admin::DashboardController
     @locations = scope.paginate :per_page => 30, :page => params[:page]
   end
 
-  def show
-    redirect_to admin_path
-  end
-
   def create
     create! do |format|
       format.js {}
@@ -23,7 +19,7 @@ class Admin::LocationsController < Admin::DashboardController
     @location = resource
     if @location.update_attributes(params[:location])
       flash[:notice] = "Location successfully updated."
-      redirect_to [:admin, :locations]
+      redirect_to [:admin, @location]
     else
       render :edit
     end

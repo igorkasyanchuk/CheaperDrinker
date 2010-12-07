@@ -1,0 +1,8 @@
+= content_for :on_ready do
+  init_add_form(); 
+  
+= error_messages_for :event
+
+= simple_form_for([:admin, @event], :html => { :multipart => true }) do |f|
+  = render :partial => '/dashboard/events/inputs', :locals => { :f => f }
+  = f.submit f.object.new_record? ? 'Create' : "Update"

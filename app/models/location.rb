@@ -30,8 +30,8 @@ class Location < ActiveRecord::Base
     indexes :state
     indexes :address
     indexes :zip
-    
-    set_property :delta => :delayed
+
+    set_property :delta => true
   end
   
   validates_presence_of :name
@@ -151,6 +151,14 @@ class Location < ActiveRecord::Base
     true
   end
   
+  def has_logo?
+    self.logo && self.logo.exists?
+  end
+  
+  def from_user?
+    self.user && self.user.present?
+  end
+  
   def location_info(day, _start = 0, _end = SpecialDay::END_TIME_OF_DATE)
     map_info.merge({ "id" => self.cached_slug, 
                      "name" => self.name, 
@@ -185,7 +193,11 @@ class Location < ActiveRecord::Base
   end  
   
   def free?
-    PLANS[self.plan] == :free
+     plan_name == :free
+  end
+  
+  def plan_name
+    PLANS[self.plan]
   end
   
   def Location.get_day(day)

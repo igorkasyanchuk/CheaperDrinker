@@ -1,3 +1,5 @@
+- if current_user.admin?
+  = f.input :user_id, :collection => User.all.collect{|u| [ u.short_information, u.id ] }, :selected => f.object.new_record? ? nil : f.object.user_id
 = f.input :location_id, :as => :select, :collection => current_user.locations
 = f.input :title
 = f.input :description, :input_html => { :rows => '12', :cols => '80' }

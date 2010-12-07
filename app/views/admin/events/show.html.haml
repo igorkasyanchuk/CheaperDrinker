@@ -1,0 +1,25 @@
+= title @event.title
+
+%h1.left #{@event.title}
+.add.right
+  = link_to "Edit", [:edit, :admin, @event], :class => 'edit_button'  
+.clear
+
+%dl.w50.strict
+  - if @event.has_owner?
+    %dt Owner
+    %dd= @event.user.name
+  %dt Description
+  %dd= simple_format @event.description
+  %dt Start
+  %dd= @event.start
+  %dt End
+  %dd= @event.end
+  %dt Start Time
+  %dd= @event.start_time.to_s(:time_12)
+  %dt Photo
+  %dd= image_tag @event.photo.url(:medium)
+  
+%p
+  = link_to "All Events", [:admin, :events], :class => 'index_button'
+  

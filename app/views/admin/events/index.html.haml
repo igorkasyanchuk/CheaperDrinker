@@ -1,0 +1,60 @@
+= title "Manage Events"
+
+- if params[:location_id]
+  %h1 Manage #{(Location.find params[:location_id]).name} Events
+- else
+  %h1 Manage Events
+
+= form_tag admin_events_path, :method => :get, :id => 'admin_quick_filter' do
+  %span Title
+  = text_field_tag :title, params[:title]
+  %span Location
+  = text_field_tag :location, params[:location]
+  = hidden_field_tag :location_id, params[:location_id]
+  = submit_tag "Search"
+
+- if @events.count > 0
+  .admin_events
+    .admin_event.summary
+      .name 
+        %strong Title
+      .date 
+        %strong Start Date
+      .date 
+        %strong End Date
+      .location
+        %strong Location
+      .photo
+        %strong Photo
+      .controls 
+        %strong Actions
+      .clear  
+    - @events.each do |event|
+      .admin_event{ :class => cycle(:odd, :even), :id => "event-#{event.id}" }
+        .name= link_to event.title, event
+        .date= event.start
+        .date= event.end
+        .location
+          - if event.in_location?
+            = link_to event.location_name, place_path(event.location), :class => 'public_button'
+          - else
+            &nbsp;
+        .photo= event.has_photo? ? (image_tag 'green.png') : (image_tag 'red.png')
+        .controls
+          = link_to 'show', [:admin, event], :class => 'show_button'
+          = link_to 'edit', [:edit, :admin, event], :class => 'edit_button'
+          = (link_to 'approve', [:approve, :admin, event], :remote => true, :class => 'approve_button') unless event.approved?
+          = link_to 'remove', [:admin, event], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+        .clear
+    .admin_event.summary
+      .paginate
+        = will_paginate @events
+      .clear
+    .admin_event.summary
+      .amount.message
+        %strong Total: #{pluralize(@total, 'event')}
+      .clear
+
+- else
+  %p
+    No Events.

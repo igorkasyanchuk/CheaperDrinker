@@ -7,11 +7,14 @@
     %th Users
     %td #{User.count}
   %tr
-    %th Contacts
-    %td #{Contact.count}
+    %th Locations
+    %td #{Location.pending.count}/#{Location.count}
   %tr
     %th Reviews
     %td #{Review.not_approved.count}/#{Review.count}
   %tr
-    %th Locations
-    %td #{Location.pending.count}/#{Location.count}
+    %th Events
+    %td #{Event.not_approved.count}/#{Event.count}
+  %tr
+    %th Contacts
+    %td #{Contact.count}

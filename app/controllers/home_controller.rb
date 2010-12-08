@@ -21,9 +21,14 @@ class HomeController < ApplicationController
     end
   end
   
+  def verify
+    render :verify, :layout => 'application'
+  end
+  
   def check_verify
     @location = Location.find_by_activation_code_and_is_code_used(params[:code], false)
     redirect_to new_user_path(:code => params[:code]) if @location
+    render :check_verify, :layout => 'application'
   end
   
   def find_bar

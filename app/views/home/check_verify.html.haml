@@ -1,2 +1,9 @@
-.verify_ownership_panel
-  %h1 Can't find your code. Please #{link_to 'try again', '/verify'} or #{link_to 'contact', new_contact_path} us for more details.
+= title "Can't find your code, or code was already verified."
+
+.page
+  .page_title
+    %h1 
+      Can't find your code, or code was already verified. 
+  .page_block
+    .page_links
+      %h2 Please #{link_to 'try again', '/verify'} or #{link_to 'contact us', new_contact_path} for more details.

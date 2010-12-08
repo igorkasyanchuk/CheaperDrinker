@@ -1,10 +1,17 @@
-.verify_ownership_panel
-  %h1 Verify Bar Ownership
-  
-  = form_tag '/check_verify' do
-    %label 
-      Verifycation Code
+= title "Verify Bar Ownership"
+
+.page
+  .page_title 
+    %h1 Verify Bar Ownership
+  .page_block.verify_ownership_panel
+    = form_tag '/check_verify' do
+      %label 
+        Verifycation Code
+        %br
+        = text_field_tag :code
       %br
-      = text_field_tag :code
-    %br
-    = submit_tag 'Verify'
+      = submit_tag 'Verify'    
+      %br
+      %br
+      %p Enter your verification code from postcard.
+      = image_tag 'Postcard_back_05.jpg'

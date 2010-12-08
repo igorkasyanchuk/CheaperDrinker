@@ -24,6 +24,6 @@
     .q_controls
       = form_tag '/search', :method => :get do
         = text_field_tag 'q', params["q"], "data-autocomplete" => autocomplete_location_name_path, :id => 'q', :placeholder => 'enter bar name'
-      = link_to 'Advanced Search &rarr;'.html_safe, '#advanced_filter', :id => 'advanced_filter_link'
+      /= link_to 'Advanced Search &rarr;'.html_safe, '#advanced_filter', :id => 'advanced_filter_link'
     
 .clear

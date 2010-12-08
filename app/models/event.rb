@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   belongs_to :location
   belongs_to :user
   
-  has_friendly_id :title, :use_slug => true, :sequence_separator => ":"
+  has_friendly_id :title, :use_slug => true, :sequence_separator => "--"
 
   scope :not_approved, where(:approved => false)
   scope :approved, where(:approved => true)
@@ -18,6 +18,13 @@ class Event < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :start
   
+  def instantiate_time_object(name, values)
+    if values.length == 2
+      values = [ self.start.year, self.start.month, self.start.day ] + values
+    end
+    super(name, values)
+  end
+
   def approve!
     self.approved = true
     self.save

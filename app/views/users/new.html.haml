@@ -3,11 +3,21 @@
 
 = no_index_me
 
-%h1 Sign up
+.page
 
-= simple_form_for @user do |f|
-  = f.error_messages
-  = render :partial => 'form', :locals => { :f => f }
-
-%p.links
-  = link_to 'Login', new_user_session_path
+  .page_title
+    %h1 Sign up
+  .clear
+  
+  .page_block
+    - if @location
+      = render :partial => '/users/verify_greetings', :locals => { :location => @location }
+    
+    = simple_form_for @user do |f|
+      = f.error_messages
+      = render :partial => 'form', :locals => { :f => f }
+    
+    .clear
+    
+    %p.links.page_links
+      = link_to 'Login', new_user_session_path

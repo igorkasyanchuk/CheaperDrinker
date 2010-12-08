@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @location = Location.find_by_activation_code_and_is_code_used(params[:code], false)
   end
 
   def create

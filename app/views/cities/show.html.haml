@@ -4,7 +4,7 @@
 %h1 Happy Hour in #{@city.name}
 
 %p
-  = link_to "Browser all #{@city.state.name} cities", [@city.state]
+  = link_to "Browse all #{@city.state.name} cities", [@city.state]
 
 .cols.cities.places
   - @city.locations.by_name.in_groups_of(6, false) do |places|

@@ -11,4 +11,7 @@
           = render :partial => '/places/place', :locals => { :place => place }
 - else
   %p
-    You need to be #{link_to 'registered', new_user_path} to use this feature.
+    You don't have any favorites yet.
+  - unless logged_in?
+    %p
+      You need to be #{link_to 'registered', new_user_path} to save bars to favorites list or #{link_to 'sign up', new_user_session_path}.

@@ -17,6 +17,11 @@ class PlacesController < ApplicationController
     @review = @location.reviews.build
   end
   
+  def events
+    @location = Location.find(params[:id])
+    @review = @location.reviews.build
+  end
+  
   def add_to_favorites
     @location = Location.find(params[:id])
     respond_to do |page|

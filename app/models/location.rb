@@ -233,8 +233,12 @@ class Location < ActiveRecord::Base
     "#{self.name} #{self.city}"
   end
   
+  def short_information
+    "#{self.name}   -   #{self.city}"
+  end
+  
   def any_icon?
     self.gay_bar
   end
-
+  
 end

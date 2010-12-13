@@ -1,0 +1,10 @@
+= title @event_category.name
+
+%h1.left #{@event_category.name}
+.add.right
+  = link_to "Edit", [:edit, :admin, @event_category], :class => 'edit_button'  
+.clear
+
+%p
+  = link_to "All Event Categories", [:admin, :event_categories], :class => 'index_button'
+  

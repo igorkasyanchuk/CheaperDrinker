@@ -2,10 +2,10 @@
   = link_to image_tag('/images/logo_smaller2.png'), root_path
 
 #section1.header_section
+  - unless logged_in?
+    %span.top_menu_spacer
   = link_to 'All Cities', states_path
   = link_to 'My Favorites', page_path('favorites')
-  - if home_page?
-    =# link_to 'Location Search', '#', :id => 'find_bar'
   - if logged_in?
     = link_to "Add a Bar", [:dashboard, :add_bar]
 
@@ -15,10 +15,12 @@
     = yield :admin_nav_items
     = link_to "Logout", logout_user_session_path
   - else
+    %span.top_menu_spacer
     = link_to 'Sign up', new_user_path
     = link_to 'Login', new_user_session_path
 
 #section3.header_section
+  %span.top_menu_spacer
   .q_bg_container
     /.q_bg
     .q_controls

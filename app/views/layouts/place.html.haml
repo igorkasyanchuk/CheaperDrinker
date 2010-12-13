@@ -76,8 +76,9 @@
             .clear
       #bar_right
         .menu
-          = link_to @location.name, place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive'
-          = link_to @location.name, reviews_place_path(@location), :id => 'bar_reviews', :class => action_name == 'reviews' ? '' : 'inactive'
+          = link_to "#{@location.name} Specials", place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive'
+          = link_to "#{@location.name} Reviews", reviews_place_path(@location), :id => 'bar_reviews', :class => action_name == 'reviews' ? '' : 'inactive'
+          = link_to "#{@location.name} Events", events_place_path(@location), :id => 'bar_events', :class => action_name == 'events' ? '' : 'inactive'
         .clear
         .bar_content= yield
     .clear

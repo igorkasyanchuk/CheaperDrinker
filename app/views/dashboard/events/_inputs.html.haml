@@ -1,7 +1,8 @@
 - if current_user.admin?
   = f.input :user_id, :collection => User.all.collect{|u| [ u.short_information, u.id ] }, :selected => f.object.new_record? ? nil : f.object.user_id
-= f.input :location_id, :as => :select, :collection => current_user.locations
+= f.input :location_id, :as => :select, :collection => current_user.admin? ? Location.all.collect{|u| [ u.short_information, u.id ] } : current_user.locations
 = f.input :title
+= f.input :event_category_id, :collection => EventCategory.all
 = f.input :description, :input_html => { :rows => '12', :cols => '80' }
 = f.input :photo
 = f.input :start, :as => :string, :input_html => { :class => 'date_picker' }, :label => "Date"

@@ -1,0 +1,22 @@
+= title "#{@location.name} Events, #{@location.city} | #{SEO_TITLE_SHORT}"
+= description "Happy hour in #{@location.name}, #{@location.name} events, #{@location.city}, music, sport"
+= keywords "#{@location.name}, #{@location.city}, #{SEO_KEYWORDS}, music, sport"
+
+.bar_reviews_list
+  %p
+    - if @location.events.approved.from_now.count == 0
+      .text_containter
+        No Events.
+    - else
+      - @location.events.approved.from_now.each do |event|
+        .text_containter.events_spacer
+          %h2= event.title
+          = image_tag event.photo.url(:small), :class => 'event_img'
+          %span Date: #{event.start}
+          - if event.has_time?
+            %span Time: #{event.time}
+          %span.last Category: #{event.category_name}
+          = simple_format event.description
+          .clear
+          
+          

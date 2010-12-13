@@ -1,7 +1,9 @@
 RailsjazzCom::Application.routes.draw do
+
   resource :user_session do 
     get 'logout'
   end
+
   resources :password_resets
   resources :users
   
@@ -22,6 +24,7 @@ RailsjazzCom::Application.routes.draw do
       get :reviews
       get :add_to_favorites
       get :remove_from_favorites
+      get :events
     }
   end
   
@@ -30,6 +33,7 @@ RailsjazzCom::Application.routes.draw do
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
     resources :contacts, :only => [:index, :destroy]
+    resources :event_categories
     resources :events do
       member {  get :approve  }
     end

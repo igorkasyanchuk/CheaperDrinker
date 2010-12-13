@@ -22,6 +22,8 @@
     .admin_event.summary
       .name 
         %strong Title
+      .name
+        %strong Category
       .date 
         %strong Start Date
       .location
@@ -34,6 +36,9 @@
     - @events.each do |event|
       .admin_event{ :class => cycle(:odd, :even), :id => "event-#{event.id}" }
         .name= link_to event.title, event
+        .name
+          = event.category_name
+          &nbsp;
         .date= event.start
         .location
           - if event.in_location?

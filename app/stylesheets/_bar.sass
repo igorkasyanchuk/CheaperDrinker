@@ -30,6 +30,21 @@
   background: $dark2
   margin: 8px 0
   padding-bottom: 6px
+  .events_spacer
+    margin-bottom: 6px
+    .event_img
+      padding-right: 12px
+      padding-bottom: 6px
+      float: left
+    p
+      padding-top: 0
+    span
+      display: block
+      color: #333
+      font-size: $base_font_size
+      line-height: $base_font_size + 6px
+      &.last
+        padding-bottom: 6px
   .synopsis
     margin-top: 18px
     padding-top: 12px
@@ -103,10 +118,13 @@
       width: 643px
       overflow: hidden
       #bar_show
-        +image_button(320, 31, 'barspecials.png')
+        +image_button(214, 31, 'specials_tab.png')
         border: 0 none
       #bar_reviews
-        +image_button(320, 31, 'reviews.png')
+        +image_button(213, 31, 'reviews_tab.png')
+        border: 0 none
+      #bar_events
+        +image_button(210, 31, 'events_tab.png')
         border: 0 none
     #map
       height: 210px

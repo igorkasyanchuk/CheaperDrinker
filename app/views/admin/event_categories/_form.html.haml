@@ -1,0 +1,8 @@
+= content_for :on_ready do
+  init_add_form(); 
+  
+= error_messages_for :event_category
+
+= simple_form_for([:admin, @event_category]) do |f|
+  = f.input :name
+  = f.submit f.object.new_record? ? 'Create' : "Update"

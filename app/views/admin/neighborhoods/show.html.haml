@@ -1,0 +1,18 @@
+= add_google_map_2
+
+= content_for :on_ready do
+  == var lat = #{@neighborhood.lat};
+  == var lng = #{@neighborhood.lng};   
+  == initialize_map_with_lat_and_lng(lat, lng);
+
+= title @neighborhood.name
+
+%h1.left #{@neighborhood.name}
+.add.right
+  = link_to "Edit", [:edit, :admin, @neighborhood.city, @neighborhood], :class => 'edit_button'  
+.clear
+
+%div#map_canvas{:style => "width: 100%; height: 400px; margin-bottom: 12px"}
+
+%p
+  = link_to "All #{@neighborhood.city.name} Neighborhoods", [:admin, @neighborhood.city, :neighborhoods], :class => 'index_button'

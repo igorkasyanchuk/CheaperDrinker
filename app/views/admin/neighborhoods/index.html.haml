@@ -1,0 +1,25 @@
+= title "Manage #{@city.name} Neighborhoods"
+
+%h1.left #{@city.name} Neighborhoods
+.add.right
+  = link_to "Add #{@city.name} Neighborhood", [:new, :admin, @city, :neighborhood], :class => 'add_button'
+.clear  
+
+%table.zebra.w50
+  %tr
+    %th Name
+    %th Actions
+  - @neighborhoods.each do |neighborhood|
+    %tr{ :class => cycle(:odd, :even)}
+      %td= neighborhood.name
+      %td
+        = link_to 'show', [:admin, @city, neighborhood], :class => 'show_button'
+        = link_to 'edit', [:edit, :admin, @city, neighborhood], :class => 'edit_button'
+        = link_to 'remove', [:admin, @city, neighborhood], :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+  %tr
+    %td{:colspan => 2}
+      %strong Total: #{@city.neighborhoods.count}
+      
+      
+%p  
+  = link_to 'Back to Cities page', [:admin, :cities], :class => 'index_button'

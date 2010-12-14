@@ -14,11 +14,6 @@
     .bar_name
       %h1
         = @location.name
-        - if logged_in? && current_user.admin?
-          %span.edit_bar
-            = link_to 'Edit Details', [:edit, :admin, @location]
-            |
-            = link_to 'Edit Specials', [:admin, @location, :special_days]
       .location_rating
         .overall_rating= static_rating(@location.average_rating)
         .rating_info based on #{pluralize(@location.reviews.approved.count, 'review')}
@@ -27,6 +22,13 @@
       .clear
     .bar
       #bar_left
+        - if logged_in? && current_user.admin?
+          %span.edit_bar
+            = link_to 'Edit Details', [:edit, :admin, @location]
+            |
+            = link_to 'Edit Specials', [:admin, @location, :special_days]
+          %br
+          %br
         #map
         .last_updated
           Last updated on: #{@location.updated_at.to_date.strftime("%B %d, %Y")}
@@ -52,6 +54,12 @@
                       %td= SpecialDay.translate_time(@location.location_schedule.send("starts_#{d}_at"))
                       %td &mdash;
                       %td= SpecialDay.translate_time(@location.location_schedule.send("ends_#{d}_at"))
+          - if (@location.twitter.present? && @location.twitter != 'twitter.com/') || (@location.facebook.present? && @location.facebook != 'facebook.com/')
+            .row
+              .location_icons
+                %span Follow us on:
+                = (link_to image_tag('/images/1292354488_twitter.png', :class => 'user_twitter', :title => "#{@location.name} Twiiter"), httpize(@location.twitter), :target => '_blank') if @location.twitter.present? && @location.twitter != 'twitter.com/'
+                = (link_to image_tag('/images/1292354412_facebook.png', :class => 'user_facebook', :title => "#{@location.name} Facebook"), httpize(@location.facebook), :target => '_blank') if @location.facebook.present? && @location.facebook != 'facebook.com/'
           .clear
         - if @location.any_icon?
           .bar_info
@@ -76,11 +84,12 @@
             .clear
       #bar_right
         .menu
-          = link_to "#{@location.name} Specials", place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive'
-          = link_to "#{@location.name} Reviews", reviews_place_path(@location), :id => 'bar_reviews', :class => action_name == 'reviews' ? '' : 'inactive'
-          = link_to "#{@location.name} Events", events_place_path(@location), :id => 'bar_events', :class => action_name == 'events' ? '' : 'inactive'
+          = link_to "#{@location.name} Specials", place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive', :title => "#{@location.name} Specials"
+          = link_to "#{@location.name} Events", events_place_path(@location), :id => 'bar_events', :class => action_name == 'events' ? '' : 'inactive', :title => "#{@location.name} Events"
+          = link_to "#{@location.name} Reviews", reviews_place_path(@location), :id => 'bar_reviews', :class => action_name == 'reviews' ? '' : 'inactive', :title => "#{@location.name} Reviews"
         .clear
-        .bar_content= yield
+        .bar_content
+          = yield
     .clear
 
     - if logged_in?

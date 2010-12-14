@@ -51,6 +51,14 @@ module ApplicationHelper
     end
   end
   
+  def httpize(url)
+    if url !~ /http:\/\//
+      'http://' + url
+    else
+      url
+    end
+  end
+  
   def add_city_name_autocomplete(field)
     content_for :on_ready do
       "$('##{field}').autocomplete({ minLength: 1, source: '/autocomplete_city_name' });"
@@ -71,6 +79,12 @@ module ApplicationHelper
   def add_google_map
     content_for :map do
       '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>'
+    end
+  end
+  
+  def add_google_map_2
+    content_for :map do
+      "<script src='http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{GOOGLE_KEYS[Rails.env.to_s]}' type='text/javascript'></script>".html_safe
     end
   end
   

@@ -5,6 +5,8 @@ class City < ActiveRecord::Base
   validates_presence_of :name
   
   has_many :locations
+  has_many :neighborhoods
+  
   scope :by_name, order(:name)
   
   scope :top, where(:is_top_city => true)

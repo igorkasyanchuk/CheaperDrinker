@@ -48,6 +48,7 @@
     = link_to 'remove', [:admin, location], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
 
 .links
+  = link_to 'preview', place_path(location), :class => 'public_view', :target => '_blank'
   - if current_user.admin?
     = link_to 'Browse All Locations', [:admin, :locations], :class => 'index_button'
   - else

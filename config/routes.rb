@@ -37,7 +37,10 @@ RailsjazzCom::Application.routes.draw do
     resources :events do
       member {  get :approve  }
     end
-    resources :cities, :only => [:index, :show, :destroy]
+    resources :cities, :only => [:index, :show, :destroy] do
+      member {  get :toggle  }
+      resources :neighborhoods
+    end
     resources :locations do
       member {  get :approve  }
       resources :reviews, :only => [:index, :destroy] do

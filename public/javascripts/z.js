@@ -20,6 +20,48 @@ var markerClusterer = null;
 var $info_window_opened = false;
 var $icon_container = null;
 var $current_stage = 0;
+var geocoder = null;
+
+function initialize_map_with_lat_and_lng_and_address(lat, lng, address) {
+  map = new GMap2(document.getElementById("map_canvas"));
+  map.setUIToDefault();
+  map.removeMapType(G_SATELLITE_MAP);
+  map.removeMapType(G_PHYSICAL_MAP);
+  map.disableScrollWheelZoom();          
+  map.setCenter(new GLatLng(lat, lng), 15);
+  geocoder = new GClientGeocoder(); 
+  if (geocoder) {
+    geocoder.getLatLng(
+      address,
+      function(point) {
+        if (!point) {
+          alert("Couldn't locate address.");
+        } else {
+          var marker = new GMarker(point, {draggable: true});
+          map.addOverlay(marker);
+          map.setCenter(point, 10);
+          GEvent.addListener(marker, "dragend", function() {
+            pt = this.getPoint();
+            $('#lat').val(pt.lat());
+            $('#lng').val(pt.lng());
+          });
+        } // else
+      }
+  )};
+};
+
+
+function initialize_map_with_lat_and_lng(lat, lng) {
+  map = new GMap2(document.getElementById("map_canvas"));
+  map.setUIToDefault();
+  map.removeMapType(G_SATELLITE_MAP);
+  map.removeMapType(G_PHYSICAL_MAP);
+  map.disableScrollWheelZoom();          
+  map.setCenter(new GLatLng(lat, lng), 15);
+  var marker = new GMarker(new GLatLng(lat, lng), {draggable: true});
+  map.addOverlay(marker);
+  map.setCenter(point, 11);
+};
 
 $(document).ajaxSend(function(event, request, settings) {
     if ( settings.type == "post" ) {

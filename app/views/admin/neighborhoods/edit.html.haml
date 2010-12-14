@@ -1,0 +1,7 @@
+= title "Edit: #{@neighborhood.name}"
+
+%h1.left== Edit: #{@neighborhood.name}
+.add.right
+  = link_to 'Back', [:admin, @city, :neighborhoods], :class => 'cancel_button'
+.clear
+= render 'form'

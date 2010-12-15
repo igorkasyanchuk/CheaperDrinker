@@ -11,7 +11,10 @@
 
 #section2.header_section
   - if logged_in?
-    = link_to 'Account Settings', edit_dashboard_user_path(current_user)
+    - if current_user.locations.count > 0
+      = link_to 'Manage Locations', dashboard_path
+    - else
+      = link_to 'Account Settings', edit_dashboard_user_path(current_user)
     = yield :admin_nav_items
     = link_to "Logout", logout_user_session_path
   - else

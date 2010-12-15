@@ -1,6 +1,7 @@
 %ul#general_nav
   %li.dashboard_menu= link_to 'Locations', dashboard_path
   %li.events_menu= link_to "Events", [:dashboard, current_user, :events]
+  %li.users_menu= link_to "Account Settings", edit_dashboard_user_path(current_user)
 
 .clear
 

@@ -146,11 +146,11 @@ module ApplicationHelper
     imgs = ""
     [0,1,2,3,4].each do |i|
       imgs += if whole > i
-        "<img src='/images/star-on.png' alt='#{i}' title='#{i}' />"
+        "<img src='/images/star-on.png' alt='#{i+1}' title='#{i+1}' />"
       elsif value > i
-        "<img src='/images/star-half.png' alt='#{i}' title='#{i}' />"
+        "<img src='/images/star-half.png' alt='#{i+1}' title='#{i+1}' />"
       else
-        "<img src='/images/star-off.png' alt='#{i}' title='#{i}' />"
+        "<img src='/images/star-off.png' alt='#{i+1}' title='#{i+1}' />"
       end
     end
     imgs.html_safe

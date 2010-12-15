@@ -11,7 +11,8 @@
       - @location.events.approved.from_now.each do |event|
         .text_containter.events_spacer
           %h2= event.title
-          = image_tag event.photo.url(:small), :class => 'event_img'
+          - if event.has_photo?
+            = image_tag event.photo.url(:small), :class => 'event_img'
           %span Date: #{event.start.to_s(:short_date)}
           - if event.has_time?
             %span Time: #{event.time}

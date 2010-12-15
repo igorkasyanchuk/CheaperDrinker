@@ -54,7 +54,7 @@
                       %td= SpecialDay.translate_time(@location.location_schedule.send("starts_#{d}_at"))
                       %td &mdash;
                       %td= SpecialDay.translate_time(@location.location_schedule.send("ends_#{d}_at"))
-          - if (@location.twitter.present? && @location.twitter != 'twitter.com/') || (@location.facebook.present? && @location.facebook != 'facebook.com/')
+          - if @location.premium? && ((@location.twitter.present? && @location.twitter != 'twitter.com/') || (@location.facebook.present? && @location.facebook != 'facebook.com/'))
             .row
               .location_icons
                 %span Follow us on:
@@ -84,9 +84,9 @@
             .clear
       #bar_right
         .menu
-          = link_to "#{@location.name} Specials", place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive', :title => "#{@location.name} Specials"
-          = link_to "#{@location.name} Events", events_place_path(@location), :id => 'bar_events', :class => action_name == 'events' ? '' : 'inactive', :title => "#{@location.name} Events"
-          = link_to "#{@location.name} Reviews", reviews_place_path(@location), :id => 'bar_reviews', :class => action_name == 'reviews' ? '' : 'inactive', :title => "#{@location.name} Reviews"
+          = link_to "#{@location.name} Specials", place_path(@location), :id => 'bar_show', :class => action_name == 'show' ? '' : 'inactive', :title => "#{@location.title} Specials"
+          = link_to "#{@location.name} Events", events_place_path(@location), :id => 'bar_events', :class => action_name == 'events' ? '' : 'inactive', :title => "#{@location.title} Events"
+          = link_to "#{@location.name} Reviews", reviews_place_path(@location), :id => 'bar_reviews', :class => action_name == 'reviews' ? '' : 'inactive', :title => "#{@location.title} Reviews"
         .clear
         .bar_content
           = yield

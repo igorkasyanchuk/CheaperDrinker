@@ -3116,7 +3116,7 @@ body #cboxloadedcontent {
   padding-bottom: 6px;
 }
 /* line 49, ../../app/stylesheets/_bar.sass */
-.edit_bar a, .edit_bar a:visited {
+.edit_bar a, .edit_bar a:visited, .edit_bar a:hover {
   color: yellow;
 }
 

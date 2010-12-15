@@ -200,6 +200,10 @@ class Location < ActiveRecord::Base
      plan_name == :free
   end
   
+  def premium?
+    !free?
+  end
+  
   def plan_name
     PLANS[self.plan]
   end

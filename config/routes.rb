@@ -10,7 +10,10 @@ RailsjazzCom::Application.routes.draw do
   resources :contacts, :only => [:new, :create, :index]
   
   resources :states, :only => [:index, :show] do
-    resources :cities, :only => [:index, :show]
+    resources :cities, :only => [:index, :show] do
+      member { get :map }
+      resources :neighborhoods, :only => [:index, :show]
+    end
   end
   
   match '/autocomplete_location_name' => 'home#autocomplete_location_name'

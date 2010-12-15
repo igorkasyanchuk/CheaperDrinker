@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   scope :recent, order('created_at DESC')
   scope :from_pending_to_approved, order('approved ASC')
   
-  scope :from_now, lambda { where(:start.gt => Time.zone.now).order('events.start desc') }
+  scope :from_now, lambda { where(:start.gt => Time.zone.now).order('events.start asc') }
   
   scope :search_by_title, lambda { |title| where(:title.matches => "#{title}%") }  
   scope :search_by_location, lambda { |location| where(:location => {:name.matches => "#{location}%"}).joins(:location) }

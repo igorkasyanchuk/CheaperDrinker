@@ -3,7 +3,8 @@
 %h1.left #{@location.name} Specials
 
 .subfilter
-  = link_to 'Public View', place_path(@location)
+  = link_to 'Edit Bar Details', [:edit, :dashboard, current_user, @location], :class => 'edit_button'
+  = link_to 'Public View', place_path(@location), :class => 'public_view'
   
 .clear
 
@@ -24,10 +25,10 @@
   .clear
   .buttons
     = s_form.submit "Add"
-    = link_to 'Cancel', '#', :class => 'cancel_add_location_special_link'
+    = link_to 'Cancel', '#', :class => 'cancel_add_location_special_link cancel_button'
   
 #add_location_special
-  = link_to 'Add Special', '#', :id => 'add_location_special_link'
+  = link_to 'Add Special', '#', :id => 'add_location_special_link', :class => 'add_button'
   
 = content_for :on_ready do
   init_add_location_special();

@@ -77,6 +77,8 @@ class Location < ActiveRecord::Base
   scope :by_plan, order("plan desc")
   scope :by_random, order(SqlFunction.random)
   
+  scope :featured_bars, where(:plan.gt => 0)
+  
   has_many :special_days, :dependent => :destroy
   accepts_nested_attributes_for :special_days, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:day_id].blank? }
   

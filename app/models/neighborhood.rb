@@ -4,5 +4,9 @@ class Neighborhood < ActiveRecord::Base
   
   def name_and_city
     "#{self.city.name} #{name}"
+  end
+  
+  def map_info
+    { "lat" => self.lat, "lng" => self.lng }
   end  
 end

@@ -1,0 +1,53 @@
+= content_for :map do
+  == <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{GOOGLE_KEYS[Rails.env.to_s]}" type="text/javascript"></script>
+  == <meta name="google-site-verification" content="FNJnbRnOMo8EFSVaXQGL_r0BziyKw7KjpHOQhaBlgrA" />
+  = javascript_include_tag 'clusterer2'
+  = javascript_include_tag 'markerclusterer_packed'
+
+- content_for :on_ready do
+  !== USER_LOCATION = #{element.map_info.merge(:zoom => DEFAULT_CITY_ZOOM).to_json};
+  set_url_options();
+  !== show_bars_on_map();
+  updateMap('home');
+  init_day_filter();
+  init_advanced_search();
+
+.contentwrapper
+  .right_content
+    #global_map.none
+%div.left_content
+  .welcome_message.none
+    %h1 Looking for drink specials? 
+    %strong If this is your first time here please take a moment to read these helpful tips.
+    %ul
+      %li 
+        .icon= image_tag 'binoculars.png'
+        .text As you zoom in on the map bars will be displayed and their specials will be listed in this area.
+        .clear
+      %li
+        .icon= image_tag 'user.png'
+        .text
+          = link_to 'Sign up', new_user_path 
+          to have access to advanced features such as adding or editing specials, reviewing bars, and setting a default location so you don’t have to view this message every time you visit.
+        .clear
+      %li 
+        .icon= image_tag 'faq.png'
+        .text
+          Please view our 
+          = link_to 'Frequently Asked Questions', page_path('faq')
+          for more information.
+    .clear
+  #siderbar_filter.none
+    .select_date
+      = select_tag :day, options_for_select(DAYS_FOR_SPECIALS.keys.collect{|d| [d.to_s.titleize, d]}, @current_date), :id => 'select_date', :class => 'simple'
+    .slider_container= render :partial => '/shared/slider'
+    .clear
+    .title.text_center
+      %strong Bars
+  #sidebar.none
+    = image_tag 'ajax.gif', :id => 'ajax', :class => 'none'
+    %p.none None
+    %ul.none
+  .none
+    = render :partial => '/shared/advanced_filter'
+%div.clear

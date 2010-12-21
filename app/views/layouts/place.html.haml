@@ -34,16 +34,16 @@
           Last updated on: #{@location.updated_at.to_date.strftime("%B %d, %Y")}
         .bar_info
           .row
-            = image_tag 'icon_adress.png', :title => "#{@location.name} Address", :alt => "#{@location.name} Address"
+            = image_tag 'i/map.png', :title => "#{@location.name} Address", :alt => "#{@location.name} Address"
             %address= @location.full_address
           - if @location.phone.present?
             .row.phone_row
-              = image_tag 'icon_phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
+              = image_tag 'i/phone.png', :title => "#{@location.name} Phone", :alt => "#{@location.name} Phone"
               %strong
                 = (number_to_phone @location.phone, :area_code => true) rescue @location.phone
           - if @location.schedule_present?
             .row.schedule_row
-              = image_tag 'icon_shedule.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
+              = image_tag 'i/clock.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
               %strong #{@location.name} Hours
               %table.bar_schedule
                 %tbody
@@ -54,16 +54,13 @@
                       %td= SpecialDay.translate_time(@location.location_schedule.send("starts_#{d}_at"))
                       %td &mdash;
                       %td= SpecialDay.translate_time(@location.location_schedule.send("ends_#{d}_at"))
-          - if @location.premium? && ((@location.twitter.present? && @location.twitter != 'twitter.com/') || (@location.facebook.present? && @location.facebook != 'facebook.com/'))
+          - if@location.any_icon? || @location.premium? && ((@location.twitter.present? && @location.twitter != 'twitter.com/') || (@location.facebook.present? && @location.facebook != 'facebook.com/'))
             .row
               .location_icons
-                %span Follow us on:
-                = (link_to image_tag('/images/1292354488_twitter.png', :class => 'user_twitter', :title => "#{@location.name} Twiiter"), httpize(@location.twitter), :target => '_blank') if @location.twitter.present? && @location.twitter != 'twitter.com/'
-                = (link_to image_tag('/images/1292354412_facebook.png', :class => 'user_facebook', :title => "#{@location.name} Facebook"), httpize(@location.facebook), :target => '_blank') if @location.facebook.present? && @location.facebook != 'facebook.com/'
+                = gay_icon(@location, :normal)
+                = (link_to image_tag('i/facebook.png', :class => 'user_twitter', :title => "#{@location.name} Twiiter"), httpize(@location.twitter), :target => '_blank') if @location.twitter.present? && @location.twitter != 'twitter.com/'
+                = (link_to image_tag('i/twitter.png', :class => 'user_facebook', :title => "#{@location.name} Facebook"), httpize(@location.facebook), :target => '_blank') if @location.facebook.present? && @location.facebook != 'facebook.com/'
           .clear
-        - if @location.any_icon?
-          .bar_info
-            = gay_icon(@location, :large)
         .bar_info.favorites
           - if logged_in?
             - favorite = current_user.favorites.include?(@location)
@@ -75,7 +72,7 @@
         - if nearest.size > 0
           .bar_info.nearest
             .row
-              = image_tag 'compass_36.png', :title => "Near #{@location.name}", :alt => "Near #{@location.name}"
+              = image_tag 'i/compass.png', :title => "Near #{@location.name}", :alt => "Near #{@location.name}"
               %strong What is close to #{@location.name}
             %ul
               - nearest.sort{|a,b| a.distance <=> b.distance}.each do |location|

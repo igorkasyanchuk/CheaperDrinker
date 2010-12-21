@@ -3,11 +3,15 @@
 
 = no_index_me
 
-%h1 Forgot Password
+.w640px.center_block.top6px.mb24px
+  .block_header
+    %h1 Forgot Password
 
-%p Fill out the form below and instructions to reset your password will be emailed to you.
-%br
-
-- simple_form_for @user, :url => password_resets_path do |f|
-  = f.input :email
-  = f.submit 'Reset my password'
+  .block
+    .block_content
+      %br
+      %p Fill out the form below and instructions to reset your password will be emailed to you.
+      - simple_form_for @user, :url => password_resets_path do |f|
+        = f.input :email
+        = f.submit 'Reset my password'
+      %br

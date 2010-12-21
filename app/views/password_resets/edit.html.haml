@@ -3,10 +3,15 @@
 
 = no_index_me
 
-%h2 Change My Password
-
-- simple_form_for @user, :url => password_reset_path, :method => :put do |f|
-  = f.error_messages
-  = f.input :password
-  = f.input :password_confirmation
-  = f.submit "Update my password"
+.w640px.center_block.top6px.mb24px
+  .block_header
+    %h1 Change My Password
+  .block
+    .block_content
+      %br
+      - simple_form_for @user, :url => password_reset_path, :method => :put do |f|
+        = f.error_messages
+        = f.input :password
+        = f.input :password_confirmation
+        = f.submit "Update my password"
+      %br

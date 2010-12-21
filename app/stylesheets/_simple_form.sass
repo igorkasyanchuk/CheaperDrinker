@@ -2,8 +2,10 @@
   label 
     margin: 2px 0
     display: block
-    color: #555
+    color: $label_color
     font-weight: bold
+    font-size: $base_font_size + 3px
+    line-height: $base_font_size + 6px
 
   div.input
     margin-bottom: 10px
@@ -33,15 +35,15 @@
 
   input.text, input.string, input.password, textarea, select
     background: white
-    border: 2px solid #DDD
+    border: 1px solid #DDD
     padding: 3px 4px
     font-size: 12px
     line-height: 14px
     &:hover, &:focus
-      border: 2px solid #ccc 
+      border: 1px solid #ccc 
 
   abbr
-    color: red
+    color: $label_color - #333
     text-decoration: none
     border-bottom: 0 none
     

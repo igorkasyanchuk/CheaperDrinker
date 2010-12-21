@@ -118,6 +118,8 @@ module ApplicationHelper
     if location.gay_bar
       if type == :small
         image_tag 'bar/gay_small.png', :title => 'gay bar'
+      elsif type == :normal
+        image_tag 'bar/gay_normal.png', :title => 'gay bar'
       else
         image_tag 'bar/gay.png', :title => 'gay bar'
       end

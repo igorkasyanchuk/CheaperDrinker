@@ -43,7 +43,7 @@
                 = (number_to_phone @location.phone, :area_code => true) rescue @location.phone
           - if @location.schedule_present?
             .row.schedule_row
-              = image_tag 'i/clock.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
+              = image_tag 'i/new_clock.png', :title => "#{@location.name} Schedule", :alt => "#{@location.name} Schedule"
               %strong #{@location.name} Hours
               %table.bar_schedule
                 %tbody
@@ -72,7 +72,7 @@
         - if nearest.size > 0
           .bar_info.nearest
             .row
-              = image_tag 'i/compass.png', :title => "Near #{@location.name}", :alt => "Near #{@location.name}"
+              = image_tag 'i/new_compass.png', :title => "Near #{@location.name}", :alt => "Near #{@location.name}"
               %strong What is close to #{@location.name}
             %ul
               - nearest.sort{|a,b| a.distance <=> b.distance}.each do |location|

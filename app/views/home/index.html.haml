@@ -1,6 +1,6 @@
 = title "Happy Hour Scout - Finding Happy Hours and Bar Specials for You!"
 
-.page.w960px.center_block.top12px.padding6_8px
+.page.w960px.center_block.top6px.padding6_8px
   .w228px.left
     .page_title
       %h2 Cities Navigation
@@ -12,7 +12,7 @@
             %ul
               - city.neighborhoods.each do |neighbourhood|
                 %li.neighborhood= link_to neighbourhood.name, [neighbourhood.city.state, neighbourhood.city, neighbourhood]
-    .page_title
+    .page_title.space
       %h2 Featured Bars
     .dark4_background.featured_bars
       %ul= render :partial => '/home/places', :locals => { :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
@@ -22,5 +22,7 @@
   .w228px.left
     .page_title
       %h2 Events
+    .dark4_background.home_events
+      = render :partial => '/home/events', :locals => { :events => Event.limit(5).all }
   .clear
     

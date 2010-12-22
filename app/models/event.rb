@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
   scope :search_by_location, lambda { |location| where(:location => {:name.matches => "#{location}%"}).joins(:location) }
   scope :search_by_location_id, lambda { |location_id| where(:location_id => location_id) }  
   
-  has_attached_file :photo, :styles => { :medium => ["600x400>", :png], :thumb => ["60x40>", :png], :small => ["320x240>", :png] }
+  has_attached_file :photo, :styles => { :medium => ["600x400>", :png], :thumb => ["60x60>", :png], :small => ["320x240>", :png] }
   
   validates_presence_of :title
   validates_presence_of :start

@@ -9,6 +9,8 @@
     background: transparent url(/images/bg_bar_title.png) repeat-x top left
     width: 100%
     height: 35px
+    &.space
+      margin-top: 6px
     h1, h2
       color: white
       float: left
@@ -38,8 +40,8 @@
   border: 0 none
   float: left
   
-.sign_in_tab
-  +image_button(213, 31, 'sign_in_both.png')
+.sign_up_tab
+  +image_button(213, 31, 'signup_both.png')
   border: 0 none  
   float: left
   
@@ -48,7 +50,13 @@
   border: 0 none  
   
 .cities_navigation
-  padding: 6px 12px
+  padding: 6px
+  ul
+    margin: 0
+    padding: 0
+    margin-left: 32px
+  ul li
+    margin: 6px 0
   .city a
     color: white
     font-size: $base_font_size + 5px
@@ -59,7 +67,7 @@
     line-height: $base_font_size + 4px
     
 .featured_bars
-  padding: 6px 12px
+  padding: 6px
   margin: 0
   background: $dark2
   ul
@@ -85,3 +93,40 @@
       display: none
   .link_to a
     color: $dark4
+    
+.home_events
+  padding: 6px
+  margin: 0
+  background: $dark2    
+  ul
+    padding: 0
+    margin: 0
+  ul, ul li 
+    list-style-type: none
+  ul li
+    background: white
+    border: 1px solid #E4E3E3
+    padding: 6px
+    margin-bottom: 6px
+    &:last-child
+      margin-bottom: 0px
+  .event_icon  
+    float: left
+  strong, span
+    display: block
+    margin-left: 56px
+  strong
+    color: #333
+    font-size: $base_font_size + 3px
+    line-height: $base_font_size + 8px
+  span
+    color: #666
+    font-size: $base_font_size + 1px
+    line-height: $base_font_size + 5px
+  .view_all_events
+    padding: 12px 0
+    font-size: $base_font_size + 4px
+    line-height: $base_font_size + 8px
+    color: white
+    text-align: center
+    display: block

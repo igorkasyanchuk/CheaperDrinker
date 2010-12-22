@@ -3787,6 +3787,10 @@ div.pagination em {
   height: 35px;
 }
 /* line 23, ../../app/stylesheets/_page.sass */
+.page .page_title.space {
+  margin-top: 6px;
+}
+/* line 27, ../../app/stylesheets/_page.sass */
 .page .page_title h1, .page .page_title h2 {
   color: white;
   float: left;
@@ -3796,33 +3800,33 @@ div.pagination em {
   line-height: 16px;
   text-transform: uppercase;
 }
-/* line 39, ../../app/stylesheets/_page.sass */
+/* line 43, ../../app/stylesheets/_page.sass */
 .page .page_block {
   margin: 12px;
 }
-/* line 43, ../../app/stylesheets/_page.sass */
+/* line 47, ../../app/stylesheets/_page.sass */
 .page h2 {
   color: #ededed;
 }
-/* line 49, ../../app/stylesheets/_page.sass */
+/* line 53, ../../app/stylesheets/_page.sass */
 .page form label {
   color: white;
 }
-/* line 53, ../../app/stylesheets/_page.sass */
+/* line 57, ../../app/stylesheets/_page.sass */
 .page form .hint {
   color: white;
 }
-/* line 57, ../../app/stylesheets/_page.sass */
+/* line 61, ../../app/stylesheets/_page.sass */
 .page form .error {
   color: #303940;
 }
-/* line 63, ../../app/stylesheets/_page.sass */
+/* line 67, ../../app/stylesheets/_page.sass */
 .page .page_links a {
   color: #303940;
   font-weight: bold;
 }
 
-/* line 71, ../../app/stylesheets/_page.sass */
+/* line 75, ../../app/stylesheets/_page.sass */
 .login_tab {
   color: red;
   width: 213px;
@@ -3854,14 +3858,14 @@ div.pagination em {
   background-position: 0px -31px;
 }
 
-/* line 81, ../../app/stylesheets/_page.sass */
-.sign_in_tab {
+/* line 85, ../../app/stylesheets/_page.sass */
+.sign_up_tab {
   color: red;
   width: 213px;
   height: 31px;
   display: inline-block;
   text-indent: -9999px;
-  background: url("/images/sign_in_both.png") 0px 0px no-repeat;
+  background: url("/images/signup_both.png") 0px 0px no-repeat;
   color: transparent;
   border-style: none;
   border-width: 0;
@@ -3874,19 +3878,19 @@ div.pagination em {
   float: left;
 }
 /* line 95, ../../app/stylesheets/_utils.sass */
-.sign_in_tab.inactive {
+.sign_up_tab.inactive {
   background-position: 0px -31px;
 }
 /* line 99, ../../app/stylesheets/_utils.sass */
-.sign_in_tab:hover {
+.sign_up_tab:hover {
   background-position: 0px 0px;
 }
 /* line 103, ../../app/stylesheets/_utils.sass */
-.sign_in_tab.disable:hover {
+.sign_up_tab.disable:hover {
   background-position: 0px -31px;
 }
 
-/* line 91, ../../app/stylesheets/_page.sass */
+/* line 95, ../../app/stylesheets/_page.sass */
 .login_button {
   color: red;
   width: 81px;
@@ -3917,53 +3921,63 @@ div.pagination em {
   background-position: 0px -28px;
 }
 
-/* line 99, ../../app/stylesheets/_page.sass */
-.cities_navigation {
-  padding: 6px 12px;
-}
 /* line 103, ../../app/stylesheets/_page.sass */
+.cities_navigation {
+  padding: 6px;
+}
+/* line 107, ../../app/stylesheets/_page.sass */
+.cities_navigation ul {
+  margin: 0;
+  padding: 0;
+  margin-left: 32px;
+}
+/* line 115, ../../app/stylesheets/_page.sass */
+.cities_navigation ul li {
+  margin: 6px 0;
+}
+/* line 119, ../../app/stylesheets/_page.sass */
 .cities_navigation .city a {
   color: white;
   font-size: 16px;
   line-height: 20px;
 }
-/* line 111, ../../app/stylesheets/_page.sass */
+/* line 127, ../../app/stylesheets/_page.sass */
 .cities_navigation .neighborhood, .cities_navigation .neighborhood a {
   color: #a9b5c2;
   font-size: 13px;
   line-height: 15px;
 }
 
-/* line 121, ../../app/stylesheets/_page.sass */
+/* line 137, ../../app/stylesheets/_page.sass */
 .featured_bars {
-  padding: 6px 12px;
+  padding: 6px;
   margin: 0;
   background: #6b8093;
 }
-/* line 129, ../../app/stylesheets/_page.sass */
+/* line 145, ../../app/stylesheets/_page.sass */
 .featured_bars ul {
   padding: 0;
   margin: 0;
 }
-/* line 135, ../../app/stylesheets/_page.sass */
+/* line 151, ../../app/stylesheets/_page.sass */
 .featured_bars ul, .featured_bars ul li {
   list-style-type: none;
 }
-/* line 139, ../../app/stylesheets/_page.sass */
+/* line 155, ../../app/stylesheets/_page.sass */
 .featured_bars .place_name {
   font-size: 14px;
   line-height: 19px;
   color: white;
 }
-/* line 147, ../../app/stylesheets/_page.sass */
+/* line 163, ../../app/stylesheets/_page.sass */
 .featured_bars .static_rating {
   padding: 6px 0;
 }
-/* line 151, ../../app/stylesheets/_page.sass */
+/* line 167, ../../app/stylesheets/_page.sass */
 .featured_bars .address {
   color: #465057;
 }
-/* line 155, ../../app/stylesheets/_page.sass */
+/* line 171, ../../app/stylesheets/_page.sass */
 .featured_bars hr {
   background: transparent url(/images/stripe.png) no-repeat 50% 50%;
   border: 0px none;
@@ -3971,13 +3985,70 @@ div.pagination em {
   margin-bottom: 8px;
   margin-top: 8px;
 }
-/* line 167, ../../app/stylesheets/_page.sass */
+/* line 183, ../../app/stylesheets/_page.sass */
 .featured_bars hr:last-child {
   display: none;
 }
-/* line 171, ../../app/stylesheets/_page.sass */
+/* line 187, ../../app/stylesheets/_page.sass */
 .featured_bars .link_to a {
   color: #465057;
+}
+
+/* line 193, ../../app/stylesheets/_page.sass */
+.home_events {
+  padding: 6px;
+  margin: 0;
+  background: #6b8093;
+}
+/* line 201, ../../app/stylesheets/_page.sass */
+.home_events ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 207, ../../app/stylesheets/_page.sass */
+.home_events ul, .home_events ul li {
+  list-style-type: none;
+}
+/* line 211, ../../app/stylesheets/_page.sass */
+.home_events ul li {
+  background: white;
+  border: 1px solid #e4e3e3;
+  padding: 6px;
+  margin-bottom: 6px;
+}
+/* line 221, ../../app/stylesheets/_page.sass */
+.home_events ul li:last-child {
+  margin-bottom: 0px;
+}
+/* line 225, ../../app/stylesheets/_page.sass */
+.home_events .event_icon {
+  float: left;
+}
+/* line 229, ../../app/stylesheets/_page.sass */
+.home_events strong, .home_events span {
+  display: block;
+  margin-left: 56px;
+}
+/* line 235, ../../app/stylesheets/_page.sass */
+.home_events strong {
+  color: #333333;
+  font-size: 14px;
+  line-height: 19px;
+}
+/* line 243, ../../app/stylesheets/_page.sass */
+.home_events span {
+  color: #666666;
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 251, ../../app/stylesheets/_page.sass */
+.home_events .view_all_events {
+  padding: 12px 0;
+  font-size: 15px;
+  line-height: 19px;
+  color: white;
+  text-align: center;
+  display: block;
 }
 
 /* line 1, ../../app/stylesheets/_block.sass */

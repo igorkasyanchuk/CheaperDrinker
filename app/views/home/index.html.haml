@@ -1,28 +1,29 @@
 = title "Happy Hour Scout - Finding Happy Hours and Bar Specials for You!"
 
-.page.w960px.center_block.top6px.padding6_8px
-  .w228px.left
-    .page_title
-      %h2 Cities Navigation
-    .dark4_background.cities_navigation
-      - City.top.by_name.each do |city|
-        .city
-          = link_to city.name, [city.state, city], :title => "specials in #{city.name}"
-          - if city.neighborhoods.count > 0
-            %ul
-              - city.neighborhoods.each do |neighbourhood|
-                %li.neighborhood= link_to neighbourhood.name, [neighbourhood.city.state, neighbourhood.city, neighbourhood]
-    .page_title.space
-      %h2 Featured Bars
-    .dark4_background.featured_bars
-      %ul= render :partial => '/home/places', :locals => { :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
-  .w490px.left.mlr6px
-    .page_title
-      %h2 Blog
-  .w228px.left
-    .page_title
-      %h2 Events
-    .dark4_background.home_events
-      = render :partial => '/home/events', :locals => { :events => Event.limit(5).all }
-  .clear
-    
+%table.w960px.center_block.top6px.padding6_8px.page.vtop
+  %tr
+    %td.w228px
+      .page_title
+        %h2 Cities Navigation
+      .dark4_background.cities_navigation
+        - City.top.by_name.each do |city|
+          .city
+            = link_to city.name, [city.state, city], :title => "specials in #{city.name}"
+            - if city.neighborhoods.count > 0
+              %ul
+                - city.neighborhoods.each do |neighbourhood|
+                  %li.neighborhood= link_to neighbourhood.name, [neighbourhood.city.state, neighbourhood.city, neighbourhood]
+      .page_title.space
+        %h2 Featured Bars
+      .dark4_background.featured_bars
+        %ul= render :partial => '/home/places', :locals => { :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
+    %td.w490px
+      .mlr6px
+        .page_title
+          %h2 Blog
+    %td.w228px
+      .page_title
+        %h2 Events
+      .dark4_background.home_events
+        = render :partial => '/home/events', :locals => { :events => Event.limit(5).all }
+  .clear    

@@ -35,6 +35,7 @@ GEM
     attribute_normalizer (0.3.1)
     authlogic (2.1.6)
       activesupport
+    auto_html (1.3.3)
     babosa (0.2.0)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
@@ -153,6 +154,7 @@ DEPENDENCIES
   acts-as-taggable-on
   attribute_normalizer
   authlogic
+  auto_html
   bcrypt-ruby
   capistrano
   compass (= 0.10.5)

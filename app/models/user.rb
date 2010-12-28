@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   
   has_many :user_favorites, :dependent => :destroy
   has_many :favorites, :through => :user_favorites
+  has_many :posts
   
   scope :admins, where(:admin => true)
   scope :forward,  order('created_at ASC')

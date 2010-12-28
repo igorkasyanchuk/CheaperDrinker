@@ -5,7 +5,9 @@ RailsjazzCom::Application.routes.draw do
   end
 
   resources :password_resets
-  resources :users
+  resources :users do
+    resources :posts, :only => [:index, :show] 
+  end
   
   resources :contacts, :only => [:new, :create, :index]
   
@@ -35,6 +37,9 @@ RailsjazzCom::Application.routes.draw do
 
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
+    resources :posts, :only => [:index, :destroy] do
+      member {  get :approve  }
+    end
     resources :contacts, :only => [:index, :destroy]
     resources :event_categories
     resources :events do
@@ -65,6 +70,7 @@ RailsjazzCom::Application.routes.draw do
     match '/add_bar', :to => 'dashboard#add_bar'
     match '/create_location', :to => 'dashboard#create_location'
     resources :users, :only => [:edit, :update, :show] do
+      resources :posts
       resources :events
       resources :locations do
         resources :special_days do

@@ -28,6 +28,7 @@ gem 'thinking-sphinx', "~> 2.0.0", :require => 'thinking_sphinx'
 gem 'meta_where'
 gem 'paperclip', '2.3.6'
 gem 'whenever', :require => false
+gem "auto_html"
 
 group :test do
   gem "shoulda"

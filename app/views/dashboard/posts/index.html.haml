@@ -1,0 +1,23 @@
+%h1.left Posts
+.subnav.right= link_to 'Add Post', new_resource_path, :class => 'add_button'
+.clear
+
+- unless @posts.empty?
+  %table.zebra
+    %thead
+      %tr
+        %th Title
+        %th Actions
+    %tbody
+      - for post in @posts
+        %tr{ :class => "#{cycle(:odd, :even)}" }
+          %td= link_to post.title, [:dashboard, current_user, post]
+          %td
+            = link_to 'show', [:dashboard, current_user, post], :class => 'show_button'
+            = link_to 'edit', [:edit, :dashboard, current_user, post], :class => 'edit_button'
+            = link_to 'remove', [:dashboard, current_user, post], :remote => true, :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+          
+
+- else
+  %p
+    %strong List is empty.

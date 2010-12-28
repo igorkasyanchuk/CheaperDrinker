@@ -21,6 +21,11 @@
       .mlr6px
         .page_title
           %h2 Blog
+        .page_content
+          - @posts.each do |post|
+            .page_content_block
+              .date= post.created_at.to_date
+              .post_content!= post.body_html
     %td.w228px
       .page_title
         %h2 Events

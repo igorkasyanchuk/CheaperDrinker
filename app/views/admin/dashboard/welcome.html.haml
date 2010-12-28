@@ -21,3 +21,6 @@
   %tr
     %th Contacts
     %td #{Contact.count}
+  %tr
+    %th Posts
+    %td #{Post.not_approved.count}/#{Post.count}

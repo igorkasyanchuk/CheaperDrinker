@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   
   def index
     @current_date = DAYS_FOR_SPECIALS.keys[Time.zone.now.to_date.wday-1]
+    @posts = Post.approved.backward.limit(5)
   end
 
   def markers

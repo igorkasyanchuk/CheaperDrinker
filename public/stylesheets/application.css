@@ -3806,32 +3806,45 @@ div.pagination em {
   text-transform: uppercase;
 }
 /* line 43, ../../app/stylesheets/_page.sass */
+.page .page_content {
+  background: #ededed;
+  padding: 6px;
+}
+/* line 49, ../../app/stylesheets/_page.sass */
+.page .page_content .page_content_block {
+  background: white;
+  border: 1px solid #e4e3e3;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: #555555;
+}
+/* line 61, ../../app/stylesheets/_page.sass */
 .page .page_block {
   margin: 12px;
 }
-/* line 47, ../../app/stylesheets/_page.sass */
+/* line 65, ../../app/stylesheets/_page.sass */
 .page h2 {
   color: #ededed;
 }
-/* line 53, ../../app/stylesheets/_page.sass */
+/* line 71, ../../app/stylesheets/_page.sass */
 .page form label {
   color: white;
 }
-/* line 57, ../../app/stylesheets/_page.sass */
+/* line 75, ../../app/stylesheets/_page.sass */
 .page form .hint {
   color: white;
 }
-/* line 61, ../../app/stylesheets/_page.sass */
+/* line 79, ../../app/stylesheets/_page.sass */
 .page form .error {
   color: #303940;
 }
-/* line 67, ../../app/stylesheets/_page.sass */
+/* line 85, ../../app/stylesheets/_page.sass */
 .page .page_links a {
   color: #303940;
   font-weight: bold;
 }
 
-/* line 75, ../../app/stylesheets/_page.sass */
+/* line 93, ../../app/stylesheets/_page.sass */
 .login_tab {
   color: red;
   width: 213px;
@@ -3863,7 +3876,7 @@ div.pagination em {
   background-position: 0px -31px;
 }
 
-/* line 85, ../../app/stylesheets/_page.sass */
+/* line 103, ../../app/stylesheets/_page.sass */
 .sign_up_tab {
   color: red;
   width: 213px;
@@ -3895,7 +3908,7 @@ div.pagination em {
   background-position: 0px -31px;
 }
 
-/* line 95, ../../app/stylesheets/_page.sass */
+/* line 113, ../../app/stylesheets/_page.sass */
 .login_button {
   color: red;
   width: 81px;
@@ -3926,63 +3939,63 @@ div.pagination em {
   background-position: 0px -28px;
 }
 
-/* line 103, ../../app/stylesheets/_page.sass */
+/* line 121, ../../app/stylesheets/_page.sass */
 .cities_navigation {
   padding: 6px;
 }
-/* line 107, ../../app/stylesheets/_page.sass */
+/* line 125, ../../app/stylesheets/_page.sass */
 .cities_navigation ul {
   margin: 0;
   padding: 0;
   margin-left: 32px;
 }
-/* line 115, ../../app/stylesheets/_page.sass */
+/* line 133, ../../app/stylesheets/_page.sass */
 .cities_navigation ul li {
   margin: 6px 0;
 }
-/* line 119, ../../app/stylesheets/_page.sass */
+/* line 137, ../../app/stylesheets/_page.sass */
 .cities_navigation .city a {
   color: white;
   font-size: 16px;
   line-height: 20px;
 }
-/* line 127, ../../app/stylesheets/_page.sass */
+/* line 145, ../../app/stylesheets/_page.sass */
 .cities_navigation .neighborhood, .cities_navigation .neighborhood a {
   color: #a9b5c2;
   font-size: 13px;
   line-height: 15px;
 }
 
-/* line 137, ../../app/stylesheets/_page.sass */
+/* line 155, ../../app/stylesheets/_page.sass */
 .featured_bars {
   padding: 6px;
   margin: 0;
   background: #6b8093;
 }
-/* line 145, ../../app/stylesheets/_page.sass */
+/* line 163, ../../app/stylesheets/_page.sass */
 .featured_bars ul {
   padding: 0;
   margin: 0;
 }
-/* line 151, ../../app/stylesheets/_page.sass */
+/* line 169, ../../app/stylesheets/_page.sass */
 .featured_bars ul, .featured_bars ul li {
   list-style-type: none;
 }
-/* line 155, ../../app/stylesheets/_page.sass */
+/* line 173, ../../app/stylesheets/_page.sass */
 .featured_bars .place_name {
   font-size: 14px;
   line-height: 19px;
   color: white;
 }
-/* line 163, ../../app/stylesheets/_page.sass */
+/* line 181, ../../app/stylesheets/_page.sass */
 .featured_bars .static_rating {
   padding: 6px 0;
 }
-/* line 167, ../../app/stylesheets/_page.sass */
+/* line 185, ../../app/stylesheets/_page.sass */
 .featured_bars .address {
   color: #465057;
 }
-/* line 171, ../../app/stylesheets/_page.sass */
+/* line 189, ../../app/stylesheets/_page.sass */
 .featured_bars hr {
   background: transparent url(/images/stripe.png) no-repeat 50% 50%;
   border: 0px none;
@@ -3990,63 +4003,63 @@ div.pagination em {
   margin-bottom: 8px;
   margin-top: 8px;
 }
-/* line 183, ../../app/stylesheets/_page.sass */
+/* line 201, ../../app/stylesheets/_page.sass */
 .featured_bars hr:last-child {
   display: none;
 }
-/* line 187, ../../app/stylesheets/_page.sass */
+/* line 205, ../../app/stylesheets/_page.sass */
 .featured_bars .link_to a {
   color: #465057;
 }
 
-/* line 193, ../../app/stylesheets/_page.sass */
+/* line 211, ../../app/stylesheets/_page.sass */
 .home_events {
   padding: 6px;
   margin: 0;
   background: #6b8093;
 }
-/* line 201, ../../app/stylesheets/_page.sass */
+/* line 219, ../../app/stylesheets/_page.sass */
 .home_events ul {
   padding: 0;
   margin: 0;
 }
-/* line 207, ../../app/stylesheets/_page.sass */
+/* line 225, ../../app/stylesheets/_page.sass */
 .home_events ul, .home_events ul li {
   list-style-type: none;
 }
-/* line 211, ../../app/stylesheets/_page.sass */
+/* line 229, ../../app/stylesheets/_page.sass */
 .home_events ul li {
   background: white;
   border: 1px solid #e4e3e3;
   padding: 6px;
   margin-bottom: 6px;
 }
-/* line 221, ../../app/stylesheets/_page.sass */
+/* line 239, ../../app/stylesheets/_page.sass */
 .home_events ul li:last-child {
   margin-bottom: 0px;
 }
-/* line 225, ../../app/stylesheets/_page.sass */
+/* line 243, ../../app/stylesheets/_page.sass */
 .home_events .event_icon {
   float: left;
 }
-/* line 229, ../../app/stylesheets/_page.sass */
+/* line 247, ../../app/stylesheets/_page.sass */
 .home_events strong, .home_events span {
   display: block;
   margin-left: 56px;
 }
-/* line 235, ../../app/stylesheets/_page.sass */
+/* line 253, ../../app/stylesheets/_page.sass */
 .home_events strong {
   color: #333333;
   font-size: 14px;
   line-height: 19px;
 }
-/* line 243, ../../app/stylesheets/_page.sass */
+/* line 261, ../../app/stylesheets/_page.sass */
 .home_events span {
   color: #666666;
   font-size: 12px;
   line-height: 16px;
 }
-/* line 251, ../../app/stylesheets/_page.sass */
+/* line 269, ../../app/stylesheets/_page.sass */
 .home_events .view_all_events {
   padding: 12px 0;
   font-size: 15px;

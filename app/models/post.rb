@@ -18,6 +18,7 @@ class Post < ActiveRecord::Base
   scope :backward, order('created_at DESC')  
   scope :pending, where('published_on is NULL')
   scope :published, where('published_on is not NULL')
+  scope :newest, order("created_at asc") # TODO order by published
   
   scope :not_approved, where(:approved => false)
   scope :approved, where(:approved => true)

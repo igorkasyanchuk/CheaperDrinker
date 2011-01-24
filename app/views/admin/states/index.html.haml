@@ -1,0 +1,18 @@
+= title "States"
+
+%h1.left States
+.clear  
+
+- @states.each do |state|
+  %h2= state.name
+  %table.zebra.w33
+    %thead
+      %tr
+        %th.w10 Name
+        %th= link_to "Manage Markets", [:admin, state, :markets], :class => 'index_button'
+    
+    %tbody
+      - for market in state.markets
+        %tr{ :class => cycle(:odd, :even), :id => "cb_row_#{market.id}" }
+          %td{:colspan => 2}= market.name
+            

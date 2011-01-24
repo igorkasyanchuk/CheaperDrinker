@@ -6,6 +6,7 @@ class City < ActiveRecord::Base
   
   has_many :locations
   has_many :neighborhoods
+  belongs_to :market
   
   scope :by_name, order(:name)
   scope :top, where(:is_top_city => true)
@@ -36,5 +37,5 @@ class City < ActiveRecord::Base
   def map_info
     { "lat" => self.lat, "lng" => self.lng }
   end  
-  
+
 end

@@ -1,6 +1,9 @@
 %h1.left Manage all Posts
 .clear
 
+%p
+  = link_to 'Add Post', [:new, :dashboard, current_user, :post], :class => 'add_button'
+
 - unless @posts.empty?
   %table.zebra
     %thead

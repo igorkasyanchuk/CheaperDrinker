@@ -12,4 +12,11 @@ class Admin::CitiesController < Admin::DashboardController
     render :nothing => true
   end
   
+  def set_market
+    @city = resource
+    @city.market_id = params["market_id"]
+    @city.save(:validate => false)
+    render :nothing => true
+  end
+  
 end

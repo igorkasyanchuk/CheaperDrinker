@@ -1,0 +1,25 @@
+= title "Manage #{@state.name} Markets"
+
+%h1.left #{@state.name} Markets
+.add.right
+  = link_to "Add #{@state.name} Market", [:new, :admin, @state, :market], :class => 'add_button'
+.clear  
+
+%table.zebra.w50
+  %tr
+    %th Name
+    %th Actions
+  - @markets.each do |market|
+    %tr{ :class => cycle(:odd, :even)}
+      %td= market.name
+      %td
+        = link_to 'show', [:admin, @state, market], :class => 'show_button'
+        = link_to 'edit', [:edit, :admin, @state, market], :class => 'edit_button'
+        = link_to 'remove', [:admin, @state, market], :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+  %tr
+    %td{:colspan => 2}
+      %strong Total: #{@state.markets.count}
+      
+      
+%p  
+  = link_to 'Back to States page', [:admin, :states], :class => 'index_button'

@@ -3720,19 +3720,25 @@ table.bar_schedule tr td, table.bar_schedule tr th {
 .cities ul li {
   list-style-type: none;
 }
+/* line 9, ../../app/stylesheets/_cities.sass */
+.cities ul li.market {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+}
 
-/* line 11, ../../app/stylesheets/_cities.sass */
+/* line 19, ../../app/stylesheets/_cities.sass */
 .top_cities {
   width: 60%;
   padding: 16px 0;
   padding-left: 20px;
 }
-/* line 19, ../../app/stylesheets/_cities.sass */
+/* line 27, ../../app/stylesheets/_cities.sass */
 .top_cities .city {
   float: left;
   width: 33%;
 }
-/* line 25, ../../app/stylesheets/_cities.sass */
+/* line 33, ../../app/stylesheets/_cities.sass */
 .top_cities .city a {
   font-size: 16px;
   line-height: 23px;

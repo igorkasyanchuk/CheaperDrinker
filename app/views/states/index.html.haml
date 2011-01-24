@@ -15,6 +15,10 @@
     .col
       - states_row.each do |state|
         %h3= state.name
+        - if state.markets.count > 0
+          %ul
+            - state.markets.by_name.each do |market|
+              %li.market= link_to market.name, [state, market]
         %ul
           - state.cities.by_name.each do |city|
             %li= link_to city.name, [state, city]

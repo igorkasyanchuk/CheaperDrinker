@@ -1,0 +1,8 @@
+= title "Find specials in #{@market.name}, #{@market.name} bars | #{SEO_TITLE_SHORT}"
+= description "Find specials in #{@market.name}, #{@market.name} bars | #{SEO_DESCRIPTION}"
+
+%h1 Happy Hours in #{@market.name}
+
+%ul
+  - @market.cities.each do |city|
+    %li= city.name

@@ -3,6 +3,7 @@ class State < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
   has_many :cities
+  has_many :markets
   
   scope :by_name, order(:name)
 end

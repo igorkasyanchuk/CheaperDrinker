@@ -19,8 +19,6 @@
         %ul= render :partial => '/home/places', :locals => { :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
     %td.w490px
       .mlr6px
-        .page_title
-          %h2 Blog
         .page_content
           - @posts.each do |post|
             .page_content_block

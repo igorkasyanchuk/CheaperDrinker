@@ -1,0 +1,19 @@
+= add_google_map_2
+
+= content_for :on_ready do
+  == var lat = #{@market.lat};
+  == var lng = #{@market.lng};   
+  == initialize_map_with_lat_and_lng(lat, lng);
+
+= title @market.name
+
+%h1.left #{@market.name}
+.add.right
+  = link_to "Edit", [:edit, :admin, @market.state, @market], :class => 'edit_button'  
+.clear
+
+%div#map_canvas{:style => "width: 100%; height: 400px; margin-bottom: 12px"}
+
+%p
+  =# link_to "public view", [@market.state.state, @market.state, @market], :class => 'public_view'
+  = link_to "All #{@market.state.name} Markets", [:admin, @market.state, :markets], :class => 'index_button'

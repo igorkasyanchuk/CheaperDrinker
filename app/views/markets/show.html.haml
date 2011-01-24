@@ -1,0 +1,18 @@
+= title "Find specials in #{@market.name}, #{@market.name} bars | #{SEO_TITLE_SHORT}"
+= description "Find specials in #{@market.name}, #{@market.name} bars | #{SEO_TITLE_SHORT}"
+
+%h1 Happy Hour in #{@market.name}
+
+%p
+  = link_to "Browse all #{@market.state.name} cities", [@market.state]
+
+%p
+  = link_to "Browse Bars on #{@market.name} Map", [:map, @market.state, @market]
+
+.cols.cities.places
+  - @market.cities.by_name.in_groups_of(6, false) do |cities|
+    .col4
+      %ul
+        - cities.each do |city|
+          %li
+            %li= link_to city.name, [city.state, city]

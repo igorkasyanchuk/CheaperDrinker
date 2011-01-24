@@ -1,0 +1,7 @@
+= title "Edit: #{@market.name}"
+
+%h1.left== Edit: #{@market.name}
+.add.right
+  = link_to 'Back', [:admin, @state, :markets], :class => 'cancel_button'
+.clear
+= render 'form'

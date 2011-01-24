@@ -37,9 +37,14 @@ function initialize_map_with_lat_and_lng_and_address(lat, lng, address) {
         if (!point) {
           alert("Couldn't locate address.");
         } else {
+          if (Math.abs(lat + lng) > 0) {
+            map.setCenter(new GLatLng(lat, lng), 10);
+            point = new GLatLng(lat, lng);
+          } else {
+            map.setCenter(point, 10);
+          }
           var marker = new GMarker(point, {draggable: true});
           map.addOverlay(marker);
-          map.setCenter(point, 10);
           GEvent.addListener(marker, "dragend", function() {
             pt = this.getPoint();
             $('#lat').val(pt.lat());
@@ -426,5 +431,12 @@ function init_favorites() {
 function init_top_cb() {
   $('.top_cb').live('click', function() {
     $.get($(this).attr("data-url"), {}, function(data){});
+  });
+};
+
+function init_select_change() {
+  $('table.zebra select').change(function() {
+    var v = $(this).val();
+    $.get($(this).attr("data-url"), {market_id: v}, function(data){});
   });
 };

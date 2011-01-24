@@ -6,11 +6,12 @@
 
   - @cities_grouped.sort.each do |state, cities|
     %h2= state
-    %table.zebra.w33
+    %table.zebra.w50
       %thead
         %tr
           %th.w10 TOP
-          %th Name
+          %th.w50 Name
+          %th Market
       
       %tbody
         - for city in cities
@@ -20,6 +21,8 @@
               = link_to city.name, [:admin, city]
               - neighborhoods = city.neighborhoods.collect{|n| n.name}
               (#{neighborhoods.size > 0 ? neighborhoods.join(", ") : '-'})
+            %td
+              = select_tag "city[#{city.id}]", options_for_select( city.state.markets.collect{|m| [m.name, m.id]}, city.market.try(:id) ), :include_blank => true, "data-url" => url_for([:set_market, :admin, city])
           
 - else
   %p
@@ -27,3 +30,4 @@
     
 = content_for :on_ready do
   init_top_cb();
+  init_select_change();

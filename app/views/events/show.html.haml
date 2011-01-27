@@ -1,23 +1,21 @@
 = title @event.title
 
 %h1 #{@event.title}
-.clear
 
-%dl.w50.strict
-  - if @event.has_owner?
-    %dt Owner
-    %dd= @event.user.name
-  %dt Description
-  %dd= simple_format @event.description
-  %dt Date
-  %dd= @event.start
+.event_date_time
+  #{@event.start}
   - if @event.has_time?
-    %dt Time
-    %dd= @event.start_time.to_s(:time_12)
-  - if @event.has_photo?
-    %dt Photo
-    %dd= image_tag @event.photo.url(:medium)
-    
+    , #{@event.start_time.to_s(:time_12)}
+
+- if @event.has_photo?
+  = image_tag @event.photo.url(:medium), :class => 'event_image'
+  
+= simple_format @event.description
+
+%p
+  = @event.category_name
+
+.clear    
     
 %p.links
   = link_to "View all Events >>", [:events]

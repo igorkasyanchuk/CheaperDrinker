@@ -1,5 +1,22 @@
 %h1 Events
 
+%ul.all_events
+  - @events.each do |e|
+    %li
+      .event_image= link_to image_tag(e.photo.url(:small)), e
+      .event_description
+        %h2= link_to e.title, e
+        .ed
+          - if e.event_category.try(:name)
+            .event_category #{e.event_category.try(:name)}, 
+            .event_date &nbsp;#{e.start.to_date}
+            - if e.has_time?
+              .event_time= e.start_time.to_s(:time_12)
+          - else
+            .event_date #{e.start.to_date}
+            - if e.has_time?
+              .event_time= e.start_time.to_s(:time_12)
+          .edd= simple_format truncate(e.description, :length => 300)
+      .clear
 
-%p
-  Total Events: #{Event.count}
+= will_paginate @events

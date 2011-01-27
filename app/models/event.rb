@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
   scope :approved, where(:approved => true)
   scope :recent, order('created_at DESC')
   scope :from_pending_to_approved, order('approved ASC')
+  scope :soon, order('start desc')
   
   scope :from_now, lambda { where(:start.gt => Time.zone.now).order('events.start asc') }
   

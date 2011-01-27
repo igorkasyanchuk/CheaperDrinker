@@ -4,24 +4,21 @@
   %tr
     %td.w228px
       .page_title
-        %h2 Cities Navigation
+        %h2 Neighborhoods
       .dark4_background.cities_navigation
-        - City.top.by_name.each do |city|
+        - Market.by_name.each do |market|
           .city
-            = link_to city.name, [city.state, city], :title => "specials in #{city.name}"
-            - if city.neighborhoods.count > 0
-              %ul
-                - city.neighborhoods.each do |neighbourhood|
-                  %li.neighborhood= link_to neighbourhood.name, [neighbourhood.city.state, neighbourhood.city, neighbourhood]
+            = link_to market.name, [:map, market.state, market], :title => "specials in #{market.name}"
       .page_title.space
         %h2 Featured Bars
       .dark4_background.featured_bars
-        %ul= render :partial => '/home/places', :locals => { :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
+        %ul= render :partial => '/home/places', :locals => { :hide_rating => true, :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
     %td.w490px
       .mlr6px
-        .page_content
+        .page_content{:style => 'padding-top: 1px; padding-bottom: 1px'}
           - @posts.each do |post|
             .page_content_block
+              %h2.post_title= link_to post.title, [post.user, post]
               .date= post.created_at.to_date
               .post_content!= post.body_html
     %td.w228px

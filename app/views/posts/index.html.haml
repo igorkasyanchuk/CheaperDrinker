@@ -1,4 +1,7 @@
 %h1 #{@user.name} Posts
 
-- for post in @posts
-  .post= link_to post.title, [@user, post]
+- @posts.each do |post|
+  .page_content_block
+    %h2.post_title= link_to post.title, [post.user, post]
+    .date= post.created_at.to_date
+    .post_content!= post.body_html

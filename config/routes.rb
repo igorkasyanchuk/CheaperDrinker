@@ -8,16 +8,14 @@ RailsjazzCom::Application.routes.draw do
   resources :users do
     resources :posts, :only => [:index, :show] 
   end
-  
   resources :contacts, :only => [:new, :create, :index]
-  
   resources :states, :only => [:index, :show] do
     resources :markets, :only => [:index, :show] do
       member { get :map }
+      resources :neighborhoods, :only => [:index, :show]
     end
     resources :cities, :only => [:index, :show] do
       member { get :map }
-      resources :neighborhoods, :only => [:index, :show]
     end
   end
   
@@ -49,14 +47,14 @@ RailsjazzCom::Application.routes.draw do
       member {  get :approve  }
     end
     resources :cities, :only => [:index, :show, :destroy] do
-      member {  
+      member {
         get :toggle  
-        get :set_market
       }
-      resources :neighborhoods
     end
     resources :states, :only => [:index] do
-      resources :markets
+      resources :markets do
+        resources :neighborhoods
+      end
     end
     resources :locations do
       member {  get :approve  }

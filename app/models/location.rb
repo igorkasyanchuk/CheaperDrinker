@@ -111,6 +111,7 @@ class Location < ActiveRecord::Base
   def generate_activation_code!
     chars = ['A'..'Z', '0'..'9'].map{|r|r.to_a}.flatten
     self.activation_code = Array.new(8).map{chars[rand(chars.size)]}.join
+    self.is_code_used = false
   end
   
   def check_fields!

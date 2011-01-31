@@ -3809,7 +3809,7 @@ div.pagination em {
   margin-right: 12px;
   margin-top: 12px;
   line-height: 16px;
-  text-transform: uppercase;
+  text-transform: normal;
 }
 /* line 43, ../../app/stylesheets/_page.sass */
 .page .page_content {
@@ -3960,48 +3960,56 @@ div.pagination em {
   margin: 6px 0;
 }
 /* line 137, ../../app/stylesheets/_page.sass */
-.cities_navigation .city a {
-  color: white;
-  font-size: 16px;
-  line-height: 20px;
+.cities_navigation .market {
+  font-size: 15px;
+  line-height: 16px;
+  padding-bottom: 6px;
 }
 /* line 145, ../../app/stylesheets/_page.sass */
+.cities_navigation .market a {
+  color: white;
+}
+/* line 149, ../../app/stylesheets/_page.sass */
 .cities_navigation .neighborhood, .cities_navigation .neighborhood a {
   color: #a9b5c2;
   font-size: 13px;
   line-height: 15px;
 }
 
-/* line 155, ../../app/stylesheets/_page.sass */
+/* line 159, ../../app/stylesheets/_page.sass */
 .featured_bars {
   padding: 6px;
   margin: 0;
   background: #6b8093;
 }
-/* line 163, ../../app/stylesheets/_page.sass */
+/* line 167, ../../app/stylesheets/_page.sass */
 .featured_bars ul {
   padding: 0;
   margin: 0;
 }
-/* line 169, ../../app/stylesheets/_page.sass */
+/* line 173, ../../app/stylesheets/_page.sass */
 .featured_bars ul, .featured_bars ul li {
   list-style-type: none;
 }
-/* line 173, ../../app/stylesheets/_page.sass */
+/* line 177, ../../app/stylesheets/_page.sass */
 .featured_bars .place_name {
   font-size: 14px;
   line-height: 19px;
   color: white;
 }
-/* line 181, ../../app/stylesheets/_page.sass */
+/* line 185, ../../app/stylesheets/_page.sass */
 .featured_bars .static_rating {
   padding: 6px 0;
 }
-/* line 185, ../../app/stylesheets/_page.sass */
-.featured_bars .address {
-  color: #465057;
-}
 /* line 189, ../../app/stylesheets/_page.sass */
+.featured_bars .address {
+  color: white;
+}
+/* line 193, ../../app/stylesheets/_page.sass */
+.featured_bars p {
+  margin-bottom: 0;
+}
+/* line 197, ../../app/stylesheets/_page.sass */
 .featured_bars hr {
   background: transparent url(/images/stripe.png) no-repeat 50% 50%;
   border: 0px none;
@@ -4009,63 +4017,63 @@ div.pagination em {
   margin-bottom: 8px;
   margin-top: 8px;
 }
-/* line 201, ../../app/stylesheets/_page.sass */
+/* line 209, ../../app/stylesheets/_page.sass */
 .featured_bars hr:last-child {
   display: none;
 }
-/* line 205, ../../app/stylesheets/_page.sass */
+/* line 213, ../../app/stylesheets/_page.sass */
 .featured_bars .link_to a {
   color: #465057;
 }
 
-/* line 211, ../../app/stylesheets/_page.sass */
+/* line 219, ../../app/stylesheets/_page.sass */
 .home_events {
   padding: 6px;
   margin: 0;
   background: #6b8093;
 }
-/* line 219, ../../app/stylesheets/_page.sass */
+/* line 227, ../../app/stylesheets/_page.sass */
 .home_events ul {
   padding: 0;
   margin: 0;
 }
-/* line 225, ../../app/stylesheets/_page.sass */
+/* line 233, ../../app/stylesheets/_page.sass */
 .home_events ul, .home_events ul li {
   list-style-type: none;
 }
-/* line 229, ../../app/stylesheets/_page.sass */
+/* line 237, ../../app/stylesheets/_page.sass */
 .home_events ul li {
   background: white;
   border: 1px solid #e4e3e3;
   padding: 6px;
   margin-bottom: 6px;
 }
-/* line 239, ../../app/stylesheets/_page.sass */
+/* line 247, ../../app/stylesheets/_page.sass */
 .home_events ul li:last-child {
   margin-bottom: 0px;
 }
-/* line 243, ../../app/stylesheets/_page.sass */
+/* line 251, ../../app/stylesheets/_page.sass */
 .home_events .event_icon {
   float: left;
 }
-/* line 247, ../../app/stylesheets/_page.sass */
+/* line 255, ../../app/stylesheets/_page.sass */
 .home_events strong, .home_events span {
   display: block;
   margin-left: 56px;
 }
-/* line 253, ../../app/stylesheets/_page.sass */
+/* line 261, ../../app/stylesheets/_page.sass */
 .home_events strong {
   color: #333333;
   font-size: 14px;
   line-height: 19px;
 }
-/* line 261, ../../app/stylesheets/_page.sass */
+/* line 269, ../../app/stylesheets/_page.sass */
 .home_events span {
   color: #666666;
   font-size: 12px;
   line-height: 16px;
 }
-/* line 269, ../../app/stylesheets/_page.sass */
+/* line 277, ../../app/stylesheets/_page.sass */
 .home_events .view_all_events {
   padding: 12px 0;
   font-size: 15px;

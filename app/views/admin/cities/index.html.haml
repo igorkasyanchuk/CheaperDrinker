@@ -11,7 +11,6 @@
         %tr
           %th.w10 TOP
           %th.w50 Name
-          %th Market
       
       %tbody
         - for city in cities
@@ -19,10 +18,6 @@
             %td= check_box_tag "c#{city.id}", city.is_top_city, city.is_top_city, "data-url" => url_for([:toggle, :admin, city]), :class => 'top_cb'
             %td
               = link_to city.name, [:admin, city]
-              - neighborhoods = city.neighborhoods.collect{|n| n.name}
-              (#{neighborhoods.size > 0 ? neighborhoods.join(", ") : '-'})
-            %td
-              = select_tag "city[#{city.id}]", options_for_select( city.state.markets.collect{|m| [m.name, m.id]}, city.market.try(:id) ), :include_blank => true, "data-url" => url_for([:set_market, :admin, city])
           
 - else
   %p
@@ -30,4 +25,3 @@
     
 = content_for :on_ready do
   init_top_cb();
-  init_select_change();

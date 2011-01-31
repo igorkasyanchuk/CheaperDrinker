@@ -7,8 +7,11 @@
         %h2 Neighborhoods
       .dark4_background.cities_navigation
         - Market.by_name.each do |market|
-          .city
-            = link_to market.name, [:map, market.state, market], :title => "specials in #{market.name}"
+          .market
+            = market.name
+            %ul
+              - market.neighborhoods.each do |neighborhood|
+                %li.neighborhood= link_to neighborhood.name, [market.state, market, neighborhood]
       .page_title.space
         %h2 Featured Bars
       .dark4_background.featured_bars

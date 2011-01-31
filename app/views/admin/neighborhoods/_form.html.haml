@@ -3,12 +3,12 @@
 = content_for :on_ready do
   init_add_form(); 
   == var lat = #{@neighborhood.lat};
-  == var lng = #{@neighborhood.lng};   
-  == initialize_map_with_lat_and_lng_and_address(lat, lng, '#{@neighborhood.city.state.name}, #{@neighborhood.city.name}');
+  == var lng = #{@neighborhood.lng};
+  == initialize_map_with_lat_and_lng_and_address(lat, lng, '#{@neighborhood.market.state.name}, #{@neighborhood.market.name}');
   
 = error_messages_for :neighborhood
 
-= simple_form_for([:admin, @city, @neighborhood]) do |f|
+= simple_form_for([:admin, @market.state, @market, @neighborhood]) do |f|
   = f.input :name
   %h3 Locate address
   = f.input :lat, :as => :string, :input_html => { :id => 'lat' }

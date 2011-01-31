@@ -1,8 +1,8 @@
-= title "Manage #{@city.name} Neighborhoods"
+= title "Manage #{@market.name} Neighborhoods"
 
-%h1.left #{@city.name} Neighborhoods
+%h1.left #{@market.name} Neighborhoods
 .add.right
-  = link_to "Add #{@city.name} Neighborhood", [:new, :admin, @city, :neighborhood], :class => 'add_button'
+  = link_to "Add #{@market.name} Neighborhood", [:new, :admin, @market.state, @market, :neighborhood], :class => 'add_button'
 .clear  
 
 %table.zebra.w50
@@ -13,13 +13,12 @@
     %tr{ :class => cycle(:odd, :even)}
       %td= neighborhood.name
       %td
-        = link_to 'show', [:admin, @city, neighborhood], :class => 'show_button'
-        = link_to 'edit', [:edit, :admin, @city, neighborhood], :class => 'edit_button'
-        = link_to 'remove', [:admin, @city, neighborhood], :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+        = link_to 'show', [:admin, @market.state, @market, neighborhood], :class => 'show_button'
+        = link_to 'edit', [:edit, :admin, @market.state, @market, neighborhood], :class => 'edit_button'
+        = link_to 'remove', [:admin, @market.state, @market, neighborhood], :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
   %tr
     %td{:colspan => 2}
-      %strong Total: #{@city.neighborhoods.count}
+      %strong Total: #{@market.neighborhoods.count}
       
-      
-%p  
-  = link_to 'Back to Cities page', [:admin, :cities], :class => 'index_button'
+%p
+  = link_to "All #{@state.name} Markets", [:admin, @state, :markets], :class => 'index_button'

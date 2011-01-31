@@ -18,7 +18,7 @@
       margin-right: 12px
       margin-top: 12px
       line-height: 16px
-      text-transform: uppercase
+      text-transform: normal
   .page_content
     background: #EDEDED
     padding: 6px
@@ -66,10 +66,12 @@
     margin-left: 32px
   ul li
     margin: 6px 0
-  .city a
-    color: white
-    font-size: $base_font_size + 5px
-    line-height: $base_font_size + 9px
+  .market
+    font-size: $base_font_size + 4px
+    line-height: $base_font_size + 5px
+    padding-bottom: 6px
+    a
+      color: white
   .neighborhood, .neighborhood a
     color: $light4
     font-size: $base_font_size + 2px
@@ -91,7 +93,9 @@
   .static_rating
     padding: 6px 0
   .address
-    color: $dark4
+    color: white
+  p
+    margin-bottom: 0
   hr
     background: transparent url(/images/stripe.png) no-repeat 50% 50%
     border: 0px none

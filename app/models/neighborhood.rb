@@ -1,9 +1,11 @@
 class Neighborhood < ActiveRecord::Base
-  belongs_to :city
-  has_friendly_id :name_and_city, :use_slug => true, :sequence_separator => ":"
+  belongs_to :market
+  has_friendly_id :name_and_market, :use_slug => true
   
-  def name_and_city
-    "#{self.city.name} #{name}"
+  validates_presence_of :name
+  
+  def name_and_market
+    "#{self.market.name} #{name}"
   end
   
   def map_info

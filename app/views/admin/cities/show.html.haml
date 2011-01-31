@@ -1,19 +1,4 @@
 = title @city.name
 
-%h1.left #{@city.name}
-.add.right
-  = link_to "Add Neighborhood", [:new, :admin, @city, :neighborhood], :class => 'add_button'
-.clear
-
 %p
   = link_to 'View Bars', [@city.state, @city], :class => 'public_view'
-
-%h2 Neighborhoods
-
-- if @city.neighborhoods.count == 0
-  %p List is empty.
-- else
-  %ul
-    - @city.neighborhoods.each do |n|
-      %li= link_to n.name, [:admin, n.city, n]
-  

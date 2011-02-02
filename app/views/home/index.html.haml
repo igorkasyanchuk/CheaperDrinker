@@ -22,8 +22,9 @@
           - @posts.each do |post|
             .page_content_block
               %h2.post_title= link_to post.title, [post.user, post]
-              .date= post.created_at.to_date
-              .post_content!= post.body_html
+              .date= post.created_at.to_date.to_s(:short_date_2)
+              .post_content
+                != Sanitize.clean(truncate(post.body_html, :length => 300), Sanitize::Config::BASIC)
     %td.w228px
       .page_title
         %h2 Events

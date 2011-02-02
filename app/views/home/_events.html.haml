@@ -1,10 +1,13 @@
 %ul
   - events.each do |event|
     %li
-      .event_icon= link_to (image_tag 'event_sample.png'), event
+      .event_icon= link_to (image_tag event.photo.url(:thumb)), event
       %strong= link_to event.title, event
       %span.category= event.event_category.try(:name)
-      %span.date= event.start.to_date
+      %span.date
+        = event.start.to_date.to_s(:short_date_2)
+        - if event.has_time?
+          %span.time= event.start_time.to_s(:time_12)
       .clear
 
 = link_to "View all Events >>", [:events], :class => 'view_all_events'  

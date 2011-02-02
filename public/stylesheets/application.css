@@ -4055,25 +4055,33 @@ div.pagination em {
 /* line 251, ../../app/stylesheets/_page.sass */
 .home_events .event_icon {
   float: left;
+  padding-right: 4px;
+  min-height: 60px;
+  min-width: 60px;
 }
-/* line 255, ../../app/stylesheets/_page.sass */
+/* line 261, ../../app/stylesheets/_page.sass */
 .home_events strong, .home_events span {
   display: block;
   margin-left: 56px;
 }
-/* line 261, ../../app/stylesheets/_page.sass */
+/* line 269, ../../app/stylesheets/_page.sass */
+.home_events span.date span.time {
+  display: block;
+  margin-left: 0;
+}
+/* line 275, ../../app/stylesheets/_page.sass */
 .home_events strong {
   color: #333333;
   font-size: 14px;
   line-height: 19px;
 }
-/* line 269, ../../app/stylesheets/_page.sass */
+/* line 283, ../../app/stylesheets/_page.sass */
 .home_events span {
   color: #666666;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 11px;
+  line-height: 15px;
 }
-/* line 277, ../../app/stylesheets/_page.sass */
+/* line 291, ../../app/stylesheets/_page.sass */
 .home_events .view_all_events {
   padding: 12px 0;
   font-size: 15px;
@@ -4229,30 +4237,42 @@ ul.all_events li {
 .event_time {
   font-weight: bold;
   float: left;
+  padding-left: 6px;
+}
+
+/* line 73, ../../app/stylesheets/_events.sass */
+.edd {
+  clear: both;
+}
+
+/* line 79, ../../app/stylesheets/_events.sass */
+.home_events span.date {
+  font-size: 11px;
 }
 
 /* line 1, ../../app/stylesheets/_posts.sass */
 h2.post_title a {
-  color: #c90316;
-  font-size: 22px;
-  line-height: 23.1px;
+  color: #465057;
+  font-size: 16.5px;
+  line-height: 17.6px;
+  text-decoration: none;
 }
 
-/* line 13, ../../app/stylesheets/_posts.sass */
+/* line 15, ../../app/stylesheets/_posts.sass */
 .post_content h1, .post_content h2, .post_content h3, .post_content h4 {
   color: #6b8093;
 }
-/* line 17, ../../app/stylesheets/_posts.sass */
+/* line 19, ../../app/stylesheets/_posts.sass */
 .post_content h1 {
   font-size: 17.6px;
   line-height: 18.15px;
 }
-/* line 23, ../../app/stylesheets/_posts.sass */
+/* line 25, ../../app/stylesheets/_posts.sass */
 .post_content h2 {
   font-size: 15.95px;
   line-height: 16.28px;
 }
-/* line 29, ../../app/stylesheets/_posts.sass */
+/* line 31, ../../app/stylesheets/_posts.sass */
 .post_content h3 {
   font-size: 13.75px;
   line-height: 15.18px;

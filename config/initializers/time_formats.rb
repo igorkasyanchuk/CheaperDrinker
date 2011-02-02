@@ -5,3 +5,4 @@ Date:: DATE_FORMATS[:long_without_year_and_day] = '%B %e'
 Time::DATE_FORMATS[:time_12] = '%l:%M %p'
 
 Date::DATE_FORMATS[:short_date] = '%m/%d/%Y'
+Date::DATE_FORMATS[:short_date_2] = '%m-%d-%Y'

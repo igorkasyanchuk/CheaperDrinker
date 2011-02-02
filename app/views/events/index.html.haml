@@ -1,3 +1,5 @@
+= title "Events"
+
 %h1 Events
 
 %ul.all_events
@@ -9,7 +11,7 @@
         .ed
           - if e.event_category.try(:name)
             .event_category #{e.event_category.try(:name)}, 
-            .event_date &nbsp;#{e.start.to_date}
+            .event_date &nbsp;#{e.start.to_date.to_s(:short_date_2)}
             - if e.has_time?
               .event_time= e.start_time.to_s(:time_12)
           - else

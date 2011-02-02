@@ -2,10 +2,16 @@
 
 %h1 #{@event.title}
 
-.event_date_time
-  #{@event.start}
+- if logged_in? && current_user.admin?
+  %p= link_to 'Edit', [:edit, :admin, @event], :class => 'edit_button'
+
+.date #{@event.start.to_date.to_s(:short_date_2)}
+- if @event.has_time?
+  .time= @event.start_time.to_s(:time_12)
+- else
+  .date #{@event.start.to_date}
   - if @event.has_time?
-    , #{@event.start_time.to_s(:time_12)}
+    .time= @event.start_time.to_s(:time_12)
 
 - if @event.has_photo?
   = image_tag @event.photo.url(:medium), :class => 'event_image'

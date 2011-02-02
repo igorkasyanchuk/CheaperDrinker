@@ -29,6 +29,7 @@ gem 'meta_where'
 gem 'paperclip', '2.3.6'
 gem 'whenever', :require => false
 gem "auto_html"
+gem "sanitize"
 
 group :test do
   gem "shoulda"

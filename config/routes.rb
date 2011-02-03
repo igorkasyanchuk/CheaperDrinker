@@ -38,6 +38,7 @@ RailsjazzCom::Application.routes.draw do
 
   namespace :admin do
     match '/', :to => 'dashboard#welcome'
+    match '/markets', :to => 'dashboard#markets', :as => 'markets'
     resources :posts, :only => [:index, :destroy] do
       member {  get :approve  }
     end

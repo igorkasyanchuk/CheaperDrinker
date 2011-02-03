@@ -1,7 +1,7 @@
 class Admin::CitiesController < Admin::DashboardController
   
   def index
-    @cities = City.all :include => [:state, :neighborhoods]
+    @cities = City.all :include => [:state]
     @cities_grouped = @cities.group_by{|c| c.state.name}
   end
   

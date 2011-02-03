@@ -1,0 +1,21 @@
+= title "Manage Markets"
+
+%table.zebra.w75
+  %tr
+    %th Name
+    %th State
+    %th Neighborhoods
+    %th Actions
+  - @markets.each do |market|
+    %tr{ :class => cycle(:odd, :even)}
+      %td= market.name
+      %td= link_to market.state.name, [:admin, market.state, :markets]
+      %td= market.neighborhoods.collect{|n| n.name}.join("; ")
+      %td
+        = link_to 'Add Neighborhood', [:new, :admin, market.state, market, :neighborhood], :class => 'add_button'
+        = link_to 'show', [:admin, market.state, market], :class => 'show_button'
+        = link_to 'edit', [:edit, :admin, market.state, market], :class => 'edit_button'
+        = link_to 'remove', [:admin, market.state, market], :method => :delete, :confirm => 'Are you sure?', :class => 'delete_button'
+  %tr
+    %td{:colspan => 4}
+      %strong Total: #{@markets.size}

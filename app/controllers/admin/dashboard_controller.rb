@@ -9,5 +9,9 @@ class Admin::DashboardController < InheritedResources::Base
   
   def welcome
   end
+  
+  def markets
+    @markets = Market.by_name.all
+  end
 
 end

@@ -21,13 +21,15 @@
         .page_content{:style => 'padding-top: 1px; padding-bottom: 1px'}
           - @posts.each do |post|
             .page_content_block
-              %h2.post_title= link_to post.title, [post.user, post]
+              %h2.post_title= post.title
+              /%h2.post_title= link_to post.title, [post.user, post]
               .date= post.created_at.to_date.to_s(:short_date_2)
               .post_content
-                != Sanitize.clean(truncate(post.body_html, :length => 300), Sanitize::Config::BASIC)
+                /!= Sanitize.clean(truncate(post.body_html, :length => 300), Sanitize::Config::BASIC)
+                != post.body_html
     %td.w228px
       .page_title
         %h2 Events
       .dark4_background.home_events
-        = render :partial => '/home/events', :locals => { :events => Event.limit(5).all }
+        = render :partial => '/home/events', :locals => { :events => Event.from_now.limit(8) }
   .clear    

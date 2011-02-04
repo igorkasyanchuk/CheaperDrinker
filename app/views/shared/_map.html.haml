@@ -5,7 +5,10 @@
   = javascript_include_tag 'markerclusterer_packed'
 
 - content_for :on_ready do
-  !== USER_LOCATION = #{element.map_info.merge(:zoom => DEFAULT_CITY_ZOOM).to_json};
+  - if element.map_info.has_key?("zoom")
+    !== USER_LOCATION = #{element.map_info.to_json};
+  - else
+    !== USER_LOCATION = #{element.map_info.merge(:zoom => DEFAULT_CITY_ZOOM).to_json};
   set_url_options();
   !== show_bars_on_map();
   updateMap('home');

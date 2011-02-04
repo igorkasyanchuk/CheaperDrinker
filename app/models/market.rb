@@ -11,7 +11,7 @@ class Market < ActiveRecord::Base
   scope :by_name, order(:name)
   
   def map_info
-    { "lat" => self.lat, "lng" => self.lng }
+    { "lat" => self.lat, "lng" => self.lng, "zoom" => 13 }
   end
 
 end

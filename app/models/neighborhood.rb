@@ -9,6 +9,6 @@ class Neighborhood < ActiveRecord::Base
   end
   
   def map_info
-    { "lat" => self.lat, "lng" => self.lng, "zoom" => 13 }
+    { "lat" => self.lat, "lng" => self.lng, "zoom" => self.zoom_level }
   end  
 end

@@ -10,7 +10,7 @@
     %tr{ :class => cycle(:odd, :even)}
       %td= market.name
       %td= link_to market.state.name, [:admin, market.state, :markets]
-      %td= market.neighborhoods.collect{|n| n.name}.join("; ")
+      %td!= market.neighborhoods.collect{|n| link_to n.name, [:edit, :admin, n.market.state, n.market, n]}.join("; ")
       %td
         = link_to 'Add Neighborhood', [:new, :admin, market.state, market, :neighborhood], :class => 'add_button'
         = link_to 'show', [:admin, market.state, market], :class => 'show_button'

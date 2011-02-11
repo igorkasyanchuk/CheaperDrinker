@@ -3,7 +3,8 @@
     %li
       .event_icon= link_to (image_tag event.photo.url(:thumb)), event
       %strong.event_name= link_to event.title, event
-      %span.category= event.event_category.try(:name)
+      - if event.location
+        %span.category= link_to event.location.name, events_place_path(event.location)
       %span.date
         = event.start.to_date.to_s(:short_date_2)
         - if event.has_time?

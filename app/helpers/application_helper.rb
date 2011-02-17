@@ -158,4 +158,19 @@ module ApplicationHelper
     imgs.html_safe
   end
   
+  def add_editor
+    content_for :css do
+      stylesheet_link_tag '/redactor/css/editor.css'
+    end
+    content_for :js do
+      javascript_include_tag '/redactor/editor.js'
+    end
+  end
+  
+  def editor(element) 
+    content_for :on_ready do 
+      "$('#{element}').editor(redactor);".html_safe
+    end
+  end   
+  
 end

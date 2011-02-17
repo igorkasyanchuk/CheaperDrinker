@@ -1,5 +1,13 @@
 //var CENTER_OF_THE_WORLD_LAT = 39.96;
 //var CENTER_OF_THE_WORLD_LNG = -95.3;
+var redactor = { 
+  focus: true, 
+  path: '/redactor/', 
+  image_upload:  '/dashboard/asset_photos',
+  pathCss: '../stylesheets/', 
+  css: ['e.css'],
+  lang: 'en'
+};
 
 var CENTER_OF_THE_WORLD_LAT = 44.97354220216914;
 var CENTER_OF_THE_WORLD_LNG = -93.24920654296875;

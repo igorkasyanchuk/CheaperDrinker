@@ -12,10 +12,6 @@
             %ul
               - market.neighborhoods.each do |neighborhood|
                 %li.neighborhood= link_to neighborhood.name, [market.state, market, neighborhood]
-      .page_title.space
-        %h2 Featured Bars
-      .dark4_background.featured_bars
-        %ul= render :partial => '/home/places', :locals => { :hide_rating => true, :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
     %td.w490px
       .mlr6px
         .page_content{:style => 'padding-top: 1px; padding-bottom: 1px'}
@@ -26,10 +22,10 @@
               .date= post.created_at.to_date.to_s(:short_date_2)
               .post_content
                 /!= Sanitize.clean(truncate(post.body_html, :length => 300), Sanitize::Config::BASIC)
-                != post.body_html
+                != post.body
     %td.w228px
       .page_title
-        %h2 Events
-      .dark4_background.home_events
-        = render :partial => '/home/events', :locals => { :events => Event.from_now.limit(8) }
+        %h2 Featured Bars
+      .dark4_background.featured_bars
+        %ul= render :partial => '/home/places', :locals => { :hide_rating => true, :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
   .clear    

@@ -4194,6 +4194,29 @@ form.simple_form .textile .markItUpContainer {
   padding-top: 16px;
 }
 
+/* line 37, ../../app/stylesheets/_editor.sass */
+.imp_editor_box {
+  width: 90%;
+}
+/* line 41, ../../app/stylesheets/_editor.sass */
+.imp_editor_box iframe {
+  padding: 4px 6px;
+}
+
+/* line 47, ../../app/stylesheets/_editor.sass */
+.img_left {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 57, ../../app/stylesheets/_editor.sass */
+.img_right {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
 /* line 1, ../../app/stylesheets/_events.sass */
 .event_image {
   float: left;

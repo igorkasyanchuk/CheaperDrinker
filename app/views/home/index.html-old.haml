@@ -1,0 +1,35 @@
+= title "Happy Hour Scout - Finding Happy Hours and Bar Specials for You!"
+
+%table.w960px.center_block.top6px.padding6_8px.page.vtop
+  %tr
+    %td.w228px
+      .page_title
+        %h2 Neighborhoods
+      .dark4_background.cities_navigation
+        - Market.by_name.each do |market|
+          .market
+            = market.name
+            %ul
+              - market.neighborhoods.each do |neighborhood|
+                %li.neighborhood= link_to neighborhood.name, [market.state, market, neighborhood]
+      .page_title.space
+        %h2 Featured Bars
+      .dark4_background.featured_bars
+        %ul= render :partial => '/home/places', :locals => { :hide_rating => true, :places => Location.featured_bars.all, :current_day => Time.zone.now.wday }
+    %td.w490px
+      .mlr6px
+        .page_content{:style => 'padding-top: 1px; padding-bottom: 1px'}
+          - @posts.each do |post|
+            .page_content_block
+              %h2.post_title= post.title
+              /%h2.post_title= link_to post.title, [post.user, post]
+              .date= post.created_at.to_date.to_s(:short_date_2)
+              .post_content
+                /!= Sanitize.clean(truncate(post.body_html, :length => 300), Sanitize::Config::BASIC)
+                != post.body_html
+    %td.w228px
+      .page_title
+        %h2 Events
+      .dark4_background.home_events
+        = render :partial => '/home/events', :locals => { :events => Event.from_now.limit(8) }
+  .clear    

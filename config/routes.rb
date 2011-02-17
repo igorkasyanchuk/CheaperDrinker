@@ -77,6 +77,7 @@ RailsjazzCom::Application.routes.draw do
     match '/', :to => 'dashboard#welcome'
     match '/add_bar', :to => 'dashboard#add_bar'
     match '/create_location', :to => 'dashboard#create_location'
+    resources :asset_photos
     resources :users, :only => [:edit, :update, :show] do
       resources :posts
       resources :events

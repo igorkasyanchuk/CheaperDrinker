@@ -14,7 +14,7 @@ gem "has_scope", '0.5.0'
 gem "responders", '0.6.2'
 gem "high_voltage" 
 gem "simple_form"
-gem 'RedCloth'
+#gem 'RedCloth'
 gem 'geokit'
 gem 'acts-as-taggable-on'
 gem "friendly_id", "~> 3.1"
@@ -28,7 +28,7 @@ gem 'thinking-sphinx', "~> 2.0.0", :require => 'thinking_sphinx'
 gem 'meta_where'
 gem 'paperclip', '2.3.6'
 gem 'whenever', :require => false
-gem "auto_html"
+#gem "auto_html"
 gem "sanitize"
 
 group :test do
